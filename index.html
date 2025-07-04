@@ -73,9 +73,47 @@
     a {
       color: #007BFF;
     }
+    .nav {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      z-index: 10;
+    }
+    .nav a {
+      text-decoration: none;
+      background: #007BFF;
+      color: #fff;
+      padding: 0.5rem 1.2rem;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.2s;
+      margin-left: 0.5rem;
+    }
+    .nav a:hover {
+      background: #0056b3;
+    }
+    .bottom-nav {
+      text-align: center;
+      margin: 2rem 0 1rem 0;
+    }
+    .bottom-nav a {
+      text-decoration: none;
+      background: #007BFF;
+      color: #fff;
+      padding: 0.5rem 1.2rem;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .bottom-nav a:hover {
+      background: #0056b3;
+    }
   </style>
 </head>
 <body>
+  <div class="nav">
+    <a href="portfolio.html">Portfolio</a>
+  </div>
   <header>
     <img src="files/Profile_Picture.jpeg" alt="Rahul Kaushik" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 0 10px rgba(0,0,0,0.5); margin-bottom: 1rem;">
     <h1>RAHUL KAUSHIK</h1>
@@ -284,5 +322,8 @@
     <h2>Resume</h2>
     <a class="download-button" href="files/Rahul_Kaushik_Resume.pdf" download>Download Resume (PDF)</a>
   </section>
+  <div class="bottom-nav">
+    <a href="portfolio.html">Go to Portfolio</a>
+  </div>
 </body>
 </html>

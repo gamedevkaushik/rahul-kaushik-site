@@ -5,30 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rahul Kaushik - Project Portfolio</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
     body {
       font-family: 'Roboto', sans-serif;
-      background: #f8f9fa;
       margin: 0;
-      padding: 2rem;
-    }
-    h1 {
-      text-align: center;
+      padding: 0;
+      background-color: #1f1c2c;
+      background-image: none;
+      background-repeat: no-repeat;
+      background-size: cover;
       color: #333;
     }
-    .portfolio-container {
+    header {
+      background: #0d0d0d;
+      color: #fff;
+      padding: 3rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+    section {
       max-width: 1000px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     .project-card {
-      background: #fff;
-      border-left: 5px solid #17a2b8;
+      background: #f9f9f9;
+      border-left: 5px solid #007BFF;
       border-radius: 8px;
       padding: 1.5rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       margin-bottom: 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+    .project-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+      object-fit: cover;
+      object-position: center;
     }
     .project-card strong {
       font-size: 1.2rem;
@@ -41,303 +68,357 @@
       color: #555;
     }
     .project-card span {
+      font-size: 0.95rem;
+      color: #007BFF;
+    }
+    .project-card ul {
+      margin: 0.5rem 0 0 0;
+      padding-left: 1.2rem;
       font-size: 0.9rem;
-      color: #777;
+      color: #666;
+    }
+    @media (max-width: 700px) {
+      section {
+        padding: 1rem;
+      }
+      .project-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+      }
+      .project-card img {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+        margin: 0 auto;
+      }
     }
     .nav {
-      text-align: center;
-      margin-bottom: 2rem;
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      z-index: 10;
     }
     .nav a {
       text-decoration: none;
       background: #007BFF;
-      color: white;
-      padding: 0.5rem 1rem;
+      color: #fff;
+      padding: 0.5rem 1.2rem;
       border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.2s;
+      margin-left: 0.5rem;
     }
     .nav a:hover {
+      background: #0056b3;
+    }
+    .bottom-nav {
+      text-align: center;
+      margin: 2rem 0 1rem 0;
+    }
+    .bottom-nav a {
+      text-decoration: none;
+      background: #007BFF;
+      color: #fff;
+      padding: 0.5rem 1.2rem;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .bottom-nav a:hover {
       background: #0056b3;
     }
   </style>
 </head>
 <body>
-  <h1>Project Portfolio</h1>
-  <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <img src="files/Icon_Measure.png" alt="Measure" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-    <div>
-      <strong>Measure</strong>
-      <em>Accurate measurement tool using your device's camera and advanced AR technology for real-world distance and area calculations</em>
-      <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.measuresoftware.app&hl=en_IN" target="_blank">Android</a></span>
-      <div style="margin-top: 0.8rem;">
-        <strong style="font-size: 1rem;">Features:</strong>
-        <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
-          <li>AR-powered measurement using device camera</li>
-          <li>Measure distances, areas, and volumes accurately</li>
-          <li>Multiple measurement units (metric and imperial)</li>
-          <li>Save and share measurement results</li>
-          <li>User-friendly interface with intuitive controls</li>
-          <li>Perfect for home improvement and professional use</li>
-        </ul>
-      </div>
-    </div>
+  <div class="nav">
+    <a href="index.html">Home</a>
   </div>
-  <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <img src="files/Icon_GummyRescue.png" alt="Gummy Rescue" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-    <div>
-      <strong>Gummy Rescue</strong>
-      <em>Help the adorable gummy bears escape dangerous situations in this charming puzzle-adventure game</em>
-      <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.GummyRescue&hl=en_IN" target="_blank">Android</a>
-        <a href="https://apps.apple.com/us/app/gummy-rescue/id1526106552" target="_blank">IOS</a></span>
-      </span>
-      <div style="margin-top: 0.8rem;">
-        <strong style="font-size: 1rem;">Features:</strong>
-        <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
-          <li>Cute and colorful gummy bear characters</li>
-          <li>Challenging rescue missions and puzzles</li>
-          <li>Multiple levels with increasing difficulty</li>
-          <li>Family-friendly gameplay suitable for all ages</li>
-          <li>Engaging physics-based mechanics</li>
-          <li>Vibrant graphics and smooth animations</li>
-        </ul>
+  <header>
+    <h1>RAHUL KAUSHIK</h1>
+    <p>PROJECT PORTFOLIO</p>
+  </header>
+  <section>
+    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
+      <img src="files/Icon_Measure.png" alt="Measure" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
+      <div>
+        <strong>Measure</strong>
+        <em>Accurate measurement tool using your device's camera and advanced AR technology for real-world distance and area calculations</em>
+        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.measuresoftware.app&hl=en_IN" target="_blank">Android</a></span>
+        <div style="margin-top: 0.8rem;">
+          <strong style="font-size: 1rem;">Features:</strong>
+          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+            <li>AR-powered measurement using device camera</li>
+            <li>Measure distances, areas, and volumes accurately</li>
+            <li>Multiple measurement units (metric and imperial)</li>
+            <li>Save and share measurement results</li>
+            <li>User-friendly interface with intuitive controls</li>
+            <li>Perfect for home improvement and professional use</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <img src="files/Icon_Brainchild.png" alt="Brainchild" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-    <div>
-      <strong>Brainchild</strong>
-      <em>Challenge your mind with this innovative puzzle game featuring unique brain-teasing mechanics and progressively difficult levels</em>
-      <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.Brainchild&hl=en_IN" target="_blank">Android</a>
-        <a href="https://apps.apple.com/us/app/brainchild/id1452322012" target="_blank">IOS</a></span>
-      <div style="margin-top: 0.8rem;">
-        <strong style="font-size: 1rem;">Features:</strong>
-        <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
-          <li>Innovative puzzle mechanics that challenge your thinking</li>
-          <li>Progressive difficulty with increasingly complex challenges</li>
-          <li>Clean, minimalist design focused on gameplay</li>
-          <li>Multiple puzzle types and brain-teasing scenarios</li>
-          <li>Intuitive controls and smooth user experience</li>
-          <li>Perfect for quick mental workouts and extended play sessions</li>
-        </ul>
+    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
+      <img src="files/Icon_GummyRescue.png" alt="Gummy Rescue" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
+      <div>
+        <strong>Gummy Rescue</strong>
+        <em>Help the adorable gummy bears escape dangerous situations in this charming puzzle-adventure game</em>
+        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.GummyRescue&hl=en_IN" target="_blank">Android</a>
+          <a href="https://apps.apple.com/us/app/gummy-rescue/id1526106552" target="_blank">IOS</a></span>
+        </span>
+        <div style="margin-top: 0.8rem;">
+          <strong style="font-size: 1rem;">Features:</strong>
+          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+            <li>Cute and colorful gummy bear characters</li>
+            <li>Challenging rescue missions and puzzles</li>
+            <li>Multiple levels with increasing difficulty</li>
+            <li>Family-friendly gameplay suitable for all ages</li>
+            <li>Engaging physics-based mechanics</li>
+            <li>Vibrant graphics and smooth animations</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <img src="files/Icon_StarTitan.png" alt="Star Titan" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-    <div>
-      <strong>Star Titan</strong>
-      <em>Epic space adventure where you pilot powerful mechs through intense battles across the galaxy</em>
-      <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.StarTitan&hl=en_IN" target="_blank">Android</a>
-        <a href="https://apps.apple.com/us/app/star-titan/id1482626137" target="_blank">IOS</a></span>
-      <div style="margin-top: 0.8rem;">
-        <strong style="font-size: 1rem;">Features:</strong>
-        <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
-          <li>Command powerful mech units in space combat</li>
-          <li>Strategic gameplay with tactical decision making</li>
-          <li>Multiple mission types and objectives</li>
-          <li>Upgrade and customize your mech arsenal</li>
-          <li>Immersive sci-fi storyline and environments</li>
-          <li>Challenging AI opponents and boss battles</li>
-        </ul>
+    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
+      <img src="files/Icon_Brainchild.png" alt="Brainchild" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
+      <div>
+        <strong>Brainchild</strong>
+        <em>Challenge your mind with this innovative puzzle game featuring unique brain-teasing mechanics and progressively difficult levels</em>
+        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.Brainchild&hl=en_IN" target="_blank">Android</a>
+          <a href="https://apps.apple.com/us/app/brainchild/id1452322012" target="_blank">IOS</a></span>
+        <div style="margin-top: 0.8rem;">
+          <strong style="font-size: 1rem;">Features:</strong>
+          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+            <li>Innovative puzzle mechanics that challenge your thinking</li>
+            <li>Progressive difficulty with increasingly complex challenges</li>
+            <li>Clean, minimalist design focused on gameplay</li>
+            <li>Multiple puzzle types and brain-teasing scenarios</li>
+            <li>Intuitive controls and smooth user experience</li>
+            <li>Perfect for quick mental workouts and extended play sessions</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <img src="files/Icon_BlockBreaker.png" alt="Block Breaker" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-    <div>
-      <strong>Block Smash 3D</strong>
-      <em>Classic brick-breaking arcade action with modern twists, power-ups, and challenging levels to test your reflexes</em>
-      <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.BlockBreaker&hl=en_IN" target="_blank">Android</a>
-        <a href="https://apps.apple.com/us/app/block-smash-3d/id1518571680" target="_blank">IOS</a></span>
-      <div style="margin-top: 0.8rem;">
-        <strong style="font-size: 1rem;">Features:</strong>
-        <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
-          <li>Classic brick-breaking gameplay with modern enhancements</li>
-          <li>Multiple power-ups and special abilities</li>
-          <li>Challenging levels with unique block arrangements</li>
-          <li>Smooth paddle controls and ball physics</li>
-          <li>Progressive difficulty and scoring system</li>
-          <li>Addictive arcade-style gameplay</li>
-        </ul>
+    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
+      <img src="files/Icon_StarTitan.png" alt="Star Titan" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
+      <div>
+        <strong>Star Titan</strong>
+        <em>Epic space adventure where you pilot powerful mechs through intense battles across the galaxy</em>
+        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.StarTitan&hl=en_IN" target="_blank">Android</a>
+          <a href="https://apps.apple.com/us/app/star-titan/id1482626137" target="_blank">IOS</a></span>
+        <div style="margin-top: 0.8rem;">
+          <strong style="font-size: 1rem;">Features:</strong>
+          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+            <li>Command powerful mech units in space combat</li>
+            <li>Strategic gameplay with tactical decision making</li>
+            <li>Multiple mission types and objectives</li>
+            <li>Upgrade and customize your mech arsenal</li>
+            <li>Immersive sci-fi storyline and environments</li>
+            <li>Challenging AI opponents and boss battles</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <img src="files/Icon_BoomerangDungeon.png" alt="Boomerang Dungeon" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-    <div>
-      <strong>Boomerang Dungeon</strong>
-      <em>Navigate through mysterious dungeons using your trusty boomerang to defeat enemies and solve puzzles in this adventure game</em>
-      <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.BoomerangDungeon&hl=en_IN" target="_blank">Android</a>
-        <a href="https://apps.apple.com/us/app/boomerang-dungeon/id1518551078" target="_blank">IOS</a></span>
-      <div style="margin-top: 0.8rem;">
-        <strong style="font-size: 1rem;">Features:</strong>
-        <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
-          <li>Unique boomerang-based combat mechanics</li>
-          <li>Challenging dungeon exploration and puzzle solving</li>
-          <li>Multiple levels with increasing difficulty</li>
-          <li>Strategic gameplay requiring timing and precision</li>
-          <li>Immersive dungeon environments and atmosphere</li>
-          <li>Intuitive touch controls for mobile gameplay</li>
-        </ul>
+    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
+      <img src="files/Icon_BlockBreaker.png" alt="Block Breaker" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
+      <div>
+        <strong>Block Smash 3D</strong>
+        <em>Classic brick-breaking arcade action with modern twists, power-ups, and challenging levels to test your reflexes</em>
+        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.BlockBreaker&hl=en_IN" target="_blank">Android</a>
+          <a href="https://apps.apple.com/us/app/block-smash-3d/id1518571680" target="_blank">IOS</a></span>
+        <div style="margin-top: 0.8rem;">
+          <strong style="font-size: 1rem;">Features:</strong>
+          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+            <li>Classic brick-breaking gameplay with modern enhancements</li>
+            <li>Multiple power-ups and special abilities</li>
+            <li>Challenging levels with unique block arrangements</li>
+            <li>Smooth paddle controls and ball physics</li>
+            <li>Progressive difficulty and scoring system</li>
+            <li>Addictive arcade-style gameplay</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <img src="files/Icon_MissilesAreGo.png" alt="Missiles Are Go" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-    <div>
-      <strong>Missiles Are Go</strong>
-      <em>Launch missiles and destroy targets in this action-packed arcade game with explosive gameplay and strategic challenges</em>
-      <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.MissilesAreGo&hl=en" target="_blank">Android</a>
-        <a href="https://apps.apple.com/us/app/missiles-are-go/id1509454143" target="_blank">IOS</a></span>
-      <div style="margin-top: 0.8rem;">
-        <strong style="font-size: 1rem;">Features:</strong>
-        <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
-          <li>Explosive missile launching action gameplay</li>
-          <li>Strategic target destruction mechanics</li>
-          <li>Multiple challenging levels and environments</li>
-          <li>Intuitive touch controls for precise aiming</li>
-          <li>Dynamic explosions and visual effects</li>
-          <li>Progressive difficulty with increasing challenges</li>
-        </ul>
+    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
+      <img src="files/Icon_BoomerangDungeon.png" alt="Boomerang Dungeon" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
+      <div>
+        <strong>Boomerang Dungeon</strong>
+        <em>Navigate through mysterious dungeons using your trusty boomerang to defeat enemies and solve puzzles in this adventure game</em>
+        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.BoomerangDungeon&hl=en_IN" target="_blank">Android</a>
+          <a href="https://apps.apple.com/us/app/boomerang-dungeon/id1518551078" target="_blank">IOS</a></span>
+        <div style="margin-top: 0.8rem;">
+          <strong style="font-size: 1rem;">Features:</strong>
+          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+            <li>Unique boomerang-based combat mechanics</li>
+            <li>Challenging dungeon exploration and puzzle solving</li>
+            <li>Multiple levels with increasing difficulty</li>
+            <li>Strategic gameplay requiring timing and precision</li>
+            <li>Immersive dungeon environments and atmosphere</li>
+            <li>Intuitive touch controls for mobile gameplay</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <img src="files/Icon_PipeSkater.png" alt="Pipe Skater" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-    <div>
-      <strong>Pipe Skater</strong>
-      <em>Experience the ultimate skateboarding adventure in pipes and ramps with realistic physics and smooth controls</em>
-      <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.PipeSkater&hl=en_IN" target="_blank">Android</a>
-        <a href="https://apps.apple.com/us/app/pipe-skater/id1495333287" target="_blank">IOS</a></span>
-      <div style="margin-top: 0.8rem;">
-        <strong style="font-size: 1rem;">Features:</strong>
-        <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
-          <li>Realistic pipe skateboarding physics and smooth controls</li>
-          <li>Multiple challenging pipe environments and ramps</li>
-          <li>Perform amazing tricks and stunts in 3D pipes</li>
-          <li>Intuitive touch controls for mobile gameplay</li>
-          <li>Immersive graphics and dynamic camera angles</li>
-          <li>Progressive levels with increasing difficulty</li>
-        </ul>
+    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
+      <img src="files/Icon_MissilesAreGo.png" alt="Missiles Are Go" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
+      <div>
+        <strong>Missiles Are Go</strong>
+        <em>Launch missiles and destroy targets in this action-packed arcade game with explosive gameplay and strategic challenges</em>
+        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.MissilesAreGo&hl=en" target="_blank">Android</a>
+          <a href="https://apps.apple.com/us/app/missiles-are-go/id1509454143" target="_blank">IOS</a></span>
+        <div style="margin-top: 0.8rem;">
+          <strong style="font-size: 1rem;">Features:</strong>
+          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+            <li>Explosive missile launching action gameplay</li>
+            <li>Strategic target destruction mechanics</li>
+            <li>Multiple challenging levels and environments</li>
+            <li>Intuitive touch controls for precise aiming</li>
+            <li>Dynamic explosions and visual effects</li>
+            <li>Progressive difficulty with increasing challenges</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <img src="files/Icon_SR3D.jpg" alt="Skater Racing 3D" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-    <div>
-      <strong>Skater Racing 3D</strong>
-      <em>Experience the thrill of skateboarding in this exciting 3D racing game with realistic physics and stunning graphics</em>
-      <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.SkaterRacing3D&hl=en_IN" target="_blank">Android</a>
-        <a href="https://apps.apple.com/us/app/skater-racing-3d/id1530838917" target="_blank">IOS</a></span>
-      <div style="margin-top: 0.8rem;">
-        <strong style="font-size: 1rem;">Features:</strong>
-        <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
-          <li>Realistic 3D skateboarding physics and controls</li>
-          <li>Multiple challenging racing tracks and environments</li>
-          <li>Customizable skateboards and character options</li>
-          <li>Competitive racing gameplay with time challenges</li>
-          <li>Smooth graphics and immersive sound effects</li>
-          <li>Progressive difficulty levels for all skill types</li>
-        </ul>
+    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
+      <img src="files/Icon_PipeSkater.png" alt="Pipe Skater" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
+      <div>
+        <strong>Pipe Skater</strong>
+        <em>Experience the ultimate skateboarding adventure in pipes and ramps with realistic physics and smooth controls</em>
+        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.PipeSkater&hl=en_IN" target="_blank">Android</a>
+          <a href="https://apps.apple.com/us/app/pipe-skater/id1495333287" target="_blank">IOS</a></span>
+        <div style="margin-top: 0.8rem;">
+          <strong style="font-size: 1rem;">Features:</strong>
+          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+            <li>Realistic pipe skateboarding physics and smooth controls</li>
+            <li>Multiple challenging pipe environments and ramps</li>
+            <li>Perform amazing tricks and stunts in 3D pipes</li>
+            <li>Intuitive touch controls for mobile gameplay</li>
+            <li>Immersive graphics and dynamic camera angles</li>
+            <li>Progressive levels with increasing difficulty</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <img src="files/Icon_Velawoods.png" alt="Drive Shack Golf and Games" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover; object-position: center;">
-    <div>
-      <strong>Velawoods English</strong>
-      <em>Velawoods English is a platform for learning English through games and interactive activities.</em>
-      <span>Unity, Android, IOS, Mac & Windows • <a href="https://velawoodsenglish.com/" target="_blank">Learn More</a></span>
-      <div style="margin-top: 0.8rem;">
-        <strong style="font-size: 1rem;">Features:</strong>
-        <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
-          <li>Interactive English learning through engaging games and activities</li>
-          <li>Comprehensive curriculum covering vocabulary, grammar, and pronunciation</li>
-          <li>Adaptive learning system that adjusts to individual progress</li>
-          <li>Multiplayer challenges and competitions with other learners</li>
-          <li>Progress tracking and achievement system</li>
-          <li>Available across multiple platforms for seamless learning</li>
-        </ul>
+    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
+      <img src="files/Icon_SR3D.jpg" alt="Skater Racing 3D" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
+      <div>
+        <strong>Skater Racing 3D</strong>
+        <em>Experience the thrill of skateboarding in this exciting 3D racing game with realistic physics and stunning graphics</em>
+        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.SkaterRacing3D&hl=en_IN" target="_blank">Android</a>
+          <a href="https://apps.apple.com/us/app/skater-racing-3d/id1530838917" target="_blank">IOS</a></span>
+        <div style="margin-top: 0.8rem;">
+          <strong style="font-size: 1rem;">Features:</strong>
+          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+            <li>Realistic 3D skateboarding physics and controls</li>
+            <li>Multiple challenging racing tracks and environments</li>
+            <li>Customizable skateboards and character options</li>
+            <li>Competitive racing gameplay with time challenges</li>
+            <li>Smooth graphics and immersive sound effects</li>
+            <li>Progressive difficulty levels for all skill types</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <img src="files/Icon_DriveShack.png" alt="Drive Shack Golf and Games" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover; object-position: center;">
-    <div>
-      <strong>Drive Shack Golf and Games</strong>
-      <em>Where fun meets friendly competition! Experience a mix of driving range games, mini golf, and real-life courses, all enhanced with TrackMan™ Range technology for precision ball tracking and immersive gameplay.</em>
-      <span>Unity, Windows • <a href="https://www.driveshack.com/play/" target="_blank">Learn More</a></span>
-      <div style="margin-top: 0.8rem;">
-        <strong style="font-size: 1rem;">Features:</strong>
-        <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
-          <li>A variety of driving range games for all skill levels</li>
-          <li>Mini golf courses with vibrant, themed environments</li>
-          <li>Real-life golf course challenges (e.g., Casa de Campo, St. Andrews)</li>
-          <li>TrackMan™ Range technology for real-time ball flight, launch angle, and speed tracking</li>
-          <li>Interactive and social gameplay experiences</li>
-          <li>Food, drink, and group event options at venues</li>
-        </ul>
+    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
+      <img src="files/Icon_Velawoods.png" alt="Drive Shack Golf and Games" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover; object-position: center;">
+      <div>
+        <strong>Velawoods English</strong>
+        <em>Velawoods English is a platform for learning English through games and interactive activities.</em>
+        <span>Unity, Android, IOS, Mac & Windows • <a href="https://velawoodsenglish.com/" target="_blank">Learn More</a></span>
+        <div style="margin-top: 0.8rem;">
+          <strong style="font-size: 1rem;">Features:</strong>
+          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+            <li>Interactive English learning through engaging games and activities</li>
+            <li>Comprehensive curriculum covering vocabulary, grammar, and pronunciation</li>
+            <li>Adaptive learning system that adjusts to individual progress</li>
+            <li>Multiplayer challenges and competitions with other learners</li>
+            <li>Progress tracking and achievement system</li>
+            <li>Available across multiple platforms for seamless learning</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <img src="files/Icon_FoL2.png" alt="Fight of the Legends" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-    <div>
-      <strong>Fight of the Legends 2</strong>
-      <em>Reveal your inner fighter in this 3D fighting game! Play up to 8 fighters, upgrade their equipment and abilities, and challenge real players worldwide.</em>
-      <span>Unity, Android • <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.legends.fight2&hl=en" target="_blank">Play on Google Play</a></span>
-      <div style="margin-top: 0.8rem;">
-        <strong style="font-size: 1rem;">Features:</strong>
-        <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
-          <li>Play as up to 8 unique fighters, each with specific combos and attacks</li>
-          <li>Upgrade equipment and abilities to reach full potential</li>
-          <li>Challenge real players worldwide in action combat</li>
-          <li>Special fighting styles: Liberal Kungfu, Taekwondo, Sword Attack, Katana</li>
-          <li>Sensitive and special 3D fighting control system</li>
-          <li>Sophisticated 3D characters and smooth, intense motion</li>
-          <li>Combine punching, kicking, catching, throwing, and dodging for deadly attacks</li>
-          <li>Immersive touch screen mechanics for mobile devices</li>
-        </ul>
+    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
+      <img src="files/Icon_DriveShack.png" alt="Drive Shack Golf and Games" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover; object-position: center;">
+      <div>
+        <strong>Drive Shack Golf and Games</strong>
+        <em>Where fun meets friendly competition! Experience a mix of driving range games, mini golf, and real-life courses, all enhanced with TrackMan™ Range technology for precision ball tracking and immersive gameplay.</em>
+        <span>Unity, Windows • <a href="https://www.driveshack.com/play/" target="_blank">Learn More</a></span>
+        <div style="margin-top: 0.8rem;">
+          <strong style="font-size: 1rem;">Features:</strong>
+          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+            <li>A variety of driving range games for all skill levels</li>
+            <li>Mini golf courses with vibrant, themed environments</li>
+            <li>Real-life golf course challenges (e.g., Casa de Campo, St. Andrews)</li>
+            <li>TrackMan™ Range technology for real-time ball flight, launch angle, and speed tracking</li>
+            <li>Interactive and social gameplay experiences</li>
+            <li>Food, drink, and group event options at venues</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <img src="files/Icon_Ashwathama.jpg" alt="Ashwathama" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-    <div>
-      <strong>Ashwathama</strong>
-      <em>Action-packed 3D fighting game featuring the legendary warrior Ashwathama</em>
-      <span>Unity, Android • <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.Ashwathama" target="_blank">Play on Google Play</a></span>
-      <div style="margin-top: 0.8rem;">
-        <strong style="font-size: 1rem;">Features:</strong>
-        <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
-          <li>Play as the immortal warrior Ashwathama</li>
-          <li>Immersive 3D combat system</li>
-          <li>Epic battles with mythological enemies</li>
-          <li>Ancient Indian warfare and martial arts</li>
-          <li>Stunning visual effects and animations</li>
-          <li>Character progression and skill upgrades</li>
-        </ul>
+    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
+      <img src="files/Icon_FoL2.png" alt="Fight of the Legends" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
+      <div>
+        <strong>Fight of the Legends 2</strong>
+        <em>Reveal your inner fighter in this 3D fighting game! Play up to 8 fighters, upgrade their equipment and abilities, and challenge real players worldwide.</em>
+        <span>Unity, Android • <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.legends.fight2&hl=en" target="_blank">Play on Google Play</a></span>
+        <div style="margin-top: 0.8rem;">
+          <strong style="font-size: 1rem;">Features:</strong>
+          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+            <li>Play as up to 8 unique fighters, each with specific combos and attacks</li>
+            <li>Upgrade equipment and abilities to reach full potential</li>
+            <li>Challenge real players worldwide in action combat</li>
+            <li>Special fighting styles: Liberal Kungfu, Taekwondo, Sword Attack, Katana</li>
+            <li>Sensitive and special 3D fighting control system</li>
+            <li>Sophisticated 3D characters and smooth, intense motion</li>
+            <li>Combine punching, kicking, catching, throwing, and dodging for deadly attacks</li>
+            <li>Immersive touch screen mechanics for mobile devices</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-    <img src="files/Icon_FoL.png" alt="Fight of the Legends" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-    <div>
-      <strong>Fight of the Legends</strong>
-      <em>Action-packed 3D fighting game featuring mythological characters</em>
-      <span>Unity, Android • <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.fightofthelegends" target="_blank">Play on Google Play</a></span>
-      <div style="margin-top: 0.8rem;">
-        <strong style="font-size: 1rem;">Features:</strong>
-        <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
-          <li>Each character fights with different style of fighting</li>
-          <li>Pure 3D</li>
-          <li>Characters made with real models</li>
-          <li>Indian Martial Art style</li>
-          <li>Cool Music</li>
-          <li>Store System to upgrade your character</li>
-        </ul>
+    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
+      <img src="files/Icon_Ashwathama.jpg" alt="Ashwathama" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
+      <div>
+        <strong>Ashwathama</strong>
+        <em>Action-packed 3D fighting game featuring the legendary warrior Ashwathama</em>
+        <span>Unity, Android • <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.Ashwathama" target="_blank">Play on Google Play</a></span>
+        <div style="margin-top: 0.8rem;">
+          <strong style="font-size: 1rem;">Features:</strong>
+          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+            <li>Play as the immortal warrior Ashwathama</li>
+            <li>Immersive 3D combat system</li>
+            <li>Epic battles with mythological enemies</li>
+            <li>Ancient Indian warfare and martial arts</li>
+            <li>Stunning visual effects and animations</li>
+            <li>Character progression and skill upgrades</li>
+          </ul>
+        </div>
       </div>
     </div>
+    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
+      <img src="files/Icon_FoL.png" alt="Fight of the Legends" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
+      <div>
+        <strong>Fight of the Legends</strong>
+        <em>Action-packed 3D fighting game featuring mythological characters</em>
+        <span>Unity, Android • <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.fightofthelegends" target="_blank">Play on Google Play</a></span>
+        <div style="margin-top: 0.8rem;">
+          <strong style="font-size: 1rem;">Features:</strong>
+          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+            <li>Each character fights with different style of fighting</li>
+            <li>Pure 3D</li>
+            <li>Characters made with real models</li>
+            <li>Indian Martial Art style</li>
+            <li>Cool Music</li>
+            <li>Store System to upgrade your character</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-nav">
+    <a href="index.html">Go to Home</a>
   </div>
 </body>
 </html>
