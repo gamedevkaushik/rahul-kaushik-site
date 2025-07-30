@@ -149,9 +149,15 @@
       align-items: flex-start;
       margin-bottom: 1.5rem;
     }
+    .experience-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
     .company-logo {
-      width: 70px;
-      height: 70px;
+      width: 90px;
+      height: 90px;
       background: linear-gradient(135deg, #007BFF, #0056b3);
       border-radius: 15px;
       display: flex;
@@ -159,7 +165,7 @@
       justify-content: center;
       color: white;
       font-weight: bold;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       margin-right: 1.5rem;
       box-shadow: 0 6px 15px rgba(0,0,0,0.15);
       transition: transform 0.3s ease;
@@ -295,23 +301,47 @@
         padding: 1.5rem;
       }
       .experience-header {
-        flex-direction: column;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .experience-info {
+        width: 100%;
+        text-align: left;
+      }
+      .experience-info > div:first-child {
+        flex-direction: row;
+        justify-content: space-between;
         align-items: flex-start;
         gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .experience-role {
+        font-size: 1.1rem;
+        margin: 0;
+        padding-top: 0;
+        flex: 1;
+        min-width: 200px;
       }
       .experience-title {
         font-size: 1.2rem;
+        margin: 0;
+        text-align: left;
       }
       .experience-date {
-        align-self: flex-end;
+        align-self: flex-start;
         font-size: 0.8rem;
         padding: 0.3rem 0.8rem;
+        margin: 0;
+        white-space: nowrap;
       }
       .company-logo {
-        width: 50px;
-        height: 50px;
-        font-size: 1rem;
+        width: 60px;
+        height: 60px;
+        font-size: 1.1rem;
         margin-right: 1rem;
+        align-self: flex-start;
+        flex-shrink: 0;
       }
       .skills-tags {
         flex-wrap: wrap;
@@ -343,9 +373,13 @@
       .experience-title {
         font-size: 1.1rem;
       }
+      .experience-role {
+        font-size: 1rem;
+        min-width: 150px;
+      }
       .company-logo {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         font-size: 0.9rem;
       }
     }
@@ -377,11 +411,13 @@
             <img src="files/Company_Logos/mpm_logo.png" alt="MPM Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
           </div>
           <div class="experience-info">
-            <h3 class="experience-title">Measure Practice Management</h3>
-            <span class="experience-date">2021 - 2025</span>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <p class="experience-role" style="margin: 0; padding-top: 0;">Development Team Lead (Consultant)</p>
+              <span class="experience-date">2021 - 2025</span>
+            </div>
+            <h3 class="experience-title" style="margin: 0;">Measure Practice Management</h3>
           </div>
         </div>
-        <p class="experience-role">Development Team Lead (Consultant)</p>
         <div class="experience-description">
           <ul>
             <li>Lead, Mentor, and Manage a high-performing development team</li>
@@ -413,11 +449,13 @@
             <img src="files/Company_Logos/dpi_logo.png" alt="DPI Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
           </div>
           <div class="experience-info">
-            <h3 class="experience-title">Dark Pyre Interactive</h3>
-            <span class="experience-date">2021 - 2024</span>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <p class="experience-role" style="margin: 0; padding-top: 0;">Development Team Lead (Consultant)</p>
+              <span class="experience-date">2021 - 2024</span>
+            </div>
+            <h3 class="experience-title" style="margin: 0;">Dark Pyre Interactive</h3>
           </div>
         </div>
-        <p class="experience-role">Development Team Lead (Consultant)</p>
         <div class="experience-description">
           <ul>
             <li>Conceptualising in-house mobile games</li>
@@ -449,11 +487,13 @@
             <img src="files/Company_Logos/freelance_logo.png" alt="Freelance Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
           </div>
           <div class="experience-info">
-            <h3 class="experience-title">Freelance Developer</h3>
-            <span class="experience-date">2019 - 2020</span>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <p class="experience-role" style="margin: 0; padding-top: 0;">AR Development</p>
+              <span class="experience-date">2019 - 2020</span>
+            </div>
+            <h3 class="experience-title" style="margin: 0;">Freelance Developer</h3>
           </div>
         </div>
-        <p class="experience-role">AR Development</p>
         <div class="experience-description">
           <ul>
             <li>Developed "Wormhole" AR social platform using ECEF coordinates</li>
@@ -482,11 +522,13 @@
             <img src="files/Company_Logos/mds_logo.png" alt="MDS Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
           </div>
           <div class="experience-info">
-            <h3 class="experience-title">MetaDesign Solutions</h3>
-            <span class="experience-date">2016 - 2019</span>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <p class="experience-role" style="margin: 0; padding-top: 0;">Team Lead</p>
+              <span class="experience-date">2016 - 2019</span>
+            </div>
+            <h3 class="experience-title" style="margin: 0;">MetaDesign Solutions</h3>
           </div>
         </div>
-        <p class="experience-role">Team Lead</p>
         <div class="experience-description">
           <ul>
             <li>Managed game teams for Unity, Cocos2DX, and Construct</li>
@@ -517,11 +559,13 @@
             <img src="files/Company_Logos/ki_logo.png" alt="KI Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
           </div>
           <div class="experience-info">
-            <h3 class="experience-title">Kimaya Infotech</h3>
-            <span class="experience-date">2016</span>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <p class="experience-role" style="margin: 0; padding-top: 0;">Sr. Unity Developer</p>
+              <span class="experience-date">2016</span>
+            </div>
+            <h3 class="experience-title" style="margin: 0;">Kimaya Infotech</h3>
           </div>
         </div>
-        <p class="experience-role">Sr. Unity Developer</p>
         <div class="experience-description">
           <ul>
             <li>Led Unity casino game development team</li>
@@ -553,11 +597,13 @@
             <img src="files/Company_Logos/dai_logo.png" alt="DAI Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
           </div>
           <div class="experience-info">
-            <h3 class="experience-title">Digital Agents Interactive</h3>
-            <span class="experience-date">2015 - 2016</span>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <p class="experience-role" style="margin: 0; padding-top: 0;">Game Developer</p>
+              <span class="experience-date">2015 - 2016</span>
+            </div>
+            <h3 class="experience-title" style="margin: 0;">Digital Agents Interactive</h3>
           </div>
         </div>
-        <p class="experience-role">Game Developer</p>
         <div class="experience-description">
           <ul>
             <li>Built VR games/apps for Google Cardboard & Oculus</li>
@@ -588,11 +634,13 @@
             <img src="files/Company_Logos/vi_logo.png" alt="VI Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
           </div>
           <div class="experience-info">
-            <h3 class="experience-title">Virtualinfocom</h3>
-            <span class="experience-date">2015</span>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <p class="experience-role" style="margin: 0; padding-top: 0;">Sr. Unity Developer</p>
+              <span class="experience-date">2015</span>
+            </div>
+            <h3 class="experience-title" style="margin: 0;">Virtualinfocom</h3>
           </div>
         </div>
-        <p class="experience-role">Sr. Unity Developer</p>
         <div class="experience-description">
           <ul>
             <li>Led cross-disciplinary teams for Unity game dev</li>
@@ -624,11 +672,13 @@
             <img src="files/Company_Logos/gis_logo.png" alt="GIS Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
           </div>
           <div class="experience-info">
-            <h3 class="experience-title">i-Greens Softech</h3>
-            <span class="experience-date">2013 - 2014</span>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <p class="experience-role" style="margin: 0; padding-top: 0;">Senior Web Developer</p>
+              <span class="experience-date">2013 - 2014</span>
+            </div>
+            <h3 class="experience-title" style="margin: 0;">i-Greens Softech</h3>
           </div>
         </div>
-        <p class="experience-role">Senior Web Developer</p>
         <div class="experience-description">
           <ul>
             <li>Front-end (ASP.NET) and back-end (MySQL, SQLServer)</li>
