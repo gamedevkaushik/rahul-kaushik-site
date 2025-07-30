@@ -43,7 +43,8 @@
       color: #444;
       border-left: 5px solid #007BFF;
       padding-left: 0.75rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
+      font-size: 2rem;
     }
     .nav {
       position: absolute;
@@ -68,20 +69,83 @@
       border-radius: 5px;
       padding: 0.5rem 1.2rem;
     }
-    .bottom-nav {
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .award-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 15px;
       text-align: center;
-      margin: 2rem 0 1rem 0;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
-    .bottom-nav a {
-      text-decoration: none;
-      color: #007BFF;
-      padding: 0.5rem 1.2rem;
+    .award-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+    .award-card::before {
+      content: "🏆";
+      font-size: 3rem;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      opacity: 0.1;
+    }
+    .award-card:nth-child(2) {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+    .award-card:nth-child(3) {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+    .award-card:nth-child(4) {
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+    .award-card:nth-child(5) {
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    }
+    .award-title {
+      font-size: 1.8rem;
       font-weight: bold;
-      transition: color 0.2s;
-      margin: 0 0.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
-    .bottom-nav a:hover {
-      color: #0056b3;
+    .award-level {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.9;
+    }
+    .award-description {
+      font-size: 1rem;
+      opacity: 0.8;
+      font-style: italic;
+    }
+    .award-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      backdrop-filter: blur(10px);
+    }
+    .winner-badge {
+      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      color: #333;
+    }
+    .runner-up-badge {
+      background: linear-gradient(135deg, #c0c0c0, #e5e5e5);
+      color: #333;
+    }
+    .first-position-badge {
+      background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+      color: white;
     }
   </style>
 </head>
@@ -103,30 +167,40 @@
 
   <section>
     <h2>Achievements</h2>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-      <div style="background: #f0f4ff; padding: 1rem; border-left: 5px solid #007BFF; border-radius: 5px;">
-        <strong>WINNER</strong><br>
-        National Level<br>
-        <em>Cell phone controlled robot</em>
+    <div class="awards-grid">
+      <div class="award-card">
+        <div class="award-badge winner-badge">🏆 WINNER</div>
+        <div class="award-title">National Level</div>
+        <div class="award-level">Cell phone controlled robot</div>
+        <div class="award-description">First place in national robotics competition</div>
       </div>
-      <div style="background: #f0f4ff; padding: 1rem; border-left: 5px solid #007BFF; border-radius: 5px;">
-        <strong>WINNER</strong><br>
-        Regional Level<br>
-        <em>Line Following Robot</em>
+      
+      <div class="award-card">
+        <div class="award-badge winner-badge">🏆 WINNER</div>
+        <div class="award-title">Regional Level</div>
+        <div class="award-level">Line Following Robot</div>
+        <div class="award-description">Champion in regional robotics challenge</div>
       </div>
-      <div style="background: #f0f4ff; padding: 1rem; border-left: 5px solid #007BFF; border-radius: 5px;">
-        <strong>1st Position</strong><br>
-        University Computer Science Olympiad
+      
+      <div class="award-card">
+        <div class="award-badge first-position-badge">🥇 1st Position</div>
+        <div class="award-title">University Computer Science Olympiad</div>
+        <div class="award-level">Programming Excellence</div>
+        <div class="award-description">Top performer in university coding competition</div>
       </div>
-      <div style="background: #f0f4ff; padding: 1rem; border-left: 5px solid #007BFF; border-radius: 5px;">
-        <strong>WINNER</strong><br>
-        Project Exhibition<br>
-        <em>Space Invaders Game</em>
+      
+      <div class="award-card">
+        <div class="award-badge winner-badge">🏆 WINNER</div>
+        <div class="award-title">Project Exhibition</div>
+        <div class="award-level">Space Invaders Game</div>
+        <div class="award-description">Best game development project award</div>
       </div>
-      <div style="background: #f0f4ff; padding: 1rem; border-left: 5px solid #007BFF; border-radius: 5px;">
-        <strong>RUNNER-UP</strong><br>
-        NASSCOM Game Jam Titans<br>
-        <em>2.5D Side Scroller Game</em>
+      
+      <div class="award-card">
+        <div class="award-badge runner-up-badge">🥈 RUNNER-UP</div>
+        <div class="award-title">NASSCOM Game Jam Titans</div>
+        <div class="award-level">2.5D Side Scroller Game</div>
+        <div class="award-description">Second place in prestigious game development competition</div>
       </div>
     </div>
   </section>
