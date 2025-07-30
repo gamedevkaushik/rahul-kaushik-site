@@ -4,10 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="aRmFzfLgwjpxaWhrCoNvopEgoAcUwKugZKHswjuYV-4" />
-  <title>Rahul Kaushik - Portfolio</title>
+  <title>Rahul Kaushik - Game Developer</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
@@ -47,33 +46,6 @@
       padding-left: 0.75rem;
       margin-bottom: 1rem;
     }
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-    }
-    ul li {
-      margin-bottom: 0.6rem;
-    }
-    ul li ul li {
-      margin-bottom: 0.3rem;
-    }
-    .download-button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.7rem 1.5rem;
-      background: #007BFF;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-    .download-button:hover {
-      background: #0056b3;
-    }
-    a {
-      color: #007BFF;
-    }
     .nav {
       position: absolute;
       top: 2rem;
@@ -82,16 +54,20 @@
     }
     .nav a {
       text-decoration: none;
-      background: #007BFF;
       color: #fff;
       padding: 0.5rem 1.2rem;
-      border-radius: 5px;
       font-weight: bold;
-      transition: background 0.2s;
+      transition: color 0.2s;
       margin-left: 0.5rem;
     }
     .nav a:hover {
-      background: #0056b3;
+      color: #007BFF;
+    }
+    .nav a.active {
+      color: #007BFF;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      padding: 0.5rem 1.2rem;
     }
     .bottom-nav {
       text-align: center;
@@ -99,233 +75,133 @@
     }
     .bottom-nav a {
       text-decoration: none;
-      background: #007BFF;
-      color: #fff;
+      color: #007BFF;
       padding: 0.5rem 1.2rem;
-      border-radius: 5px;
       font-weight: bold;
-      transition: background 0.2s;
+      transition: color 0.2s;
+      margin: 0 0.5rem;
     }
     .bottom-nav a:hover {
+      color: #0056b3;
+    }
+    .welcome-section {
+      text-align: center;
+      padding: 2rem 0;
+      margin-bottom: 3rem;
+    }
+    .welcome-section h2 {
+      font-size: 2.5rem;
+      color: #28a745;
+      margin-bottom: 1.5rem;
+      border-left: 5px solid #007BFF;
+      padding-left: 1rem;
+      text-align: left;
+    }
+    .welcome-section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+      color: #666;
+      text-align: left;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #007BFF;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+    }
+    .cta-button:hover {
       background: #0056b3;
+      transform: translateY(-2px);
+    }
+    .cta-button.secondary {
+      background: #28a745;
+    }
+    .cta-button.secondary:hover {
+      background: #218838;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 0;
+    }
+    .stat-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .stat-card h3 {
+      font-size: 3rem;
+      margin: 0 0 0.5rem 0;
+      font-weight: bold;
+    }
+    .stat-card p {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
   <div class="nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
     <a href="portfolio.html">Portfolio</a>
+    <a href="experience.html">Experience</a>
+    <a href="awards.html">Awards</a>
+    <a href="education.html">Education</a>
+    <a href="contact.html">Contact</a>
+    <a href="files/Resume_Rahul_Kaushik.pdf" download>📄 Resume</a>
   </div>
   <header>
     <img src="files/Profile_Picture.jpeg" alt="Rahul Kaushik" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 0 10px rgba(0,0,0,0.5); margin-bottom: 1rem;">
     <h1>RAHUL KAUSHIK</h1>
-    <p>GAME TECHNOLOGY LEAD | FULL-CYCLE GAME DEVELOPER | TECHNICAL STRATEGIST</p>
+    <p>GAME DEVELOPER & TECHNICAL LEAD</p>
+    <p style="font-size: 1rem; color: #ccc; margin-top: 0.5rem;">Crafting Digital Experiences Across Mobile, Web & VR</p>
   </header>
 
-  <section style="background: #fff; border-left: 8px solid #28a745; padding: 2rem; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
-  <p style="font-size: 1.1rem; line-height: 1.8;">
-    I am a versatile Game Technology Lead and Full-Cycle Developer with over a decade of experience building games, apps, and interactive experiences for mobile, web, desktop, AR, and VR platforms. My core strengths lie in Unity, Unreal, Godot, Construct 3, and a broad technical foundation in C#, C++, and GDScript.<br><br>
-    Having led cross-functional teams, consulted for gaming startups and product firms, and delivered high-performing projects from concept to deployment, I combine hands-on development with strategic planning. I thrive on R&D, mentoring developers, and creating scalable, engaging digital experiences tailored to modern users and markets.
-  </p>
-</section>
-
   <section>
-  <h2>Work Experience</h2>
-  <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-    <div style="background: #f9f9f9; border-left: 5px solid #007BFF; padding: 1rem 1.5rem; border-radius: 8px;">
-      <h3 style="margin: 0 0 0.3rem 0;">Measure Practice Management <span style="float: right; font-weight: normal;">2021 - 2025</span></h3>
-      <p style="margin: 0 0 0.5rem 0; font-weight: bold;">Development Team Lead (Consultant)</p>
-      <ul>
-        <li>Lead, Mentor, and Manage a high-performing development team</li>
-        <li>Heading R&D on new features and optimisation</li>
-        <li>Responsible for tech stack, risk management, reporting, QC, and coordination</li>
-      </ul>
+    <div class="welcome-section">
+      <h2>Welcome to My Game Development Portfolio</h2>
+      <p>
+        I'm a passionate Game Developer and Technical Lead with over a decade of experience creating engaging digital experiences. 
+        From mobile games that millions play to immersive VR adventures, I've led teams and built games that connect with players worldwide.
+      </p>
     </div>
-    <div style="background: #f9f9f9; border-left: 5px solid #007BFF; padding: 1rem 1.5rem; border-radius: 8px;">
-      <h3>Dark Pyre Interactive <span style="float: right; font-weight: normal;">2021 - 2024</span></h3>
-      <p style="margin: 0 0 0.5rem 0; font-weight: bold;">Development Team Lead (Consultant)</p>
-      <ul>
-        <li>Conceptualising in-house mobile games</li>
-        <li>Team and client management for service products</li>
-        <li>Led R&D for game features and optimisation</li>
-      </ul>
-    </div>
-    <div style="background: #f9f9f9; border-left: 5px solid #007BFF; padding: 1rem 1.5rem; border-radius: 8px;">
-      <h3>Freelance Developer <span style="float: right; font-weight: normal;">2019 - 2020</span></h3>
-      <p style="margin: 0 0 0.5rem 0; font-weight: bold;">AR Development</p>
-      <ul>
-        <li>Developed "Wormhole" AR social platform using ECEF coordinates</li>
-      </ul>
-    </div>
-    <div style="background: #f9f9f9; border-left: 5px solid #007BFF; padding: 1rem 1.5rem; border-radius: 8px;">
-      <h3>MetaDesign Solutions <span style="float: right; font-weight: normal;">2016 - 2019</span></h3>
-      <p style="margin: 0 0 0.5rem 0; font-weight: bold;">Team Lead</p>
-      <ul>
-        <li>Managed game teams for Unity, Cocos2DX, and Construct</li>
-        <li>Documentation, QA, and department coordination</li>
-      </ul>
-    </div>
-    <div style="background: #f9f9f9; border-left: 5px solid #007BFF; padding: 1rem 1.5rem; border-radius: 8px;">
-      <h3>Kimaya Infotech <span style="float: right; font-weight: normal;">2016</span></h3>
-      <p style="margin: 0 0 0.5rem 0; font-weight: bold;">Sr. Unity Developer</p>
-      <ul>
-        <li>Led Unity casino game development team</li>
-        <li>Cross-platform dev and SSL/TLS integration</li>
-        <li>Built random number generators for game logic</li>
-      </ul>
-    </div>
-    <div style="background: #f9f9f9; border-left: 5px solid #007BFF; padding: 1rem 1.5rem; border-radius: 8px;">
-      <h3>Digital Agents Interactive <span style="float: right; font-weight: normal;">2015 - 2016</span></h3>
-      <p style="margin: 0 0 0.5rem 0; font-weight: bold;">Game Developer</p>
-      <ul>
-        <li>Built VR games/apps for Google Cardboard & Oculus</li>
-        <li>Worked with Unity and Unreal Engine</li>
-      </ul>
-    </div>
-    <div style="background: #f9f9f9; border-left: 5px solid #007BFF; padding: 1rem 1.5rem; border-radius: 8px;">
-      <h3>Virtualinfocom <span style="float: right; font-weight: normal;">2015</span></h3>
-      <p style="margin: 0 0 0.5rem 0; font-weight: bold;">Sr. Unity Developer</p>
-      <ul>
-        <li>Led cross-disciplinary teams for Unity game dev</li>
-        <li>Managed publishing and monetisation strategies</li>
-        <li>Mentored junior developers</li>
-      </ul>
-    </div>
-    <div style="background: #f9f9f9; border-left: 5px solid #007BFF; padding: 1rem 1.5rem; border-radius: 8px;">
-      <h3>i-Greens Softech <span style="float: right; font-weight: normal;">2013 - 2014</span></h3>
-      <p style="margin: 0 0 0.5rem 0; font-weight: bold;">Senior Web Developer</p>
-      <ul>
-        <li>Front-end (ASP.NET) and back-end (MySQL, SQLServer)</li>
-        <li>Developed e-commerce & job portal platforms</li>
-        <li>Led web teams and mentored new developers</li>
-      </ul>
-    </div>
-  </div>
-</section>
 
-  <section>
-  <h2>Skills</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-    <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">Unity & C#</span>
-    <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">Godot & GDScript</span>
-    <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">Unreal & C++</span>
-    <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">Construct 3</span>
-    <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">Game Design</span>
-    <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">OOP & Real-time Systems</span>
-    <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">Cross-functional Collaboration</span>
-    <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">Project Management</span>
-  </div>
-</section>
-
-  <section>
-  <h2>Languages</h2>
-  <div style="display: flex; gap: 1rem;">
-    <div style="background: #e6f4ea; padding: 1rem 1.5rem; border-left: 5px solid #28a745; border-radius: 6px;">
-      <strong>English</strong><br>
-      <em>Fluent</em>
-    </div>
-    <div style="background: #e6f4ea; padding: 1rem 1.5rem; border-left: 5px solid #28a745; border-radius: 6px;">
-      <strong>Hindi</strong><br>
-      <em>Native</em>
-    </div>
-  </div>
-</section>
-
-  <section>
-  <h2>Education</h2>
-  <div style="display: flex; flex-direction: column; gap: 1rem;">
-    <div style="background: #fefefe; padding: 1rem; border-left: 5px solid #007BFF; border-radius: 6px;">
-      <h3 style="margin: 0;">ICAT Design & Media College <span style="float: right; font-weight: normal;">2014 - 2015</span></h3>
-      <p style="margin: 0.2rem 0 0; font-style: italic;">PD Diploma in Game Development</p>
-    </div>
-    <div style="background: #fefefe; padding: 1rem; border-left: 5px solid #007BFF; border-radius: 6px;">
-      <h3 style="margin: 0;">Kurukshetra University <span style="float: right; font-weight: normal;">2009 - 2013</span></h3>
-      <p style="margin: 0.2rem 0 0; font-style: italic;">B. Tech in Computer Science</p>
-    </div>
-  </div>
-</section>
-
-  <section>
-  <h2>Academic Projects</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-    <div style="background: #ffffff; padding: 1rem; border-left: 4px solid #28a745; border-radius: 6px;">
-      <strong>Line Following & Cell phone Controlled Robot</strong><br>
-      <em>Embedded C</em>
-    </div>
-    <div style="background: #ffffff; padding: 1rem; border-left: 4px solid #28a745; border-radius: 6px;">
-      <strong>Space Invaders Game</strong><br>
-      <em>HAAF's Game Engine - C++</em>
-    </div>
-    <div style="background: #ffffff; padding: 1rem; border-left: 4px solid #28a745; border-radius: 6px;">
-      <strong>Text-Based DOS Game</strong><br>
-      <em>C++</em>
-    </div>
-    <div style="background: #ffffff; padding: 1rem; border-left: 4px solid #28a745; border-radius: 6px;">
-      <strong>2.5D Side Scroller Game</strong><br>
-      <em>Unity</em>
-    </div>
-  </div>
-</section>
-
-  <section>
-    <h2>Achievements</h2>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-      <div style="background: #f0f4ff; padding: 1rem; border-left: 5px solid #007BFF; border-radius: 5px;">
-        <strong>WINNER</strong><br>
-        National Level<br>
-        <em>Cell phone controlled robot</em>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>15+</h3>
+        <p>Published Games</p>
       </div>
-      <div style="background: #f0f4ff; padding: 1rem; border-left: 5px solid #007BFF; border-radius: 5px;">
-        <strong>WINNER</strong><br>
-        Regional Level<br>
-        <em>Line Following Robot</em>
+      <div class="stat-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+        <h3>10+</h3>
+        <p>Years Experience</p>
       </div>
-      <div style="background: #f0f4ff; padding: 1rem; border-left: 5px solid #007BFF; border-radius: 5px;">
-        <strong>1st Position</strong><br>
-        University Computer Science Olympiad
+      <div class="stat-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+        <h3>5+</h3>
+        <p>Platforms Supported</p>
       </div>
-      <div style="background: #f0f4ff; padding: 1rem; border-left: 5px solid #007BFF; border-radius: 5px;">
-        <strong>WINNER</strong><br>
-        Project Exhibition<br>
-        <em>Space Invaders Game</em>
-      </div>
-      <div style="background: #f0f4ff; padding: 1rem; border-left: 5px solid #007BFF; border-radius: 5px;">
-        <strong>RUNNER-UP</strong><br>
-        NASSCOM Game Jam Titans<br>
-        <em>2.5D Side Scroller Game</em>
+      <div class="stat-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+        <h3>100%</h3>
+        <p>Client Satisfaction</p>
       </div>
     </div>
   </section>
-
-  <section>
-  <h2>Certifications</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-    <div style="background: #fff6e6; padding: 1rem; border-left: 5px solid #f0ad4e; border-radius: 6px;">
-      <strong>Game Programming Certificate</strong><br>
-      <em>S.A.G.E. Infolabs – 2012</em>
-    </div>
-    <div style="background: #fff6e6; padding: 1rem; border-left: 5px solid #f0ad4e; border-radius: 6px;">
-      <strong>Core Java & Advanced Java</strong><br>
-      <em>Aptech – 2010</em>
-    </div>
-  </div>
-</section>
-
-  <section>
-  <h2>Contact</h2>
-  <div style="display: flex; flex-direction: column; gap: 0.5rem; background: #f2f2f2; padding: 1.5rem; border-left: 6px solid #007BFF; border-radius: 8px;">
-    <div><strong>Phone:</strong> +91-8826625771</div>
-    <div><strong>Email:</strong> <a href="mailto:gamedev.kaushik@gmail.com">gamedev.kaushik@gmail.com</a></div>
-    <div><strong>Address:</strong> RK Puram, New Delhi - 10022</div>
-    <div><strong>Google Play:</strong> <a href="https://play.google.com/store/apps/dev?id=7029321396024566670" target="_blank">GameDevKaushik Developer Page</a></div>
-  </div>
-</section>
-
-  <section>
-    <h2>Resume</h2>
-    <a class="download-button" href="files/Rahul_Kaushik_Resume.pdf" download>Download Resume (PDF)</a>
-  </section>
-  <div class="bottom-nav">
-    <a href="portfolio.html">Go to Portfolio</a>
-  </div>
 </body>
 </html>
