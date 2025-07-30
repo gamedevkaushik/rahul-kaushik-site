@@ -40,10 +40,42 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     h2 {
-      color: #444;
-      border-left: 5px solid #007BFF;
-      padding-left: 0.75rem;
-      margin-bottom: 1rem;
+      color: #2c3e50;
+      border-left: 6px solid #007BFF;
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+      font-weight: 800;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      letter-spacing: 0.5px;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      left: 1rem;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #007BFF, #28a745);
+      border-radius: 2px;
+    }
+    h3 {
+      color: #34495e;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 1.5rem 0 1rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e9ecef;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    h4 {
+      color: #495057;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 1.2rem 0 0.8rem 0;
+      padding-left: 0.5rem;
+      border-left: 3px solid #28a745;
     }
     .nav {
       position: absolute;
@@ -157,42 +189,53 @@
     <a href="files/Resume_Rahul_Kaushik.pdf" download>📄 Resume</a>
   </div>
   <header>
-    <h1>EDUCATION & CERTIFICATIONS</h1>
-    <p>ACADEMIC BACKGROUND</p>
+    <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1rem; text-shadow: 0 3px 6px rgba(0,0,0,0.5); color: #4facfe; letter-spacing: 2px;">EDUCATION & CERTIFICATIONS</h1>
+    <p style="font-size: 1.4rem; color: #ffd700; font-weight: 700; margin-bottom: 0.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.7); letter-spacing: 1px; text-transform: uppercase;">🎓 Academic Background</p>
+    <p style="font-size: 1.1rem; color: #ccc; margin-top: 0; font-style: italic;">Building the foundation for game development excellence</p>
   </header>
 
   <section>
     <h2>Education & Certifications</h2>
-    <div style="display: flex; flex-direction: column; gap: 1rem;">
-      <div style="background: #fefefe; padding: 1rem; border-left: 5px solid #007BFF; border-radius: 6px;">
-        <h3 style="margin: 0;">🎓 ICAT Design & Media College <span style="float: right; font-weight: normal;">2014 - 2015</span></h3>
-        <p style="margin: 0.2rem 0 0; font-style: italic;">PD Diploma in Game Development</p>
+    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+      <div style="background: #ffffff; padding: 2rem; border-left: 6px solid #007BFF; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <h3 style="margin: 0; color: #2c3e50; font-size: 1.6rem;">🎓 ICAT Design & Media College</h3>
+          <span style="background: #f8f9fa; padding: 0.4rem 0.8rem; border-radius: 15px; font-weight: 600; color: #007BFF; border: 1px solid #e9ecef;">2014 - 2015</span>
+        </div>
+        <p style="margin: 0; font-style: italic; color: #666; font-size: 1.1rem;">PD Diploma in Game Development</p>
       </div>
-      <div style="background: #fefefe; padding: 1rem; border-left: 5px solid #007BFF; border-radius: 6px;">
-        <h3 style="margin: 0;">🎓 Kurukshetra University <span style="float: right; font-weight: normal;">2009 - 2013</span></h3>
-        <p style="margin: 0.2rem 0 0; font-style: italic;">B. Tech in Computer Science</p>
+      
+      <div style="background: #ffffff; padding: 2rem; border-left: 6px solid #007BFF; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <h3 style="margin: 0; color: #2c3e50; font-size: 1.6rem;">🎓 Kurukshetra University</h3>
+          <span style="background: #f8f9fa; padding: 0.4rem 0.8rem; border-radius: 15px; font-weight: 600; color: #007BFF; border: 1px solid #e9ecef;">2009 - 2013</span>
+        </div>
+        <p style="margin: 0; font-style: italic; color: #666; font-size: 1.1rem;">B. Tech in Computer Science</p>
       </div>
     </div>
   </section>
 
   <section>
     <h2>Academic Game Projects</h2>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-      <div style="background: #ffffff; padding: 1rem; border-left: 4px solid #28a745; border-radius: 6px;">
-        <strong>🎮 Space Invaders Game</strong><br>
-        <em>HAAF's Game Engine - C++</em>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+      <div style="background: #ffffff; padding: 1.5rem; border-left: 4px solid #28a745; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+        <h4 style="margin: 0 0 0.5rem 0; color: #2c3e50; font-size: 1.2rem;">🎮 Space Invaders Game</h4>
+        <p style="margin: 0; color: #666; font-style: italic;">HAAF's Game Engine - C++</p>
       </div>
-      <div style="background: #ffffff; padding: 1rem; border-left: 4px solid #28a745; border-radius: 6px;">
-        <strong>🎮 2.5D Side Scroller Game</strong><br>
-        <em>Unity</em>
+      
+      <div style="background: #ffffff; padding: 1.5rem; border-left: 4px solid #28a745; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+        <h4 style="margin: 0 0 0.5rem 0; color: #2c3e50; font-size: 1.2rem;">🎮 2.5D Side Scroller Game</h4>
+        <p style="margin: 0; color: #666; font-style: italic;">Unity</p>
       </div>
-      <div style="background: #ffffff; padding: 1rem; border-left: 4px solid #28a745; border-radius: 6px;">
-        <strong>🎮 Text-Based DOS Game</strong><br>
-        <em>C++</em>
+      
+      <div style="background: #ffffff; padding: 1.5rem; border-left: 4px solid #28a745; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+        <h4 style="margin: 0 0 0.5rem 0; color: #2c3e50; font-size: 1.2rem;">🎮 Text-Based DOS Game</h4>
+        <p style="margin: 0; color: #666; font-style: italic;">C++</p>
       </div>
-      <div style="background: #ffffff; padding: 1rem; border-left: 4px solid #28a745; border-radius: 6px;">
-        <strong>🤖 Line Following Robot</strong><br>
-        <em>Embedded C</em>
+      
+      <div style="background: #ffffff; padding: 1.5rem; border-left: 4px solid #28a745; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+        <h4 style="margin: 0 0 0.5rem 0; color: #2c3e50; font-size: 1.2rem;">🤖 Line Following Robot</h4>
+        <p style="margin: 0; color: #666; font-style: italic;">Embedded C</p>
       </div>
     </div>
   </section>

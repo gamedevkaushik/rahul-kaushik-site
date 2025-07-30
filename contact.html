@@ -40,10 +40,42 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     h2 {
-      color: #444;
-      border-left: 5px solid #007BFF;
-      padding-left: 0.75rem;
-      margin-bottom: 1rem;
+      color: #2c3e50;
+      border-left: 6px solid #007BFF;
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+      font-weight: 800;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      letter-spacing: 0.5px;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      left: 1rem;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #007BFF, #28a745);
+      border-radius: 2px;
+    }
+    h3 {
+      color: #34495e;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 1.5rem 0 1rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e9ecef;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    h4 {
+      color: #495057;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 1.2rem 0 0.8rem 0;
+      padding-left: 0.5rem;
+      border-left: 3px solid #28a745;
     }
     .download-button {
       display: inline-block;
@@ -119,6 +151,7 @@
     .contact-card h3 {
       margin: 0 0 1rem 0;
       font-size: 1.5rem;
+      color: white;
     }
     .contact-card a {
       color: white;
@@ -127,6 +160,11 @@
     }
     .contact-card a:hover {
       text-decoration: underline;
+    }
+    .contact-card p {
+      color: white;
+      margin: 0;
+      font-weight: bold;
     }
     .contact-info {
       background: #f8f9fa;
@@ -261,8 +299,9 @@
     <a href="files/Resume_Rahul_Kaushik.pdf" download>📄 Resume</a>
   </div>
   <header>
-    <h1>CONTACT</h1>
-    <p>GET IN TOUCH</p>
+    <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1rem; text-shadow: 0 3px 6px rgba(0,0,0,0.5); color: #4facfe; letter-spacing: 2px;">CONTACT</h1>
+    <p style="font-size: 1.4rem; color: #ffd700; font-weight: 700; margin-bottom: 0.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.7); letter-spacing: 1px; text-transform: uppercase;">📧 Get In Touch</p>
+    <p style="font-size: 1.1rem; color: #ccc; margin-top: 0; font-style: italic;">Let's discuss your next game development project</p>
   </header>
 
   <section>

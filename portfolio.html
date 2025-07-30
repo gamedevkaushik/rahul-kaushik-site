@@ -32,65 +32,255 @@
       color: #aaa;
     }
     section {
-      max-width: 900px;
+      max-width: 1200px;
       margin: 4rem auto 2rem auto;
       background: rgba(255, 255, 255, 0.95);
       padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-    .project-card {
-      background: #f9f9f9;
-      border-left: 5px solid #007BFF;
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
+    h2 {
+      color: #2c3e50;
+      border-left: 6px solid #007BFF;
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+      font-weight: 800;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      letter-spacing: 0.5px;
+      position: relative;
     }
-    .project-card img {
-      width: 100px;
-      height: 100px;
-      border-radius: 8px;
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      left: 1rem;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #007BFF, #28a745);
+      border-radius: 2px;
+    }
+    h3 {
+      color: #34495e;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 1.5rem 0 1rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e9ecef;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    h4 {
+      color: #495057;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 1.2rem 0 0.8rem 0;
+      padding-left: 0.5rem;
+      border-left: 3px solid #28a745;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .project-card {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-left: 8px solid #007BFF;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      min-height: 350px;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #007BFF, #28a745);
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #007BFF, #0056b3, #28a745);
+    }
+    .project-header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 3px solid #e9ecef;
+      position: relative;
+    }
+    .project-header::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, #007BFF, #28a745);
+      border-radius: 2px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .project-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 20px;
       object-fit: cover;
       object-position: center;
+      flex-shrink: 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border: 5px solid #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.2));
     }
-    .project-card strong {
+    .project-card:hover .project-image {
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.3));
+    }
+    .project-info {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #000;
+      margin: 0 0 1rem 0;
+      line-height: 1.1;
+      text-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #007BFF, #0056b3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .project-description {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+      font-style: italic;
+      font-size: 1rem;
+    }
+    .project-links {
+      margin-bottom: 1.2rem;
+    }
+    .project-links a {
+      display: inline-block;
+      margin-right: 1rem;
+      padding: 0.5rem 1rem;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .project-links a[href*="play.google.com"],
+    .project-links a[href*="google.com/store"],
+    .project-links a[href*="Play on Android"],
+    .project-links a[href*="Android"] {
+      background: linear-gradient(135deg, #28a745, #20c997);
+    }
+    .project-links a[href*="apps.apple.com"],
+    .project-links a[href*="iOS"] {
+      background: linear-gradient(135deg, #e9ecef, #dee2e6);
+      color: #495057 !important;
+    }
+    .project-links a[href*="velawoodsenglish.com"],
+    .project-links a[href*="driveshack.com"],
+    .project-links a[href*="Learn More"] {
+      background: linear-gradient(135deg, #17a2b8, #138496);
+    }
+    .project-links a:hover {
+      transform: translateY(-2px);
+      color: white !important;
+    }
+    .project-links a[href*="play.google.com"]:hover,
+    .project-links a[href*="google.com/store"]:hover,
+    .project-links a[href*="Play on Android"]:hover,
+    .project-links a[href*="Android"]:hover {
+      box-shadow: 0 4px 12px rgba(40,167,69,0.4);
+    }
+    .project-links a[href*="apps.apple.com"]:hover,
+    .project-links a[href*="iOS"]:hover {
+      box-shadow: 0 4px 12px rgba(233,236,239,0.4);
+      color: #495057 !important;
+    }
+    .project-links a[href*="velawoodsenglish.com"]:hover,
+    .project-links a[href*="driveshack.com"]:hover,
+    .project-links a[href*="Learn More"]:hover {
+      box-shadow: 0 4px 12px rgba(23,162,184,0.4);
+    }
+    .project-links a {
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 1rem;
+      transition: color 0.3s ease;
+    }
+    .project-links a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+    .project-features {
+      flex: 1;
+    }
+    .features-title {
       font-size: 1.2rem;
-      display: block;
+      font-weight: bold;
+      color: #28a745;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 2px solid #28a745;
+      padding-bottom: 0.3rem;
+    }
+    .features-list {
+      margin: 0;
+      padding-left: 1rem;
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.4;
+    }
+    .features-list li {
       margin-bottom: 0.3rem;
     }
-    .project-card em {
-      display: block;
-      margin-bottom: 0.4rem;
-      color: #555;
-    }
-    .project-card span {
-      font-size: 0.95rem;
-      color: #007BFF;
-    }
-    .project-card ul {
-      margin: 0.5rem 0 0 0;
-      padding-left: 1.2rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
-    @media (max-width: 700px) {
-      section {
-        padding: 1rem;
+    @media (max-width: 768px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
       .project-card {
+        min-height: 300px;
+        padding: 1.2rem;
+      }
+      .project-header {
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
+        text-align: center;
         gap: 1rem;
       }
-      .project-card img {
-        width: 100%;
-        height: auto;
-        max-width: 300px;
-        margin: 0 auto;
+      .project-image {
+        width: 100px;
+        height: 100px;
       }
     }
     .nav {
@@ -167,19 +357,22 @@
         font-size: 1.8rem;
       }
       .project-card {
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 1rem !important;
+        min-height: 280px;
+        padding: 1rem;
       }
-      .project-card img {
-        width: 100% !important;
-        height: auto !important;
-        max-width: 200px !important;
-        margin: 0 auto !important;
-      }
-      .project-card div {
+      .project-header {
+        flex-direction: column;
+        align-items: center;
         text-align: center;
+        gap: 0.8rem;
       }
+              .project-image {
+          width: 90px;
+          height: 90px;
+        }
+        .project-title {
+          font-size: 1.8rem;
+        }
     }
     
     @media (max-width: 480px) {
@@ -199,6 +392,9 @@
       .project-card {
         padding: 1rem !important;
       }
+      .project-title {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
@@ -214,24 +410,32 @@
     <a href="files/Resume_Rahul_Kaushik.pdf" download>📄 Resume</a>
   </div>
   <header>
-    <h1>RAHUL KAUSHIK</h1>
-    <p>GAME DEVELOPER PORTFOLIO</p>
-    <p style="font-size: 1rem; color: #ccc; margin-top: 0.5rem;">Showcasing 15+ Published Games & Interactive Experiences</p>
+    <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1rem; text-shadow: 0 3px 6px rgba(0,0,0,0.5); color: #4facfe; letter-spacing: 2px;">PORTFOLIO</h1>
+    <p style="font-size: 1.4rem; color: #ffd700; font-weight: 700; margin-bottom: 0.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.7); letter-spacing: 1px; text-transform: uppercase;">🎮 Game Development Showcase</p>
+    <p style="font-size: 1.1rem; color: #ccc; margin-top: 0; font-style: italic;">15+ Published Games & Interactive Experiences</p>
   </header>
   <section>
-    <h2 style="color: #28a745; margin-top: 0;">Featured Projects</h2>
+    <h2>Featured Projects</h2>
     <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
       From casual mobile hits to immersive VR experiences, here's a collection of games and interactive projects I've developed. Each project represents different challenges, technologies, and creative solutions in game development.
     </p>
-    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-      <img src="files/Icon_Measure.png" alt="Measure" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-      <div>
-        <strong>Measure</strong>
-        <em>Accurate measurement tool using your device's camera and advanced AR technology for real-world distance and area calculations</em>
-        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.measuresoftware.app&hl=en_IN" target="_blank">Android</a></span>
-        <div style="margin-top: 0.8rem;">
-          <strong style="font-size: 1rem;">Features:</strong>
-          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+    <div class="portfolio-grid">
+      <div class="project-card">
+        <div class="project-header">
+          <img src="files/Icon_Measure.png" alt="Measure" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Measure PM</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://play.google.com/store/apps/details?id=com.measuresoftware.app&hl=en_IN" target="_blank">Android</a>
+              <a href="https://apps.apple.com/in/app/measurepm/id1493856868" target="_blank">IOS</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">It is a cloud-based innovative, comprehensive, effective, paperless suite of HIPAA-compliant tools delivering Practice Management, Data Collection, Scheduling, and Revenue Cycle Management for ABA Therapy providers.</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
             <li>AR-powered measurement using device camera</li>
             <li>Measure distances, areas, and volumes accurately</li>
             <li>Multiple measurement units (metric and imperial)</li>
@@ -241,18 +445,22 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-      <img src="files/Icon_GummyRescue.png" alt="Gummy Rescue" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-      <div>
-        <strong>Gummy Rescue</strong>
-        <em>Help the adorable gummy bears escape dangerous situations in this charming puzzle-adventure game</em>
-        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.GummyRescue&hl=en_IN" target="_blank">Android</a>
-          <a href="https://apps.apple.com/us/app/gummy-rescue/id1526106552" target="_blank">IOS</a></span>
-        </span>
-        <div style="margin-top: 0.8rem;">
-          <strong style="font-size: 1rem;">Features:</strong>
-          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+          <div class="project-card">
+        <div class="project-header">
+          <img src="files/Icon_GummyRescue.png" alt="Gummy Rescue" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Gummy Rescue</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.GummyRescue&hl=en_IN" target="_blank">Android</a>
+              <a href="https://apps.apple.com/us/app/gummy-rescue/id1526106552" target="_blank">iOS</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Help the adorable gummy bears escape dangerous situations in this charming puzzle-adventure game</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
             <li>Cute and colorful gummy bear characters</li>
             <li>Challenging rescue missions and puzzles</li>
             <li>Multiple levels with increasing difficulty</li>
@@ -262,17 +470,22 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-      <img src="files/Icon_Brainchild.png" alt="Brainchild" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-      <div>
-        <strong>Brainchild</strong>
-        <em>Challenge your mind with this innovative puzzle game featuring unique brain-teasing mechanics and progressively difficult levels</em>
-        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.Brainchild&hl=en_IN" target="_blank">Android</a>
-          <a href="https://apps.apple.com/us/app/brainchild/id1452322012" target="_blank">IOS</a></span>
-        <div style="margin-top: 0.8rem;">
-          <strong style="font-size: 1rem;">Features:</strong>
-          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+          <div class="project-card">
+        <div class="project-header">
+          <img src="files/Icon_Brainchild.png" alt="Brainchild" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Brainchild</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.Brainchild&hl=en_IN" target="_blank">Android</a>
+              <a href="https://apps.apple.com/us/app/brainchild/id1452322012" target="_blank">iOS</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Challenge your mind with this innovative puzzle game featuring unique brain-teasing mechanics and progressively difficult levels</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
             <li>Innovative puzzle mechanics that challenge your thinking</li>
             <li>Progressive difficulty with increasingly complex challenges</li>
             <li>Clean, minimalist design focused on gameplay</li>
@@ -282,17 +495,22 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-      <img src="files/Icon_StarTitan.png" alt="Star Titan" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-      <div>
-        <strong>Star Titan</strong>
-        <em>Epic space adventure where you pilot powerful mechs through intense battles across the galaxy</em>
-        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.StarTitan&hl=en_IN" target="_blank">Android</a>
-          <a href="https://apps.apple.com/us/app/star-titan/id1482626137" target="_blank">IOS</a></span>
-        <div style="margin-top: 0.8rem;">
-          <strong style="font-size: 1rem;">Features:</strong>
-          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+          <div class="project-card">
+        <div class="project-header">
+          <img src="files/Icon_StarTitan.png" alt="Star Titan" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Star Titan</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.StarTitan&hl=en_IN" target="_blank">Android</a>
+              <a href="https://apps.apple.com/us/app/star-titan/id1482626137" target="_blank">iOS</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Epic space adventure where you pilot powerful mechs through intense battles across the galaxy</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
             <li>Command powerful mech units in space combat</li>
             <li>Strategic gameplay with tactical decision making</li>
             <li>Multiple mission types and objectives</li>
@@ -302,17 +520,22 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-      <img src="files/Icon_BlockBreaker.png" alt="Block Breaker" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-      <div>
-        <strong>Block Smash 3D</strong>
-        <em>Classic brick-breaking arcade action with modern twists, power-ups, and challenging levels to test your reflexes</em>
-        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.BlockBreaker&hl=en_IN" target="_blank">Android</a>
-          <a href="https://apps.apple.com/us/app/block-smash-3d/id1518571680" target="_blank">IOS</a></span>
-        <div style="margin-top: 0.8rem;">
-          <strong style="font-size: 1rem;">Features:</strong>
-          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+      <div class="project-card">
+        <div class="project-header">
+          <img src="files/Icon_BlockBreaker.png" alt="Block Smash 3D" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Block Smash 3D</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.BlockBreaker&hl=en_IN" target="_blank">Android</a>
+              <a href="https://apps.apple.com/us/app/block-smash-3d/id1518571680" target="_blank">iOS</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Classic brick-breaking arcade action with modern twists, power-ups, and challenging levels to test your reflexes</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
             <li>Classic brick-breaking gameplay with modern enhancements</li>
             <li>Multiple power-ups and special abilities</li>
             <li>Challenging levels with unique block arrangements</li>
@@ -322,17 +545,22 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-      <img src="files/Icon_BoomerangDungeon.png" alt="Boomerang Dungeon" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-      <div>
-        <strong>Boomerang Dungeon</strong>
-        <em>Navigate through mysterious dungeons using your trusty boomerang to defeat enemies and solve puzzles in this adventure game</em>
-        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.BoomerangDungeon&hl=en_IN" target="_blank">Android</a>
-          <a href="https://apps.apple.com/us/app/boomerang-dungeon/id1518551078" target="_blank">IOS</a></span>
-        <div style="margin-top: 0.8rem;">
-          <strong style="font-size: 1rem;">Features:</strong>
-          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+      <div class="project-card">
+        <div class="project-header">
+          <img src="files/Icon_BoomerangDungeon.png" alt="Boomerang Dungeon" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Boomerang Dungeon</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.BoomerangDungeon&hl=en_IN" target="_blank">Android</a>
+              <a href="https://apps.apple.com/us/app/boomerang-dungeon/id1518551078" target="_blank">iOS</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Navigate through mysterious dungeons using your trusty boomerang to defeat enemies and solve puzzles in this adventure game</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
             <li>Unique boomerang-based combat mechanics</li>
             <li>Challenging dungeon exploration and puzzle solving</li>
             <li>Multiple levels with increasing difficulty</li>
@@ -342,17 +570,22 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-      <img src="files/Icon_MissilesAreGo.png" alt="Missiles Are Go" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-      <div>
-        <strong>Missiles Are Go</strong>
-        <em>Launch missiles and destroy targets in this action-packed arcade game with explosive gameplay and strategic challenges</em>
-        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.MissilesAreGo&hl=en" target="_blank">Android</a>
-          <a href="https://apps.apple.com/us/app/missiles-are-go/id1509454143" target="_blank">IOS</a></span>
-        <div style="margin-top: 0.8rem;">
-          <strong style="font-size: 1rem;">Features:</strong>
-          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+      <div class="project-card">
+        <div class="project-header">
+          <img src="files/Icon_MissilesAreGo.png" alt="Missiles Are Go" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Missiles Are Go</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.MissilesAreGo&hl=en" target="_blank">Android</a>
+              <a href="https://apps.apple.com/us/app/missiles-are-go/id1509454143" target="_blank">iOS</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Launch missiles and destroy targets in this action-packed arcade game with explosive gameplay and strategic challenges</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
             <li>Explosive missile launching action gameplay</li>
             <li>Strategic target destruction mechanics</li>
             <li>Multiple challenging levels and environments</li>
@@ -362,17 +595,22 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-      <img src="files/Icon_PipeSkater.png" alt="Pipe Skater" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-      <div>
-        <strong>Pipe Skater</strong>
-        <em>Experience the ultimate skateboarding adventure in pipes and ramps with realistic physics and smooth controls</em>
-        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.PipeSkater&hl=en_IN" target="_blank">Android</a>
-          <a href="https://apps.apple.com/us/app/pipe-skater/id1495333287" target="_blank">IOS</a></span>
-        <div style="margin-top: 0.8rem;">
-          <strong style="font-size: 1rem;">Features:</strong>
-          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+      <div class="project-card">
+        <div class="project-header">
+          <img src="files/Icon_PipeSkater.png" alt="Pipe Skater" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Pipe Skater</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.PipeSkater&hl=en_IN" target="_blank">Android</a>
+              <a href="https://apps.apple.com/us/app/pipe-skater/id1495333287" target="_blank">iOS</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Experience the ultimate skateboarding adventure in pipes and ramps with realistic physics and smooth controls</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
             <li>Realistic pipe skateboarding physics and smooth controls</li>
             <li>Multiple challenging pipe environments and ramps</li>
             <li>Perform amazing tricks and stunts in 3D pipes</li>
@@ -382,17 +620,22 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-      <img src="files/Icon_SR3D.jpg" alt="Skater Racing 3D" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-      <div>
-        <strong>Skater Racing 3D</strong>
-        <em>Experience the thrill of skateboarding in this exciting 3D racing game with realistic physics and stunning graphics</em>
-        <span>Unity, Play on <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.SkaterRacing3D&hl=en_IN" target="_blank">Android</a>
-          <a href="https://apps.apple.com/us/app/skater-racing-3d/id1530838917" target="_blank">IOS</a></span>
-        <div style="margin-top: 0.8rem;">
-          <strong style="font-size: 1rem;">Features:</strong>
-          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+      <div class="project-card">
+        <div class="project-header">
+          <img src="files/Icon_SR3D.jpg" alt="Skater Racing 3D" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Skater Racing 3D</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.SkaterRacing3D&hl=en_IN" target="_blank">Android</a>
+              <a href="https://apps.apple.com/us/app/skater-racing-3d/id1530838917" target="_blank">iOS</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Experience the thrill of skateboarding in this exciting 3D racing game with realistic physics and stunning graphics</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
             <li>Realistic 3D skateboarding physics and controls</li>
             <li>Multiple challenging racing tracks and environments</li>
             <li>Customizable skateboards and character options</li>
@@ -402,16 +645,21 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-      <img src="files/Icon_Velawoods.png" alt="Drive Shack Golf and Games" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover; object-position: center;">
-      <div>
-        <strong>Velawoods English</strong>
-        <em>Velawoods English is a platform for learning English through games and interactive activities.</em>
-        <span>Unity, Android, IOS, Mac & Windows • <a href="https://velawoodsenglish.com/" target="_blank">Learn More</a></span>
-        <div style="margin-top: 0.8rem;">
-          <strong style="font-size: 1rem;">Features:</strong>
-          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+      <div class="project-card">
+        <div class="project-header">
+          <img src="files/Icon_Velawoods.png" alt="Velawoods English" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Velawoods English</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://velawoodsenglish.com/" target="_blank">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Velawoods English is a platform for learning English through games and interactive activities.</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
             <li>Interactive English learning through engaging games and activities</li>
             <li>Comprehensive curriculum covering vocabulary, grammar, and pronunciation</li>
             <li>Adaptive learning system that adjusts to individual progress</li>
@@ -421,16 +669,21 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-      <img src="files/Icon_Driveshack.png" alt="Drive Shack Golf and Games" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover; object-position: center;">
-      <div>
-        <strong>Drive Shack Golf and Games</strong>
-        <em>Where fun meets friendly competition! Experience a mix of driving range games, mini golf, and real-life courses, all enhanced with TrackMan™ Range technology for precision ball tracking and immersive gameplay.</em>
-        <span>Unity, Windows • <a href="https://www.driveshack.com/play/" target="_blank">Learn More</a></span>
-        <div style="margin-top: 0.8rem;">
-          <strong style="font-size: 1rem;">Features:</strong>
-          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+      <div class="project-card">
+        <div class="project-header">
+          <img src="files/Icon_Driveshack.png" alt="Drive Shack Golf and Games" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Drive Shack Golf and Games</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://www.driveshack.com/play/" target="_blank">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Where fun meets friendly competition! Experience a mix of driving range games, mini golf, and real-life courses, all enhanced with TrackMan™ Range technology for precision ball tracking and immersive gameplay.</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
             <li>A variety of driving range games for all skill levels</li>
             <li>Mini golf courses with vibrant, themed environments</li>
             <li>Real-life golf course challenges (e.g., Casa de Campo, St. Andrews)</li>
@@ -440,16 +693,21 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-      <img src="files/Icon_FoL2.png" alt="Fight of the Legends" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-      <div>
-        <strong>Fight of the Legends 2</strong>
-        <em>Reveal your inner fighter in this 3D fighting game! Play up to 8 fighters, upgrade their equipment and abilities, and challenge real players worldwide.</em>
-        <span>Unity, Android • <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.legends.fight2&hl=en" target="_blank">Play on Google Play</a></span>
-        <div style="margin-top: 0.8rem;">
-          <strong style="font-size: 1rem;">Features:</strong>
-          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+      <div class="project-card">
+        <div class="project-header">
+          <img src="files/Icon_FoL2.png" alt="Fight of the Legends 2" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Fight of the Legends 2</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.legends.fight2&hl=en" target="_blank">Play on Google Play</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Reveal your inner fighter in this 3D fighting game! Play up to 8 fighters, upgrade their equipment and abilities, and challenge real players worldwide.</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
             <li>Play as up to 8 unique fighters, each with specific combos and attacks</li>
             <li>Upgrade equipment and abilities to reach full potential</li>
             <li>Challenge real players worldwide in action combat</li>
@@ -461,16 +719,21 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-      <img src="files/Icon_Ashwathama.jpg" alt="Ashwathama" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-      <div>
-        <strong>Ashwathama</strong>
-        <em>Action-packed 3D fighting game featuring the legendary warrior Ashwathama</em>
-        <span>Unity, Android • <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.Ashwathama" target="_blank">Play on Google Play</a></span>
-        <div style="margin-top: 0.8rem;">
-          <strong style="font-size: 1rem;">Features:</strong>
-          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+      <div class="project-card">
+        <div class="project-header">
+          <img src="files/Icon_Ashwathama.jpg" alt="Ashwathama" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Ashwathama</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.Ashwathama" target="_blank">Play on Google Play</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Action-packed 3D fighting game featuring the legendary warrior Ashwathama</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
             <li>Play as the immortal warrior Ashwathama</li>
             <li>Immersive 3D combat system</li>
             <li>Epic battles with mythological enemies</li>
@@ -480,16 +743,21 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="project-card" style="display: flex; align-items: flex-start; gap: 1rem;">
-      <img src="files/Icon_FoL.png" alt="Fight of the Legends" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;">
-      <div>
-        <strong>Fight of the Legends</strong>
-        <em>Action-packed 3D fighting game featuring mythological characters</em>
-        <span>Unity, Android • <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.fightofthelegends" target="_blank">Play on Google Play</a></span>
-        <div style="margin-top: 0.8rem;">
-          <strong style="font-size: 1rem;">Features:</strong>
-          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem; color: #666;">
+      <div class="project-card">
+        <div class="project-header">
+          <img src="files/Icon_FoL.png" alt="Fight of the Legends" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Fight of the Legends</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.fightofthelegends" target="_blank">Play on Google Play</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Action-packed 3D fighting game featuring mythological characters</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
             <li>Each character fights with different style of fighting</li>
             <li>Pure 3D</li>
             <li>Characters made with real models</li>
@@ -499,7 +767,6 @@
           </ul>
         </div>
       </div>
-    </div>
   </section>
 </body>
 </html>

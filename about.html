@@ -40,10 +40,42 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     h2 {
-      color: #444;
-      border-left: 5px solid #007BFF;
-      padding-left: 0.75rem;
-      margin-bottom: 1rem;
+      color: #2c3e50;
+      border-left: 6px solid #007BFF;
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+      font-weight: 800;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      letter-spacing: 0.5px;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      left: 1rem;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #007BFF, #28a745);
+      border-radius: 2px;
+    }
+    h3 {
+      color: #34495e;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 1.5rem 0 1rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e9ecef;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    h4 {
+      color: #495057;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 1.2rem 0 0.8rem 0;
+      padding-left: 0.5rem;
+      border-left: 3px solid #28a745;
     }
     .nav {
       position: absolute;
@@ -162,8 +194,9 @@
     <a href="files/Resume_Rahul_Kaushik.pdf" download>📄 Resume</a>
   </div>
   <header>
-    <h1>ABOUT ME</h1>
-    <p>GAME DEVELOPER & TECHNICAL LEAD</p>
+    <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 1rem; text-shadow: 0 3px 6px rgba(0,0,0,0.5); color: #4facfe; letter-spacing: 2px;">ABOUT ME</h1>
+    <p style="font-size: 1.4rem; color: #ffd700; font-weight: 700; margin-bottom: 0.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.7); letter-spacing: 1px; text-transform: uppercase;">🎮 Game Developer & Technical Lead</p>
+    <p style="font-size: 1.1rem; color: #ccc; margin-top: 0; font-style: italic;">Passionate about creating digital experiences that connect with players worldwide</p>
   </header>
 
   <section style="background: #fff; border-left: 8px solid #28a745; padding: 2rem; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
@@ -178,20 +211,20 @@
     <h2>Game Development Achievements</h2>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
       <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 10px; text-align: center;">
-        <h3 style="margin: 0 0 1rem 0;">🏆 15+ Published Games</h3>
-        <p style="margin: 0; font-size: 0.9rem;">Mobile games with millions of downloads</p>
+        <h3 style="margin: 0 0 1rem 0; color: white;">🏆 15+ Published Games</h3>
+        <p style="margin: 0; font-size: 0.9rem; color: white;">Mobile games with millions of downloads</p>
       </div>
       <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 1.5rem; border-radius: 10px; text-align: center;">
-        <h3 style="margin: 0 0 1rem 0;">🎯 Cross-Platform Success</h3>
-        <p style="margin: 0; font-size: 0.9rem;">Games on Android, iOS, Web & VR</p>
+        <h3 style="margin: 0 0 1rem 0; color: white;">🎯 Cross-Platform Success</h3>
+        <p style="margin: 0; font-size: 0.9rem; color: white;">Games on Android, iOS, Web & VR</p>
       </div>
       <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 1.5rem; border-radius: 10px; text-align: center;">
-        <h3 style="margin: 0 0 1rem 0;">🚀 Technical Leadership</h3>
-        <p style="margin: 0; font-size: 0.9rem;">Led teams of 5-15 developers</p>
+        <h3 style="margin: 0 0 1rem 0; color: white;">🚀 Technical Leadership</h3>
+        <p style="margin: 0; font-size: 0.9rem; color: white;">Led teams of 5-15 developers</p>
       </div>
-      <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333; padding: 1.5rem; border-radius: 10px; text-align: center;">
-        <h3 style="margin: 0 0 1rem 0;">💡 Innovation Awards</h3>
-        <p style="margin: 0; font-size: 0.9rem;">NASSCOM Game Jam Runner-Up</p>
+      <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #2c3e50; padding: 1.5rem; border-radius: 10px; text-align: center;">
+        <h3 style="margin: 0 0 1rem 0; color: #2c3e50;">💡 Innovation Awards</h3>
+        <p style="margin: 0; font-size: 0.9rem; color: #34495e;">NASSCOM Game Jam Runner-Up</p>
       </div>
     </div>
   </section>
@@ -199,14 +232,14 @@
   <section>
     <h2>Game Development Skills</h2>
     <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-      <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">🎮 Unity & C#</span>
-      <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">🎯 Unreal & C++</span>
-      <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">🚀 Godot & GDScript</span>
-      <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">📱 Mobile Development</span>
-      <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">🎨 Game Design</span>
-      <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">⚡ Performance Optimization</span>
-      <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">🔄 Cross-Platform Development</span>
-      <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold;">👥 Team Leadership</span>
+      <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; color: #2c3e50;">🎮 Unity & C#</span>
+      <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; color: #2c3e50;">🎯 Unreal & C++</span>
+      <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; color: #2c3e50;">🚀 Godot & GDScript</span>
+      <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; color: #2c3e50;">📱 Mobile Development</span>
+      <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; color: #2c3e50;">🎨 Game Design</span>
+      <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; color: #2c3e50;">⚡ Performance Optimization</span>
+      <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; color: #2c3e50;">🔄 Cross-Platform Development</span>
+      <span style="background: #e0f0ff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; color: #2c3e50;">👥 Team Leadership</span>
     </div>
   </section>
 </body>
