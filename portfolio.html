@@ -392,12 +392,12 @@
       border: 2px solid var(--border-color);
       border-left: 4px solid var(--game-unity-blue);
       border-radius: 8px;
-      padding: 2rem;
+      padding: 0;
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
       cursor: pointer;
-      min-height: 400px;
+      min-height: 500px;
       display: flex;
       flex-direction: column;
       box-shadow: 
@@ -416,6 +416,10 @@
       font-weight: 700;
       letter-spacing: 2px;
       opacity: 0.5;
+      z-index: 5;
+      background: rgba(20, 20, 25, 0.8);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
     }
     
     .project-card::after {
@@ -442,12 +446,37 @@
         0 0 30px rgba(0, 188, 212, 0.4);
     }
     
-    .project-header {
+    .project-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border: none;
+      border-bottom: 2px solid var(--border-color);
+      transition: all 0.3s ease;
+      display: block;
+    }
+    
+    .project-image:not(img) {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 900;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .project-card:hover .project-image {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+    
+    .project-card:hover .project-image:not(img) {
+      filter: brightness(1.15);
+    }
+    
+    .project-header {
+      padding: 1.5rem 2rem 1rem;
+      margin-bottom: 0;
       border-bottom: 1px solid var(--border-color);
       position: relative;
     }
@@ -467,26 +496,10 @@
       width: 100%;
     }
     
-    .project-image {
-      width: 80px;
-      height: 80px;
-      border-radius: 12px;
-      object-fit: cover;
-      border: 2px solid var(--border-color);
-      box-shadow: var(--shadow-md);
-      transition: all 0.3s ease;
-      flex-shrink: 0;
-    }
-    
-    .project-card:hover .project-image {
-      transform: scale(1.05);
-      border-color: var(--border-accent);
-      box-shadow: var(--shadow-lg);
-    }
-    
     .project-info {
       flex: 1;
       min-width: 0;
+      width: 100%;
     }
     
     .project-title {
@@ -545,10 +558,12 @@
       margin-bottom: 1.5rem;
       font-size: 1rem;
       font-family: var(--font-body);
+      padding: 0 2rem;
     }
     
     .project-features {
       flex: 1;
+      padding: 0 2rem 2rem;
     }
     
     .features-title {
@@ -693,15 +708,19 @@
       }
       
       .project-header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1rem;
+        padding: 1rem 1.5rem 0.5rem;
       }
       
       .project-image {
-        width: 70px;
-        height: 70px;
+        height: 200px;
+      }
+      
+      .project-description {
+        padding: 0 1.5rem;
+      }
+      
+      .project-features {
+        padding: 0 1.5rem 1.5rem;
       }
     }
     
@@ -725,13 +744,24 @@
       }
       
       .project-card {
-        padding: 1.2rem;
-        min-height: 320px;
+        min-height: 400px;
       }
       
       .project-image {
-        width: 60px;
-        height: 60px;
+        height: 180px;
+      }
+      
+      .project-header {
+        padding: 1rem 1rem 0.5rem;
+      }
+      
+      .project-description {
+        padding: 0 1rem;
+        font-size: 0.9rem;
+      }
+      
+      .project-features {
+        padding: 0 1rem 1rem;
       }
     }
   </style>
@@ -772,8 +802,8 @@
       
       <div class="portfolio-grid">
       <div class="project-card">
+        <img src="files/Icon_Measure.png" alt="Measure PM" class="project-image">
         <div class="project-header">
-          <img src="files/Icon_Measure.png" alt="Measure" class="project-image">
           <div class="project-info">
             <h3 class="project-title">Measure PM</h3>
             <div class="project-links">
@@ -797,8 +827,8 @@
         </div>
       </div>
           <div class="project-card">
+        <img src="files/Icon_GummyRescue.png" alt="Gummy Rescue" class="project-image">
         <div class="project-header">
-          <img src="files/Icon_GummyRescue.png" alt="Gummy Rescue" class="project-image">
           <div class="project-info">
             <h3 class="project-title">Gummy Rescue</h3>
             <div class="project-links">
@@ -822,8 +852,8 @@
         </div>
       </div>
           <div class="project-card">
+        <img src="files/Icon_Brainchild.png" alt="Brainchild" class="project-image">
         <div class="project-header">
-          <img src="files/Icon_Brainchild.png" alt="Brainchild" class="project-image">
           <div class="project-info">
             <h3 class="project-title">Brainchild</h3>
             <div class="project-links">
@@ -847,8 +877,8 @@
         </div>
       </div>
           <div class="project-card">
+        <img src="files/Icon_StarTitan.png" alt="Star Titan" class="project-image">
         <div class="project-header">
-          <img src="files/Icon_StarTitan.png" alt="Star Titan" class="project-image">
           <div class="project-info">
             <h3 class="project-title">Star Titan</h3>
             <div class="project-links">
@@ -872,8 +902,8 @@
         </div>
       </div>
       <div class="project-card">
+        <img src="files/Icon_BlockBreaker.png" alt="Block Smash 3D" class="project-image">
         <div class="project-header">
-          <img src="files/Icon_BlockBreaker.png" alt="Block Smash 3D" class="project-image">
           <div class="project-info">
             <h3 class="project-title">Block Smash 3D</h3>
             <div class="project-links">
@@ -897,8 +927,8 @@
         </div>
       </div>
       <div class="project-card">
+        <img src="files/Icon_BoomerangDungeon.png" alt="Boomerang Dungeon" class="project-image">
         <div class="project-header">
-          <img src="files/Icon_BoomerangDungeon.png" alt="Boomerang Dungeon" class="project-image">
           <div class="project-info">
             <h3 class="project-title">Boomerang Dungeon</h3>
             <div class="project-links">
@@ -922,8 +952,8 @@
         </div>
       </div>
       <div class="project-card">
+        <img src="files/Icon_MissilesAreGo.png" alt="Missiles Are Go" class="project-image">
         <div class="project-header">
-          <img src="files/Icon_MissilesAreGo.png" alt="Missiles Are Go" class="project-image">
           <div class="project-info">
             <h3 class="project-title">Missiles Are Go</h3>
             <div class="project-links">
@@ -947,8 +977,8 @@
         </div>
       </div>
       <div class="project-card">
+        <img src="files/Icon_PipeSkater.png" alt="Pipe Skater" class="project-image">
         <div class="project-header">
-          <img src="files/Icon_PipeSkater.png" alt="Pipe Skater" class="project-image">
           <div class="project-info">
             <h3 class="project-title">Pipe Skater</h3>
             <div class="project-links">
@@ -972,8 +1002,8 @@
         </div>
       </div>
       <div class="project-card">
+        <img src="files/Icon_SR3D.jpg" alt="Skater Racing 3D" class="project-image">
         <div class="project-header">
-          <img src="files/Icon_SR3D.jpg" alt="Skater Racing 3D" class="project-image">
           <div class="project-info">
             <h3 class="project-title">Skater Racing 3D</h3>
             <div class="project-links">
@@ -997,8 +1027,8 @@
         </div>
       </div>
       <div class="project-card">
+        <img src="files/Icon_Velawoods.png" alt="Velawoods English" class="project-image">
         <div class="project-header">
-          <img src="files/Icon_Velawoods.png" alt="Velawoods English" class="project-image">
           <div class="project-info">
             <h3 class="project-title">Velawoods English</h3>
             <div class="project-links">
@@ -1021,8 +1051,8 @@
         </div>
       </div>
       <div class="project-card">
+        <img src="files/Icon_Driveshack.png" alt="Drive Shack Golf and Games" class="project-image">
         <div class="project-header">
-          <img src="files/Icon_Driveshack.png" alt="Drive Shack Golf and Games" class="project-image">
           <div class="project-info">
             <h3 class="project-title">Drive Shack Golf and Games</h3>
             <div class="project-links">
@@ -1045,8 +1075,8 @@
         </div>
       </div>
       <div class="project-card">
+        <img src="files/Icon_FoL2.png" alt="Fight of the Legends 2" class="project-image">
         <div class="project-header">
-          <img src="files/Icon_FoL2.png" alt="Fight of the Legends 2" class="project-image">
           <div class="project-info">
             <h3 class="project-title">Fight of the Legends 2</h3>
             <div class="project-links">
@@ -1071,8 +1101,8 @@
         </div>
       </div>
       <div class="project-card">
+        <img src="files/Icon_Ashwathama.jpg" alt="Ashwathama" class="project-image">
         <div class="project-header">
-          <img src="files/Icon_Ashwathama.jpg" alt="Ashwathama" class="project-image">
           <div class="project-info">
             <h3 class="project-title">Ashwathama</h3>
             <div class="project-links">
@@ -1095,8 +1125,8 @@
         </div>
       </div>
       <div class="project-card">
+        <img src="files/Icon_FoL.png" alt="Fight of the Legends" class="project-image">
         <div class="project-header">
-          <img src="files/Icon_FoL.png" alt="Fight of the Legends" class="project-image">
           <div class="project-info">
             <h3 class="project-title">Fight of the Legends</h3>
             <div class="project-links">
@@ -1115,6 +1145,102 @@
             <li>Indian Martial Art style</li>
             <li>Cool Music</li>
             <li>Store System to upgrade your character</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="files/Icon_BinaryLooper.png" alt="Binary Looper" class="project-image">
+        <div class="project-header">
+          <div class="project-info">
+            <h3 class="project-title">Binary Looper</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://gamedevkaushik.itch.io/binary-looper" target="_blank">Play on itch.io</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Binary Looper takes the familiar concept of binary patterns and transforms it into an addictive puzzle experience. The combination of continuous movement, time pressure, and strategic thinking creates a unique gameplay loop that will keep you coming back for more.</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
+            <li>Addictive binary pattern puzzle mechanics</li>
+            <li>Continuous movement with time pressure</li>
+            <li>Strategic thinking and perfect timing required</li>
+            <li>3-star completion system for hardcore puzzle solvers</li>
+            <li>Minimalist design with fast-paced gameplay</li>
+            <li>GMTK Game Jam 2025 submission</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="files/Icon_ProjectEcho.png" alt="Project Echo" class="project-image">
+        <div class="project-header">
+          <div class="project-info">
+            <h3 class="project-title">Project Echo</h3>
+            <div class="project-links">
+              <span>Godot • </span>
+              <a href="https://gamedevkaushik.itch.io/project-echo" target="_blank">Play on itch.io</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Play with Time, Team Up with Your Own Echoes! Solve brain-twisting puzzles in this inventive puzzle-platformer where you don't just play solo—you play with your past! Each time you complete a run, an "Echo" of your previous self replays your recorded actions.</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
+            <li>Innovative echo mechanic - play with your past selves</li>
+            <li>Recorded action replays create ghost echoes</li>
+            <li>Echoes can press switches, push boxes, and trigger reactions</li>
+            <li>Multi-step puzzles requiring coordination with echoes</li>
+            <li>2D pixel art platformer with mystery elements</li>
+            <li>GMTK Game Jam 2025 submission (co-developed with RedOre)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="files/Icon_RaceTime.png" alt="Race Time" class="project-image">
+        <div class="project-header">
+          <div class="project-info">
+            <h3 class="project-title">Race_Time</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://gamedevkaushik.itch.io/race-time" target="_blank">Download on itch.io</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">A high-speed racing challenge where control meets chaos! Control your car using only the mouse to slow down time and rotate the car with pinpoint precision. You only get 10 seconds of total slowmo for the entire run - master the art of timing and angle!</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
+            <li>Mouse-only control system - no brakes, no steering wheel</li>
+            <li>Time manipulation mechanics - slow motion with limited duration</li>
+            <li>10 seconds of total slowmo per run - strategic resource management</li>
+            <li>Physics-based car rotation and movement</li>
+            <li>High score system - chase the perfect lap time</li>
+            <li>Unity 20th Anniversary Game Jam submission</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="files/Icon_TukTukRace.png" alt="TukTuk Race" class="project-image">
+        <div class="project-header">
+          <div class="project-info">
+            <h3 class="project-title">TukTuk Race</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://play.google.com/store/apps/details?id=com.darkpyre.tuktuk" target="_blank">Android</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Dive into a world where the traditional meets the thrill of racing! Race using Tuk-tuks transformed into high-speed racing machines. Choose between Racing Mode for simplified controls or Simulation Mode with realistic physics and side characters balancing your Tuk-tuk.</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
+            <li>Two game modes: Racing Mode and Simulation Mode</li>
+            <li>Realistic physics with side forces during turns</li>
+            <li>Power-ups: Booster, Homing Missile, Rocket Launcher, Mine, Minigun, Shield</li>
+            <li>Side characters balance your Tuk-tuk in simulation mode</li>
+            <li>Intuitive touch controls for mobile gameplay</li>
+            <li>Various stages and levels with increasing challenges</li>
           </ul>
         </div>
       </div>
