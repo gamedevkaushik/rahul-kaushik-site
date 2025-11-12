@@ -1059,6 +1059,193 @@
       justify-items: center;
     }
     
+    /* Upcoming Game Section */
+    .upcoming-game-section {
+      margin-top: 3rem;
+    }
+    
+    .upcoming-game-card {
+      background: var(--game-panel-bg);
+      border: 3px solid var(--border-color);
+      border-left: 6px solid var(--game-unreal-orange);
+      border-radius: 12px;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: 
+        var(--shadow-lg),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 0 40px rgba(255, 107, 53, 0.3);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .upcoming-game-card::before {
+      content: 'WORK IN PROGRESS';
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 0.7rem;
+      color: var(--game-unreal-orange);
+      font-family: var(--font-ui);
+      font-weight: 700;
+      letter-spacing: 3px;
+      opacity: 0.9;
+      z-index: 5;
+      background: rgba(20, 20, 25, 0.95);
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      border: 2px solid var(--game-unreal-orange);
+      box-shadow: 0 0 20px rgba(255, 107, 53, 0.6);
+      animation: wip-pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes wip-pulse {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 107, 53, 0.6);
+        opacity: 0.9;
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(255, 107, 53, 0.9);
+        opacity: 1;
+      }
+    }
+    
+    .upcoming-game-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--game-unreal-orange), var(--game-unity-blue), var(--gaming-teal));
+      transition: width 0.4s ease;
+      box-shadow: 0 0 20px var(--game-unreal-orange);
+    }
+    
+    .upcoming-game-card:hover::after {
+      width: 8px;
+    }
+    
+    .upcoming-game-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color: var(--game-unreal-orange);
+      box-shadow: 
+        var(--shadow-xl),
+        0 0 50px rgba(255, 107, 53, 0.6),
+        0 0 80px rgba(0, 188, 212, 0.3);
+    }
+    
+    .upcoming-game-image {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-bottom: 3px solid var(--border-color);
+      position: relative;
+      filter: brightness(0.9);
+      transition: all 0.3s ease;
+    }
+    
+    .upcoming-game-card:hover .upcoming-game-image {
+      filter: brightness(1);
+      transform: scale(1.02);
+    }
+    
+    .upcoming-game-content {
+      padding: 2.5rem;
+    }
+    
+    .upcoming-game-header {
+      margin-bottom: 1.5rem;
+    }
+    
+    .upcoming-game-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, var(--game-unreal-orange), var(--game-unity-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .upcoming-game-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .upcoming-game-links span {
+      color: var(--text-accent);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    .upcoming-game-links a {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      color: var(--game-unity-blue);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: var(--font-ui);
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .upcoming-game-links a:hover {
+      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 
+        var(--shadow-md),
+        0 0 15px rgba(0, 188, 212, 0.5);
+      border-color: var(--game-unity-blue);
+    }
+    
+    .upcoming-game-description {
+      color: var(--text-primary);
+      line-height: 1.8;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .upcoming-game-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: rgba(255, 107, 53, 0.15);
+      border: 2px solid var(--game-unreal-orange);
+      border-radius: 6px;
+      color: var(--game-unreal-orange);
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 1rem;
+    }
+    
+    .upcoming-game-status::before {
+      content: '⚙';
+      font-size: 1rem;
+      animation: spin 2s linear infinite;
+    }
+    
     .stat-card {
       background: var(--game-panel-bg);
       backdrop-filter: blur(20px) saturate(180%);
@@ -1929,6 +2116,26 @@
         font-size: 1rem;
       }
       
+      .upcoming-game-card {
+        max-width: 100%;
+      }
+      
+      .upcoming-game-image {
+        height: 250px;
+      }
+      
+      .upcoming-game-content {
+        padding: 1.5rem;
+      }
+      
+      .upcoming-game-title {
+        font-size: 1.5rem;
+      }
+      
+      .upcoming-game-description {
+        font-size: 1rem;
+      }
+      
       .achievements-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -2638,6 +2845,38 @@
         <div class="stat-card animate-right">
           <div class="stat-number">100%</div>
           <div class="stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Game Section -->
+  <section id="upcoming-game">
+    <div class="section-container animate-on-scroll upcoming-game-section">
+      <h2 class="section-title">
+        <span>Upcoming Game</span>
+      </h2>
+      
+      <p style="font-size: 1.1rem; color: var(--text-primary); text-align: center; margin-bottom: 3rem; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);">
+        Currently in development! Get a sneak peek at the next exciting project I'm working on.
+      </p>
+      
+      <div class="upcoming-game-card">
+        <img src="files/Icon_RaceTime.png" alt="Race_Time" class="upcoming-game-image">
+        <div class="upcoming-game-content">
+          <div class="upcoming-game-header">
+            <h3 class="upcoming-game-title">Race_Time</h3>
+            <div class="upcoming-game-links">
+              <span>Unity • </span>
+              <a href="https://gamedevkaushik.itch.io/race-time" target="_blank">Download on itch.io</a>
+            </div>
+          </div>
+          <p class="upcoming-game-description">
+            A high-speed racing challenge where control meets chaos! Control your car using only the mouse to slow down time and rotate the car with pinpoint precision. You only get 10 seconds of total slowmo for the entire run - master the art of timing and angle!
+          </p>
+          <div class="upcoming-game-status">
+            Development in Progress
+          </div>
         </div>
       </div>
     </div>
