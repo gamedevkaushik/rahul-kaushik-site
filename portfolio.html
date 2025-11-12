@@ -478,7 +478,216 @@
     }
     
     .featured-card .project-features {
+      display: none; /* Hidden in featured card too */
+    }
+    
+    .featured-card .view-features-btn {
+      margin: 0 2.5rem 2.5rem;
+    }
+    
+    /* Game Details Popup */
+    .game-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 2rem;
+    }
+    
+    .game-popup.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    
+    .game-popup-content {
+      background: var(--game-panel-bg);
+      border: 3px solid var(--game-unity-blue);
+      border-top: 5px solid var(--game-unreal-orange);
+      border-radius: 12px;
+      max-width: 700px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      transform: scale(0.9) translateY(20px);
+      transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      box-shadow: 
+        0 0 60px rgba(0, 188, 212, 0.8),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    
+    .game-popup.active .game-popup-content {
+      transform: scale(1) translateY(0);
+    }
+    
+    .game-popup-header {
+      padding: 2rem 2.5rem 1.5rem;
+      border-bottom: 2px solid var(--border-color);
+      position: relative;
+    }
+    
+    .game-popup-header::before {
+      content: 'GAME DETAILS';
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 0.7rem;
+      color: var(--game-unity-blue);
+      font-family: var(--font-ui);
+      font-weight: 700;
+      letter-spacing: 2px;
+      opacity: 0.5;
+    }
+    
+    .game-popup-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: 2px solid var(--border-color);
+      border-radius: 50%;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+    
+    .game-popup-close:hover {
+      border-color: var(--game-unity-blue);
+      color: var(--game-unity-blue);
+      transform: rotate(90deg);
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+    }
+    
+    .game-popup-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-bottom: 2px solid var(--border-color);
+      display: block;
+    }
+    
+    .game-popup-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .game-popup-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .game-popup-links span {
+      color: var(--text-accent);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    .game-popup-links a {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      color: var(--game-unity-blue);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: var(--font-ui);
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .game-popup-links a:hover {
+      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 
+        var(--shadow-md),
+        0 0 15px rgba(0, 188, 212, 0.5);
+      border-color: var(--game-unity-blue);
+    }
+    
+    .game-popup-description {
+      color: var(--text-primary);
+      line-height: 1.8;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      padding: 0 2.5rem;
+    }
+    
+    .game-popup-features {
       padding: 0 2.5rem 2.5rem;
+    }
+    
+    .game-popup-features .features-title {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--game-unity-blue);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .game-popup-features .features-title::before {
+      content: '⚙ ';
+      margin-right: 0.5rem;
+      opacity: 0.7;
+    }
+    
+    .game-popup-features .features-list {
+      margin: 0;
+      padding-left: 1rem;
+      font-size: 1rem;
+      color: var(--text-primary);
+      line-height: 1.8;
+      font-family: var(--font-body);
+    }
+    
+    .game-popup-features .features-list li {
+      margin-bottom: 0.6rem;
+      position: relative;
+      padding-left: 0.5rem;
+    }
+    
+    .game-popup-features .features-list li::marker {
+      color: var(--game-unity-blue);
+    }
+    
+    .game-popup-features .features-list li::before {
+      content: '▶';
+      position: absolute;
+      left: -1rem;
+      color: var(--game-unity-blue);
+      font-size: 0.7rem;
+      opacity: 0.7;
     }
     
     /* Portfolio Grid */
@@ -499,7 +708,7 @@
       overflow: hidden;
       transition: all 0.3s ease;
       cursor: pointer;
-      min-height: 500px;
+      min-height: 400px;
       display: flex;
       flex-direction: column;
       box-shadow: 
@@ -657,15 +866,39 @@
     .project-description {
       color: var(--text-primary);
       line-height: 1.6;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0;
       font-size: 1rem;
       font-family: var(--font-body);
-      padding: 0 2rem;
+      padding: 0 2rem 2rem;
+      flex: 1;
     }
     
     .project-features {
-      flex: 1;
-      padding: 0 2rem 2rem;
+      display: none; /* Hidden in card, shown in popup */
+    }
+    
+    .view-features-btn {
+      margin: 0 2rem 2rem;
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      border: 2px solid var(--game-unity-blue);
+      border-radius: 4px;
+      color: var(--game-unity-blue);
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    
+    .view-features-btn:hover {
+      background: var(--game-unity-blue);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
     }
     
     .features-title {
@@ -759,6 +992,43 @@
 
     /* Mobile Responsiveness */
     @media (max-width: 768px) {
+      .game-popup {
+        padding: 1rem;
+      }
+      
+      .game-popup-content {
+        max-width: 100%;
+        max-height: 95vh;
+        border-radius: 8px;
+      }
+      
+      .game-popup-image {
+        height: 200px;
+      }
+      
+      .game-popup-header {
+        padding: 1.5rem 1.5rem 1rem;
+      }
+      
+      .game-popup-title {
+        font-size: 1.5rem;
+      }
+      
+      .game-popup-description {
+        padding: 0 1.5rem;
+        font-size: 1rem;
+      }
+      
+      .game-popup-features {
+        padding: 0 1.5rem 1.5rem;
+      }
+      
+      .game-popup-close {
+        width: 35px;
+        height: 35px;
+        font-size: 1.3rem;
+      }
+      
       .nav {
         position: fixed;
         top: 0.5rem;
@@ -906,6 +1176,23 @@
     <div class="loading-text">Loading Portfolio</div>
   </div>
   
+  <!-- Game Details Popup -->
+  <div class="game-popup" id="gamePopup">
+    <div class="game-popup-content">
+      <button class="game-popup-close" id="gamePopupClose">×</button>
+      <img src="" alt="" class="game-popup-image" id="popupImage">
+      <div class="game-popup-header">
+        <h2 class="game-popup-title" id="popupTitle"></h2>
+        <div class="game-popup-links" id="popupLinks"></div>
+      </div>
+      <p class="game-popup-description" id="popupDescription"></p>
+      <div class="game-popup-features">
+        <h4 class="features-title">Features:</h4>
+        <ul class="features-list" id="popupFeatures"></ul>
+      </div>
+    </div>
+  </div>
+  
   <div class="nav">
     <a href="index.html">Home</a>
     <a href="index.html#about">About</a>
@@ -952,7 +1239,7 @@
       </p>
       
       <div class="portfolio-grid">
-      <div class="project-card">
+      <div class="project-card" data-features='["AR-powered measurement using device camera","Measure distances, areas, and volumes accurately","Multiple measurement units (metric and imperial)","Save and share measurement results","User-friendly interface with intuitive controls","Perfect for home improvement and professional use"]'>
         <img src="files/Icon_Measure.png" alt="Measure PM" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -965,19 +1252,9 @@
           </div>
         </div>
         <p class="project-description">It is a cloud-based innovative, comprehensive, effective, paperless suite of HIPAA-compliant tools delivering Practice Management, Data Collection, Scheduling, and Revenue Cycle Management for ABA Therapy providers.</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>AR-powered measurement using device camera</li>
-            <li>Measure distances, areas, and volumes accurately</li>
-            <li>Multiple measurement units (metric and imperial)</li>
-            <li>Save and share measurement results</li>
-            <li>User-friendly interface with intuitive controls</li>
-            <li>Perfect for home improvement and professional use</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-          <div class="project-card">
+          <div class="project-card" data-features='["Cute and colorful gummy bear characters","Challenging rescue missions and puzzles","Multiple levels with increasing difficulty","Family-friendly gameplay suitable for all ages","Engaging physics-based mechanics","Vibrant graphics and smooth animations"]'>
         <img src="files/Icon_GummyRescue.png" alt="Gummy Rescue" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -990,19 +1267,9 @@
           </div>
         </div>
         <p class="project-description">Help the adorable gummy bears escape dangerous situations in this charming puzzle-adventure game</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Cute and colorful gummy bear characters</li>
-            <li>Challenging rescue missions and puzzles</li>
-            <li>Multiple levels with increasing difficulty</li>
-            <li>Family-friendly gameplay suitable for all ages</li>
-            <li>Engaging physics-based mechanics</li>
-            <li>Vibrant graphics and smooth animations</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-          <div class="project-card">
+          <div class="project-card" data-features='["Innovative puzzle mechanics that challenge your thinking","Progressive difficulty with increasingly complex challenges","Clean, minimalist design focused on gameplay","Multiple puzzle types and brain-teasing scenarios","Intuitive controls and smooth user experience","Perfect for quick mental workouts and extended play sessions"]'>
         <img src="files/Icon_Brainchild.png" alt="Brainchild" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1015,19 +1282,9 @@
           </div>
         </div>
         <p class="project-description">Challenge your mind with this innovative puzzle game featuring unique brain-teasing mechanics and progressively difficult levels</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Innovative puzzle mechanics that challenge your thinking</li>
-            <li>Progressive difficulty with increasingly complex challenges</li>
-            <li>Clean, minimalist design focused on gameplay</li>
-            <li>Multiple puzzle types and brain-teasing scenarios</li>
-            <li>Intuitive controls and smooth user experience</li>
-            <li>Perfect for quick mental workouts and extended play sessions</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-          <div class="project-card">
+          <div class="project-card" data-features='["Command powerful mech units in space combat","Strategic gameplay with tactical decision making","Multiple mission types and objectives","Upgrade and customize your mech arsenal","Immersive sci-fi storyline and environments","Challenging AI opponents and boss battles"]'>
         <img src="files/Icon_StarTitan.png" alt="Star Titan" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1040,19 +1297,9 @@
           </div>
         </div>
         <p class="project-description">Epic space adventure where you pilot powerful mechs through intense battles across the galaxy</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Command powerful mech units in space combat</li>
-            <li>Strategic gameplay with tactical decision making</li>
-            <li>Multiple mission types and objectives</li>
-            <li>Upgrade and customize your mech arsenal</li>
-            <li>Immersive sci-fi storyline and environments</li>
-            <li>Challenging AI opponents and boss battles</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["Classic brick-breaking gameplay with modern enhancements","Multiple power-ups and special abilities","Challenging levels with unique block arrangements","Smooth paddle controls and ball physics","Progressive difficulty and scoring system","Addictive arcade-style gameplay"]'>
         <img src="files/Icon_BlockBreaker.png" alt="Block Smash 3D" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1065,19 +1312,9 @@
           </div>
         </div>
         <p class="project-description">Classic brick-breaking arcade action with modern twists, power-ups, and challenging levels to test your reflexes</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Classic brick-breaking gameplay with modern enhancements</li>
-            <li>Multiple power-ups and special abilities</li>
-            <li>Challenging levels with unique block arrangements</li>
-            <li>Smooth paddle controls and ball physics</li>
-            <li>Progressive difficulty and scoring system</li>
-            <li>Addictive arcade-style gameplay</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["Unique boomerang-based combat mechanics","Challenging dungeon exploration and puzzle solving","Multiple levels with increasing difficulty","Strategic gameplay requiring timing and precision","Immersive dungeon environments and atmosphere","Intuitive touch controls for mobile gameplay"]'>
         <img src="files/Icon_BoomerangDungeon.png" alt="Boomerang Dungeon" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1090,19 +1327,9 @@
           </div>
         </div>
         <p class="project-description">Navigate through mysterious dungeons using your trusty boomerang to defeat enemies and solve puzzles in this adventure game</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Unique boomerang-based combat mechanics</li>
-            <li>Challenging dungeon exploration and puzzle solving</li>
-            <li>Multiple levels with increasing difficulty</li>
-            <li>Strategic gameplay requiring timing and precision</li>
-            <li>Immersive dungeon environments and atmosphere</li>
-            <li>Intuitive touch controls for mobile gameplay</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["Explosive missile launching action gameplay","Strategic target destruction mechanics","Multiple challenging levels and environments","Intuitive touch controls for precise aiming","Dynamic explosions and visual effects","Progressive difficulty with increasing challenges"]'>
         <img src="files/Icon_MissilesAreGo.png" alt="Missiles Are Go" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1115,19 +1342,9 @@
           </div>
         </div>
         <p class="project-description">Launch missiles and destroy targets in this action-packed arcade game with explosive gameplay and strategic challenges</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Explosive missile launching action gameplay</li>
-            <li>Strategic target destruction mechanics</li>
-            <li>Multiple challenging levels and environments</li>
-            <li>Intuitive touch controls for precise aiming</li>
-            <li>Dynamic explosions and visual effects</li>
-            <li>Progressive difficulty with increasing challenges</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["Realistic pipe skateboarding physics and smooth controls","Multiple challenging pipe environments and ramps","Perform amazing tricks and stunts in 3D pipes","Intuitive touch controls for mobile gameplay","Immersive graphics and dynamic camera angles","Progressive levels with increasing difficulty"]'>
         <img src="files/Icon_PipeSkater.png" alt="Pipe Skater" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1140,19 +1357,9 @@
           </div>
         </div>
         <p class="project-description">Experience the ultimate skateboarding adventure in pipes and ramps with realistic physics and smooth controls</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Realistic pipe skateboarding physics and smooth controls</li>
-            <li>Multiple challenging pipe environments and ramps</li>
-            <li>Perform amazing tricks and stunts in 3D pipes</li>
-            <li>Intuitive touch controls for mobile gameplay</li>
-            <li>Immersive graphics and dynamic camera angles</li>
-            <li>Progressive levels with increasing difficulty</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["Realistic 3D skateboarding physics and controls","Multiple challenging racing tracks and environments","Customizable skateboards and character options","Competitive racing gameplay with time challenges","Smooth graphics and immersive sound effects","Progressive difficulty levels for all skill types"]'>
         <img src="files/Icon_SR3D.jpg" alt="Skater Racing 3D" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1165,19 +1372,9 @@
           </div>
         </div>
         <p class="project-description">Experience the thrill of skateboarding in this exciting 3D racing game with realistic physics and stunning graphics</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Realistic 3D skateboarding physics and controls</li>
-            <li>Multiple challenging racing tracks and environments</li>
-            <li>Customizable skateboards and character options</li>
-            <li>Competitive racing gameplay with time challenges</li>
-            <li>Smooth graphics and immersive sound effects</li>
-            <li>Progressive difficulty levels for all skill types</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["Interactive English learning through engaging games and activities","Comprehensive curriculum covering vocabulary, grammar, and pronunciation","Adaptive learning system that adjusts to individual progress","Multiplayer challenges and competitions with other learners","Progress tracking and achievement system","Available across multiple platforms for seamless learning"]'>
         <img src="files/Icon_Velawoods.png" alt="Velawoods English" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1189,19 +1386,9 @@
           </div>
         </div>
         <p class="project-description">Velawoods English is a platform for learning English through games and interactive activities.</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Interactive English learning through engaging games and activities</li>
-            <li>Comprehensive curriculum covering vocabulary, grammar, and pronunciation</li>
-            <li>Adaptive learning system that adjusts to individual progress</li>
-            <li>Multiplayer challenges and competitions with other learners</li>
-            <li>Progress tracking and achievement system</li>
-            <li>Available across multiple platforms for seamless learning</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["A variety of driving range games for all skill levels","Mini golf courses with vibrant, themed environments","Real-life golf course challenges (e.g., Casa de Campo, St. Andrews)","TrackMan™ Range technology for real-time ball flight, launch angle, and speed tracking","Interactive and social gameplay experiences","Food, drink, and group event options at venues"]'>
         <img src="files/Icon_Driveshack.png" alt="Drive Shack Golf and Games" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1213,19 +1400,9 @@
           </div>
         </div>
         <p class="project-description">Where fun meets friendly competition! Experience a mix of driving range games, mini golf, and real-life courses, all enhanced with TrackMan™ Range technology for precision ball tracking and immersive gameplay.</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>A variety of driving range games for all skill levels</li>
-            <li>Mini golf courses with vibrant, themed environments</li>
-            <li>Real-life golf course challenges (e.g., Casa de Campo, St. Andrews)</li>
-            <li>TrackMan™ Range technology for real-time ball flight, launch angle, and speed tracking</li>
-            <li>Interactive and social gameplay experiences</li>
-            <li>Food, drink, and group event options at venues</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["Play as up to 8 unique fighters, each with specific combos and attacks","Upgrade equipment and abilities to reach full potential","Challenge real players worldwide in action combat","Special fighting styles: Liberal Kungfu, Taekwondo, Sword Attack, Katana","Sensitive and special 3D fighting control system","Sophisticated 3D characters and smooth, intense motion","Combine punching, kicking, catching, throwing, and dodging for deadly attacks","Immersive touch screen mechanics for mobile devices"]'>
         <img src="files/Icon_FoL2.png" alt="Fight of the Legends 2" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1237,21 +1414,9 @@
           </div>
         </div>
         <p class="project-description">Reveal your inner fighter in this 3D fighting game! Play up to 8 fighters, upgrade their equipment and abilities, and challenge real players worldwide.</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Play as up to 8 unique fighters, each with specific combos and attacks</li>
-            <li>Upgrade equipment and abilities to reach full potential</li>
-            <li>Challenge real players worldwide in action combat</li>
-            <li>Special fighting styles: Liberal Kungfu, Taekwondo, Sword Attack, Katana</li>
-            <li>Sensitive and special 3D fighting control system</li>
-            <li>Sophisticated 3D characters and smooth, intense motion</li>
-            <li>Combine punching, kicking, catching, throwing, and dodging for deadly attacks</li>
-            <li>Immersive touch screen mechanics for mobile devices</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["Play as the immortal warrior Ashwathama","Immersive 3D combat system","Epic battles with mythological enemies","Ancient Indian warfare and martial arts","Stunning visual effects and animations","Character progression and skill upgrades"]'>
         <img src="files/Icon_Ashwathama.jpg" alt="Ashwathama" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1263,19 +1428,9 @@
           </div>
         </div>
         <p class="project-description">Action-packed 3D fighting game featuring the legendary warrior Ashwathama</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Play as the immortal warrior Ashwathama</li>
-            <li>Immersive 3D combat system</li>
-            <li>Epic battles with mythological enemies</li>
-            <li>Ancient Indian warfare and martial arts</li>
-            <li>Stunning visual effects and animations</li>
-            <li>Character progression and skill upgrades</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["Each character fights with different style of fighting","Pure 3D","Characters made with real models","Indian Martial Art style","Cool Music","Store System to upgrade your character"]'>
         <img src="files/Icon_FoL.png" alt="Fight of the Legends" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1287,19 +1442,9 @@
           </div>
         </div>
         <p class="project-description">Action-packed 3D fighting game featuring mythological characters</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Each character fights with different style of fighting</li>
-            <li>Pure 3D</li>
-            <li>Characters made with real models</li>
-            <li>Indian Martial Art style</li>
-            <li>Cool Music</li>
-            <li>Store System to upgrade your character</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["Addictive binary pattern puzzle mechanics","Continuous movement with time pressure","Strategic thinking and perfect timing required","3-star completion system for hardcore puzzle solvers","Minimalist design with fast-paced gameplay","GMTK Game Jam 2025 submission"]'>
         <img src="files/Icon_BinaryLooper.png" alt="Binary Looper" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1311,19 +1456,9 @@
           </div>
         </div>
         <p class="project-description">Binary Looper takes the familiar concept of binary patterns and transforms it into an addictive puzzle experience. The combination of continuous movement, time pressure, and strategic thinking creates a unique gameplay loop that will keep you coming back for more.</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Addictive binary pattern puzzle mechanics</li>
-            <li>Continuous movement with time pressure</li>
-            <li>Strategic thinking and perfect timing required</li>
-            <li>3-star completion system for hardcore puzzle solvers</li>
-            <li>Minimalist design with fast-paced gameplay</li>
-            <li>GMTK Game Jam 2025 submission</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["Innovative echo mechanic - play with your past selves","Recorded action replays create ghost echoes","Echoes can press switches, push boxes, and trigger reactions","Multi-step puzzles requiring coordination with echoes","2D pixel art platformer with mystery elements","GMTK Game Jam 2025 submission (co-developed with RedOre)"]'>
         <img src="files/Icon_ProjectEcho.png" alt="Project Echo" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1335,19 +1470,9 @@
           </div>
         </div>
         <p class="project-description">Play with Time, Team Up with Your Own Echoes! Solve brain-twisting puzzles in this inventive puzzle-platformer where you don't just play solo—you play with your past! Each time you complete a run, an "Echo" of your previous self replays your recorded actions.</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Innovative echo mechanic - play with your past selves</li>
-            <li>Recorded action replays create ghost echoes</li>
-            <li>Echoes can press switches, push boxes, and trigger reactions</li>
-            <li>Multi-step puzzles requiring coordination with echoes</li>
-            <li>2D pixel art platformer with mystery elements</li>
-            <li>GMTK Game Jam 2025 submission (co-developed with RedOre)</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["Mouse-only control system - no brakes, no steering wheel","Time manipulation mechanics - slow motion with limited duration","10 seconds of total slowmo per run - strategic resource management","Physics-based car rotation and movement","High score system - chase the perfect lap time","Unity 20th Anniversary Game Jam submission"]'>
         <img src="files/Icon_RaceTime.png" alt="Race Time" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1359,19 +1484,9 @@
           </div>
         </div>
         <p class="project-description">A high-speed racing challenge where control meets chaos! Control your car using only the mouse to slow down time and rotate the car with pinpoint precision. You only get 10 seconds of total slowmo for the entire run - master the art of timing and angle!</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Mouse-only control system - no brakes, no steering wheel</li>
-            <li>Time manipulation mechanics - slow motion with limited duration</li>
-            <li>10 seconds of total slowmo per run - strategic resource management</li>
-            <li>Physics-based car rotation and movement</li>
-            <li>High score system - chase the perfect lap time</li>
-            <li>Unity 20th Anniversary Game Jam submission</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["Two game modes: Racing Mode and Simulation Mode","Realistic physics with side forces during turns","Power-ups: Booster, Homing Missile, Rocket Launcher, Mine, Minigun, Shield","Side characters balance your Tuk-tuk in simulation mode","Intuitive touch controls for mobile gameplay","Various stages and levels with increasing challenges"]'>
         <img src="files/Icon_TukTukRace.png" alt="TukTuk Race" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1383,19 +1498,9 @@
           </div>
         </div>
         <p class="project-description">Dive into a world where the traditional meets the thrill of racing! Race using Tuk-tuks transformed into high-speed racing machines. Choose between Racing Mode for simplified controls or Simulation Mode with realistic physics and side characters balancing your Tuk-tuk.</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Two game modes: Racing Mode and Simulation Mode</li>
-            <li>Realistic physics with side forces during turns</li>
-            <li>Power-ups: Booster, Homing Missile, Rocket Launcher, Mine, Minigun, Shield</li>
-            <li>Side characters balance your Tuk-tuk in simulation mode</li>
-            <li>Intuitive touch controls for mobile gameplay</li>
-            <li>Various stages and levels with increasing challenges</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["Immersive 3D environment with stunning visuals and high-quality details","Tilt-based control using device motion sensors for intuitive gameplay","Challenging mazes with obstacles, traps, and puzzles","Dynamic obstacles including moving platforms and rotating barriers","Rich soundscape that enhances the immersive experience","High replay value with numerous levels and increasing difficulty"]'>
         <img src="files/Icon_TiltMaze3D.png" alt="Tilt Maze 3D" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1407,19 +1512,9 @@
           </div>
         </div>
         <p class="project-description">Step into an immersive 3D world with our innovative 3D Tilt Maze Game, where your device becomes the key to navigating complex and engaging mazes. The game capitalizes on the unique capabilities of your device's motion sensors, allowing you to control the environment with a simple tilt.</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Immersive 3D environment with stunning visuals and high-quality details</li>
-            <li>Tilt-based control using device motion sensors for intuitive gameplay</li>
-            <li>Challenging mazes with obstacles, traps, and puzzles</li>
-            <li>Dynamic obstacles including moving platforms and rotating barriers</li>
-            <li>Rich soundscape that enhances the immersive experience</li>
-            <li>High replay value with numerous levels and increasing difficulty</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["Dynamic track-switching between three parallel tracks","Simple tap controls for seamless movement between tracks","Destroy goods coaches to make room for rescued passenger cars","Link passenger coaches to extinguish flames and save passengers","Immersive 3D environments with stunning visuals","Challenging missions under time pressure with upgrades and unlockable train models"]'>
         <img src="files/Icon_TheBurningTrain.png" alt="The Burning Train" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1431,19 +1526,9 @@
           </div>
         </div>
         <p class="project-description">Take control of a blazing train in The Burning Train, an adrenaline-fueled 3D game that will test your reflexes, precision, and quick thinking. The engine roars forward unscathed, but the passenger coaches are engulfed in flames! Your mission? Save the day by navigating the train and rescuing passengers.</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Dynamic track-switching between three parallel tracks</li>
-            <li>Simple tap controls for seamless movement between tracks</li>
-            <li>Destroy goods coaches to make room for rescued passenger cars</li>
-            <li>Link passenger coaches to extinguish flames and save passengers</li>
-            <li>Immersive 3D environments with stunning visuals</li>
-            <li>Challenging missions under time pressure with upgrades and unlockable train models</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-features='["Intuitive swipe controls to move platforms and guide animals","Varied challenges with new obstacles and layouts in each level","Increasing difficulty as animals hop faster and terrain becomes trickier","Adorable characters with unique hopping animations","Fast, reflex-driven gameplay perfect for quick challenges","Endless replayability with progressively challenging levels"]'>
         <img src="files/Icon_TumbleRescue.png" alt="Tumble Rescue" class="project-image">
         <div class="project-header">
           <div class="project-info">
@@ -1455,17 +1540,7 @@
           </div>
         </div>
         <p class="project-description">Tumble Rescue is an engaging, fast-paced 2D mobile game where you help cute, hopping animals reach their home by swiping and moving platforms on the screen. Your goal is to guide these animals safely across tricky obstacles, ensuring they don't fall off as they bounce along the path.</p>
-        <div class="project-features">
-          <h4 class="features-title">Features:</h4>
-          <ul class="features-list">
-            <li>Intuitive swipe controls to move platforms and guide animals</li>
-            <li>Varied challenges with new obstacles and layouts in each level</li>
-            <li>Increasing difficulty as animals hop faster and terrain becomes trickier</li>
-            <li>Adorable characters with unique hopping animations</li>
-            <li>Fast, reflex-driven gameplay perfect for quick challenges</li>
-            <li>Endless replayability with progressively challenging levels</li>
-          </ul>
-        </div>
+        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
       </div>
       </div>
     </div>
@@ -1653,10 +1728,10 @@
     // Generate featured card HTML
     function generateFeaturedCard(gameKey) {
       const game = featuredGamesPool[gameKey];
-      const featuresHTML = game.features.map(feature => `<li>${feature}</li>`).join('');
+      const featuresJSON = JSON.stringify(game.features);
       
       return `
-        <div class="featured-card">
+        <div class="featured-card" data-features='${featuresJSON}'>
           <img src="${game.image}" alt="${game.title}" class="project-image">
           <div class="project-header">
             <div class="project-info">
@@ -1667,15 +1742,91 @@
             </div>
           </div>
           <p class="project-description">${game.description}</p>
-          <div class="project-features">
-            <h4 class="features-title">Features:</h4>
-            <ul class="features-list">
-              ${featuresHTML}
-            </ul>
-          </div>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
       `;
     }
+    
+    // Open game popup with game details
+    function openGamePopup(button) {
+      const card = button.closest('.project-card, .featured-card');
+      if (!card) return;
+      
+      const popup = document.getElementById('gamePopup');
+      const image = card.querySelector('.project-image');
+      const title = card.querySelector('.project-title');
+      const links = card.querySelector('.project-links');
+      const description = card.querySelector('.project-description');
+      const featuresData = card.getAttribute('data-features');
+      
+      if (!popup || !title || !description || !featuresData) return;
+      
+      // Set popup content
+      const popupImage = document.getElementById('popupImage');
+      const popupTitle = document.getElementById('popupTitle');
+      const popupLinks = document.getElementById('popupLinks');
+      const popupDescription = document.getElementById('popupDescription');
+      const popupFeatures = document.getElementById('popupFeatures');
+      
+      if (image && image.src) {
+        popupImage.src = image.src;
+        popupImage.alt = image.alt || title.textContent;
+        popupImage.style.display = 'block';
+      } else {
+        popupImage.style.display = 'none';
+      }
+      
+      popupTitle.textContent = title.textContent;
+      popupLinks.innerHTML = links ? links.innerHTML : '';
+      popupDescription.textContent = description.textContent;
+      
+      // Parse and display features
+      try {
+        const features = JSON.parse(featuresData);
+        popupFeatures.innerHTML = features.map(feature => `<li>${feature}</li>`).join('');
+      } catch (e) {
+        popupFeatures.innerHTML = '<li>Features not available</li>';
+      }
+      
+      // Show popup
+      popup.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    // Close game popup
+    function closeGamePopup() {
+      const popup = document.getElementById('gamePopup');
+      if (popup) {
+        popup.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+    
+    // Close popup on close button click
+    document.addEventListener('DOMContentLoaded', function() {
+      const closeBtn = document.getElementById('gamePopupClose');
+      const popup = document.getElementById('gamePopup');
+      
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeGamePopup);
+      }
+      
+      // Close popup on background click
+      if (popup) {
+        popup.addEventListener('click', function(e) {
+          if (e.target === popup) {
+            closeGamePopup();
+          }
+        });
+      }
+      
+      // Close popup on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && popup && popup.classList.contains('active')) {
+          closeGamePopup();
+        }
+      });
+    });
 
     // Load featured games on page load
     function loadFeaturedGames() {
