@@ -379,6 +379,108 @@
       box-shadow: 0 0 10px var(--game-unity-blue);
     }
 
+    /* Featured Section */
+    .featured-section {
+      margin-bottom: 6rem;
+    }
+    
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .featured-card {
+      background: var(--game-panel-bg);
+      border: 3px solid var(--border-color);
+      border-left: 6px solid var(--game-unity-blue);
+      border-radius: 12px;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+      min-height: 550px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 
+        var(--shadow-lg),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 0 40px rgba(0, 188, 212, 0.3);
+    }
+    
+    .featured-card::before {
+      content: 'FEATURED';
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 0.7rem;
+      color: var(--game-unity-blue);
+      font-family: var(--font-ui);
+      font-weight: 700;
+      letter-spacing: 3px;
+      opacity: 0.8;
+      z-index: 5;
+      background: rgba(20, 20, 25, 0.9);
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      border: 1px solid var(--game-unity-blue);
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+    }
+    
+    .featured-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--game-unity-blue), var(--game-unreal-orange), var(--gaming-teal));
+      transition: width 0.4s ease;
+      box-shadow: 0 0 20px var(--game-unity-blue);
+    }
+    
+    .featured-card:hover::after {
+      width: 8px;
+    }
+    
+    .featured-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: var(--game-unity-blue);
+      box-shadow: 
+        var(--shadow-xl),
+        0 0 50px rgba(0, 188, 212, 0.6),
+        0 0 80px rgba(255, 107, 53, 0.3);
+    }
+    
+    .featured-card .project-image {
+      height: 300px;
+      border-bottom: 3px solid var(--border-color);
+    }
+    
+    .featured-card .project-header {
+      padding: 2rem 2.5rem 1.5rem;
+    }
+    
+    .featured-card .project-title {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .featured-card .project-description {
+      padding: 0 2.5rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    
+    .featured-card .project-features {
+      padding: 0 2.5rem 2.5rem;
+    }
+    
     /* Portfolio Grid */
     .portfolio-grid {
       display: grid;
@@ -763,6 +865,37 @@
       .project-features {
         padding: 0 1rem 1rem;
       }
+      
+      /* Featured Section Mobile */
+      .featured-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .featured-card {
+        min-height: 450px;
+      }
+      
+      .featured-card .project-image {
+        height: 200px;
+      }
+      
+      .featured-card .project-header {
+        padding: 1.5rem 1.5rem 1rem;
+      }
+      
+      .featured-card .project-title {
+        font-size: 1.5rem;
+      }
+      
+      .featured-card .project-description {
+        padding: 0 1.5rem;
+        font-size: 1rem;
+      }
+      
+      .featured-card .project-features {
+        padding: 0 1.5rem 1.5rem;
+      }
     }
   </style>
 </head>
@@ -790,14 +923,32 @@
     <p class="header-description">15+ Published Games & Interactive Experiences</p>
   </header>
 
+  <!-- Featured Section -->
   <section>
-    <div class="section-container">
+    <div class="section-container featured-section">
       <h2 class="section-title">
-        <span>Featured Projects</span>
+        <span>Featured Games</span>
       </h2>
       
       <p style="font-size: 1.1rem; color: var(--text-primary); text-align: center; margin-bottom: 2rem; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);">
-        From casual mobile hits to immersive VR experiences, here's a collection of games and interactive projects I've developed. Each project represents different challenges, technologies, and creative solutions in game development.
+        Discover our standout games! A new featured title is selected weekly to showcase the diversity and quality of our game development portfolio.
+      </p>
+      
+      <div class="featured-grid" id="featuredGrid">
+        <!-- Featured games will be dynamically inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- All Projects Section -->
+  <section>
+    <div class="section-container">
+      <h2 class="section-title">
+        <span>All Projects</span>
+      </h2>
+      
+      <p style="font-size: 1.1rem; color: var(--text-primary); text-align: center; margin-bottom: 2rem; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);">
+        From casual mobile hits to immersive VR experiences, here's a complete collection of games and interactive projects I've developed. Each project represents different challenges, technologies, and creative solutions in game development.
       </p>
       
       <div class="portfolio-grid">
@@ -1244,15 +1395,302 @@
           </ul>
         </div>
       </div>
+      <div class="project-card">
+        <img src="files/Icon_TiltMaze3D.png" alt="Tilt Maze 3D" class="project-image">
+        <div class="project-header">
+          <div class="project-info">
+            <h3 class="project-title">Tilt Maze 3D</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://play.google.com/store/apps/details?id=com.ShashiTAGS.TiltMaze3D" target="_blank">Android</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Step into an immersive 3D world with our innovative 3D Tilt Maze Game, where your device becomes the key to navigating complex and engaging mazes. The game capitalizes on the unique capabilities of your device's motion sensors, allowing you to control the environment with a simple tilt.</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
+            <li>Immersive 3D environment with stunning visuals and high-quality details</li>
+            <li>Tilt-based control using device motion sensors for intuitive gameplay</li>
+            <li>Challenging mazes with obstacles, traps, and puzzles</li>
+            <li>Dynamic obstacles including moving platforms and rotating barriers</li>
+            <li>Rich soundscape that enhances the immersive experience</li>
+            <li>High replay value with numerous levels and increasing difficulty</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="files/Icon_TheBurningTrain.png" alt="The Burning Train" class="project-image">
+        <div class="project-header">
+          <div class="project-info">
+            <h3 class="project-title">The Burning Train</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://play.google.com/store/apps/details?id=com.shashitags.burningtrain" target="_blank">Android</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Take control of a blazing train in The Burning Train, an adrenaline-fueled 3D game that will test your reflexes, precision, and quick thinking. The engine roars forward unscathed, but the passenger coaches are engulfed in flames! Your mission? Save the day by navigating the train and rescuing passengers.</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
+            <li>Dynamic track-switching between three parallel tracks</li>
+            <li>Simple tap controls for seamless movement between tracks</li>
+            <li>Destroy goods coaches to make room for rescued passenger cars</li>
+            <li>Link passenger coaches to extinguish flames and save passengers</li>
+            <li>Immersive 3D environments with stunning visuals</li>
+            <li>Challenging missions under time pressure with upgrades and unlockable train models</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="files/Icon_TumbleRescue.png" alt="Tumble Rescue" class="project-image">
+        <div class="project-header">
+          <div class="project-info">
+            <h3 class="project-title">Tumble Rescue</h3>
+            <div class="project-links">
+              <span>Unity • </span>
+              <a href="https://play.google.com/store/apps/details?id=com.shashitags.tumblerescue" target="_blank">Android</a>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">Tumble Rescue is an engaging, fast-paced 2D mobile game where you help cute, hopping animals reach their home by swiping and moving platforms on the screen. Your goal is to guide these animals safely across tricky obstacles, ensuring they don't fall off as they bounce along the path.</p>
+        <div class="project-features">
+          <h4 class="features-title">Features:</h4>
+          <ul class="features-list">
+            <li>Intuitive swipe controls to move platforms and guide animals</li>
+            <li>Varied challenges with new obstacles and layouts in each level</li>
+            <li>Increasing difficulty as animals hop faster and terrain becomes trickier</li>
+            <li>Adorable characters with unique hopping animations</li>
+            <li>Fast, reflex-driven gameplay perfect for quick challenges</li>
+            <li>Endless replayability with progressively challenging levels</li>
+          </ul>
+        </div>
+      </div>
       </div>
     </div>
   </section>
 
   <script>
+    // Featured Games Data
+    const featuredGamesPool = {
+      'Race_Time': {
+        image: 'files/Icon_RaceTime.png',
+        title: 'Race_Time',
+        tech: 'Unity',
+        links: '<span>Unity • </span><a href="https://gamedevkaushik.itch.io/race-time" target="_blank">Download on itch.io</a>',
+        description: 'A high-speed racing challenge where control meets chaos! Control your car using only the mouse to slow down time and rotate the car with pinpoint precision. You only get 10 seconds of total slowmo for the entire run - master the art of timing and angle!',
+        features: [
+          'Mouse-only control system - no brakes, no steering wheel',
+          'Time manipulation mechanics - slow motion with limited duration',
+          '10 seconds of total slowmo per run - strategic resource management',
+          'Physics-based car rotation and movement',
+          'High score system - chase the perfect lap time',
+          'Unity 20th Anniversary Game Jam submission'
+        ]
+      },
+      'TukTuk Race': {
+        image: 'files/Icon_TukTukRace.png',
+        title: 'TukTuk Race',
+        tech: 'Unity',
+        links: '<span>Unity • </span><a href="https://play.google.com/store/apps/details?id=com.darkpyre.tuktuk" target="_blank">Android</a>',
+        description: 'Dive into a world where the traditional meets the thrill of racing! Race using Tuk-tuks transformed into high-speed racing machines. Choose between Racing Mode for simplified controls or Simulation Mode with realistic physics and side characters balancing your Tuk-tuk.',
+        features: [
+          'Two game modes: Racing Mode and Simulation Mode',
+          'Realistic physics with side forces during turns',
+          'Power-ups: Booster, Homing Missile, Rocket Launcher, Mine, Minigun, Shield',
+          'Side characters balance your Tuk-tuk in simulation mode',
+          'Intuitive touch controls for mobile gameplay',
+          'Various stages and levels with increasing challenges'
+        ]
+      },
+      'Drive Shack Golf and Games': {
+        image: 'files/Icon_Driveshack.png',
+        title: 'Drive Shack Golf and Games',
+        tech: 'Unity',
+        links: '<span>Unity • </span><a href="https://www.driveshack.com/play/" target="_blank">Learn More</a>',
+        description: 'Where fun meets friendly competition! Experience a mix of driving range games, mini golf, and real-life courses, all enhanced with TrackMan™ Range technology for precision ball tracking and immersive gameplay.',
+        features: [
+          'A variety of driving range games for all skill levels',
+          'Mini golf courses with vibrant, themed environments',
+          'Real-life golf course challenges (e.g., Casa de Campo, St. Andrews)',
+          'TrackMan™ Range technology for real-time ball flight, launch angle, and speed tracking',
+          'Interactive and social gameplay experiences',
+          'Food, drink, and group event options at venues'
+        ]
+      },
+      'Velawoods English': {
+        image: 'files/Icon_Velawoods.png',
+        title: 'Velawoods English',
+        tech: 'Unity',
+        links: '<span>Unity • </span><a href="https://velawoodsenglish.com/" target="_blank">Learn More</a>',
+        description: 'Velawoods English is a platform for learning English through games and interactive activities.',
+        features: [
+          'Interactive English learning through engaging games and activities',
+          'Comprehensive curriculum covering vocabulary, grammar, and pronunciation',
+          'Adaptive learning system that adjusts to individual progress',
+          'Multiplayer challenges and competitions with other learners',
+          'Progress tracking and achievement system',
+          'Available across multiple platforms for seamless learning'
+        ]
+      },
+      'Ashwathama': {
+        image: 'files/Icon_Ashwathama.jpg',
+        title: 'Ashwathama',
+        tech: 'Unity',
+        links: '<span>Unity • </span><a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.Ashwathama" target="_blank">Play on Google Play</a>',
+        description: 'Action-packed 3D fighting game featuring the legendary warrior Ashwathama',
+        features: [
+          'Play as the immortal warrior Ashwathama',
+          'Immersive 3D combat system',
+          'Epic battles with mythological enemies',
+          'Ancient Indian warfare and martial arts',
+          'Stunning visual effects and animations',
+          'Character progression and skill upgrades'
+        ]
+      },
+      'Star Titan': {
+        image: 'files/Icon_StarTitan.png',
+        title: 'Star Titan',
+        tech: 'Unity',
+        links: '<span>Unity • </span><a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.StarTitan&hl=en_IN" target="_blank">Android</a><a href="https://apps.apple.com/us/app/star-titan/id1482626137" target="_blank">iOS</a>',
+        description: 'Epic space adventure where you pilot powerful mechs through intense battles across the galaxy',
+        features: [
+          'Command powerful mech units in space combat',
+          'Strategic gameplay with tactical decision making',
+          'Multiple mission types and objectives',
+          'Upgrade and customize your mech arsenal',
+          'Immersive sci-fi storyline and environments',
+          'Challenging AI opponents and boss battles'
+        ]
+      },
+      'Measure PM': {
+        image: 'files/Icon_Measure.png',
+        title: 'Measure PM',
+        tech: 'Unity',
+        links: '<span>Unity • </span><a href="https://play.google.com/store/apps/details?id=com.measuresoftware.app&hl=en_IN" target="_blank">Android</a> <a href="https://apps.apple.com/in/app/measurepm/id1493856868" target="_blank">IOS</a>',
+        description: 'It is a cloud-based innovative, comprehensive, effective, paperless suite of HIPAA-compliant tools delivering Practice Management, Data Collection, Scheduling, and Revenue Cycle Management for ABA Therapy providers.',
+        features: [
+          'AR-powered measurement using device camera',
+          'Measure distances, areas, and volumes accurately',
+          'Multiple measurement units (metric and imperial)',
+          'Save and share measurement results',
+          'User-friendly interface with intuitive controls',
+          'Perfect for home improvement and professional use'
+        ]
+      }
+    };
+
+    // Get weekly seed based on year and week number
+    function getWeeklySeed() {
+      const today = new Date();
+      const year = today.getFullYear();
+      const startOfYear = new Date(year, 0, 1);
+      const daysSinceStart = Math.floor((today - startOfYear) / (1000 * 60 * 60 * 24));
+      const weekNumber = Math.floor(daysSinceStart / 7);
+      
+      // Create a seed from year and week number
+      const dateString = `${year}-${weekNumber}`;
+      let hash = 0;
+      for (let i = 0; i < dateString.length; i++) {
+        const char = dateString.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash; // Convert to 32bit integer
+      }
+      return Math.abs(hash);
+    }
+
+    // Seeded random number generator
+    function seededRandom(seed) {
+      const x = Math.sin(seed) * 10000;
+      return x - Math.floor(x);
+    }
+
+    // Shuffle array using seeded random
+    function seededShuffle(array, seed) {
+      const shuffled = [...array];
+      let currentSeed = seed;
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        currentSeed = (currentSeed * 9301 + 49297) % 233280;
+        const j = Math.floor(seededRandom(currentSeed) * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    }
+
+    // Select one featured game per week
+    // Games rotate weekly starting with Race_Time
+    function selectFeaturedGames() {
+      const gameOrder = ['Race_Time', 'TukTuk Race', 'Drive Shack Golf and Games', 'Velawoods English', 'Ashwathama', 'Star Titan', 'Measure PM'];
+      
+      // Calculate which week we're in (starting from a reference date)
+      // Use a reference date and add offset to ensure Race_Time shows first
+      // If Velawoods (index 3) was showing, we need to offset by -3 to get Race_Time (index 0)
+      const referenceDate = new Date('2025-01-01T00:00:00');
+      const today = new Date();
+      
+      // Calculate days since reference date
+      const timeDiff = today.getTime() - referenceDate.getTime();
+      const daysSinceStart = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      
+      // Calculate week number (weeks since reference date)
+      const weekNumber = Math.floor(daysSinceStart / 7);
+      
+      // Add offset to ensure Race_Time (index 0) is shown first
+      // If Velawoods (index 3) was showing, we offset by -3 to get Race_Time (index 0)
+      const offset = -3; // Offset to make Race_Time show first
+      
+      // Calculate index in the rotation (modulo to cycle through all games)
+      const gameIndex = (weekNumber + offset) % gameOrder.length;
+      
+      // Ensure positive index
+      const finalIndex = gameIndex < 0 ? gameIndex + gameOrder.length : gameIndex;
+      
+      // Return array with single game
+      return [gameOrder[finalIndex]];
+    }
+
+    // Generate featured card HTML
+    function generateFeaturedCard(gameKey) {
+      const game = featuredGamesPool[gameKey];
+      const featuresHTML = game.features.map(feature => `<li>${feature}</li>`).join('');
+      
+      return `
+        <div class="featured-card">
+          <img src="${game.image}" alt="${game.title}" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">${game.title}</h3>
+              <div class="project-links">
+                ${game.links}
+              </div>
+            </div>
+          </div>
+          <p class="project-description">${game.description}</p>
+          <div class="project-features">
+            <h4 class="features-title">Features:</h4>
+            <ul class="features-list">
+              ${featuresHTML}
+            </ul>
+          </div>
+        </div>
+      `;
+    }
+
+    // Load featured games on page load
+    function loadFeaturedGames() {
+      const featuredGrid = document.getElementById('featuredGrid');
+      if (!featuredGrid) return;
+      
+      const selectedGames = selectFeaturedGames();
+      featuredGrid.innerHTML = selectedGames.map(gameKey => generateFeaturedCard(gameKey)).join('');
+    }
+
     // Loading Screen
     window.addEventListener('load', function() {
       setTimeout(() => {
         document.getElementById('loadingOverlay').classList.add('hidden');
+        loadFeaturedGames();
       }, 1000);
     });
     
