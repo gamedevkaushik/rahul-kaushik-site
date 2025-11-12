@@ -6,7 +6,7 @@
   <title>Rahul Kaushik - Game Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:wght@300;400;600;700;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:wght@300;400;600;700;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -56,21 +56,12 @@
       --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
       --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.25);
       
-      /* Game Development Typography */
-      --font-heading: 'Orbitron', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+      /* Modern Gaming Typography */
+      --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-body: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-display: 'Rajdhani', 'Montserrat', sans-serif;
+      --font-display: 'Montserrat', sans-serif;
       --font-accent: 'Roboto', sans-serif;
-      --font-ui: 'Orbitron', 'Open Sans', sans-serif;
-      --font-code: 'Courier New', monospace;
-      
-      /* Game UI Elements */
-      --game-panel-bg: rgba(20, 20, 25, 0.95);
-      --game-border-glow: 0 0 10px rgba(255, 107, 53, 0.5);
-      --game-console-bg: #0a0a0f;
-      --game-terminal-green: #00ff41;
-      --game-unity-blue: #00bcd4;
-      --game-unreal-orange: #ff6b35;
+      --font-ui: 'Open Sans', sans-serif;
     }
     
     * {
@@ -95,7 +86,7 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Game Development Background Pattern */
+    /* Clean Gaming Background Pattern */
     body::after {
       content: '';
       position: fixed;
@@ -104,35 +95,11 @@
       width: 100%;
       height: 100%;
       background-image: 
-        radial-gradient(circle at 20% 20%, rgba(0, 188, 212, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 60% 40%, rgba(78, 205, 196, 0.08) 0%, transparent 50%),
-        repeating-linear-gradient(
-          0deg,
-          transparent,
-          transparent 2px,
-          rgba(0, 255, 65, 0.03) 2px,
-          rgba(0, 255, 65, 0.03) 4px
-        );
+        radial-gradient(circle at 20% 20%, rgba(255, 107, 53, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(78, 205, 196, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 60% 40%, rgba(69, 183, 209, 0.05) 0%, transparent 50%);
       z-index: -1;
       opacity: 0.8;
-    }
-    
-    /* Game Grid Overlay */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        linear-gradient(rgba(0, 188, 212, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 188, 212, 0.1) 1px, transparent 1px);
-      background-size: 50px 50px;
-      z-index: -2;
-      opacity: 0.3;
-      pointer-events: none;
     }
 
     /* Remove sci-fi wave animations for clean look */
@@ -231,45 +198,13 @@
       100% { transform: translateY(4px); }
     }
     
-    /* Floating Particles - GAMIFIED */
+    /* Floating Particles */
     .particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-      overflow: hidden;
+      display: none;
     }
     
     .particle {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: var(--primary-accent);
-      border-radius: 50%;
-      pointer-events: none;
-      animation: float-particle 15s infinite linear;
-      opacity: 0.6;
-      box-shadow: 0 0 6px var(--primary-accent);
-    }
-    
-    @keyframes float-particle {
-      0% {
-        transform: translateY(100vh) translateX(0) scale(0);
-        opacity: 0;
-      }
-      10% {
-        opacity: 0.6;
-      }
-      90% {
-        opacity: 0.6;
-      }
-      100% {
-        transform: translateY(-100px) translateX(100px) scale(1);
-        opacity: 0;
-      }
+      display: none;
     }
     
     /* Digital Rain Effect */
@@ -290,7 +225,7 @@
       display: none;
     }
     
-    /* Game Menu Navigation - Unity/Unreal Style */
+    /* Modern Gaming Navigation */
     .nav {
       position: fixed;
       top: 1rem;
@@ -298,41 +233,19 @@
       display: flex;
       gap: 0.5rem;
       z-index: 1000;
-      background: var(--game-panel-bg);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
+      background: rgba(var(--surface-primary-rgb), 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border: 2px solid var(--border-color);
-      border-top: 3px solid var(--game-unity-blue);
-      border-radius: 8px;
+      border-radius: 12px;
       padding: 0.75rem;
-      box-shadow: 
-        var(--shadow-xl),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        0 0 20px rgba(0, 188, 212, 0.3);
+      box-shadow: var(--shadow-lg);
       transition: all 0.3s ease;
-      font-family: var(--font-ui);
     }
 
     .nav:hover {
-      border-color: var(--game-unity-blue);
-      box-shadow: 
-        var(--shadow-xl),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        0 0 30px rgba(0, 188, 212, 0.5);
-    }
-    
-    .nav::before {
-      content: 'MENU';
-      position: absolute;
-      top: -12px;
-      left: 10px;
-      background: var(--game-panel-bg);
-      padding: 0 8px;
-      font-size: 0.7rem;
-      color: var(--game-unity-blue);
-      font-weight: 700;
-      letter-spacing: 2px;
-      font-family: var(--font-ui);
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-xl);
     }
     
     /* Remove excessive nav animation */
@@ -359,49 +272,27 @@
       color: var(--text-secondary);
       text-decoration: none;
       padding: 0.75rem 1.25rem;
-      border-radius: 4px;
-      font-weight: 600;
+      border-radius: 8px;
+      font-weight: 500;
       font-size: 0.875rem;
       font-family: var(--font-ui);
       transition: all 0.2s ease;
       position: relative;
       white-space: nowrap;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.025em;
       background: transparent;
-      text-transform: uppercase;
-      border: 1px solid transparent;
-    }
-    
-    .nav a::before {
-      content: '▶';
-      margin-right: 0.5rem;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-      font-size: 0.7rem;
     }
     
     .nav a:hover {
-      color: var(--game-unity-blue);
-      background: rgba(0, 188, 212, 0.1);
-      transform: translateX(4px);
-      border-color: var(--game-unity-blue);
-    }
-    
-    .nav a:hover::before {
-      opacity: 1;
+      color: var(--text-primary);
+      background: var(--surface-secondary);
+      transform: translateY(-2px);
     }
     
     .nav a.active {
       color: var(--white);
-      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
-      font-weight: 700;
-      border-color: var(--game-unity-blue);
-      box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
-    }
-    
-    .nav a.active::before {
-      opacity: 1;
-      content: '●';
+      background: var(--primary-accent);
+      font-weight: 600;
     }
     
     /* Header */
@@ -477,38 +368,18 @@
       max-width: 900px;
       margin: 2rem auto 0;
       padding: 3rem;
-      background: var(--game-panel-bg);
+      background: var(--surface-secondary);
       border: 2px solid var(--border-color);
-      border-top: 4px solid var(--game-unity-blue);
-      border-radius: 8px;
-      box-shadow: 
-        var(--shadow-lg),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05),
-        0 0 30px rgba(0, 188, 212, 0.2);
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
       transition: all 0.3s ease;
       position: relative;
       z-index: 15;
     }
     
-    .hero-content::before {
-      content: 'DEV_LOG';
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 0.7rem;
-      color: var(--game-unity-blue);
-      font-family: var(--font-ui);
-      font-weight: 700;
-      letter-spacing: 2px;
-      opacity: 0.5;
-    }
-    
     .hero-content:hover {
-      border-color: var(--game-unity-blue);
-      box-shadow: 
-        var(--shadow-xl),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        0 0 40px rgba(0, 188, 212, 0.4);
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-xl);
     }
     
     @keyframes profile-glow {
@@ -527,78 +398,45 @@
     }
     
     .header-title {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-size: clamp(3.5rem, 8vw, 6rem);
-      font-weight: 900;
+      font-weight: 800;
       margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange), var(--gaming-teal));
+      background: var(--primary-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      letter-spacing: 4px;
+      letter-spacing: 1px;
       position: relative;
       line-height: 1.1;
       z-index: 15;
-      text-transform: uppercase;
-      text-shadow: 0 0 40px rgba(0, 188, 212, 0.5);
-      animation: title-glow 3s ease-in-out infinite;
-    }
-    
-    @keyframes title-glow {
-      0%, 100% {
-        filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.5));
-      }
-      50% {
-        filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.5));
-      }
     }
     
     /* Clean professional animations removed */
     
     .header-subtitle {
-      font-family: var(--font-display);
+      font-family: var(--font-accent);
       font-size: 1.5rem;
       color: var(--text-secondary);
       margin-bottom: 1.5rem;
-      font-weight: 600;
-      letter-spacing: 2px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
       line-height: 1.4;
       position: relative;
       z-index: 15;
-      text-transform: uppercase;
-    }
-    
-    .header-subtitle::before {
-      content: '> ';
-      color: var(--game-terminal-green);
-      font-family: var(--font-code);
-      margin-right: 0.5rem;
     }
     
     /* Subtitle animations removed for clean look */
     
     .header-tagline {
-      font-family: var(--font-code);
+      font-family: var(--font-ui);
       font-size: 1rem;
-      color: var(--game-terminal-green);
-      letter-spacing: 3px;
+      color: var(--secondary-accent);
+      letter-spacing: 2px;
       margin-bottom: 3rem;
       position: relative;
-      font-weight: 600;
+      font-weight: 500;
       z-index: 15;
-      text-transform: uppercase;
-      text-shadow: 0 0 10px var(--game-terminal-green);
-      animation: terminal-blink 1.5s step-end infinite;
-    }
-    
-    @keyframes terminal-blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0.5; }
-    }
-    
-    .header-tagline::before {
-      content: '>>> ';
-      color: var(--game-terminal-green);
     }
     
     /* Clean professional appearance - sci-fi effects removed */
@@ -712,50 +550,19 @@
     .section-container {
       max-width: 1200px;
       margin: 0 auto;
-      background: var(--game-panel-bg);
+      background: var(--surface-primary);
       border: 2px solid var(--border-color);
-      border-top: 4px solid var(--game-unity-blue);
-      border-radius: 8px;
+      border-radius: 16px;
       padding: 4rem;
-      box-shadow: 
-        var(--shadow-xl),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05),
-        0 0 30px rgba(0, 188, 212, 0.2);
+      box-shadow: var(--shadow-lg);
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
-      font-family: var(--font-body);
-    }
-    
-    .section-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--game-unity-blue), var(--game-unreal-orange), var(--gaming-teal));
-      opacity: 0.8;
-    }
-    
-    .section-container::after {
-      content: '';
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 40px;
-      height: 40px;
-      background: radial-gradient(circle, rgba(0, 188, 212, 0.2), transparent);
-      border-radius: 50%;
-      opacity: 0.5;
     }
 
     .section-container:hover {
-      border-color: var(--game-unity-blue);
-      box-shadow: 
-        var(--shadow-xl),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        0 0 40px rgba(0, 188, 212, 0.4);
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-xl);
       transform: translateY(-4px);
     }
     
@@ -795,36 +602,32 @@
     }
     
     .section-title {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-size: 3rem;
       text-align: center;
       margin-bottom: 3rem;
       position: relative;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 3px;
+      font-weight: 700;
     }
     
     .section-title span {
-      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
+      background: var(--primary-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       position: relative;
-      text-shadow: 0 0 30px rgba(0, 188, 212, 0.5);
     }
-    
+
     .section-title::after {
       content: '';
       position: absolute;
-      bottom: -15px;
+      bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 100px;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--game-unity-blue), var(--game-unreal-orange), transparent);
+      width: 60px;
+      height: 4px;
+      background: var(--primary-gradient);
       border-radius: 2px;
-      box-shadow: 0 0 10px var(--game-unity-blue);
     }
     
     /* Hero Welcome */
@@ -836,22 +639,11 @@
       font-size: 2.5rem;
       margin-bottom: 2rem;
       color: var(--white);
-      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
+      background: var(--primary-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       position: relative;
-      font-family: var(--font-heading);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    .hero-title::before {
-      content: '// ';
-      color: var(--game-terminal-green);
-      font-family: var(--font-code);
-      opacity: 0.7;
     }
     
     .hero-title::after {
@@ -979,26 +771,20 @@
     }
     
     .cta-primary {
-      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
+      background: var(--primary-gradient);
       color: var(--white);
-      border-color: var(--game-unity-blue);
-      box-shadow: 
-        var(--shadow-md),
-        0 0 20px rgba(0, 188, 212, 0.3);
+      border-color: var(--primary-accent);
+      box-shadow: var(--shadow-md);
       position: relative;
-      font-family: var(--font-ui);
-      font-weight: 700;
-      letter-spacing: 0.1em;
     }
     
     .cta-primary:hover {
       transform: translateY(-4px) scale(1.02);
       box-shadow: 
         var(--shadow-xl),
-        0 0 30px rgba(0, 188, 212, 0.6),
-        0 0 50px rgba(255, 107, 53, 0.4);
+        0 0 20px rgba(255, 107, 53, 0.4);
       filter: brightness(1.1);
-      border-color: var(--game-unity-blue);
+      border-color: var(--gaming-orange);
     }
 
     .cta-primary:active {
@@ -1008,13 +794,10 @@
     
     .cta-secondary {
       background: transparent;
-      color: var(--gaming-teal);
-      border-color: var(--gaming-teal);
+      color: var(--secondary-accent);
+      border-color: var(--secondary-accent);
       box-shadow: var(--shadow-sm);
       position: relative;
-      font-family: var(--font-ui);
-      font-weight: 700;
-      letter-spacing: 0.1em;
     }
     
     .cta-secondary::after {
@@ -1024,7 +807,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(69, 183, 209, 0.2));
+      background: var(--secondary-accent);
       opacity: 0;
       transition: opacity 0.3s ease;
       z-index: -1;
@@ -1036,7 +819,7 @@
       transform: translateY(-4px) scale(1.02);
       box-shadow: 
         var(--shadow-xl),
-        0 0 30px rgba(78, 205, 196, 0.6);
+        0 0 20px rgba(78, 205, 196, 0.4);
       border-color: var(--gaming-teal);
     }
 
@@ -1060,11 +843,10 @@
     }
     
     .stat-card {
-      background: var(--game-panel-bg);
+      background: var(--surface-dark);
       backdrop-filter: blur(20px) saturate(180%);
-      border: 2px solid var(--border-color);
-      border-top: 3px solid var(--game-unity-blue);
-      border-radius: 8px;
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
       padding: 3rem 2rem;
       text-align: center;
       position: relative;
@@ -1076,25 +858,6 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      box-shadow: 
-        var(--shadow-md),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    }
-    
-    .stat-card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--game-unity-blue), var(--game-unreal-orange));
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-    
-    .stat-card:hover::after {
-      transform: scaleX(1);
     }
 
     /* Gaming UI corner brackets */
@@ -1155,30 +918,15 @@
     }
     
     .stat-number {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-size: 4rem;
-      font-weight: 900;
+      font-weight: 800;
       margin-bottom: 1rem;
-      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
+      background: var(--primary-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       line-height: 1;
-      text-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
-      position: relative;
-    }
-    
-    .stat-number::before {
-      content: '';
-      position: absolute;
-      top: -5px;
-      left: -5px;
-      right: -5px;
-      bottom: -5px;
-      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
-      opacity: 0.2;
-      filter: blur(10px);
-      z-index: -1;
     }
     
     @keyframes number-glow {
@@ -1203,61 +951,37 @@
     }
     
     .achievement-card {
-      background: var(--game-panel-bg);
+      background: var(--surface-secondary);
       border: 2px solid var(--border-color);
-      border-left: 4px solid var(--game-unity-blue);
-      border-radius: 8px;
+      border-radius: 12px;
       padding: 2.5rem;
       position: relative;
       transition: all 0.3s ease;
       cursor: pointer;
-      box-shadow: 
-        var(--shadow-md),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    }
-    
-    .achievement-card::before {
-      content: 'ACHIEVEMENT';
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 0.6rem;
-      color: var(--game-unity-blue);
-      font-family: var(--font-ui);
-      font-weight: 700;
-      letter-spacing: 2px;
-      opacity: 0.5;
     }
 
     .achievement-card:hover {
-      transform: translateY(-8px) scale(1.02);
+      transform: translateY(-8px);
       border-color: var(--border-accent);
       box-shadow: var(--shadow-lg);
-      cursor: pointer;
-    }
-    
-    .achievement-card:active {
-      transform: translateY(-4px) scale(0.98);
     }
 
-    .achievement-card::after {
+    .achievement-card::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 4px;
-      background: linear-gradient(90deg, var(--game-unity-blue), var(--game-unreal-orange));
+      background: var(--primary-gradient);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.3s ease;
     }
 
-    .achievement-card:hover::after {
+    .achievement-card:hover::before {
       transform: scaleX(1);
-    }
-    
-    .achievement-icon {
+    }    .achievement-icon {
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
       display: block;
@@ -1287,62 +1011,39 @@
     }
     
     .skill-badge {
-      background: var(--game-panel-bg);
+      background: var(--surface-secondary);
       border: 2px solid var(--border-color);
-      border-top: 2px solid var(--game-unity-blue);
-      border-radius: 4px;
+      border-radius: 8px;
       padding: 0.75rem 1.25rem;
       color: var(--text-secondary);
-      font-weight: 600;
+      font-weight: 500;
       font-size: 0.875rem;
       font-family: var(--font-ui);
       transition: all 0.2s ease;
       cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      position: relative;
-      box-shadow: 
-        var(--shadow-sm),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
     }
     
-    .skill-badge::after {
+    .skill-badge::before {
       content: '';
       position: absolute;
       top: 0;
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(0, 188, 212, 0.4), transparent);
+      background: linear-gradient(90deg, transparent, var(--primary-accent)44, transparent);
       transition: left 0.6s ease;
-      z-index: -1;
     }
     
-    .skill-badge:hover::after {
+    .skill-badge:hover::before {
       left: 100%;
-    }
-    
-    .skill-badge::before {
-      content: '⚙';
-      margin-right: 0.5rem;
-      opacity: 0.5;
-      display: inline-block;
     }
     
     .skill-badge:hover {
       transform: translateY(-2px);
       color: var(--white);
-      background: linear-gradient(135deg, rgba(0, 188, 212, 0.2), rgba(255, 107, 53, 0.2));
-      border-color: var(--game-unity-blue);
-      box-shadow: 
-        var(--shadow-md),
-        0 0 20px rgba(0, 188, 212, 0.4);
-    }
-    
-    .skill-badge:hover::before {
-      opacity: 1;
-      animation: spin 1s linear infinite;
-      display: inline-block;
+      background: var(--primary-accent);
+      border-color: var(--primary-accent);
+      box-shadow: var(--shadow-md);
     }
     
     /* Clean Gaming Timeline */
@@ -1380,43 +1081,21 @@
     }
     
     .timeline-content {
-      background: var(--game-panel-bg);
+      background: var(--surface-secondary);
       border: 2px solid var(--border-color);
-      border-left: 4px solid var(--game-unreal-orange);
-      border-radius: 8px;
+      border-radius: 12px;
       padding: 2rem;
       margin-left: 3rem;
       flex: 1;
       max-width: 500px;
       position: relative;
       transition: all 0.3s ease;
-      box-shadow: 
-        var(--shadow-md),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    }
-    
-    .timeline-content::before {
-      content: 'EXPERIENCE';
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 0.6rem;
-      color: var(--game-unreal-orange);
-      font-family: var(--font-ui);
-      font-weight: 700;
-      letter-spacing: 2px;
-      opacity: 0.5;
     }
     
     .timeline-content:hover {
-      transform: translateY(-5px) scale(1.01);
+      transform: translateY(-5px);
       border-color: var(--border-accent);
       box-shadow: var(--shadow-lg);
-      cursor: pointer;
-    }
-    
-    .timeline-content:active {
-      transform: translateY(-2px) scale(0.99);
     }
     
     .timeline-content p {
@@ -1522,10 +1201,9 @@
     
     .award-card,
     .education-card {
-      background: var(--game-panel-bg);
+      background: var(--surface-secondary);
       border: 2px solid var(--border-color);
-      border-top: 4px solid var(--gaming-teal);
-      border-radius: 8px;
+      border-radius: 16px;
       padding: 2.5rem;
       text-align: center;
       position: relative;
@@ -1538,40 +1216,13 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      box-shadow: 
-        var(--shadow-md),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    }
-    
-    .award-card::before,
-    .education-card::before {
-      content: 'TROPHY';
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 0.6rem;
-      color: var(--gaming-teal);
-      font-family: var(--font-ui);
-      font-weight: 700;
-      letter-spacing: 2px;
-      opacity: 0.5;
-    }
-    
-    .education-card::before {
-      content: 'EDUCATION';
     }
     
     .award-card:hover,
     .education-card:hover {
-      transform: translateY(-8px) scale(1.02);
+      transform: translateY(-8px);
       border-color: var(--border-accent);
       box-shadow: var(--shadow-lg);
-      cursor: pointer;
-    }
-    
-    .award-card:active,
-    .education-card:active {
-      transform: translateY(-4px) scale(0.98);
     }
     
     .award-icon,
@@ -1672,14 +1323,9 @@
     }
 
     .contact-method:hover {
-      transform: translateX(8px) scale(1.02);
+      transform: translateX(8px);
       border-color: var(--border-accent);
       box-shadow: var(--shadow-lg);
-      cursor: pointer;
-    }
-    
-    .contact-method:active {
-      transform: translateX(4px) scale(0.98);
     }
 
     .contact-method::before {
@@ -2092,348 +1738,19 @@
         padding: 0.6rem 1.2rem;
         font-size: 0.85rem;
       }
-      
-      /* Game HUD Mobile */
-      .game-hud {
-        top: auto;
-        bottom: 1rem;
-        left: 1rem;
-        right: 1rem;
-        min-width: auto;
-        max-width: 300px;
-        margin: 0 auto;
-      }
-      
-      .easter-egg {
-        bottom: 5rem;
-        right: 1rem;
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-      }
     }
     
-    /* Scroll Progress Indicator - GAMIFIED */
+    /* Scroll Progress Indicator */
     .scroll-progress {
       position: fixed;
       top: 0;
       left: 0;
       width: 0%;
-      height: 6px;
+      height: 4px;
       background: var(--primary-gradient);
       z-index: 9999;
       transition: width 0.1s ease;
-      box-shadow: 0 0 15px var(--primary-accent), 0 0 30px rgba(255, 107, 53, 0.5);
-      border-bottom: 2px solid var(--primary-accent);
-    }
-    
-    /* Gamification HUD */
-    .game-hud {
-      position: fixed;
-      bottom: 1rem;
-      left: 1rem;
-      z-index: 1001;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      background: rgba(var(--surface-primary-rgb), 0.95);
-      backdrop-filter: blur(10px);
-      border: 2px solid var(--border-accent);
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: var(--shadow-xl);
-      min-width: 200px;
-    }
-    
-    .xp-bar-container {
-      position: relative;
-    }
-    
-    .xp-label {
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-      margin-bottom: 0.25rem;
-      font-family: var(--font-ui);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    
-    .xp-bar {
-      width: 100%;
-      height: 20px;
-      background: var(--surface-secondary);
-      border: 2px solid var(--border-color);
-      border-radius: 10px;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .xp-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--game-unity-blue), var(--game-unreal-orange));
-      width: 0%;
-      transition: width 0.5s ease;
-      position: relative;
-      box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
-    }
-    
-    .xp-fill::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      animation: xp-shine 2s infinite;
-    }
-    
-    @keyframes xp-shine {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    
-    .xp-value {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--white);
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-      font-family: var(--font-display);
-    }
-    
-    .level-display {
-      text-align: center;
-      font-family: var(--font-heading);
-      font-size: 1.5rem;
-      font-weight: 900;
-      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    .level-display::before {
-      content: 'LVL ';
-      font-size: 0.8rem;
-      opacity: 0.7;
-    }
-    
-    .achievements-popup {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      background: var(--game-panel-bg);
-      border: 3px solid var(--game-unity-blue);
-      border-top: 5px solid var(--game-unreal-orange);
-      border-radius: 8px;
-      padding: 2rem;
-      z-index: 10000;
-      box-shadow: 
-        0 0 50px rgba(0, 188, 212, 0.8),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      max-width: 400px;
-      text-align: center;
-      font-family: var(--font-ui);
-    }
-    
-    .achievements-popup::before {
-      content: 'ACHIEVEMENT UNLOCKED';
-      position: absolute;
-      top: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--game-panel-bg);
-      padding: 0 15px;
-      font-size: 0.7rem;
-      color: var(--game-unity-blue);
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-    
-    .achievements-popup.show {
-      transform: translate(-50%, -50%) scale(1);
-    }
-    
-    .achievements-popup h3 {
-      color: var(--primary-accent);
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      font-family: var(--font-display);
-    }
-    
-    .achievements-popup p {
-      color: var(--text-primary);
-      font-size: 1.1rem;
-    }
-    
-    .achievement-icon-large {
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      animation: achievement-bounce 0.6s ease;
-    }
-    
-    @keyframes achievement-bounce {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2) rotate(10deg); }
-    }
-    
-    /* Click Effects */
-    .click-effect {
-      position: fixed;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: var(--primary-accent);
-      pointer-events: none;
-      z-index: 9998;
-      animation: click-pop 0.5s ease-out;
-      box-shadow: 0 0 20px var(--primary-accent);
-    }
-    
-    @keyframes click-pop {
-      0% {
-        transform: scale(0);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(3);
-        opacity: 0;
-      }
-    }
-    
-    /* Interactive Stat Cards - Enhanced */
-    .stat-card {
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      user-select: none;
-    }
-    
-    .stat-card::after {
-      content: '+10 XP';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      color: var(--gaming-green);
-      font-weight: 800;
-      font-size: 1.5rem;
-      pointer-events: none;
-      text-shadow: 0 0 10px var(--gaming-green);
-      transition: transform 0.3s ease;
-      z-index: 10;
-    }
-    
-    .stat-card.clicked::after {
-      animation: xp-popup 1s ease-out;
-    }
-    
-    @keyframes xp-popup {
-      0% {
-        transform: translate(-50%, -50%) scale(0);
-        opacity: 1;
-      }
-      50% {
-        transform: translate(-50%, -150%) scale(1.2);
-        opacity: 1;
-      }
-      100% {
-        transform: translate(-50%, -200%) scale(0.8);
-        opacity: 0;
-      }
-    }
-    
-    /* Number Counter Animation */
-    .stat-number {
-      transition: all 0.3s ease;
-    }
-    
-    .stat-number.animate {
-      animation: number-pop 0.5s ease;
-    }
-    
-    @keyframes number-pop {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-    }
-    
-    /* Interactive Skill Badges */
-    .skill-badge {
-      position: relative;
-      overflow: hidden;
-      user-select: none;
-      cursor: pointer;
-    }
-    
-    .skill-badge::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-      transition: left 0.6s ease;
-    }
-    
-    .skill-badge:hover::before {
-      left: 100%;
-    }
-    
-    .skill-badge.collected {
-      background: var(--gaming-green);
-      border-color: var(--gaming-green);
-      animation: skill-collect 0.5s ease;
-    }
-    
-    @keyframes skill-collect {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1) rotate(5deg); }
-    }
-    
-    /* Easter Egg */
-    .easter-egg {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 50px;
-      height: 50px;
-      background: var(--surface-secondary);
-      border: 2px solid var(--border-color);
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      transition: all 0.3s ease;
-      opacity: 0.5;
-    }
-    
-    .easter-egg:hover {
-      opacity: 1;
-      transform: scale(1.1);
-      border-color: var(--border-accent);
-      box-shadow: 0 0 20px var(--primary-accent);
-    }
-    
-    .easter-egg.clicked {
-      animation: easter-egg-spin 1s ease;
-    }
-    
-    @keyframes easter-egg-spin {
-      0% { transform: rotate(0deg) scale(1); }
-      50% { transform: rotate(180deg) scale(1.3); }
-      100% { transform: rotate(360deg) scale(1); }
+      box-shadow: 0 0 10px var(--primary-accent);
     }
     @keyframes fadeInUp {
       from {
@@ -2547,34 +1864,9 @@
     }
   </style>
 </head>
-  <body>
-  <!-- Particles Background -->
-  <div class="particles" id="particles"></div>
-  
+<body>
   <!-- Scroll Progress Indicator -->
   <div class="scroll-progress" id="scrollProgress"></div>
-  
-  <!-- Game HUD -->
-  <div class="game-hud" id="gameHud">
-    <div class="level-display">Level <span id="playerLevel">1</span></div>
-    <div class="xp-bar-container">
-      <div class="xp-label">Experience</div>
-      <div class="xp-bar">
-        <div class="xp-fill" id="xpFill"></div>
-        <div class="xp-value" id="xpValue">0 / 100</div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Achievement Popup -->
-  <div class="achievements-popup" id="achievementPopup">
-    <div class="achievement-icon-large" id="achievementIcon">🏆</div>
-    <h3 id="achievementTitle">Achievement Unlocked!</h3>
-    <p id="achievementDesc">Keep exploring to unlock more!</p>
-  </div>
-  
-  <!-- Easter Egg -->
-  <div class="easter-egg" id="easterEgg" title="Click me!">🎮</div>
   
   <!-- Loading Screen -->
   <div class="loading-overlay" id="loadingOverlay">
@@ -2599,11 +1891,11 @@
     </div>
     <h1 class="header-title">RAHUL KAUSHIK</h1>
     <p class="header-subtitle">Game Developer • Unity • Unreal • Godot • Mobile • VR • AR</p>
-    <p class="header-tagline">CODE. CREATE. PLAY.</p>
+    <p class="header-tagline">"CODE. CREATE. PLAY."</p>
     
     <!-- Integrated Digital Universe Content -->
     <div class="hero-content">
-      <h2 class="hero-title">Welcome to My Game Dev Studio</h2>
+      <h2 class="hero-title">Welcome to My Digital Universe</h2>
       <p class="hero-description">
         I'm a passionate Game Developer and Technical Lead with over a decade of experience creating engaging digital experiences. From mobile games that millions play to immersive VR adventures, I've led teams and built games that connect with players worldwide.
       </p>
@@ -3003,213 +2295,25 @@
   </section>
 
   <script>
-    // ===== GAMIFICATION SYSTEM =====
-    let gameState = {
-      xp: 0,
-      level: 1,
-      xpToNextLevel: 100,
-      achievements: [],
-      skillsCollected: 0,
-      sectionsVisited: new Set(),
-      clicks: 0,
-      easterEggCollected: false
-    };
-    
-    // Load game state from localStorage
-    function loadGameState() {
-      const saved = localStorage.getItem('portfolioGameState');
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        gameState = { 
-          ...gameState, 
-          ...parsed,
-          sectionsVisited: new Set(parsed.sectionsVisited || [])
-        };
-      }
-      updateHUD();
-      
-      // Hide easter egg if already collected
-      if (gameState.easterEggCollected) {
-        const easterEgg = document.getElementById('easterEgg');
-        if (easterEgg) {
-          easterEgg.style.display = 'none';
-        }
-      }
-    }
-    
-    // Save game state to localStorage
-    function saveGameState() {
-      const toSave = {
-        ...gameState,
-        sectionsVisited: Array.from(gameState.sectionsVisited)
-      };
-      localStorage.setItem('portfolioGameState', JSON.stringify(toSave));
-    }
-    
-    // Update HUD
-    function updateHUD() {
-      document.getElementById('playerLevel').textContent = gameState.level;
-      const xpPercent = (gameState.xp / gameState.xpToNextLevel) * 100;
-      document.getElementById('xpFill').style.width = xpPercent + '%';
-      document.getElementById('xpValue').textContent = `${gameState.xp} / ${gameState.xpToNextLevel}`;
-    }
-    
-    // Add XP
-    function addXP(amount, reason = '') {
-      gameState.xp += amount;
-      
-      // Level up check
-      while (gameState.xp >= gameState.xpToNextLevel) {
-        gameState.xp -= gameState.xpToNextLevel;
-        gameState.level++;
-        gameState.xpToNextLevel = Math.floor(gameState.xpToNextLevel * 1.5);
-        showAchievement('🎉', 'Level Up!', `You've reached Level ${gameState.level}!`);
-      }
-      
-      updateHUD();
-      saveGameState();
-    }
-    
-    // Show Achievement
-    function showAchievement(icon, title, desc) {
-      const popup = document.getElementById('achievementPopup');
-      document.getElementById('achievementIcon').textContent = icon;
-      document.getElementById('achievementTitle').textContent = title;
-      document.getElementById('achievementDesc').textContent = desc;
-      
-      popup.classList.add('show');
-      setTimeout(() => {
-        popup.classList.remove('show');
-      }, 3000);
-    }
-    
-    // Check for achievements
-    function checkAchievements() {
-      const achievements = [
-        { id: 'first_click', condition: () => gameState.clicks === 1, icon: '👆', title: 'First Click!', desc: 'You clicked something!' },
-        { id: 'explorer', condition: () => gameState.sectionsVisited.size === 3, icon: '🗺️', title: 'Explorer', desc: 'Visited 3 sections!' },
-        { id: 'master_explorer', condition: () => gameState.sectionsVisited.size === 6, icon: '🌟', title: 'Master Explorer', desc: 'Visited all sections!' },
-        { id: 'skill_collector', condition: () => gameState.skillsCollected >= 5, icon: '🎯', title: 'Skill Collector', desc: 'Collected 5 skills!' },
-        { id: 'click_master', condition: () => gameState.clicks >= 50, icon: '⚡', title: 'Click Master', desc: '50 clicks achieved!' },
-        { id: 'scroll_king', condition: () => window.scrollY > document.body.scrollHeight * 0.8, icon: '👑', title: 'Scroll King', desc: 'Scrolled through most of the page!' }
-      ];
-      
-      achievements.forEach(achievement => {
-        if (!gameState.achievements.includes(achievement.id) && achievement.condition()) {
-          gameState.achievements.push(achievement.id);
-          showAchievement(achievement.icon, achievement.title, achievement.desc);
-          addXP(50, achievement.title);
-        }
-      });
-    }
-    
-    // Create Particles
-    function createParticles() {
-      const particlesContainer = document.getElementById('particles');
-      const particleCount = 30;
-      
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 15 + 's';
-        particle.style.animationDuration = (10 + Math.random() * 10) + 's';
-        particlesContainer.appendChild(particle);
-      }
-    }
-    
-    // Click Effect
-    function createClickEffect(x, y) {
-      const effect = document.createElement('div');
-      effect.className = 'click-effect';
-      effect.style.left = x + 'px';
-      effect.style.top = y + 'px';
-      document.body.appendChild(effect);
-      
-      setTimeout(() => {
-        effect.remove();
-      }, 500);
-    }
-    
-    // Animate Number Counter
-    function animateNumber(element, target, duration = 2000) {
-      const start = parseInt(element.textContent) || 0;
-      const increment = target / (duration / 16);
-      let current = start;
-      
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          element.textContent = target + (element.textContent.includes('+') ? '+' : '');
-          element.classList.add('animate');
-          setTimeout(() => element.classList.remove('animate'), 500);
-          clearInterval(timer);
-        } else {
-          element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : '');
-        }
-      }, 16);
-    }
-    
     // Professional Loading Screen
     window.addEventListener('load', function() {
       setTimeout(() => {
         document.getElementById('loadingOverlay').classList.add('hidden');
-        loadGameState();
-        createParticles();
-        addXP(10, 'Welcome!');
-        
-        // Animate stat numbers
-        document.querySelectorAll('.stat-number').forEach(stat => {
-          const text = stat.textContent;
-          const number = parseInt(text.replace(/\D/g, ''));
-          if (number) {
-            stat.textContent = '0' + (text.includes('+') ? '+' : '');
-            setTimeout(() => {
-              animateNumber(stat, number, 1500);
-            }, 500);
-          }
-        });
       }, 800);
     });
     
-    // Scroll Progress Indicator and Header Fade Effect - GAMIFIED
-    let lastScrollPercent = 0;
+    // Scroll Progress Indicator and Header Fade Effect
     window.addEventListener('scroll', () => {
       const scrollTop = window.pageYOffset;
       const docHeight = document.body.offsetHeight - window.innerHeight;
       const scrollPercent = (scrollTop / docHeight) * 100;
       document.getElementById('scrollProgress').style.width = scrollPercent + '%';
       
-      // Award XP for scrolling milestones
-      if (scrollPercent >= 25 && lastScrollPercent < 25) {
-        addXP(15, 'Scrolled 25%');
-      } else if (scrollPercent >= 50 && lastScrollPercent < 50) {
-        addXP(20, 'Scrolled 50%');
-      } else if (scrollPercent >= 75 && lastScrollPercent < 75) {
-        addXP(25, 'Scrolled 75%');
-      } else if (scrollPercent >= 95 && lastScrollPercent < 95) {
-        addXP(30, 'Scrolled to the end!');
-      }
-      lastScrollPercent = scrollPercent;
-      
-      // Track section visits
-      document.querySelectorAll('section[id]').forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.5 && rect.bottom > 0) {
-          const sectionId = section.id;
-          if (!gameState.sectionsVisited.has(sectionId)) {
-            gameState.sectionsVisited.add(sectionId);
-            addXP(20, `Visited ${sectionId}`);
-            checkAchievements();
-          }
-        }
-      });
-      
       // Header fade out effect
       const header = document.querySelector('header');
       const headerHeight = header.offsetHeight;
-      const fadeStartPoint = headerHeight * 0.3;
-      const fadeEndPoint = headerHeight * 0.8;
+      const fadeStartPoint = headerHeight * 0.3; // Start fading at 30% of header height
+      const fadeEndPoint = headerHeight * 0.8; // Complete fade at 80% of header height
       
       if (scrollTop >= fadeStartPoint) {
         header.classList.add('fade-out');
@@ -3222,8 +2326,6 @@
       } else {
         header.classList.remove('fade-out', 'scrolled');
       }
-      
-      checkAchievements();
     });
     
     // Navigation
@@ -3312,98 +2414,15 @@
       });
     }
     
-    // Enhanced Card Interactions - GAMIFIED
+    // Enhanced Card Interactions
     document.querySelectorAll('.stat-card').forEach(card => {
-      let clicked = false;
-      
       card.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-8px) scale(1.02) rotateY(2deg)';
       });
       
       card.addEventListener('mouseleave', function() {
-        if (!clicked) {
-          this.style.transform = 'translateY(0) scale(1) rotateY(0deg)';
-        }
+        this.style.transform = 'translateY(0) scale(1) rotateY(0deg)';
       });
-      
-      card.addEventListener('click', function() {
-        if (!clicked) {
-          clicked = true;
-          this.classList.add('clicked');
-          addXP(10, 'Clicked stat card');
-          gameState.clicks++;
-          checkAchievements();
-          
-          setTimeout(() => {
-            this.classList.remove('clicked');
-            clicked = false;
-          }, 1000);
-        }
-      });
-    });
-    
-    // Interactive Skill Badges
-    document.querySelectorAll('.skill-badge').forEach(badge => {
-      let collected = false;
-      
-      badge.addEventListener('click', function() {
-        if (!collected) {
-          collected = true;
-          this.classList.add('collected');
-          gameState.skillsCollected++;
-          addXP(5, 'Collected skill');
-          checkAchievements();
-          
-          // Create particle effect
-          const rect = this.getBoundingClientRect();
-          for (let i = 0; i < 5; i++) {
-            setTimeout(() => {
-              createClickEffect(
-                rect.left + rect.width / 2 + (Math.random() - 0.5) * 50,
-                rect.top + rect.height / 2 + (Math.random() - 0.5) * 50
-              );
-            }, i * 50);
-          }
-        }
-      });
-    });
-    
-    // Global Click Tracking
-    document.addEventListener('click', function(e) {
-      // Don't count clicks on interactive elements
-      if (!e.target.closest('.stat-card, .skill-badge, .nav a, .cta-button, .easter-egg')) {
-        gameState.clicks++;
-        createClickEffect(e.clientX, e.clientY);
-        checkAchievements();
-      }
-    });
-    
-    // Easter Egg
-    document.getElementById('easterEgg').addEventListener('click', function() {
-      // Prevent multiple clicks
-      if (gameState.easterEggCollected) return;
-      
-      this.classList.add('clicked');
-      gameState.easterEggCollected = true;
-      addXP(100, 'Easter Egg Found!');
-      showAchievement('🎁', 'Easter Egg!', 'You found the secret! +100 XP');
-      
-      // Create explosion of particles
-      for (let i = 0; i < 20; i++) {
-        setTimeout(() => {
-          const rect = this.getBoundingClientRect();
-          createClickEffect(
-            rect.left + rect.width / 2 + (Math.random() - 0.5) * 200,
-            rect.top + rect.height / 2 + (Math.random() - 0.5) * 200
-          );
-        }, i * 30);
-      }
-      
-      // Hide easter egg after animation
-      setTimeout(() => {
-        this.style.display = 'none';
-        saveGameState();
-      }, 1000);
     });
     
     // Smooth scroll for all anchor links
@@ -3444,35 +2463,7 @@
       }
     });
     
-    // Achievement tracking on page interactions
-    document.querySelectorAll('.achievement-card, .award-card, .education-card').forEach(card => {
-      card.addEventListener('click', function() {
-        addXP(5, 'Viewed card');
-        checkAchievements();
-      });
-    });
-    
-    // Track navigation clicks
-    document.querySelectorAll('.nav a').forEach(link => {
-      link.addEventListener('click', function() {
-        addXP(3, 'Navigated');
-        checkAchievements();
-      });
-    });
-    
-    // Track CTA button clicks
-    document.querySelectorAll('.cta-button').forEach(button => {
-      button.addEventListener('click', function() {
-        addXP(10, 'Clicked CTA');
-        checkAchievements();
-      });
-    });
-    
-    // Periodic achievement checks
-    setInterval(checkAchievements, 2000);
-    
-    // Save state periodically
-    setInterval(saveGameState, 5000);
+    // Professional loading screen - animations removed for clean appearance
   </script>
 </body>
 </html>
