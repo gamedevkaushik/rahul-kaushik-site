@@ -736,18 +736,7 @@
       height: 4px;
       background: linear-gradient(90deg, var(--game-unity-blue), var(--game-unreal-orange), var(--gaming-teal));
       opacity: 0.8;
-    }
-    
-    .section-container::after {
-      content: '';
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 40px;
-      height: 40px;
-      background: radial-gradient(circle, rgba(0, 188, 212, 0.2), transparent);
-      border-radius: 50%;
-      opacity: 0.5;
+      z-index: 1;
     }
 
     .section-container:hover {
@@ -757,41 +746,6 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.1),
         0 0 40px rgba(0, 188, 212, 0.4);
       transform: translateY(-4px);
-    }
-    
-    @keyframes section-glow {
-      0%, 100% { 
-        box-shadow: 
-          var(--shadow-deep),
-          var(--neon-glow) var(--primary-accent);
-      }
-      50% { 
-        box-shadow: 
-          var(--shadow-deep),
-          var(--neon-glow) var(--secondary-accent);
-      }
-    }
-    
-    .section-container::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(10, 10, 15, 0.3);
-      z-index: -1;
-      border-radius: 30px;
-    }
-    
-    .section-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--primary-gradient);
     }
     
     .section-title {
@@ -1268,53 +1222,6 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
     }
     
-    .stat-card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--game-unity-blue), var(--game-unreal-orange));
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-    
-    .stat-card:hover::after {
-      transform: scaleX(1);
-    }
-
-    /* Gaming UI corner brackets */
-    .stat-card::before,
-    .stat-card::after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      border: 2px solid var(--primary-accent);
-      opacity: 0;
-      transition: all 0.3s ease;
-    }
-
-    .stat-card::before {
-      top: 12px;
-      left: 12px;
-      border-right: none;
-      border-bottom: none;
-    }
-
-    .stat-card::after {
-      bottom: 12px;
-      right: 12px;
-      border-left: none;
-      border-top: none;
-    }
-
-    .stat-card:hover::before,
-    .stat-card:hover::after {
-      opacity: 1;
-    }
-    
     .stat-card::before {
       content: '';
       position: absolute;
@@ -1332,6 +1239,23 @@
       opacity: 0.08;
     }
     
+    .stat-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--game-unity-blue), var(--game-unreal-orange));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      z-index: 1;
+    }
+    
+    .stat-card:hover::after {
+      transform: scaleX(1);
+    }
+    
     .stat-card:hover {
       transform: translateY(-8px) scale(1.02);
       border-color: var(--primary-accent);
@@ -1346,26 +1270,35 @@
       font-size: 4rem;
       font-weight: 900;
       margin-bottom: 1rem;
+      line-height: 1;
+      position: relative;
+      white-space: nowrap;
+      overflow: visible;
+      width: 100%;
+      text-align: center;
+      display: inline-block;
+    }
+    
+    .stat-value,
+    .stat-suffix {
       background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      line-height: 1;
       text-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
-      position: relative;
+    }
+    
+    /* Fallback for stats without spans */
+    .stat-number:not(:has(.stat-value)) {
+      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
     }
     
     .stat-number::before {
-      content: '';
-      position: absolute;
-      top: -5px;
-      left: -5px;
-      right: -5px;
-      bottom: -5px;
-      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
-      opacity: 0.2;
-      filter: blur(10px);
-      z-index: -1;
+      display: none; /* Removed glow effect to prevent unwanted visual artifacts */
     }
     
     @keyframes number-glow {
@@ -2524,8 +2457,8 @@
       user-select: none;
     }
     
-    .stat-card::after {
-      content: '+10 XP';
+    /* XP Popup - Separate element, not ::after */
+    .stat-card-xp-popup {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -2535,12 +2468,14 @@
       font-size: 1.5rem;
       pointer-events: none;
       text-shadow: 0 0 10px var(--gaming-green);
-      transition: transform 0.3s ease;
+      opacity: 0;
       z-index: 10;
+      font-family: var(--font-heading);
     }
     
-    .stat-card.clicked::after {
+    .stat-card.clicked .stat-card-xp-popup {
       animation: xp-popup 1s ease-out;
+      opacity: 1;
     }
     
     @keyframes xp-popup {
@@ -2831,19 +2766,19 @@
     <div class="section-container animate-on-scroll">
       <div class="stats-grid">
         <div class="stat-card animate-left">
-          <div class="stat-number">10+</div>
+          <div class="stat-number"><span class="stat-value">10</span><span class="stat-suffix">+</span></div>
           <div class="stat-label">Years Experience</div>
         </div>
         <div class="stat-card animate-on-scroll">
-          <div class="stat-number">15+</div>
+          <div class="stat-number"><span class="stat-value">15</span><span class="stat-suffix">+</span></div>
           <div class="stat-label">Published Games</div>
         </div>
         <div class="stat-card animate-on-scroll">
-          <div class="stat-number">5+</div>
+          <div class="stat-number"><span class="stat-value">5</span><span class="stat-suffix">+</span></div>
           <div class="stat-label">Platforms Supported</div>
         </div>
         <div class="stat-card animate-right">
-          <div class="stat-number">100%</div>
+          <div class="stat-number"><span class="stat-value">100</span><span class="stat-suffix">%</span></div>
           <div class="stat-label">Client Satisfaction</div>
         </div>
       </div>
@@ -3371,20 +3306,38 @@
     }
     
     // Animate Number Counter
-    function animateNumber(element, target, duration = 2000) {
-      const start = parseInt(element.textContent) || 0;
+    function animateNumber(element, target, duration = 2000, suffix = '') {
+      // Get current number from element, ensuring we start from 0
+      const currentText = element.textContent.trim();
+      const start = parseInt(currentText.replace(/\D/g, '')) || 0;
       const increment = target / (duration / 16);
       let current = start;
+      
+      // Ensure suffix is stored in data attribute
+      if (suffix) {
+        element.setAttribute('data-suffix', suffix);
+      }
       
       const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
-          element.textContent = target + (element.textContent.includes('+') ? '+' : '');
+          // Ensure suffix is always included - use explicit string concatenation
+          const finalText = String(target) + suffix;
+          element.textContent = finalText;
           element.classList.add('animate');
-          setTimeout(() => element.classList.remove('animate'), 500);
+          setTimeout(() => {
+            element.classList.remove('animate');
+            // Double-check suffix is still there after animation
+            const currentTextAfter = element.textContent.trim();
+            if (!currentTextAfter.endsWith(suffix) && suffix) {
+              element.textContent = String(target) + suffix;
+            }
+          }, 500);
           clearInterval(timer);
         } else {
-          element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : '');
+          // Always include suffix during animation - use explicit string concatenation
+          const animatedText = String(Math.floor(current)) + suffix;
+          element.textContent = animatedText;
         }
       }, 16);
     }
@@ -3399,15 +3352,75 @@
         
         // Animate stat numbers
         document.querySelectorAll('.stat-number').forEach(stat => {
-          const text = stat.textContent;
-          const number = parseInt(text.replace(/\D/g, ''));
-          if (number) {
-            stat.textContent = '0' + (text.includes('+') ? '+' : '');
-            setTimeout(() => {
-              animateNumber(stat, number, 1500);
-            }, 500);
+          // Check if stat already has span structure
+          const statValue = stat.querySelector('.stat-value');
+          const statSuffix = stat.querySelector('.stat-suffix');
+          
+          if (statValue && statSuffix) {
+            // Stat has span structure - animate the value, keep suffix separate
+            const originalValue = parseInt(statValue.textContent.trim().replace(/\D/g, '')) || 0;
+            const suffix = statSuffix.textContent.trim();
+            
+            if (originalValue > 0) {
+              statValue.textContent = '0';
+              setTimeout(() => {
+                animateNumberInSpan(statValue, originalValue, 1500);
+              }, 500);
+            }
+          } else {
+            // Legacy stat without spans - convert to span structure
+            const originalText = stat.textContent.trim();
+            const number = parseInt(originalText.replace(/\D/g, '')) || 0;
+            
+            // Preserve suffix (+, %, or empty) from original text
+            let suffix = '';
+            if (originalText.includes('+')) {
+              suffix = '+';
+            } else if (originalText.includes('%')) {
+              suffix = '%';
+            }
+            
+            // Create span structure
+            const valueSpan = document.createElement('span');
+            valueSpan.className = 'stat-value';
+            valueSpan.textContent = '0';
+            
+            const suffixSpan = document.createElement('span');
+            suffixSpan.className = 'stat-suffix';
+            suffixSpan.textContent = suffix;
+            
+            stat.innerHTML = '';
+            stat.appendChild(valueSpan);
+            if (suffix) {
+              stat.appendChild(suffixSpan);
+            }
+            
+            if (number > 0) {
+              setTimeout(() => {
+                animateNumberInSpan(valueSpan, number, 1500);
+              }, 500);
+            }
           }
         });
+        
+        // Animate number in span element
+        function animateNumberInSpan(element, target, duration = 2000) {
+          const start = parseInt(element.textContent.trim().replace(/\D/g, '')) || 0;
+          const increment = target / (duration / 16);
+          let current = start;
+          
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              element.textContent = String(target);
+              element.classList.add('animate');
+              setTimeout(() => element.classList.remove('animate'), 500);
+              clearInterval(timer);
+            } else {
+              element.textContent = String(Math.floor(current));
+            }
+          }, 16);
+        }
       }, 800);
     });
     
@@ -3554,6 +3567,12 @@
     // Enhanced Card Interactions - GAMIFIED
     document.querySelectorAll('.stat-card').forEach(card => {
       let clicked = false;
+      
+      // Create XP popup element
+      const xpPopup = document.createElement('div');
+      xpPopup.className = 'stat-card-xp-popup';
+      xpPopup.textContent = '+10 XP';
+      card.appendChild(xpPopup);
       
       card.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-8px) scale(1.02) rotateY(2deg)';
