@@ -6,7 +6,7 @@
   <title>Rahul Kaushik - Game Developer Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:wght@300;400;600;700;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -42,26 +42,35 @@
       --text-secondary: #cccccc;
       --text-muted: #999999;
       --text-accent: #ff6b35;
-      --text-success: #4ecdc4;
+      --text-link: #4ecdc4;
       
       /* Modern Gaming Gradients */
-      --primary-gradient: linear-gradient(135deg, #ff6b35, #ff8f65, #ffab91);
-      --secondary-gradient: linear-gradient(135deg, #4ecdc4, #81d4fa, #b3e5fc);
-      --accent-gradient: linear-gradient(135deg, #45b7d1, #64b5f6, #90caf9);
-      --background-gradient: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+      --primary-gradient: linear-gradient(135deg, #ff6b35, #f39c12);
+      --secondary-gradient: linear-gradient(135deg, #4ecdc4, #45b7d1);
+      --accent-gradient: linear-gradient(135deg, #9b59b6, #8e44ad);
+      --bg-gradient: linear-gradient(135deg, #1a1a1a, #2d2d2d);
       
-      /* Professional Shadows */
-      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.12);
-      --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.25), 0 6px 6px rgba(0, 0, 0, 0.22);
-      --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.3), 0 10px 10px rgba(0, 0, 0, 0.24);
+      /* Clean Shadow System */
+      --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+      --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+      --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.25);
       
-      /* Typography */
-      --font-display: 'Poppins', sans-serif;
-      --font-heading: 'Montserrat', sans-serif;
-      --font-body: 'Source Sans Pro', sans-serif;
+      /* Game Development Typography */
+      --font-heading: 'Orbitron', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'Rajdhani', 'Montserrat', sans-serif;
       --font-accent: 'Roboto', sans-serif;
-      --font-ui: 'Open Sans', sans-serif;
+      --font-ui: 'Orbitron', 'Open Sans', sans-serif;
+      --font-code: 'Courier New', monospace;
+      
+      /* Game UI Elements */
+      --game-panel-bg: rgba(20, 20, 25, 0.95);
+      --game-border-glow: 0 0 10px rgba(255, 107, 53, 0.5);
+      --game-console-bg: #0a0a0f;
+      --game-terminal-green: #00ff41;
+      --game-unity-blue: #00bcd4;
+      --game-unreal-orange: #ff6b35;
     }
     
     * {
@@ -83,7 +92,30 @@
       position: relative;
     }
 
-    /* Clean modern gaming background */
+    /* Game Development Background Pattern */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 20% 20%, rgba(0, 188, 212, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 60% 40%, rgba(78, 205, 196, 0.08) 0%, transparent 50%),
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(0, 255, 65, 0.03) 2px,
+          rgba(0, 255, 65, 0.03) 4px
+        );
+      z-index: -1;
+      opacity: 0.8;
+    }
+    
+    /* Game Grid Overlay */
     body::before {
       content: '';
       position: fixed;
@@ -91,11 +123,16 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: var(--background-gradient);
-      z-index: -1;
+      background-image: 
+        linear-gradient(rgba(0, 188, 212, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 188, 212, 0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: -2;
+      opacity: 0.3;
+      pointer-events: none;
     }
     
-    /* Modern Gaming Navigation */
+    /* Game Menu Navigation - Unity/Unreal Style */
     .nav {
       position: fixed;
       top: 1rem;
@@ -103,57 +140,90 @@
       display: flex;
       gap: 0.5rem;
       z-index: 1000;
-      background: rgba(var(--surface-primary-rgb), 0.95);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: var(--game-panel-bg);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
       border: 2px solid var(--border-color);
-      border-radius: 12px;
+      border-top: 3px solid var(--game-unity-blue);
+      border-radius: 8px;
       padding: 0.75rem;
-      box-shadow: var(--shadow-lg);
+      box-shadow: 
+        var(--shadow-xl),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 20px rgba(0, 188, 212, 0.3);
       transition: all 0.3s ease;
+      font-family: var(--font-ui);
     }
 
     .nav:hover {
-      border-color: var(--border-accent);
-      box-shadow: var(--shadow-xl);
+      border-color: var(--game-unity-blue);
+      box-shadow: 
+        var(--shadow-xl),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 30px rgba(0, 188, 212, 0.5);
+    }
+    
+    .nav::before {
+      content: 'MENU';
+      position: absolute;
+      top: -12px;
+      left: 10px;
+      background: var(--game-panel-bg);
+      padding: 0 8px;
+      font-size: 0.7rem;
+      color: var(--game-unity-blue);
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-family: var(--font-ui);
     }
     
     .nav a {
       color: var(--text-secondary);
       text-decoration: none;
       padding: 0.75rem 1.25rem;
-      border-radius: 8px;
-      font-weight: 500;
+      border-radius: 4px;
+      font-weight: 600;
       font-size: 0.875rem;
       font-family: var(--font-ui);
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
       position: relative;
-      overflow: hidden;
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+      background: transparent;
+      text-transform: uppercase;
+      border: 1px solid transparent;
     }
     
     .nav a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: var(--primary-gradient);
-      transition: left 0.3s ease;
-      z-index: -1;
-      border-radius: 8px;
+      content: '▶';
+      margin-right: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      font-size: 0.7rem;
     }
     
-    .nav a:hover::before,
-    .nav a.active::before {
-      left: 0;
+    .nav a:hover {
+      color: var(--game-unity-blue);
+      background: rgba(0, 188, 212, 0.1);
+      transform: translateX(4px);
+      border-color: var(--game-unity-blue);
     }
     
-    .nav a:hover,
+    .nav a:hover::before {
+      opacity: 1;
+    }
+    
     .nav a.active {
       color: var(--white);
-      font-weight: 600;
-      transform: translateY(-2px);
+      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
+      font-weight: 700;
+      border-color: var(--game-unity-blue);
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+    }
+    
+    .nav a.active::before {
+      opacity: 1;
+      content: '●';
     }
 
     /* Header */
@@ -169,26 +239,46 @@
     }
     
     .header-title {
-      font-family: var(--font-display);
+      font-family: var(--font-heading);
       font-size: clamp(3rem, 8vw, 5rem);
-      font-weight: 800;
+      font-weight: 900;
       margin-bottom: 1rem;
-      background: var(--primary-gradient);
+      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange), var(--gaming-teal));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      letter-spacing: 2px;
+      letter-spacing: 4px;
       position: relative;
       line-height: 1.1;
+      text-transform: uppercase;
+      text-shadow: 0 0 40px rgba(0, 188, 212, 0.5);
+      animation: title-glow 3s ease-in-out infinite;
+    }
+    
+    @keyframes title-glow {
+      0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.5));
+      }
+      50% {
+        filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.5));
+      }
     }
     
     .header-subtitle {
-      font-family: var(--font-accent);
+      font-family: var(--font-display);
       font-size: 1.4rem;
-      color: var(--secondary-accent);
+      color: var(--text-secondary);
       margin-bottom: 1rem;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    
+    .header-subtitle::before {
+      content: '> ';
+      color: var(--game-terminal-green);
+      font-family: var(--font-code);
+      margin-right: 0.5rem;
     }
     
     .header-description {
@@ -209,34 +299,84 @@
     .section-container {
       max-width: 1400px;
       margin: 0 auto;
-      background: var(--surface-primary);
+      background: var(--game-panel-bg);
       border: 2px solid var(--border-color);
-      border-radius: 20px;
+      border-top: 4px solid var(--game-unity-blue);
+      border-radius: 8px;
       padding: 4rem;
-      box-shadow: var(--shadow-lg);
+      box-shadow: 
+        var(--shadow-xl),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 0 30px rgba(0, 188, 212, 0.2);
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
+      font-family: var(--font-body);
+    }
+    
+    .section-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--game-unity-blue), var(--game-unreal-orange), var(--gaming-teal));
+      opacity: 0.8;
+    }
+    
+    .section-container::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle, rgba(0, 188, 212, 0.2), transparent);
+      border-radius: 50%;
+      opacity: 0.5;
     }
     
     .section-container:hover {
-      border-color: var(--border-accent);
-      box-shadow: var(--shadow-xl);
+      border-color: var(--game-unity-blue);
+      box-shadow: 
+        var(--shadow-xl),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 40px rgba(0, 188, 212, 0.4);
+      transform: translateY(-4px);
     }
     
     .section-title {
-      font-family: var(--font-display);
+      font-family: var(--font-heading);
       font-size: 3rem;
       text-align: center;
       margin-bottom: 3rem;
       position: relative;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 3px;
     }
     
     .section-title span {
-      background: var(--primary-gradient);
+      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      position: relative;
+      text-shadow: 0 0 30px rgba(0, 188, 212, 0.5);
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--game-unity-blue), var(--game-unreal-orange), transparent);
+      border-radius: 2px;
+      box-shadow: 0 0 10px var(--game-unity-blue);
     }
 
     /* Portfolio Grid */
@@ -248,9 +388,10 @@
     }
     
     .project-card {
-      background: var(--surface-secondary);
+      background: var(--game-panel-bg);
       border: 2px solid var(--border-color);
-      border-radius: 16px;
+      border-left: 4px solid var(--game-unity-blue);
+      border-radius: 8px;
       padding: 2rem;
       position: relative;
       overflow: hidden;
@@ -259,27 +400,46 @@
       min-height: 400px;
       display: flex;
       flex-direction: column;
+      box-shadow: 
+        var(--shadow-md),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
     }
     
     .project-card::before {
+      content: 'PROJECT';
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 0.6rem;
+      color: var(--game-unity-blue);
+      font-family: var(--font-ui);
+      font-weight: 700;
+      letter-spacing: 2px;
+      opacity: 0.5;
+    }
+    
+    .project-card::after {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 4px;
       height: 100%;
-      background: var(--primary-gradient);
+      background: linear-gradient(180deg, var(--game-unity-blue), var(--game-unreal-orange));
       transition: width 0.3s ease;
+      box-shadow: 0 0 10px var(--game-unity-blue);
     }
     
-    .project-card:hover::before {
+    .project-card:hover::after {
       width: 6px;
     }
     
     .project-card:hover {
       transform: translateY(-5px);
-      border-color: var(--border-accent);
-      box-shadow: var(--shadow-xl);
+      border-color: var(--game-unity-blue);
+      box-shadow: 
+        var(--shadow-xl),
+        0 0 30px rgba(0, 188, 212, 0.4);
     }
     
     .project-header {
@@ -288,7 +448,23 @@
       gap: 1.5rem;
       margin-bottom: 1.5rem;
       padding-bottom: 1rem;
-      border-bottom: 1px solid var(--glass-border);
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+    }
+    
+    .project-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--game-unity-blue), var(--game-unreal-orange));
+      transition: width 0.3s ease;
+    }
+    
+    .project-card:hover .project-header::after {
+      width: 100%;
     }
     
     .project-image {
@@ -320,6 +496,8 @@
       color: var(--white);
       margin: 0 0 0.5rem 0;
       line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     
     .project-links {
@@ -340,21 +518,25 @@
       padding: 0.4rem 1rem;
       background: var(--surface-elevated);
       border: 1px solid var(--border-color);
-      border-radius: 8px;
-      color: var(--primary-accent);
+      border-radius: 4px;
+      color: var(--game-unity-blue);
       text-decoration: none;
       font-size: 0.8rem;
-      font-weight: 500;
+      font-weight: 600;
       font-family: var(--font-ui);
       transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
     
     .project-links a:hover {
-      background: var(--primary-accent);
+      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
       color: var(--white);
       transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--primary-accent);
+      box-shadow: 
+        var(--shadow-md),
+        0 0 15px rgba(0, 188, 212, 0.5);
+      border-color: var(--game-unity-blue);
     }
     
     .project-description {
@@ -373,10 +555,16 @@
       font-family: var(--font-heading);
       font-size: 1rem;
       font-weight: 600;
-      color: var(--secondary-accent);
+      color: var(--game-unity-blue);
       margin-bottom: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+    }
+    
+    .features-title::before {
+      content: '⚙ ';
+      margin-right: 0.5rem;
+      opacity: 0.7;
     }
     
     .features-list {
@@ -391,10 +579,20 @@
     .features-list li {
       margin-bottom: 0.4rem;
       position: relative;
+      padding-left: 0.5rem;
     }
     
     .features-list li::marker {
-      color: var(--primary-accent);
+      color: var(--game-unity-blue);
+    }
+    
+    .features-list li::before {
+      content: '▶';
+      position: absolute;
+      left: -1rem;
+      color: var(--game-unity-blue);
+      font-size: 0.7rem;
+      opacity: 0.7;
     }
 
     /* Loading Animation */
@@ -404,8 +602,9 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: var(--void-black);
+      background: var(--primary-bg);
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       z-index: 9999;
@@ -418,15 +617,22 @@
     }
     
     .loading-spinner {
-      width: 80px;
-      height: 80px;
+      width: 60px;
+      height: 60px;
       border: 3px solid var(--border-color);
-      border-top: 3px solid var(--primary-accent);
+      border-top: 3px solid var(--game-unity-blue);
       border-radius: 50%;
       animation: spin 1s linear infinite;
-      box-shadow: 
-        0 0 20px var(--primary-accent),
-        0 0 40px rgba(255, 107, 53, 0.3);
+      margin-bottom: 2rem;
+      box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+    }
+    
+    .loading-text {
+      color: var(--game-unity-blue);
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
     
     @keyframes spin {
@@ -534,6 +740,7 @@
   <!-- Loading Screen -->
   <div class="loading-overlay" id="loadingOverlay">
     <div class="loading-spinner"></div>
+    <div class="loading-text">Loading Portfolio</div>
   </div>
   
   <div class="nav">
