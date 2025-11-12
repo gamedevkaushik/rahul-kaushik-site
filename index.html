@@ -135,101 +135,6 @@
       pointer-events: none;
     }
 
-    /* Remove sci-fi wave animations for clean look */
-
-    /* Subtle Accent Layer */
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      z-index: -2;
-      pointer-events: none;
-      animation: none;
-    }
-
-    @keyframes wave-flow {
-      0%, 100% {
-        transform: translateX(0) translateY(0) scale(1);
-        opacity: 0.8;
-      }
-      25% {
-        transform: translateX(-20px) translateY(-10px) scale(1.02);
-        opacity: 1;
-      }
-      50% {
-        transform: translateX(15px) translateY(8px) scale(0.98);
-        opacity: 0.9;
-      }
-      75% {
-        transform: translateX(-10px) translateY(12px) scale(1.01);
-        opacity: 0.95;
-      }
-    }
-
-    @keyframes subtle-pulse {
-      0%, 100% { 
-        opacity: 0.8;
-        filter: drop-shadow(0 0 3px rgba(0, 255, 255, 0.5)) drop-shadow(0 0 6px rgba(255, 0, 255, 0.3));
-      }
-      50% { 
-        opacity: 1;
-        filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.7)) drop-shadow(0 0 10px rgba(255, 0, 255, 0.5));
-      }
-    }
-
-    @keyframes grid-shift {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.6; }
-    }
-
-    @keyframes circuit-pulse {
-      0%, 100% { 
-        opacity: 0.4;
-        filter: hue-rotate(0deg);
-      }
-      25% { 
-        opacity: 0.6;
-        filter: hue-rotate(90deg);
-      }
-      50% { 
-        opacity: 0.5;
-        filter: hue-rotate(180deg);
-      }
-      75% { 
-        opacity: 0.7;
-        filter: hue-rotate(270deg);
-      }
-    }
-
-    @keyframes plasma-shift {
-      0%, 100% { 
-        background: 
-          radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.25) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.25) 0%, transparent 50%),
-          radial-gradient(circle at 40% 40%, rgba(0, 255, 65, 0.25) 0%, transparent 50%);
-      }
-      33% { 
-        background: 
-          radial-gradient(circle at 80% 80%, rgba(255, 0, 255, 0.25) 0%, transparent 50%),
-          radial-gradient(circle at 20% 20%, rgba(0, 255, 65, 0.25) 0%, transparent 50%),
-          radial-gradient(circle at 60% 60%, rgba(0, 255, 255, 0.25) 0%, transparent 50%);
-      }
-      66% { 
-        background: 
-          radial-gradient(circle at 40% 20%, rgba(0, 255, 65, 0.25) 0%, transparent 50%),
-          radial-gradient(circle at 60% 80%, rgba(0, 255, 255, 0.25) 0%, transparent 50%),
-          radial-gradient(circle at 80% 40%, rgba(255, 0, 255, 0.25) 0%, transparent 50%);
-      }
-    }
-
-    @keyframes scan-lines {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(4px); }
-    }
     
     /* Floating Particles - GAMIFIED */
     .particles {
@@ -272,23 +177,6 @@
       }
     }
     
-    /* Digital Rain Effect */
-    .digital-rain {
-      display: none;
-    }
-    
-    .rain-column {
-      display: none;
-    }
-    
-    /* Energy Fields */
-    .energy-fields {
-      display: none;
-    }
-    
-    .energy-wave {
-      display: none;
-    }
     
     /* Game Menu Navigation - Unity/Unreal Style */
     .nav {
@@ -335,25 +223,6 @@
       font-family: var(--font-ui);
     }
     
-    /* Remove excessive nav animation */
-    @keyframes nav-glow {
-      /* Removed for professional look */
-    }
-    
-    /* Remove excessive section animation */
-    @keyframes section-glow {
-      /* Removed for professional look */
-    }
-    
-    /* Remove number glow animation */
-    @keyframes number-glow {
-      /* Removed for professional look */
-    }
-    
-    /* Remove excessive CTA pulse */
-    @keyframes cta-pulse {
-      /* Removed for professional look */
-    }
     
     .nav a {
       color: var(--text-secondary);
@@ -511,20 +380,6 @@
         0 0 40px rgba(0, 188, 212, 0.4);
     }
     
-    @keyframes profile-glow {
-      0%, 100% { 
-        box-shadow: 
-          var(--shadow-medium), 
-          var(--neon-glow) var(--primary-accent),
-          0 0 40px var(--primary-accent);
-      }
-      50% { 
-        box-shadow: 
-          var(--shadow-medium), 
-          var(--neon-glow) var(--secondary-accent),
-          0 0 40px var(--secondary-accent);
-      }
-    }
     
     .header-title {
       font-family: var(--font-heading);
@@ -553,8 +408,6 @@
       }
     }
     
-    /* Clean professional animations removed */
-    
     .header-subtitle {
       font-family: var(--font-display);
       font-size: 1.5rem;
@@ -574,8 +427,6 @@
       font-family: var(--font-code);
       margin-right: 0.5rem;
     }
-    
-    /* Subtitle animations removed for clean look */
     
     .header-tagline {
       font-family: var(--font-code);
@@ -599,91 +450,6 @@
     .header-tagline::before {
       content: '>>> ';
       color: var(--game-terminal-green);
-    }
-    
-    /* Clean professional appearance - sci-fi effects removed */
-    
-    @keyframes tagline-glitch {
-      0%, 90%, 100% { 
-        opacity: 1; 
-        text-shadow: 
-          0 0 10px var(--tertiary-accent),
-          0 0 20px var(--tertiary-accent),
-          0 0 30px var(--tertiary-accent);
-        transform: translateX(0);
-      }
-      92% { 
-        opacity: 0.8; 
-        text-shadow: 
-          2px 0 var(--primary-accent),
-          -2px 0 var(--secondary-accent),
-          0 0 20px var(--tertiary-accent);
-        transform: translateX(2px);
-      }
-      94% { 
-        opacity: 1; 
-        text-shadow: 
-          -1px 0 var(--secondary-accent),
-          1px 0 var(--primary-accent),
-          0 0 25px var(--tertiary-accent);
-        transform: translateX(-1px);
-      }
-      96% { 
-        opacity: 0.9; 
-        text-shadow: 
-          1px 0 var(--primary-accent),
-          -1px 0 var(--secondary-accent),
-          0 0 15px var(--tertiary-accent);
-        transform: translateX(1px);
-      }
-    }
-    
-    @keyframes tagline-appear {
-      0% {
-        opacity: 0;
-        transform: translateY(20px) scale(0.8);
-        filter: blur(5px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0);
-      }
-    }
-    
-    @keyframes glitch-1 {
-      0%, 90%, 100% { opacity: 0; }
-      92% { 
-        opacity: 0.7;
-        transform: translateX(2px);
-        color: var(--primary-accent);
-      }
-    }
-    
-    @keyframes glitch-2 {
-      0%, 90%, 100% { opacity: 0; }
-      94% { 
-        opacity: 0.6;
-        transform: translateX(-2px);
-        color: var(--secondary-accent);
-      }
-    }
-    
-    @keyframes tagline-pulse {
-      0%, 100% { 
-        opacity: 1; 
-        text-shadow: 
-          0 0 10px var(--tertiary-accent),
-          0 0 20px var(--tertiary-accent),
-          0 0 30px var(--tertiary-accent);
-      }
-      50% { 
-        opacity: 0.8; 
-        text-shadow: 
-          0 0 15px var(--tertiary-accent),
-          0 0 25px var(--tertiary-accent),
-          0 0 35px var(--tertiary-accent);
-      }
     }
     
     .scroll-indicator {
@@ -808,43 +574,6 @@
       opacity: 0.7;
     }
     
-    .hero-title::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary-gradient);
-      animation: hero-underline 1.5s ease-out 9s both;
-    }
-    
-    @keyframes hero-title-emerge {
-      0% {
-        opacity: 0;
-        transform: translateY(30px) rotateX(90deg);
-        filter: blur(10px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) rotateX(0deg);
-        filter: blur(0);
-      }
-    }
-    
-    @keyframes hero-title-float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-5px);
-      }
-    }
-    
-    @keyframes hero-underline {
-      0% { width: 0; }
-      100% { width: 100%; }
-    }
     
     .hero-description {
       font-size: 1.2rem;
@@ -854,19 +583,6 @@
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
-    }
-    
-    @keyframes hero-desc-fade-in {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-        filter: blur(5px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-      }
     }
     
     /* CTA Buttons */
@@ -912,25 +628,6 @@
       left: 100%;
     }
     
-    @keyframes cta-appear {
-      0% {
-        opacity: 0;
-        transform: translateY(20px) scale(0.9);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-    
-    @keyframes cta-pulse {
-      0%, 100% {
-        box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.4);
-      }
-      50% {
-        box-shadow: 0 0 0 10px rgba(0, 255, 255, 0);
-      }
-    }
     
     .cta-primary {
       background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
@@ -1301,10 +998,6 @@
       display: none; /* Removed glow effect to prevent unwanted visual artifacts */
     }
     
-    @keyframes number-glow {
-      0%, 100% { filter: brightness(1); }
-      50% { filter: brightness(1.3); }
-    }
     
     .stat-label {
       font-size: 1.2rem;
@@ -2185,10 +1878,6 @@
         border-radius: 20px;
       }
       
-      .hero-welcome {
-        padding: 2.5rem 1.5rem;
-        border-radius: 20px;
-      }
       
       .cta-container {
         flex-direction: column;
@@ -2451,9 +2140,6 @@
         grid-row: auto;
       }
       
-      .hero-welcome {
-        padding: 2rem 1rem;
-      }
       
       .stat-card {
         padding: 2rem 1.5rem;
@@ -2815,38 +2501,6 @@
       0% { transform: rotate(0deg) scale(1); }
       50% { transform: rotate(180deg) scale(1.3); }
       100% { transform: rotate(360deg) scale(1); }
-    }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(60px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-60px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(60px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
     }
     
     /* Intersection Observer Classes */
@@ -3890,12 +3544,16 @@
       }, 800);
     });
     
-    // Scroll Progress Indicator and Header Fade Effect - GAMIFIED
+    // Optimized Scroll Handler - Combined all scroll events
     let lastScrollPercent = 0;
-    window.addEventListener('scroll', () => {
+    let ticking = false;
+    
+    function handleScroll() {
       const scrollTop = window.pageYOffset;
       const docHeight = document.body.offsetHeight - window.innerHeight;
       const scrollPercent = (scrollTop / docHeight) * 100;
+      
+      // Scroll progress
       document.getElementById('scrollProgress').style.width = scrollPercent + '%';
       
       // Award XP for scrolling milestones
@@ -3925,26 +3583,52 @@
       
       // Header fade out effect
       const header = document.querySelector('header');
-      const headerHeight = header.offsetHeight;
-      const fadeStartPoint = headerHeight * 0.3;
-      const fadeEndPoint = headerHeight * 0.8;
-      
-      if (scrollTop >= fadeStartPoint) {
-        header.classList.add('fade-out');
+      if (header) {
+        const headerHeight = header.offsetHeight;
+        const fadeStartPoint = headerHeight * 0.3;
+        const fadeEndPoint = headerHeight * 0.8;
         
-        if (scrollTop >= fadeEndPoint) {
-          header.classList.add('scrolled');
+        if (scrollTop >= fadeStartPoint) {
+          header.classList.add('fade-out');
+          if (scrollTop >= fadeEndPoint) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
         } else {
-          header.classList.remove('scrolled');
+          header.classList.remove('fade-out', 'scrolled');
         }
-      } else {
-        header.classList.remove('fade-out', 'scrolled');
       }
       
+      // Navigation active state
+      const sections = document.querySelectorAll('section[id], header[id]');
+      const navLinks = document.querySelectorAll('.nav a[href^="#"]');
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+      
       checkAchievements();
+      ticking = false;
+    }
+    
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(handleScroll);
+        ticking = true;
+      }
     });
     
-    // Navigation
+    // Navigation click handlers
     document.querySelectorAll('.nav a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -3955,8 +3639,6 @@
             block: 'start'
           });
         }
-        
-        // Update active nav
         document.querySelectorAll('.nav a').forEach(link => link.classList.remove('active'));
         this.classList.add('active');
       });
@@ -3976,30 +3658,8 @@
       });
     }, observerOptions);
     
-    // Observe all animated elements
     document.querySelectorAll('.animate-on-scroll, .animate-left, .animate-right').forEach(el => {
       observer.observe(el);
-    });
-    
-    // Navigation active state on scroll
-    window.addEventListener('scroll', () => {
-      const sections = document.querySelectorAll('section[id], header[id]');
-      const navLinks = document.querySelectorAll('.nav a[href^="#"]');
-      
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= (sectionTop - 200)) {
-          current = section.getAttribute('id');
-        }
-      });
-      
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
-        }
-      });
     });
     
     // Professional Form Handling
@@ -4130,43 +3790,6 @@
       }, 1000);
     });
     
-    // Smooth scroll for all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-    
-    // Optimized parallax effect with fade integration
-    let ticking = false;
-    function updateParallax() {
-      const scrolled = window.pageYOffset;
-      const header = document.querySelector('header');
-      const headerHeight = header.offsetHeight;
-      
-      // Subtle parallax effect that works with fade-out
-      const speed = Math.min(scrolled * 0.2, headerHeight * 0.3);
-      
-      if (header && scrolled < headerHeight) {
-        header.style.transform = `translateY(${speed}px)`;
-      }
-      
-      ticking = false;
-    }
-    
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(updateParallax);
-        ticking = true;
-      }
-    });
     
     // Achievement tracking on page interactions
     document.querySelectorAll('.achievement-card, .award-card, .education-card').forEach(card => {
