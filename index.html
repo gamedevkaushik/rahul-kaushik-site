@@ -1465,133 +1465,195 @@
       display: inline-block;
     }
     
-    /* Clean Gaming Timeline */
-    .timeline {
-      position: relative;
+    /* Experience Grid - Card Design */
+    .experience-grid {
+      display: grid;
+      gap: 2.5rem;
       margin-top: 3rem;
     }
     
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: var(--primary-gradient);
-      transform: translateX(-50%);
-      border-radius: 2px;
-    }
-    
-    .timeline-item {
-      position: relative;
-      margin-bottom: 4rem;
-      display: flex;
-      align-items: center;
-    }
-    
-    .timeline-item:nth-child(odd) {
-      flex-direction: row-reverse;
-    }
-    
-    .timeline-item:nth-child(odd) .timeline-content {
-      margin-right: 3rem;
-      margin-left: 0;
-    }
-    
-    .timeline-content {
+    .experience-card {
       background: var(--game-panel-bg);
       border: 2px solid var(--border-color);
-      border-left: 4px solid var(--game-unreal-orange);
-      border-radius: 8px;
-      padding: 2rem;
-      margin-left: 3rem;
-      flex: 1;
-      max-width: 500px;
+      border-left: 6px solid var(--game-unity-blue);
+      border-radius: 12px;
+      padding: 2.5rem;
       position: relative;
+      overflow: hidden;
       transition: all 0.3s ease;
       box-shadow: 
         var(--shadow-md),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
     }
     
-    .timeline-content::before {
-      content: 'EXPERIENCE';
+    .experience-card::before {
+      content: '';
       position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 0.6rem;
-      color: var(--game-unreal-orange);
-      font-family: var(--font-ui);
-      font-weight: 700;
-      letter-spacing: 2px;
-      opacity: 0.5;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--game-unity-blue), var(--game-unreal-orange), var(--gaming-teal));
+      opacity: 0.8;
     }
     
-    .timeline-content:hover {
-      transform: translateY(-5px) scale(1.01);
-      border-color: var(--border-accent);
-      box-shadow: var(--shadow-lg);
-      cursor: pointer;
-    }
-    
-    .timeline-content:active {
-      transform: translateY(-2px) scale(0.99);
-    }
-    
-    .timeline-content p {
-      color: var(--text-primary);
-      line-height: 1.6;
-      margin-top: 1rem;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-    }
-    
-    .timeline-dot {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 16px;
-      height: 16px;
-      background: linear-gradient(135deg, var(--primary-accent), var(--gaming-purple));
-      border-radius: 50%;
-      z-index: 10;
-      border: 3px solid var(--void-black);
+    .experience-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--game-unity-blue);
       box-shadow: 
-        0 0 20px rgba(0, 217, 255, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        var(--shadow-lg),
+        0 0 30px rgba(0, 188, 212, 0.3);
     }
     
     .experience-header {
       display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      gap: 1.5rem;
     }
     
     .company-logo {
-      width: 50px;
-      height: 50px;
-      border-radius: 10px;
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 
+        0 6px 15px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(0, 188, 212, 0.3);
+      overflow: hidden;
+      border: 2px solid var(--border-color);
+    }
+    
+    .company-logo img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      border: 2px solid var(--glass-border);
+      border-radius: 12px;
     }
     
-    .experience-info h3 {
-      color: var(--stellar-white);
-      font-size: 1.2rem;
-      margin-bottom: 0.25rem;
+    .experience-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
     
-    .experience-info h4 {
-      color: var(--primary-accent);
-      font-size: 1rem;
-      margin-bottom: 0.25rem;
+    .experience-role {
+      color: var(--game-unity-blue);
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     
-    .duration {
-      color: var(--text-primary);
+    .experience-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin: 0 0 0.5rem 0;
+      font-family: var(--font-heading);
+    }
+    
+    .experience-date {
+      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
+      color: var(--white);
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
       font-size: 0.9rem;
-      opacity: 0.8;
+      font-weight: 700;
+      display: inline-block;
+      font-family: var(--font-ui);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(0, 188, 212, 0.3);
+      align-self: flex-start;
+    }
+    
+    .experience-description {
+      color: var(--text-primary);
+      line-height: 1.8;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.4s ease, margin-bottom 0.4s ease;
+    }
+    
+    .experience-card:hover .experience-description {
+      max-height: 500px;
+      opacity: 1;
+      margin-bottom: 1.5rem;
+    }
+    
+    .experience-description ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    
+    .experience-description ul li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .experience-description ul li::before {
+      content: '▶';
+      color: var(--game-unity-blue);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      font-size: 0.8rem;
+    }
+    
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .skill-tag {
+      background: rgba(0, 188, 212, 0.15);
+      color: var(--game-unity-blue);
+      padding: 0.4rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1px solid rgba(0, 188, 212, 0.3);
+      font-family: var(--font-ui);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .experience-stats {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-family: var(--font-ui);
+    }
+    
+    .stat-icon {
+      font-size: 1.1rem;
     }
     
     /* Awards & Education Grid */
@@ -2087,28 +2149,57 @@
         font-size: 0.9rem;
       }
       
-      .timeline::before {
-        left: 20px;
+      .experience-grid {
+        gap: 1.5rem;
       }
       
-      .timeline-item {
-        flex-direction: row !important;
-        margin-left: 40px;
+      .experience-card {
+        padding: 1.5rem;
       }
       
-      .timeline-item:nth-child(odd) .timeline-content {
-        margin-right: 0;
-        margin-left: 2rem;
+      .experience-header {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
       }
       
-      .timeline-content {
-        margin-left: 2rem;
-        max-width: none;
+      .company-logo {
+        width: 60px;
+        height: 60px;
+        align-self: flex-start;
+        flex-shrink: 0;
       }
       
-      .timeline-dot {
-        left: 20px;
-        transform: translateX(-50%);
+      .experience-role {
+        font-size: 1.1rem;
+        margin: 0;
+        padding-top: 0;
+        flex: 1;
+        min-width: 200px;
+      }
+      
+      .experience-title {
+        font-size: 1.2rem;
+        margin: 0;
+        text-align: left;
+      }
+      
+      .experience-date {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+        margin: 0;
+        white-space: nowrap;
+        align-self: flex-start;
+      }
+      
+      .skills-tags {
+        flex-wrap: wrap;
+        gap: 0.3rem;
+      }
+      
+      .skill-tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
       }
       
       .contact-container {
@@ -2888,124 +2979,303 @@
         <span>Experience</span>
       </h2>
       
-      <div class="timeline">
-        <div class="timeline-item animate-left">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="experience-header">
-              <img src="files/Company_Logos/mpm_logo.png" alt="MPM" class="company-logo">
-              <div class="experience-info">
-                <h3>Development Team Lead (Consultant)</h3>
-                <h4>Measure Practice Management</h4>
-                <span class="duration">2021 - 2025</span>
-              </div>
+      <div class="experience-grid">
+        <div class="experience-card animate-left">
+          <div class="experience-header">
+            <div class="company-logo">
+              <img src="files/Company_Logos/mpm_logo.png" alt="MPM Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
-            <p>Lead, Mentor, and Manage a high-performing development team. Heading R&D on new features and optimisation. Responsible for tech stack, risk management, reporting, QC, and coordination.</p>
+            <div class="experience-info">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                <p class="experience-role" style="margin: 0; padding-top: 0;">Development Team Lead (Consultant)</p>
+                <span class="experience-date">2021 - 2025</span>
+              </div>
+              <h3 class="experience-title" style="margin: 0;">Measure Practice Management</h3>
+            </div>
+          </div>
+          <div class="experience-description">
+            <ul>
+              <li>Lead, Mentor, and Manage a high-performing development team</li>
+              <li>Heading R&D on new features and optimisation</li>
+              <li>Responsible for tech stack, risk management, reporting, QC, and coordination</li>
+            </ul>
+          </div>
+          <div class="skills-tags">
+            <span class="skill-tag">Team Leadership</span>
+            <span class="skill-tag">R&D</span>
+            <span class="skill-tag">Risk Management</span>
+            <span class="skill-tag">Quality Control</span>
+          </div>
+          <div class="experience-stats">
+            <div class="stat-item">
+              <span class="stat-icon">👥</span>
+              <span>Team Lead</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon">📈</span>
+              <span>4 Years</span>
+            </div>
           </div>
         </div>
         
-        <div class="timeline-item animate-right">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="experience-header">
-              <img src="files/Company_Logos/dpi_logo.png" alt="DPI" class="company-logo">
-              <div class="experience-info">
-                <h3>Team Lead</h3>
-                <h4>Dark Pyre Interactive</h4>
-                <span class="duration">2021 - 2024</span>
-              </div>
+        <div class="experience-card animate-right">
+          <div class="experience-header">
+            <div class="company-logo">
+              <img src="files/Company_Logos/dpi_logo.png" alt="DPI Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
-            <p>Conceptualising in-house mobile games, team and client management for service products. Led R&D for game features and optimisation.</p>
+            <div class="experience-info">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                <p class="experience-role" style="margin: 0; padding-top: 0;">Development Team Lead (Consultant)</p>
+                <span class="experience-date">2021 - 2024</span>
+              </div>
+              <h3 class="experience-title" style="margin: 0;">Dark Pyre Interactive</h3>
+            </div>
+          </div>
+          <div class="experience-description">
+            <ul>
+              <li>Conceptualising in-house mobile games</li>
+              <li>Team and client management for service products</li>
+              <li>Led R&D for game features and optimisation</li>
+            </ul>
+          </div>
+          <div class="skills-tags">
+            <span class="skill-tag">Mobile Games</span>
+            <span class="skill-tag">Client Management</span>
+            <span class="skill-tag">Game Development</span>
+            <span class="skill-tag">R&D</span>
+          </div>
+          <div class="experience-stats">
+            <div class="stat-item">
+              <span class="stat-icon">🎮</span>
+              <span>Mobile Games</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon">📈</span>
+              <span>3 Years</span>
+            </div>
           </div>
         </div>
         
-        <div class="timeline-item animate-left">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="experience-header">
-              <img src="files/Company_Logos/freelance_logo.png" alt="Freelance" class="company-logo">
-              <div class="experience-info">
-                <h3>AR Development</h3>
-                <h4>Freelance Developer</h4>
-                <span class="duration">2019 - 2020</span>
-              </div>
+        <div class="experience-card animate-left">
+          <div class="experience-header">
+            <div class="company-logo">
+              <img src="files/Company_Logos/freelance_logo.png" alt="Freelance Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
-            <p>Developed "Wormhole" AR social platform using ECEF coordinates. Focused on AR development and social platform integration.</p>
+            <div class="experience-info">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                <p class="experience-role" style="margin: 0; padding-top: 0;">AR Development</p>
+                <span class="experience-date">2019 - 2020</span>
+              </div>
+              <h3 class="experience-title" style="margin: 0;">Freelance Developer</h3>
+            </div>
+          </div>
+          <div class="experience-description">
+            <ul>
+              <li>Developed "Wormhole" AR social platform using ECEF coordinates</li>
+            </ul>
+          </div>
+          <div class="skills-tags">
+            <span class="skill-tag">AR Development</span>
+            <span class="skill-tag">Social Platform</span>
+            <span class="skill-tag">ECEF Coordinates</span>
+          </div>
+          <div class="experience-stats">
+            <div class="stat-item">
+              <span class="stat-icon">🕶️</span>
+              <span>AR Platform</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon">📈</span>
+              <span>1 Year</span>
+            </div>
           </div>
         </div>
         
-        <div class="timeline-item animate-right">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="experience-header">
-              <img src="files/Company_Logos/mds_logo.png" alt="MDS" class="company-logo">
-              <div class="experience-info">
-                <h3>Team Lead</h3>
-                <h4>MetaDesign Solutions</h4>
-                <span class="duration">2016 - 2019</span>
-              </div>
+        <div class="experience-card animate-right">
+          <div class="experience-header">
+            <div class="company-logo">
+              <img src="files/Company_Logos/mds_logo.png" alt="MDS Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
-            <p>Managed game teams for Unity, Cocos2DX, and Construct. Handled documentation, QA, and department coordination.</p>
+            <div class="experience-info">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                <p class="experience-role" style="margin: 0; padding-top: 0;">Team Lead</p>
+                <span class="experience-date">2016 - 2019</span>
+              </div>
+              <h3 class="experience-title" style="margin: 0;">MetaDesign Solutions</h3>
+            </div>
+          </div>
+          <div class="experience-description">
+            <ul>
+              <li>Managed game teams for Unity, Cocos2DX, and Construct</li>
+              <li>Documentation, QA, and department coordination</li>
+            </ul>
+          </div>
+          <div class="skills-tags">
+            <span class="skill-tag">Unity</span>
+            <span class="skill-tag">Cocos2DX</span>
+            <span class="skill-tag">Construct</span>
+            <span class="skill-tag">QA</span>
+          </div>
+          <div class="experience-stats">
+            <div class="stat-item">
+              <span class="stat-icon">🎮</span>
+              <span>Game Engines</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon">📈</span>
+              <span>3 Years</span>
+            </div>
           </div>
         </div>
         
-        <div class="timeline-item animate-left">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="experience-header">
-              <img src="files/Company_Logos/ki_logo.png" alt="KI" class="company-logo">
-              <div class="experience-info">
-                <h3>Sr. Unity Developer</h3>
-                <h4>Kimaya Infotech</h4>
-                <span class="duration">2016</span>
-              </div>
+        <div class="experience-card animate-left">
+          <div class="experience-header">
+            <div class="company-logo">
+              <img src="files/Company_Logos/ki_logo.png" alt="KI Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
-            <p>Led Unity casino game development team. Cross-platform dev and SSL/TLS integration. Built random number generators for game logic.</p>
+            <div class="experience-info">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                <p class="experience-role" style="margin: 0; padding-top: 0;">Sr. Unity Developer</p>
+                <span class="experience-date">2016</span>
+              </div>
+              <h3 class="experience-title" style="margin: 0;">Kimaya Infotech</h3>
+            </div>
+          </div>
+          <div class="experience-description">
+            <ul>
+              <li>Led Unity casino game development team</li>
+              <li>Cross-platform dev and SSL/TLS integration</li>
+              <li>Built random number generators for game logic</li>
+            </ul>
+          </div>
+          <div class="skills-tags">
+            <span class="skill-tag">Unity</span>
+            <span class="skill-tag">Casino Games</span>
+            <span class="skill-tag">SSL/TLS</span>
+            <span class="skill-tag">RNG</span>
+          </div>
+          <div class="experience-stats">
+            <div class="stat-item">
+              <span class="stat-icon">🎰</span>
+              <span>Casino Games</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon">📈</span>
+              <span>1 Year</span>
+            </div>
           </div>
         </div>
         
-        <div class="timeline-item animate-right">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="experience-header">
-              <img src="files/Company_Logos/dai_logo.png" alt="DAI" class="company-logo">
-              <div class="experience-info">
-                <h3>Game Developer</h3>
-                <h4>Digital Agents Interactive</h4>
-                <span class="duration">2015 - 2016</span>
-              </div>
+        <div class="experience-card animate-right">
+          <div class="experience-header">
+            <div class="company-logo">
+              <img src="files/Company_Logos/dai_logo.png" alt="DAI Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
-            <p>Built VR games/apps for Google Cardboard & Oculus. Worked with Unity and Unreal Engine for immersive experiences.</p>
+            <div class="experience-info">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                <p class="experience-role" style="margin: 0; padding-top: 0;">Game Developer</p>
+                <span class="experience-date">2015 - 2016</span>
+              </div>
+              <h3 class="experience-title" style="margin: 0;">Digital Agents Interactive</h3>
+            </div>
+          </div>
+          <div class="experience-description">
+            <ul>
+              <li>Built VR games/apps for Google Cardboard & Oculus</li>
+              <li>Worked with Unity and Unreal Engine</li>
+            </ul>
+          </div>
+          <div class="skills-tags">
+            <span class="skill-tag">VR Development</span>
+            <span class="skill-tag">Unity</span>
+            <span class="skill-tag">Unreal Engine</span>
+            <span class="skill-tag">Oculus</span>
+          </div>
+          <div class="experience-stats">
+            <div class="stat-item">
+              <span class="stat-icon">🥽</span>
+              <span>VR Games</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon">📈</span>
+              <span>1 Year</span>
+            </div>
           </div>
         </div>
         
-        <div class="timeline-item animate-left">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="experience-header">
-              <img src="files/Company_Logos/vi_logo.png" alt="VI" class="company-logo">
-              <div class="experience-info">
-                <h3>Sr. Unity Developer</h3>
-                <h4>Virtualinfocom</h4>
-                <span class="duration">2015</span>
-              </div>
+        <div class="experience-card animate-left">
+          <div class="experience-header">
+            <div class="company-logo">
+              <img src="files/Company_Logos/vi_logo.png" alt="VI Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
-            <p>Led cross-disciplinary teams for Unity game dev. Managed publishing and monetisation strategies. Mentored junior developers.</p>
+            <div class="experience-info">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                <p class="experience-role" style="margin: 0; padding-top: 0;">Sr. Unity Developer</p>
+                <span class="experience-date">2015</span>
+              </div>
+              <h3 class="experience-title" style="margin: 0;">Virtualinfocom</h3>
+            </div>
+          </div>
+          <div class="experience-description">
+            <ul>
+              <li>Led cross-disciplinary teams for Unity game dev</li>
+              <li>Managed publishing and monetisation strategies</li>
+              <li>Mentored junior developers</li>
+            </ul>
+          </div>
+          <div class="skills-tags">
+            <span class="skill-tag">Unity</span>
+            <span class="skill-tag">Team Leadership</span>
+            <span class="skill-tag">Publishing</span>
+            <span class="skill-tag">Monetization</span>
+          </div>
+          <div class="experience-stats">
+            <div class="stat-item">
+              <span class="stat-icon">👥</span>
+              <span>Team Lead</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon">📈</span>
+              <span>1 Year</span>
+            </div>
           </div>
         </div>
         
-        <div class="timeline-item animate-right">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="experience-header">
-              <img src="files/Company_Logos/gis_logo.png" alt="GIS" class="company-logo">
-              <div class="experience-info">
-                <h3>Senior Web Developer</h3>
-                <h4>i-Greens Softech</h4>
-                <span class="duration">2013 - 2014</span>
-              </div>
+        <div class="experience-card animate-right">
+          <div class="experience-header">
+            <div class="company-logo">
+              <img src="files/Company_Logos/gis_logo.png" alt="GIS Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
-            <p>Front-end (ASP.NET) and back-end (MySQL, SQLServer). Developed e-commerce & job portal platforms. Led web teams and mentored new developers.</p>
+            <div class="experience-info">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                <p class="experience-role" style="margin: 0; padding-top: 0;">Senior Web Developer</p>
+                <span class="experience-date">2013 - 2014</span>
+              </div>
+              <h3 class="experience-title" style="margin: 0;">i-Greens Softech</h3>
+            </div>
+          </div>
+          <div class="experience-description">
+            <ul>
+              <li>Front-end (ASP.NET) and back-end (MySQL, SQLServer)</li>
+              <li>Developed e-commerce & job portal platforms</li>
+              <li>Led web teams and mentored new developers</li>
+            </ul>
+          </div>
+          <div class="skills-tags">
+            <span class="skill-tag">ASP.NET</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">SQL Server</span>
+            <span class="skill-tag">E-commerce</span>
+          </div>
+          <div class="experience-stats">
+            <div class="stat-item">
+              <span class="stat-icon">🌐</span>
+              <span>Web Development</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon">📈</span>
+              <span>2 Years</span>
+            </div>
           </div>
         </div>
       </div>
