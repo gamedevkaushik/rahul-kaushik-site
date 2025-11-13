@@ -1147,6 +1147,33 @@
       100% { transform: rotate(360deg); }
     }
 
+    /* Aspect Ratio Based Navigation */
+    /* Show hamburger menu when aspect ratio is below 1909/1769 */
+    @media (max-aspect-ratio: 1909/1769) {
+      /* Hide desktop nav */
+      .nav {
+        display: none;
+      }
+      
+      /* Show hamburger menu */
+      .hamburger-menu {
+        display: flex;
+      }
+    }
+    
+    /* Show full navbar when aspect ratio is 1909/1769 or above */
+    @media (min-aspect-ratio: 1909/1769) {
+      /* Show desktop nav */
+      .nav {
+        display: flex;
+      }
+      
+      /* Hide hamburger menu */
+      .hamburger-menu {
+        display: none;
+      }
+    }
+    
     /* Mobile Responsiveness */
     @media (max-width: 768px) {
       /* Prevent horizontal scrolling */
@@ -1176,16 +1203,6 @@
       button, .view-features-btn, .nav a, .game-popup-close {
         min-height: 44px;
         min-width: 44px;
-      }
-      
-      /* Hide desktop nav on mobile */
-      .nav {
-        display: none;
-      }
-      
-      /* Show hamburger menu on mobile */
-      .hamburger-menu {
-        display: flex;
       }
       
       .game-popup {
