@@ -93,6 +93,8 @@
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      width: 100%;
+      max-width: 100vw;
     }
 
     /* Game Development Background Pattern */
@@ -269,6 +271,161 @@
     }
     
     .nav a.active::before {
+      opacity: 1;
+      content: '●';
+    }
+    
+    /* Hamburger Menu Button (Hidden on Desktop) */
+    .hamburger-menu {
+      display: none;
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1001;
+      width: 50px;
+      height: 50px;
+      background: var(--game-panel-bg);
+      border: 2px solid var(--game-unity-blue);
+      border-radius: 8px;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      padding: 0.75rem;
+      box-shadow: 
+        var(--shadow-xl),
+        0 0 20px rgba(0, 188, 212, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .hamburger-menu span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: var(--game-unity-blue);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    
+    .hamburger-menu:hover {
+      background: rgba(0, 188, 212, 0.1);
+      box-shadow: 
+        var(--shadow-xl),
+        0 0 30px rgba(0, 188, 212, 0.5);
+    }
+    
+    .hamburger-menu.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    .hamburger-menu.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger-menu.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    /* Mobile Menu Overlay */
+    .mobile-menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 10000;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .mobile-menu-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+    
+    .mobile-menu-content {
+      width: 100%;
+      max-width: 400px;
+      background: var(--game-panel-bg);
+      border-right: 4px solid var(--game-unity-blue);
+      padding: 2rem;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 
+        var(--shadow-xl),
+        0 0 50px rgba(0, 188, 212, 0.5);
+    }
+    
+    .mobile-menu-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: 2px solid var(--game-unity-blue);
+      border-radius: 50%;
+      color: var(--game-unity-blue);
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+    
+    .mobile-menu-close:hover {
+      background: var(--game-unity-blue);
+      color: var(--white);
+      transform: rotate(90deg);
+    }
+    
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    
+    .mobile-nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      font-family: var(--font-ui);
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 2px solid transparent;
+      position: relative;
+    }
+    
+    .mobile-nav a::before {
+      content: '▶';
+      margin-right: 0.75rem;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+    }
+    
+    .mobile-nav a:hover,
+    .mobile-nav a.active {
+      color: var(--white);
+      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
+      border-color: var(--game-unity-blue);
+      transform: translateX(8px);
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+    }
+    
+    .mobile-nav a:hover::before,
+    .mobile-nav a.active::before {
       opacity: 1;
       content: '●';
     }
@@ -1281,10 +1438,13 @@
       transition: max-height 0.4s ease, opacity 0.4s ease, margin-bottom 0.4s ease;
     }
     
-    .experience-card:hover .experience-description {
-      max-height: 500px;
-      opacity: 1;
-      margin-bottom: 1.5rem;
+    /* Show description on hover - Desktop only */
+    @media (min-width: 769px) {
+      .experience-card:hover .experience-description {
+        max-height: 500px;
+        opacity: 1;
+        margin-bottom: 1.5rem;
+      }
     }
     
     .experience-description ul {
@@ -1826,30 +1986,58 @@
     
     /* Mobile Responsiveness */
     @media (max-width: 768px) {
-      .nav {
-        position: fixed;
-        top: 0.5rem;
-        left: 0.5rem;
-        right: 0.5rem;
-        margin: 0;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.25rem;
-        padding: 0.6rem 0.4rem;
-        border-radius: 10px;
-        background: rgba(var(--surface-primary-rgb), 0.98);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
+      /* Prevent horizontal scrolling */
+      html, body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
       }
       
-      .nav a {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.85rem;
+      /* Ensure images don't overflow */
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      
+      /* Ensure containers respect viewport */
+      .section-container,
+      .hero-content,
+      .upcoming-game-card,
+      .project-card,
+      .featured-card,
+      .achievement-card,
+      .award-card,
+      .education-card,
+      .experience-card,
+      .stat-card {
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+      
+      /* Touch-friendly buttons */
+      button, .cta-button, .view-features-btn, .nav a {
+        min-height: 44px;
+        min-width: 44px;
+      }
+      
+      /* Hide desktop nav on mobile */
+      .nav {
+        display: none;
+      }
+      
+      /* Show hamburger menu on mobile */
+      .hamburger-menu {
+        display: flex;
       }
       
       header {
-        min-height: 80vh;
-        padding: 6rem 1rem 0;
+        min-height: auto;
+        padding: 5rem 1rem 2rem;
+      }
+      
+      .profile-container {
+        margin-bottom: 2rem;
       }
       
       .profile-image {
@@ -1862,20 +2050,49 @@
       .header-title {
         font-size: clamp(2rem, 8vw, 3rem);
         letter-spacing: 2px;
+        margin-bottom: 1rem;
+      }
+      
+      .header-subtitle {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
       }
       
       .header-tagline {
-        font-size: 0.9rem;
-        letter-spacing: 2px;
+        font-size: 0.85rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 2rem;
+      }
+      
+      .hero-content {
+        padding: 2rem 1.5rem;
+        margin: 1.5rem 0 0;
+      }
+      
+      .hero-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .hero-description {
+        font-size: 1rem;
+        line-height: 1.6;
       }
       
       section {
-        padding: 4rem 1rem;
+        padding: 3rem 1rem;
       }
       
       .section-container {
-        padding: 2.5rem 1.5rem;
-        border-radius: 20px;
+        padding: 2rem 1.5rem;
+        border-radius: 12px;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        letter-spacing: 2px;
       }
       
       
@@ -1952,6 +2169,14 @@
       
       .experience-card {
         padding: 1.5rem;
+      }
+      
+      /* Always show experience description on mobile (tablet) */
+      .experience-description {
+        max-height: none !important;
+        opacity: 1 !important;
+        margin-bottom: 1.5rem !important;
+        overflow: visible !important;
       }
       
       .experience-header {
@@ -2047,88 +2272,17 @@
       
       /* Awards Grid - Mobile Responsive */
       .awards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-        max-width: 750px;
-      }
-      
-      .awards-grid .award-card {
-        width: 340px;
-        height: 450px;
-        max-width: 360px;
-      }
-      
-      .awards-grid .award-card:nth-child(1) {
-        grid-column: 1 / 2;
-      }
-      
-      .awards-grid .award-card:nth-child(2) {
-        grid-column: 2 / 3;
-      }
-      
-      .awards-grid .award-card:nth-child(3) {
-        grid-column: 1 / 3;
-        grid-row: 2;
-      }
-      
-      .awards-grid .award-card:nth-child(4) {
-        grid-column: 1 / 2;
-        grid-row: 3;
-      }
-      
-      .awards-grid .award-card:nth-child(5) {
-        grid-column: 2 / 3;
-        grid-row: 3;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .nav {
-        padding: 0.8rem;
-        gap: 0.3rem;
-      }
-      
-      .nav a {
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
-      }
-      
-      .profile-image {
-        width: 120px;
-        height: 120px;
-        object-fit: cover;
-        object-position: center;
-      }
-      
-      .header-title {
-        font-size: clamp(1.8rem, 8vw, 2.5rem);
-      }
-      
-      .section-container {
-        padding: 2rem 1rem;
-      }
-      
-      .contact-method {
-        padding: 1.25rem 1.5rem;
-        min-height: 70px;
-      }
-      
-      .contact-method:hover {
-        transform: translateY(-2px);
-      }
-      
-      /* Awards Grid - Mobile Single Column */
-      .awards-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-        max-width: 400px;
+        max-width: 100%;
+        justify-items: center;
       }
       
       .awards-grid .award-card {
         width: 100%;
-        height: 450px;
-        max-width: 380px;
-        padding: 2rem;
+        max-width: 400px;
+        height: auto;
+        min-height: 400px;
       }
       
       .awards-grid .award-card:nth-child(1),
@@ -2140,38 +2294,285 @@
         grid-row: auto;
       }
       
+      .contact-method {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.25rem 1.5rem;
+      }
+      
+      .contact-details {
+        text-align: center;
+      }
+      
+      .contact-details p {
+        word-break: break-all;
+        font-size: 0.85rem;
+      }
+      
+      .game-hud {
+        position: fixed;
+        bottom: 0.5rem;
+        left: 0.5rem;
+        right: 0.5rem;
+        max-width: calc(100% - 1rem);
+        min-width: auto;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+      }
+      
+      .level-display {
+        font-size: 1.2rem;
+      }
+      
+      .xp-bar {
+        height: 18px;
+      }
+      
+      .xp-value {
+        font-size: 0.65rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hamburger-menu {
+        width: 45px;
+        height: 45px;
+        top: 0.75rem;
+        right: 0.75rem;
+        padding: 0.6rem;
+      }
+      
+      .hamburger-menu span {
+        width: 22px;
+        height: 2.5px;
+      }
+      
+      .mobile-menu-content {
+        max-width: 100%;
+        padding: 1.5rem;
+      }
+      
+      .mobile-nav a {
+        padding: 0.9rem 1.25rem;
+        font-size: 0.9rem;
+      }
+      
+      header {
+        padding: 4.5rem 0.75rem 1.5rem;
+      }
+      
+      .profile-image {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        object-position: center;
+      }
+      
+      .header-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        letter-spacing: 1px;
+      }
+      
+      .header-subtitle {
+        font-size: 1rem;
+      }
+      
+      .header-tagline {
+        font-size: 0.75rem;
+      }
+      
+      .hero-content {
+        padding: 1.5rem 1rem;
+      }
+      
+      .hero-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .hero-description {
+        font-size: 0.95rem;
+      }
+      
+      .section-container {
+        padding: 1.5rem 1rem;
+      }
+      
+      .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
       
       .stat-card {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1rem;
       }
       
       .stat-number {
-        font-size: 3rem;
+        font-size: 2.5rem;
+      }
+      
+      .stat-label {
+        font-size: 0.9rem;
       }
       
       .achievement-card {
         padding: 1.5rem;
       }
       
+      .achievement-title {
+        font-size: 1.2rem;
+      }
+      
+      .achievement-description {
+        font-size: 1rem;
+      }
+      
       .skill-badge {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+      
+      .experience-card {
+        padding: 1.25rem;
+      }
+      
+      /* Always show experience description on mobile */
+      .experience-description {
+        max-height: none !important;
+        opacity: 1 !important;
+        margin-bottom: 1.5rem !important;
+        overflow: visible !important;
+      }
+      
+      .experience-header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .company-logo {
+        width: 70px;
+        height: 70px;
+        align-self: center;
+      }
+      
+      .experience-role {
+        font-size: 1rem;
+        text-align: center;
+      }
+      
+      .experience-title {
+        font-size: 1.1rem;
+        text-align: center;
+      }
+      
+      .experience-date {
+        align-self: center;
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+      }
+      
+      .education-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .contact-method {
+        padding: 1rem 1.25rem;
+        min-height: auto;
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+      
+      .contact-details h4 {
+        font-size: 1rem;
+      }
+      
+      .contact-details p {
+        font-size: 0.8rem;
+        word-break: break-all;
+      }
+      
+      /* Awards Grid - Mobile Single Column */
+      .awards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 100%;
+      }
+      
+      .awards-grid .award-card {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 380px;
+        padding: 1.5rem;
+      }
+      
+      .awards-grid .award-card:nth-child(1),
+      .awards-grid .award-card:nth-child(2),
+      .awards-grid .award-card:nth-child(3),
+      .awards-grid .award-card:nth-child(4),
+      .awards-grid .award-card:nth-child(5) {
+        grid-column: 1;
+        grid-row: auto;
+      }
+      
+      .upcoming-game-card {
+        max-width: 100%;
+      }
+      
+      .upcoming-game-image {
+        height: 200px;
+      }
+      
+      .upcoming-game-content {
+        padding: 1.25rem;
+      }
+      
+      .upcoming-game-title {
+        font-size: 1.3rem;
+      }
+      
+      .upcoming-game-description {
+        font-size: 0.95rem;
       }
       
       /* Game HUD Mobile */
       .game-hud {
-        top: auto;
-        bottom: 1rem;
-        left: 1rem;
-        right: 1rem;
-        min-width: auto;
-        max-width: 300px;
-        margin: 0 auto;
+        bottom: 0.25rem;
+        left: 0.25rem;
+        right: 0.25rem;
+        max-width: calc(100% - 0.5rem);
+        padding: 0.5rem;
+        font-size: 0.8rem;
+      }
+      
+      .level-display {
+        font-size: 1rem;
+      }
+      
+      .xp-bar {
+        height: 16px;
+      }
+      
+      .xp-value {
+        font-size: 0.6rem;
       }
       
       .easter-egg {
-        bottom: 5rem;
-        right: 1rem;
+        bottom: 4rem;
+        right: 0.5rem;
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
@@ -2617,6 +3018,31 @@
     <div class="loading-text">Loading Portfolio</div>
   </div>
   
+  <!-- Hamburger Menu Button (Mobile Only) -->
+  <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <div class="mobile-menu-content">
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">×</button>
+      <div class="mobile-nav">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="#experience">Experience</a>
+        <a href="#awards">Awards</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <a href="files/Resume_Rahul_Kaushik.pdf" download>📄 Resume</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Desktop Navigation -->
   <div class="nav">
     <a href="#home" class="active">Home</a>
     <a href="#about">About</a>
@@ -3628,7 +4054,74 @@
       }
     });
     
-    // Navigation click handlers
+    // Hamburger Menu Toggle
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+    
+    function openMobileMenu() {
+      hamburgerMenu.classList.add('active');
+      mobileMenuOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeMobileMenu() {
+      hamburgerMenu.classList.remove('active');
+      mobileMenuOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    if (hamburgerMenu) {
+      hamburgerMenu.addEventListener('click', openMobileMenu);
+    }
+    
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener('click', closeMobileMenu);
+    }
+    
+    // Close menu when clicking overlay background
+    if (mobileMenuOverlay) {
+      mobileMenuOverlay.addEventListener('click', function(e) {
+        if (e.target === mobileMenuOverlay) {
+          closeMobileMenu();
+        }
+      });
+    }
+    
+    // Close menu when clicking mobile nav links
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        closeMobileMenu();
+        
+        // Handle navigation
+        const href = this.getAttribute('href');
+        if (href.startsWith('#')) {
+          const target = document.querySelector(href);
+          if (target) {
+            setTimeout(() => {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }, 300);
+          }
+        }
+        
+        // Update active state
+        mobileNavLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+    
+    // Close menu on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
+        closeMobileMenu();
+      }
+    });
+    
+    // Navigation click handlers (Desktop)
     document.querySelectorAll('.nav a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
