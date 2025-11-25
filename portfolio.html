@@ -1,233 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rahul Kaushik - Game Developer Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:wght@300;400;600;700;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:wght@300;400;600;700;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
   <style>
     :root {
-      /* Modern Gaming Industry Color Palette */
-      --primary-bg: #1a1a1a;
-      --secondary-bg: #2d2d2d;
-      --card-bg: #333333;
-      --light-bg: #404040;
+      /* Black, Gold, and Red Color Palette - Calvin Template Style */
+      --primary-bg: #000000;
+      /* Black background */
+      --secondary-bg: #1a1a1a;
+      /* Dark gray for cards */
+      --card-bg: #ffffff;
+      /* White for content cards */
+      --light-bg: #f5f5f5;
+      /* Light gray for sections */
       --white: #ffffff;
-      --primary-accent: #ff6b35;
-      --secondary-accent: #4ecdc4;
-      --success-color: #45b7d1;
-      --warning-color: #f39c12;
-      --danger-color: #e74c3c;
-      --gaming-orange: #ff6b35;
-      --gaming-teal: #4ecdc4;
-      --gaming-blue: #45b7d1;
-      --gaming-purple: #9b59b6;
-      --gaming-green: #2ecc71;
-      
-      /* Modern Game UI Surfaces */
-      --surface-primary: #333333;
-      --surface-primary-rgb: 51, 51, 51;
-      --surface-secondary: #404040;
-      --surface-elevated: #4a4a4a;
-      --border-color: #555555;
-      --border-accent: #ff6b35;
-      --shadow-color: rgba(0, 0, 0, 0.3);
-      --overlay-bg: rgba(26, 26, 26, 0.95);
-      
+      --primary-accent: #d4af37;
+      /* Gold */
+      --secondary-accent: #b8940f;
+      /* Darker gold */
+      --accent-red: #c41e3a;
+      /* Red accent */
+      --success-color: #d4af37;
+      --warning-color: #ffd700;
+      --danger-color: #c41e3a;
+
+      /* Surfaces */
+      --surface-primary: #ffffff;
+      --surface-primary-rgb: 255, 255, 255;
+      --surface-secondary: #f8f9fa;
+      --surface-elevated: #ffffff;
+      --border-color: #e9ecef;
+      --border-accent: #d4af37;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --overlay-bg: rgba(0, 0, 0, 0.95);
+
       /* Text Colors */
-      --text-primary: #ffffff;
-      --text-secondary: #cccccc;
-      --text-muted: #999999;
-      --text-accent: #ff6b35;
-      --text-link: #4ecdc4;
-      
-      /* Modern Gaming Gradients */
-      --primary-gradient: linear-gradient(135deg, #ff6b35, #f39c12);
-      --secondary-gradient: linear-gradient(135deg, #4ecdc4, #45b7d1);
-      --accent-gradient: linear-gradient(135deg, #9b59b6, #8e44ad);
-      --bg-gradient: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-      
-      /* Clean Shadow System */
-      --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-      --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
-      --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
-      --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.25);
-      
-      /* Game Development Typography */
-      --font-heading: 'Orbitron', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-body: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-display: 'Rajdhani', 'Montserrat', sans-serif;
+      --text-primary: #2d3436;
+      /* Dark gray/black for main text */
+      --text-secondary: #636e72;
+      /* Lighter gray */
+      --text-muted: #b2bec3;
+      --text-accent: #d4af37;
+      /* Gold */
+      --text-link: #c41e3a;
+      /* Red */
+
+      /* Gradients */
+      --primary-gradient: linear-gradient(135deg, #d4af37, #b8940f);
+      --secondary-gradient: linear-gradient(135deg, #c41e3a, #8b0000);
+      --accent-gradient: linear-gradient(135deg, #d4af37, #c41e3a);
+      --bg-gradient: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
+
+      /* Shadows */
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+      --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+      --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.25);
+
+      /* Typography */
+      --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'Montserrat', sans-serif;
       --font-accent: 'Roboto', sans-serif;
-      --font-ui: 'Orbitron', 'Open Sans', sans-serif;
+      --font-ui: 'Poppins', sans-serif;
       --font-code: 'Courier New', monospace;
-      
-      /* Game UI Elements */
-      --game-panel-bg: rgba(20, 20, 25, 0.95);
-      --game-border-glow: 0 0 10px rgba(255, 107, 53, 0.5);
-      --game-console-bg: #0a0a0f;
-      --game-terminal-green: #00ff41;
-      --game-unity-blue: #00bcd4;
-      --game-unreal-orange: #ff6b35;
+
+      /* Game UI Elements (Adapted for new theme) */
+      --game-panel-bg: #ffffff;
+      --game-border-glow: 0 0 10px rgba(212, 175, 55, 0.5);
+      --game-console-bg: #1a1a1a;
+      --game-terminal-green: #d4af37;
+      --game-unity-blue: #d4af37;
+      --game-unreal-orange: #c41e3a;
     }
-    
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     html {
       scroll-behavior: smooth;
     }
-    
+
     body {
       font-family: var(--font-body);
-      background: var(--primary-bg);
+      background: var(--light-bg);
       color: var(--text-primary);
-      line-height: 1.6;
+      line-height: 1.7;
       overflow-x: hidden;
       position: relative;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       width: 100%;
       max-width: 100vw;
     }
 
-    /* Game Development Background Pattern */
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        radial-gradient(circle at 20% 20%, rgba(0, 188, 212, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 60% 40%, rgba(78, 205, 196, 0.08) 0%, transparent 50%),
-        repeating-linear-gradient(
-          0deg,
-          transparent,
-          transparent 2px,
-          rgba(0, 255, 65, 0.03) 2px,
-          rgba(0, 255, 65, 0.03) 4px
-        );
-      z-index: -1;
-      opacity: 0.8;
-    }
-    
-    /* Game Grid Overlay */
+    body::after,
     body::before {
-      content: '';
+      content: none;
+    }
+
+    /* Top Navigation Bar - Calvin Template Style */
+    .top-navbar {
       position: fixed;
       top: 0;
       left: 0;
+      right: 0;
       width: 100%;
-      height: 100%;
-      background-image: 
-        linear-gradient(rgba(0, 188, 212, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 188, 212, 0.1) 1px, transparent 1px);
-      background-size: 50px 50px;
-      z-index: -2;
-      opacity: 0.3;
-      pointer-events: none;
-    }
-    
-    /* Game Menu Navigation - Unity/Unreal Style */
-    .nav {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
+      background: var(--primary-bg);
+      padding: 1rem 3rem;
       display: flex;
-      gap: 0.5rem;
+      justify-content: space-between;
+      align-items: center;
       z-index: 1000;
-      background: var(--game-panel-bg);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      border: 2px solid var(--border-color);
-      border-top: 3px solid var(--game-unity-blue);
-      border-radius: 8px;
-      padding: 0.75rem;
-      box-shadow: 
-        var(--shadow-xl),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        0 0 20px rgba(0, 188, 212, 0.3);
-      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .brand-name {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
       font-family: var(--font-ui);
+      position: static;
+      top: auto;
+      right: auto;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border: none;
+      border-top: none;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
     }
 
     .nav:hover {
-      border-color: var(--game-unity-blue);
-      box-shadow: 
-        var(--shadow-xl),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        0 0 30px rgba(0, 188, 212, 0.5);
+      border-color: transparent;
+      box-shadow: none;
     }
-    
+
     .nav::before {
-      content: 'MENU';
-      position: absolute;
-      top: -12px;
-      left: 10px;
-      background: var(--game-panel-bg);
-      padding: 0 8px;
-      font-size: 0.7rem;
-      color: var(--game-unity-blue);
-      font-weight: 700;
-      letter-spacing: 2px;
-      font-family: var(--font-ui);
+      display: none;
     }
-    
+
     .nav a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      padding: 0.75rem 1.25rem;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 0.875rem;
-      font-family: var(--font-ui);
-      transition: all 0.2s ease;
-      position: relative;
-      white-space: nowrap;
-      letter-spacing: 0.05em;
-      background: transparent;
-      text-transform: uppercase;
-      border: 1px solid transparent;
-    }
-    
-    .nav a::before {
-      content: '▶';
-      margin-right: 0.5rem;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-      font-size: 0.7rem;
-    }
-    
-    .nav a:hover {
-      color: var(--game-unity-blue);
-      background: rgba(0, 188, 212, 0.1);
-      transform: translateX(4px);
-      border-color: var(--game-unity-blue);
-    }
-    
-    .nav a:hover::before {
-      opacity: 1;
-    }
-    
-    .nav a.active {
       color: var(--white);
-      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
-      font-weight: 700;
-      border-color: var(--game-unity-blue);
-      box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      padding: 0.5rem 0;
+      position: relative;
+      background: transparent;
+      border: none;
+      white-space: normal;
     }
-    
-    .nav a.active::before {
-      opacity: 1;
-      content: '●';
+
+    .nav a::before {
+      display: none;
     }
-    
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav a:hover::after,
+    .nav a.active::after {
+      width: 100%;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--primary-accent);
+      background: transparent;
+      transform: none;
+      border-color: transparent;
+      box-shadow: none;
+    }
+
+    .floating-social {
+      position: fixed;
+      top: 110px;
+      left: 2rem;
+      display: inline-flex;
+      gap: 0.75rem;
+      z-index: 1200;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(12px);
+      padding: 0.65rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow-lg);
+      transition: top 0.4s ease, left 0.4s ease, transform 0.4s ease;
+    }
+
+    .floating-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .floating-social a img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .floating-social a:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .floating-social.bottom-left {
+      left: 1.5rem;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .floating-social {
+        display: none;
+      }
+    }
+
     /* Hamburger Menu Button (Hidden on Desktop) */
     .hamburger-menu {
       display: none;
@@ -237,49 +267,45 @@
       z-index: 1001;
       width: 50px;
       height: 50px;
-      background: var(--game-panel-bg);
-      border: 2px solid var(--game-unity-blue);
-      border-radius: 8px;
+      background: var(--primary-bg);
+      border: 2px solid var(--primary-accent);
+      border-radius: 0;
       cursor: pointer;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 5px;
       padding: 0.75rem;
-      box-shadow: 
-        var(--shadow-xl),
-        0 0 20px rgba(0, 188, 212, 0.3);
+      box-shadow: var(--shadow-md);
       transition: all 0.3s ease;
     }
-    
+
     .hamburger-menu span {
       display: block;
       width: 25px;
       height: 3px;
-      background: var(--game-unity-blue);
+      background: var(--white);
       border-radius: 2px;
       transition: all 0.3s ease;
     }
-    
+
     .hamburger-menu:hover {
-      background: rgba(0, 188, 212, 0.1);
-      box-shadow: 
-        var(--shadow-xl),
-        0 0 30px rgba(0, 188, 212, 0.5);
+      background: var(--primary-accent);
+      box-shadow: var(--shadow-lg);
     }
-    
+
     .hamburger-menu.active span:nth-child(1) {
       transform: rotate(45deg) translate(8px, 8px);
     }
-    
+
     .hamburger-menu.active span:nth-child(2) {
       opacity: 0;
     }
-    
+
     .hamburger-menu.active span:nth-child(3) {
       transform: rotate(-45deg) translate(7px, -7px);
     }
-    
+
     /* Mobile Menu Overlay */
     .mobile-menu-overlay {
       position: fixed;
@@ -295,25 +321,23 @@
       opacity: 0;
       transition: opacity 0.3s ease;
     }
-    
+
     .mobile-menu-overlay.active {
       display: flex;
       opacity: 1;
     }
-    
+
     .mobile-menu-content {
       width: 100%;
       max-width: 400px;
-      background: var(--game-panel-bg);
-      border-right: 4px solid var(--game-unity-blue);
+      background: var(--card-bg);
+      border-right: 3px solid var(--primary-accent);
       padding: 2rem;
       overflow-y: auto;
       position: relative;
-      box-shadow: 
-        var(--shadow-xl),
-        0 0 50px rgba(0, 188, 212, 0.5);
+      box-shadow: var(--shadow-xl);
     }
-    
+
     .mobile-menu-close {
       position: absolute;
       top: 1rem;
@@ -321,9 +345,9 @@
       width: 40px;
       height: 40px;
       background: transparent;
-      border: 2px solid var(--game-unity-blue);
-      border-radius: 50%;
-      color: var(--game-unity-blue);
+      border: 2px solid var(--primary-accent);
+      border-radius: 0;
+      color: var(--primary-accent);
       font-size: 1.5rem;
       cursor: pointer;
       display: flex;
@@ -332,118 +356,102 @@
       transition: all 0.3s ease;
       z-index: 10;
     }
-    
+
     .mobile-menu-close:hover {
-      background: var(--game-unity-blue);
+      background: var(--primary-accent);
       color: var(--white);
       transform: rotate(90deg);
     }
-    
+
     .mobile-nav {
       display: flex;
       flex-direction: column;
       gap: 1rem;
       margin-top: 3rem;
     }
-    
+
     .mobile-nav a {
-      color: var(--text-secondary);
+      color: var(--text-primary);
       text-decoration: none;
       padding: 1rem 1.5rem;
-      border-radius: 8px;
+      border-radius: 0;
       font-weight: 600;
       font-size: 1rem;
       font-family: var(--font-ui);
       transition: all 0.3s ease;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      border: 2px solid transparent;
+      border: 1px solid transparent;
       position: relative;
     }
-    
+
     .mobile-nav a::before {
-      content: '▶';
-      margin-right: 0.75rem;
-      opacity: 0.5;
-      transition: opacity 0.3s ease;
+      display: none;
     }
-    
+
     .mobile-nav a:hover,
     .mobile-nav a.active {
       color: var(--white);
-      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
-      border-color: var(--game-unity-blue);
-      transform: translateX(8px);
-      box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
-    }
-    
-    .mobile-nav a:hover::before,
-    .mobile-nav a.active::before {
-      opacity: 1;
-      content: '●';
+      background: var(--primary-accent);
+      border-color: var(--primary-accent);
+      transform: translateX(4px);
+      box-shadow: var(--shadow-sm);
     }
 
     /* Header */
     header {
-      min-height: 60vh;
+      min-height: 40vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       position: relative;
-      padding: 5rem 2rem 4rem;
+      padding: 8rem 2rem 4rem;
+      background: var(--light-bg);
     }
-    
+
     .header-title {
       font-family: var(--font-heading);
-      font-size: clamp(3rem, 8vw, 5rem);
+      font-size: clamp(2.5rem, 6vw, 4rem);
       font-weight: 900;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange), var(--gaming-teal));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      letter-spacing: 4px;
-      position: relative;
+      margin-bottom: 0.5rem;
+      color: var(--primary-bg);
+      letter-spacing: 2px;
       line-height: 1.1;
       text-transform: uppercase;
-      text-shadow: 0 0 40px rgba(0, 188, 212, 0.5);
-      animation: title-glow 3s ease-in-out infinite;
+      background: none;
+      -webkit-text-fill-color: initial;
+      text-shadow: none;
+      animation: none;
     }
-    
-    @keyframes title-glow {
-      0%, 100% {
-        filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.5));
-      }
-      50% {
-        filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.5));
-      }
-    }
-    
+
     .header-subtitle {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      color: var(--text-secondary);
+      font-family: var(--font-ui);
+      font-size: 1.1rem;
+      color: var(--primary-accent);
       margin-bottom: 1rem;
       font-weight: 600;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-    
+
     .header-subtitle::before {
       content: '> ';
-      color: var(--game-terminal-green);
-      font-family: var(--font-code);
-      margin-right: 0.5rem;
+      color: var(--primary-accent);
+      font-weight: 700;
     }
-    
+
     .header-description {
       font-family: var(--font-body);
-      font-size: 1.1rem;
-      color: var(--text-muted);
+      font-size: 1rem;
+      color: var(--text-secondary);
       margin-top: 0;
       font-weight: 400;
+      max-width: 600px;
     }
 
     /* Sections */
@@ -452,7 +460,7 @@
       position: relative;
       z-index: 10;
     }
-    
+
     .section-container {
       max-width: 1400px;
       margin: 0 auto;
@@ -461,7 +469,7 @@
       border-top: 4px solid var(--game-unity-blue);
       border-radius: 8px;
       padding: 4rem;
-      box-shadow: 
+      box-shadow:
         var(--shadow-xl),
         inset 0 1px 0 rgba(255, 255, 255, 0.05),
         0 0 30px rgba(0, 188, 212, 0.2);
@@ -470,7 +478,7 @@
       transition: all 0.3s ease;
       font-family: var(--font-body);
     }
-    
+
     .section-container::before {
       content: '';
       position: absolute;
@@ -481,7 +489,7 @@
       background: linear-gradient(90deg, var(--game-unity-blue), var(--game-unreal-orange), var(--gaming-teal));
       opacity: 0.8;
     }
-    
+
     .section-container::after {
       content: '';
       position: absolute;
@@ -493,16 +501,16 @@
       border-radius: 50%;
       opacity: 0.5;
     }
-    
+
     .section-container:hover {
       border-color: var(--game-unity-blue);
-      box-shadow: 
+      box-shadow:
         var(--shadow-xl),
         inset 0 1px 0 rgba(255, 255, 255, 0.1),
         0 0 40px rgba(0, 188, 212, 0.4);
       transform: translateY(-4px);
     }
-    
+
     .section-title {
       font-family: var(--font-heading);
       font-size: 3rem;
@@ -513,7 +521,7 @@
       text-transform: uppercase;
       letter-spacing: 3px;
     }
-    
+
     .section-title span {
       background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
       -webkit-background-clip: text;
@@ -522,7 +530,7 @@
       position: relative;
       text-shadow: 0 0 30px rgba(0, 188, 212, 0.5);
     }
-    
+
     .section-title::after {
       content: '';
       position: absolute;
@@ -540,7 +548,7 @@
     .featured-section {
       margin-bottom: 6rem;
     }
-    
+
     .featured-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -550,98 +558,80 @@
       margin-left: auto;
       margin-right: auto;
     }
-    
+
     .featured-card {
-      background: var(--game-panel-bg);
-      border: 3px solid var(--border-color);
-      border-left: 6px solid var(--game-unity-blue);
-      border-radius: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-left: 3px solid var(--primary-accent);
+      border-radius: 0;
       padding: 0;
       position: relative;
       overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: all 0.3s ease;
       cursor: pointer;
       min-height: 550px;
       display: flex;
       flex-direction: column;
-      box-shadow: 
-        var(--shadow-lg),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05),
-        0 0 40px rgba(0, 188, 212, 0.3);
+      box-shadow: var(--shadow-sm);
     }
-    
+
     .featured-card::before {
       content: 'FEATURED';
       position: absolute;
       top: 15px;
       right: 15px;
       font-size: 0.7rem;
-      color: var(--game-unity-blue);
+      color: var(--white);
       font-family: var(--font-ui);
       font-weight: 700;
-      letter-spacing: 3px;
-      opacity: 0.8;
+      letter-spacing: 1px;
       z-index: 5;
-      background: rgba(20, 20, 25, 0.9);
-      padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-      border: 1px solid var(--game-unity-blue);
-      box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+      background: var(--primary-accent);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      border: none;
+      box-shadow: var(--shadow-sm);
     }
-    
+
     .featured-card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 6px;
-      height: 100%;
-      background: linear-gradient(180deg, var(--game-unity-blue), var(--game-unreal-orange), var(--gaming-teal));
-      transition: width 0.4s ease;
-      box-shadow: 0 0 20px var(--game-unity-blue);
+      display: none;
     }
-    
-    .featured-card:hover::after {
-      width: 8px;
-    }
-    
+
     .featured-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      border-color: var(--game-unity-blue);
-      box-shadow: 
-        var(--shadow-xl),
-        0 0 50px rgba(0, 188, 212, 0.6),
-        0 0 80px rgba(255, 107, 53, 0.3);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--border-color);
     }
-    
+
     .featured-card .project-image {
       height: 300px;
       border-bottom: 3px solid var(--border-color);
     }
-    
+
     .featured-card .project-header {
       padding: 2rem 2.5rem 1.5rem;
     }
-    
+
     .featured-card .project-title {
       font-size: 1.8rem;
       margin-bottom: 0.75rem;
     }
-    
+
     .featured-card .project-description {
       padding: 0 2.5rem;
       font-size: 1.1rem;
       line-height: 1.8;
     }
-    
+
     .featured-card .project-features {
-      display: none; /* Hidden in featured card too */
+      display: none;
+      /* Hidden in featured card too */
     }
-    
+
     .featured-card .view-features-btn {
       margin: 0 2.5rem 2.5rem;
     }
-    
+
     /* Game Details Popup */
     .game-popup {
       position: fixed;
@@ -661,12 +651,12 @@
       transition: opacity 0.3s ease;
       padding: 2rem;
     }
-    
+
     .game-popup.active {
       opacity: 1;
       pointer-events: all;
     }
-    
+
     .game-popup-content {
       background: var(--game-panel-bg);
       border: 3px solid var(--game-unity-blue);
@@ -679,21 +669,21 @@
       position: relative;
       transform: scale(0.9) translateY(20px);
       transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      box-shadow: 
+      box-shadow:
         0 0 60px rgba(0, 188, 212, 0.8),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
-    
+
     .game-popup.active .game-popup-content {
       transform: scale(1) translateY(0);
     }
-    
+
     .game-popup-header {
       padding: 2rem 2.5rem 1.5rem;
       border-bottom: 2px solid var(--border-color);
       position: relative;
     }
-    
+
     .game-popup-header::before {
       content: 'GAME DETAILS';
       position: absolute;
@@ -706,7 +696,7 @@
       letter-spacing: 2px;
       opacity: 0.5;
     }
-    
+
     .game-popup-close {
       position: absolute;
       top: 1rem;
@@ -725,14 +715,14 @@
       transition: all 0.3s ease;
       z-index: 10;
     }
-    
+
     .game-popup-close:hover {
       border-color: var(--game-unity-blue);
       color: var(--game-unity-blue);
       transform: rotate(90deg);
       box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
     }
-    
+
     .game-popup-image {
       width: 100%;
       height: 300px;
@@ -740,7 +730,7 @@
       border-bottom: 2px solid var(--border-color);
       display: block;
     }
-    
+
     .game-popup-title {
       font-family: var(--font-heading);
       font-size: 2rem;
@@ -750,7 +740,7 @@
       text-transform: uppercase;
       letter-spacing: 2px;
     }
-    
+
     .game-popup-links {
       display: flex;
       flex-wrap: wrap;
@@ -758,13 +748,13 @@
       align-items: center;
       margin-bottom: 1rem;
     }
-    
+
     .game-popup-links span {
       color: var(--text-accent);
       font-size: 0.9rem;
       font-weight: 500;
     }
-    
+
     .game-popup-links a {
       display: inline-block;
       padding: 0.4rem 1rem;
@@ -780,17 +770,17 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    
+
     .game-popup-links a:hover {
       background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
       color: var(--white);
       transform: translateY(-2px);
-      box-shadow: 
+      box-shadow:
         var(--shadow-md),
         0 0 15px rgba(0, 188, 212, 0.5);
       border-color: var(--game-unity-blue);
     }
-    
+
     .game-popup-description {
       color: var(--text-primary);
       line-height: 1.8;
@@ -798,11 +788,11 @@
       margin-bottom: 2rem;
       padding: 0 2.5rem;
     }
-    
+
     .game-popup-features {
       padding: 0 2.5rem 2.5rem;
     }
-    
+
     .game-popup-features .features-title {
       font-family: var(--font-heading);
       font-size: 1.2rem;
@@ -812,13 +802,13 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    
+
     .game-popup-features .features-title::before {
       content: '⚙ ';
       margin-right: 0.5rem;
       opacity: 0.7;
     }
-    
+
     .game-popup-features .features-list {
       margin: 0;
       padding-left: 1rem;
@@ -827,17 +817,17 @@
       line-height: 1.8;
       font-family: var(--font-body);
     }
-    
+
     .game-popup-features .features-list li {
       margin-bottom: 0.6rem;
       position: relative;
       padding-left: 0.5rem;
     }
-    
+
     .game-popup-features .features-list li::marker {
       color: var(--game-unity-blue);
     }
-    
+
     .game-popup-features .features-list li::before {
       content: '▶';
       position: absolute;
@@ -846,7 +836,7 @@
       font-size: 0.7rem;
       opacity: 0.7;
     }
-    
+
     /* Portfolio Grid */
     .portfolio-grid {
       display: grid;
@@ -854,12 +844,12 @@
       gap: 2rem;
       margin-top: 3rem;
     }
-    
+
     .project-card {
-      background: var(--game-panel-bg);
-      border: 2px solid var(--border-color);
-      border-left: 4px solid var(--game-unity-blue);
-      border-radius: 8px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-left: 3px solid var(--primary-accent);
+      border-radius: 0;
       padding: 0;
       position: relative;
       overflow: hidden;
@@ -868,132 +858,88 @@
       min-height: 400px;
       display: flex;
       flex-direction: column;
-      box-shadow: 
-        var(--shadow-md),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      box-shadow: var(--shadow-sm);
     }
-    
+
     .project-card::before {
-      content: 'PROJECT';
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 0.6rem;
-      color: var(--game-unity-blue);
-      font-family: var(--font-ui);
-      font-weight: 700;
-      letter-spacing: 2px;
-      opacity: 0.5;
-      z-index: 5;
-      background: rgba(20, 20, 25, 0.8);
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
+      display: none;
     }
-    
+
     .project-card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(180deg, var(--game-unity-blue), var(--game-unreal-orange));
-      transition: width 0.3s ease;
-      box-shadow: 0 0 10px var(--game-unity-blue);
+      display: none;
     }
-    
-    .project-card:hover::after {
-      width: 6px;
-    }
-    
+
     .project-card:hover {
       transform: translateY(-5px);
-      border-color: var(--game-unity-blue);
-      box-shadow: 
-        var(--shadow-xl),
-        0 0 30px rgba(0, 188, 212, 0.4);
+      border-color: var(--primary-accent);
+      box-shadow: var(--shadow-md);
     }
-    
+
     .project-image {
       width: 100%;
       height: 250px;
       object-fit: cover;
       border: none;
-      border-bottom: 2px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
       transition: all 0.3s ease;
       display: block;
     }
-    
+
     .project-image:not(img) {
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: var(--font-heading);
-      font-weight: 900;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      font-weight: 700;
+      background: var(--secondary-bg);
+      color: var(--white);
     }
-    
+
     .project-card:hover .project-image {
-      transform: scale(1.05);
-      filter: brightness(1.1);
+      transform: scale(1.02);
     }
-    
-    .project-card:hover .project-image:not(img) {
-      filter: brightness(1.15);
-    }
-    
+
     .project-header {
-      padding: 1.5rem 2rem 1rem;
+      padding: 1.5rem 1.5rem 1rem;
       margin-bottom: 0;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: none;
       position: relative;
     }
-    
+
     .project-header::after {
-      content: '';
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--game-unity-blue), var(--game-unreal-orange));
-      transition: width 0.3s ease;
+      display: none;
     }
-    
-    .project-card:hover .project-header::after {
-      width: 100%;
-    }
-    
+
     .project-info {
       flex: 1;
       min-width: 0;
       width: 100%;
     }
-    
+
     .project-title {
       font-family: var(--font-heading);
       font-size: 1.4rem;
       font-weight: 700;
-      color: var(--white);
+      color: var(--primary-accent);
       margin: 0 0 0.5rem 0;
       line-height: 1.2;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    
+
     .project-links {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
       align-items: center;
     }
-    
+
     .project-links span {
       color: var(--text-accent);
       font-size: 0.9rem;
       font-weight: 500;
     }
-    
+
     .project-links a {
       display: inline-block;
       padding: 0.4rem 1rem;
@@ -1009,17 +955,17 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    
+
     .project-links a:hover {
       background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
       color: var(--white);
       transform: translateY(-2px);
-      box-shadow: 
+      box-shadow:
         var(--shadow-md),
         0 0 15px rgba(0, 188, 212, 0.5);
       border-color: var(--game-unity-blue);
     }
-    
+
     .project-description {
       color: var(--text-primary);
       line-height: 1.6;
@@ -1029,11 +975,12 @@
       padding: 0 2rem 2rem;
       flex: 1;
     }
-    
+
     .project-features {
-      display: none; /* Hidden in card, shown in popup */
+      display: none;
+      /* Hidden in card, shown in popup */
     }
-    
+
     .view-features-btn {
       margin: 0 2rem 2rem;
       padding: 0.75rem 1.5rem;
@@ -1050,14 +997,14 @@
       transition: all 0.3s ease;
       text-align: center;
     }
-    
+
     .view-features-btn:hover {
       background: var(--game-unity-blue);
       color: var(--white);
       transform: translateY(-2px);
       box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
     }
-    
+
     .features-title {
       font-family: var(--font-heading);
       font-size: 1rem;
@@ -1067,13 +1014,13 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    
+
     .features-title::before {
       content: '⚙ ';
       margin-right: 0.5rem;
       opacity: 0.7;
     }
-    
+
     .features-list {
       margin: 0;
       padding-left: 1rem;
@@ -1082,17 +1029,17 @@
       line-height: 1.5;
       font-family: var(--font-body);
     }
-    
+
     .features-list li {
       margin-bottom: 0.4rem;
       position: relative;
       padding-left: 0.5rem;
     }
-    
+
     .features-list li::marker {
       color: var(--game-unity-blue);
     }
-    
+
     .features-list li::before {
       content: '▶';
       position: absolute;
@@ -1117,12 +1064,12 @@
       z-index: 9999;
       transition: opacity 0.5s ease;
     }
-    
+
     .loading-overlay.hidden {
       opacity: 0;
       pointer-events: none;
     }
-    
+
     .loading-spinner {
       width: 60px;
       height: 60px;
@@ -1133,7 +1080,7 @@
       margin-bottom: 2rem;
       box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
     }
-    
+
     .loading-text {
       color: var(--game-unity-blue);
       font-family: var(--font-display);
@@ -1141,55 +1088,64 @@
       letter-spacing: 2px;
       text-transform: uppercase;
     }
-    
+
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     /* Aspect Ratio Based Navigation */
     /* Show hamburger menu when aspect ratio is below 1909/1769 */
     @media (max-aspect-ratio: 1909/1769) {
+
       /* Hide desktop nav */
       .nav {
         display: none;
       }
-      
+
       /* Show hamburger menu */
       .hamburger-menu {
         display: flex;
       }
     }
-    
+
     /* Show full navbar when aspect ratio is 1909/1769 or above */
     @media (min-aspect-ratio: 1909/1769) {
+
       /* Show desktop nav */
       .nav {
         display: flex;
       }
-      
+
       /* Hide hamburger menu */
       .hamburger-menu {
         display: none;
       }
     }
-    
+
     /* Mobile Responsiveness */
     @media (max-width: 768px) {
+
       /* Prevent horizontal scrolling */
-      html, body {
+      html,
+      body {
         overflow-x: hidden;
         width: 100%;
         max-width: 100vw;
       }
-      
+
       /* Ensure images don't overflow */
       img {
         max-width: 100%;
         height: auto;
         display: block;
       }
-      
+
       /* Ensure containers respect viewport */
       .section-container,
       .project-card,
@@ -1198,49 +1154,52 @@
         max-width: 100%;
         box-sizing: border-box;
       }
-      
+
       /* Touch-friendly buttons */
-      button, .view-features-btn, .nav a, .game-popup-close {
+      button,
+      .view-features-btn,
+      .nav a,
+      .game-popup-close {
         min-height: 44px;
         min-width: 44px;
       }
-      
+
       .game-popup {
         padding: 0.5rem;
       }
-      
+
       .game-popup-content {
         max-width: 100%;
         max-height: 95vh;
         border-radius: 8px;
         margin: 0.5rem;
       }
-      
+
       .game-popup-image {
         height: 200px;
         width: 100%;
         object-fit: cover;
       }
-      
+
       .game-popup-header {
         padding: 1.5rem 1.5rem 1rem;
       }
-      
+
       .game-popup-title {
         font-size: 1.5rem;
         word-wrap: break-word;
       }
-      
+
       .game-popup-description {
         padding: 0 1.5rem;
         font-size: 1rem;
         word-wrap: break-word;
       }
-      
+
       .game-popup-features {
         padding: 0 1.5rem 1.5rem;
       }
-      
+
       .game-popup-close {
         width: 35px;
         height: 35px;
@@ -1248,124 +1207,124 @@
         top: 0.5rem;
         right: 0.5rem;
       }
-      
+
       header {
         min-height: auto;
         padding: 5rem 1rem 2rem;
       }
-      
+
       .header-title {
         font-size: clamp(2rem, 8vw, 3rem);
         letter-spacing: 2px;
         margin-bottom: 1rem;
       }
-      
+
       .header-subtitle {
         font-size: 1.1rem;
         letter-spacing: 1px;
       }
-      
+
       .header-description {
         font-size: 1rem;
       }
-      
+
       section {
         padding: 3rem 1rem;
       }
-      
+
       .section-container {
         padding: 2rem 1.5rem;
         border-radius: 12px;
       }
-      
+
       .section-title {
         font-size: 2rem;
         margin-bottom: 2rem;
         letter-spacing: 2px;
       }
-      
+
       .featured-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
       }
-      
+
       .featured-card {
         min-height: auto;
         max-width: 100%;
       }
-      
+
       .featured-card .project-image {
         height: 250px;
         width: 100%;
         object-fit: cover;
       }
-      
+
       .featured-card .project-header {
         padding: 1.5rem 1.5rem 1rem;
       }
-      
+
       .featured-card .project-title {
         font-size: 1.6rem;
         word-wrap: break-word;
       }
-      
+
       .featured-card .project-description {
         padding: 0 1.5rem;
         font-size: 1rem;
       }
-      
+
       .portfolio-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
       }
-      
+
       .project-card {
         min-height: auto;
         max-width: 100%;
       }
-      
+
       .project-header {
         padding: 1rem 1.5rem 0.5rem;
       }
-      
+
       .project-title {
         font-size: 1.2rem;
         word-wrap: break-word;
       }
-      
+
       .project-image {
         height: 200px;
         width: 100%;
         object-fit: cover;
       }
-      
+
       .project-description {
         padding: 0 1.5rem 1rem;
         font-size: 0.95rem;
         word-wrap: break-word;
       }
-      
+
       .project-links {
         flex-wrap: wrap;
         gap: 0.4rem;
       }
-      
+
       .project-links a {
         font-size: 0.75rem;
         padding: 0.35rem 0.8rem;
       }
-      
+
       .view-features-btn {
         margin: 0 1.5rem 1.5rem;
         padding: 0.65rem 1.25rem;
         font-size: 0.8rem;
       }
-      
+
       .project-features {
         padding: 0 1.5rem 1.5rem;
       }
     }
-    
+
     @media (max-width: 480px) {
       .hamburger-menu {
         width: 45px;
@@ -1374,74 +1333,74 @@
         right: 0.75rem;
         padding: 0.6rem;
       }
-      
+
       .hamburger-menu span {
         width: 22px;
         height: 2.5px;
       }
-      
+
       .mobile-menu-content {
         max-width: 100%;
         padding: 1.5rem;
       }
-      
+
       .mobile-nav a {
         padding: 0.9rem 1.25rem;
         font-size: 0.9rem;
       }
-      
+
       header {
         padding: 4.5rem 0.75rem 1.5rem;
       }
-      
+
       .header-title {
         font-size: clamp(1.8rem, 8vw, 2.5rem);
         letter-spacing: 1px;
       }
-      
+
       .header-subtitle {
         font-size: 1rem;
       }
-      
+
       .header-description {
         font-size: 0.9rem;
       }
-      
+
       .section-container {
         padding: 1.5rem 1rem;
       }
-      
+
       .section-title {
         font-size: 1.75rem;
         margin-bottom: 1.5rem;
       }
-      
+
       .game-popup-content {
         margin: 0.25rem;
         max-height: 98vh;
       }
-      
+
       .game-popup-image {
         height: 150px;
       }
-      
+
       .game-popup-header {
         padding: 1.25rem 1.25rem 0.75rem;
       }
-      
+
       .game-popup-title {
         font-size: 1.3rem;
       }
-      
+
       .game-popup-description {
         padding: 0 1.25rem;
         font-size: 0.95rem;
       }
-      
+
       .game-popup-features {
         padding: 0 1.25rem 1.25rem;
       }
-      
+
       .game-popup-close {
         width: 30px;
         height: 30px;
@@ -1449,92 +1408,93 @@
         top: 0.25rem;
         right: 0.25rem;
       }
-      
+
       .featured-grid {
         grid-template-columns: 1fr;
         gap: 1.25rem;
       }
-      
+
       .featured-card {
         min-height: auto;
       }
-      
+
       .featured-card .project-image {
         height: 180px;
       }
-      
+
       .featured-card .project-header {
         padding: 1.25rem 1.25rem 0.75rem;
       }
-      
+
       .featured-card .project-title {
         font-size: 1.3rem;
       }
-      
+
       .featured-card .project-description {
         padding: 0 1.25rem;
         font-size: 0.95rem;
       }
-      
+
       .featured-card .view-features-btn {
         margin: 0 1.25rem 1.25rem;
         padding: 0.6rem 1rem;
         font-size: 0.75rem;
       }
-      
+
       .portfolio-grid {
         gap: 1.25rem;
       }
-      
+
       .project-card {
         min-height: auto;
       }
-      
+
       .project-image {
         height: 180px;
       }
-      
+
       .project-header {
         padding: 1rem 1rem 0.5rem;
       }
-      
+
       .project-title {
         font-size: 1.1rem;
       }
-      
+
       .project-links {
         gap: 0.3rem;
       }
-      
+
       .project-links a {
         font-size: 0.7rem;
         padding: 0.3rem 0.7rem;
       }
-      
+
       .project-description {
         padding: 0 1rem 1rem;
         font-size: 0.9rem;
       }
-      
+
       .view-features-btn {
         margin: 0 1rem 1rem;
         padding: 0.6rem 1rem;
         font-size: 0.75rem;
       }
-      
+
       .project-features {
         padding: 0 1rem 1rem;
       }
     }
   </style>
 </head>
+
 <body>
   <!-- Loading Screen -->
   <div class="loading-overlay" id="loadingOverlay">
     <div class="loading-spinner"></div>
     <div class="loading-text">Loading Portfolio</div>
   </div>
-  
+
   <!-- Game Details Popup -->
   <div class="game-popup" id="gamePopup">
     <div class="game-popup-content">
@@ -1551,14 +1511,54 @@
       </div>
     </div>
   </div>
-  
-  <!-- Hamburger Menu Button (Mobile Only) -->
-  <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-  
+
+  <!-- Top Navigation Bar -->
+  <nav class="top-navbar">
+    <a href="index.html" class="brand-name">RAHUL KAUSHIK</a>
+
+    <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="index.html#upcoming-game">Upcoming Game</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#awards">Awards</a>
+      <a href="index.html#education">Education</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="files/Resume_Rahul_Kaushik.pdf" class="lets-talk-btn" download>
+        <span class="resume-icon">📄</span>
+        <span>Resume</span>
+      </a>
+    </div>
+
+    <!-- Hamburger Menu Button (Mobile Only) -->
+    <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div class="floating-social" id="floatingSocial">
+    <a href="https://www.linkedin.com/in/game-dev-kaushik/" target="_blank" rel="noopener noreferrer"
+      aria-label="LinkedIn">
+      <img src="files/socialprofiles/linkedin.png" alt="LinkedIn">
+    </a>
+    <a href="https://gamedevkaushik.itch.io" target="_blank" rel="noopener noreferrer" aria-label="Itch.io">
+      <img src="files/socialprofiles/itch.png" alt="itch.io">
+    </a>
+    <a href="https://github.com/gamedevkaushik" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+      <img src="files/socialprofiles/github.png" alt="GitHub">
+    </a>
+    <a href="https://www.instagram.com/gamedev.kaushik" target="_blank" rel="noopener noreferrer"
+      aria-label="Instagram">
+      <img src="files/socialprofiles/insta.png" alt="Instagram">
+    </a>
+    <a href="https://twitter.com/gamedevkaushik" target="_blank" rel="noopener noreferrer" aria-label="X">
+      <img src="files/socialprofiles/x.jpg" alt="X">
+    </a>
+  </div>
+
   <!-- Mobile Menu Overlay -->
   <div class="mobile-menu-overlay" id="mobileMenuOverlay">
     <div class="mobile-menu-content">
@@ -1567,6 +1567,7 @@
         <a href="index.html">Home</a>
         <a href="index.html#about">About</a>
         <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="index.html#upcoming-game">Upcoming Game</a>
         <a href="index.html#experience">Experience</a>
         <a href="index.html#awards">Awards</a>
         <a href="index.html#education">Education</a>
@@ -1575,19 +1576,7 @@
       </div>
     </div>
   </div>
-  
-  <!-- Desktop Navigation -->
-  <div class="nav">
-    <a href="index.html">Home</a>
-    <a href="index.html#about">About</a>
-    <a href="portfolio.html" class="active">Portfolio</a>
-    <a href="index.html#experience">Experience</a>
-    <a href="index.html#awards">Awards</a>
-    <a href="index.html#education">Education</a>
-    <a href="index.html#contact">Contact</a>
-    <a href="files/Resume_Rahul_Kaushik.pdf" download>📄 Resume</a>
-  </div>
-  
+
   <header>
     <h1 class="header-title">PORTFOLIO</h1>
     <p class="header-subtitle">🎮 Game Development Showcase</p>
@@ -1600,11 +1589,13 @@
       <h2 class="section-title">
         <span>Featured Games</span>
       </h2>
-      
-      <p style="font-size: 1.1rem; color: var(--text-primary); text-align: center; margin-bottom: 2rem; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);">
-        Discover our standout games! A new featured title is selected weekly to showcase the diversity and quality of our game development portfolio.
+
+      <p
+        style="font-size: 1.1rem; color: var(--text-primary); text-align: center; margin-bottom: 2rem; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);">
+        Discover our standout games! A new featured title is selected weekly to showcase the diversity and quality of
+        our game development portfolio.
       </p>
-      
+
       <div class="featured-grid" id="featuredGrid">
         <!-- Featured games will be dynamically inserted here -->
       </div>
@@ -1617,315 +1608,384 @@
       <h2 class="section-title">
         <span>All Projects</span>
       </h2>
-      
-      <p style="font-size: 1.1rem; color: var(--text-primary); text-align: center; margin-bottom: 2rem; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);">
-        From casual mobile hits to immersive VR experiences, here's a complete collection of games and interactive projects I've developed. Each project represents different challenges, technologies, and creative solutions in game development.
+
+      <p
+        style="font-size: 1.1rem; color: var(--text-primary); text-align: center; margin-bottom: 2rem; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);">
+        From casual mobile hits to immersive VR experiences, here's a complete collection of games and interactive
+        projects I've developed. Each project represents different challenges, technologies, and creative solutions in
+        game development.
       </p>
-      
+
       <div class="portfolio-grid">
-      <div class="project-card" data-features='["AR-powered measurement using device camera","Measure distances, areas, and volumes accurately","Multiple measurement units (metric and imperial)","Save and share measurement results","User-friendly interface with intuitive controls","Perfect for home improvement and professional use"]'>
-        <img src="files/Icon_Measure.png" alt="Measure PM" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Measure PM</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://play.google.com/store/apps/details?id=com.measuresoftware.app&hl=en_IN" target="_blank">Android</a>
-              <a href="https://apps.apple.com/in/app/measurepm/id1493856868" target="_blank">IOS</a>
+        <div class="project-card"
+          data-features='["AR-powered measurement using device camera","Measure distances, areas, and volumes accurately","Multiple measurement units (metric and imperial)","Save and share measurement results","User-friendly interface with intuitive controls","Perfect for home improvement and professional use"]'>
+          <img src="files/projecticons/icon_measure.png" alt="Measure PM" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Measure PM</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://play.google.com/store/apps/details?id=com.measuresoftware.app&hl=en_IN"
+                  target="_blank">Android</a>
+                <a href="https://apps.apple.com/in/app/measurepm/id1493856868" target="_blank">IOS</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">It is a cloud-based innovative, comprehensive, effective, paperless suite of
+            HIPAA-compliant tools delivering Practice Management, Data Collection, Scheduling, and Revenue Cycle
+            Management for ABA Therapy providers.</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">It is a cloud-based innovative, comprehensive, effective, paperless suite of HIPAA-compliant tools delivering Practice Management, Data Collection, Scheduling, and Revenue Cycle Management for ABA Therapy providers.</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-          <div class="project-card" data-features='["Cute and colorful gummy bear characters","Challenging rescue missions and puzzles","Multiple levels with increasing difficulty","Family-friendly gameplay suitable for all ages","Engaging physics-based mechanics","Vibrant graphics and smooth animations"]'>
-        <img src="files/Icon_GummyRescue.png" alt="Gummy Rescue" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Gummy Rescue</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.GummyRescue&hl=en_IN" target="_blank">Android</a>
-              <a href="https://apps.apple.com/us/app/gummy-rescue/id1526106552" target="_blank">iOS</a>
+        <div class="project-card"
+          data-features='["Cute and colorful gummy bear characters","Challenging rescue missions and puzzles","Multiple levels with increasing difficulty","Family-friendly gameplay suitable for all ages","Engaging physics-based mechanics","Vibrant graphics and smooth animations"]'>
+          <img src="files/projecticons/icon_gummyrescue.png" alt="Gummy Rescue" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Gummy Rescue</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.GummyRescue&hl=en_IN"
+                  target="_blank">Android</a>
+                <a href="https://apps.apple.com/us/app/gummy-rescue/id1526106552" target="_blank">iOS</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Help the adorable gummy bears escape dangerous situations in this charming
+            puzzle-adventure game</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Help the adorable gummy bears escape dangerous situations in this charming puzzle-adventure game</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-          <div class="project-card" data-features='["Innovative puzzle mechanics that challenge your thinking","Progressive difficulty with increasingly complex challenges","Clean, minimalist design focused on gameplay","Multiple puzzle types and brain-teasing scenarios","Intuitive controls and smooth user experience","Perfect for quick mental workouts and extended play sessions"]'>
-        <img src="files/Icon_Brainchild.png" alt="Brainchild" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Brainchild</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.Brainchild&hl=en_IN" target="_blank">Android</a>
-              <a href="https://apps.apple.com/us/app/brainchild/id1452322012" target="_blank">iOS</a>
+        <div class="project-card"
+          data-features='["Innovative puzzle mechanics that challenge your thinking","Progressive difficulty with increasingly complex challenges","Clean, minimalist design focused on gameplay","Multiple puzzle types and brain-teasing scenarios","Intuitive controls and smooth user experience","Perfect for quick mental workouts and extended play sessions"]'>
+          <img src="files/projecticons/icon_brainchild.png" alt="Brainchild" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Brainchild</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.Brainchild&hl=en_IN"
+                  target="_blank">Android</a>
+                <a href="https://apps.apple.com/us/app/brainchild/id1452322012" target="_blank">iOS</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Challenge your mind with this innovative puzzle game featuring unique
+            brain-teasing mechanics and progressively difficult levels</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Challenge your mind with this innovative puzzle game featuring unique brain-teasing mechanics and progressively difficult levels</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-          <div class="project-card" data-features='["Command powerful mech units in space combat","Strategic gameplay with tactical decision making","Multiple mission types and objectives","Upgrade and customize your mech arsenal","Immersive sci-fi storyline and environments","Challenging AI opponents and boss battles"]'>
-        <img src="files/Icon_StarTitan.png" alt="Star Titan" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Star Titan</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.StarTitan&hl=en_IN" target="_blank">Android</a>
-              <a href="https://apps.apple.com/us/app/star-titan/id1482626137" target="_blank">iOS</a>
+        <div class="project-card"
+          data-features='["Command powerful mech units in space combat","Strategic gameplay with tactical decision making","Multiple mission types and objectives","Upgrade and customize your mech arsenal","Immersive sci-fi storyline and environments","Challenging AI opponents and boss battles"]'>
+          <img src="files/projecticons/icon_startitan.png" alt="Star Titan" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Star Titan</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.StarTitan&hl=en_IN"
+                  target="_blank">Android</a>
+                <a href="https://apps.apple.com/us/app/star-titan/id1482626137" target="_blank">iOS</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Epic space adventure where you pilot powerful mechs through intense battles
+            across the galaxy</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Epic space adventure where you pilot powerful mechs through intense battles across the galaxy</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["Classic brick-breaking gameplay with modern enhancements","Multiple power-ups and special abilities","Challenging levels with unique block arrangements","Smooth paddle controls and ball physics","Progressive difficulty and scoring system","Addictive arcade-style gameplay"]'>
-        <img src="files/Icon_BlockBreaker.png" alt="Block Smash 3D" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Block Smash 3D</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.BlockBreaker&hl=en_IN" target="_blank">Android</a>
-              <a href="https://apps.apple.com/us/app/block-smash-3d/id1518571680" target="_blank">iOS</a>
+        <div class="project-card"
+          data-features='["Classic brick-breaking gameplay with modern enhancements","Multiple power-ups and special abilities","Challenging levels with unique block arrangements","Smooth paddle controls and ball physics","Progressive difficulty and scoring system","Addictive arcade-style gameplay"]'>
+          <img src="files/projecticons/icon_blockbreaker.png" alt="Block Smash 3D" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Block Smash 3D</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.BlockBreaker&hl=en_IN"
+                  target="_blank">Android</a>
+                <a href="https://apps.apple.com/us/app/block-smash-3d/id1518571680" target="_blank">iOS</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Classic brick-breaking arcade action with modern twists, power-ups, and
+            challenging levels to test your reflexes</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Classic brick-breaking arcade action with modern twists, power-ups, and challenging levels to test your reflexes</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["Unique boomerang-based combat mechanics","Challenging dungeon exploration and puzzle solving","Multiple levels with increasing difficulty","Strategic gameplay requiring timing and precision","Immersive dungeon environments and atmosphere","Intuitive touch controls for mobile gameplay"]'>
-        <img src="files/Icon_BoomerangDungeon.png" alt="Boomerang Dungeon" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Boomerang Dungeon</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.BoomerangDungeon&hl=en_IN" target="_blank">Android</a>
-              <a href="https://apps.apple.com/us/app/boomerang-dungeon/id1518551078" target="_blank">iOS</a>
+        <div class="project-card"
+          data-features='["Unique boomerang-based combat mechanics","Challenging dungeon exploration and puzzle solving","Multiple levels with increasing difficulty","Strategic gameplay requiring timing and precision","Immersive dungeon environments and atmosphere","Intuitive touch controls for mobile gameplay"]'>
+          <img src="files/projecticons/icon_boomerangdungeon.png" alt="Boomerang Dungeon" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Boomerang Dungeon</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.BoomerangDungeon&hl=en_IN"
+                  target="_blank">Android</a>
+                <a href="https://apps.apple.com/us/app/boomerang-dungeon/id1518551078" target="_blank">iOS</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Navigate through mysterious dungeons using your trusty boomerang to defeat
+            enemies and solve puzzles in this adventure game</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Navigate through mysterious dungeons using your trusty boomerang to defeat enemies and solve puzzles in this adventure game</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["Explosive missile launching action gameplay","Strategic target destruction mechanics","Multiple challenging levels and environments","Intuitive touch controls for precise aiming","Dynamic explosions and visual effects","Progressive difficulty with increasing challenges"]'>
-        <img src="files/Icon_MissilesAreGo.png" alt="Missiles Are Go" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Missiles Are Go</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.MissilesAreGo&hl=en" target="_blank">Android</a>
-              <a href="https://apps.apple.com/us/app/missiles-are-go/id1509454143" target="_blank">iOS</a>
+        <div class="project-card"
+          data-features='["Explosive missile launching action gameplay","Strategic target destruction mechanics","Multiple challenging levels and environments","Intuitive touch controls for precise aiming","Dynamic explosions and visual effects","Progressive difficulty with increasing challenges"]'>
+          <img src="files/projecticons/icon_missilesarego.png" alt="Missiles Are Go" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Missiles Are Go</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.MissilesAreGo&hl=en"
+                  target="_blank">Android</a>
+                <a href="https://apps.apple.com/us/app/missiles-are-go/id1509454143" target="_blank">iOS</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Launch missiles and destroy targets in this action-packed arcade game with
+            explosive gameplay and strategic challenges</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Launch missiles and destroy targets in this action-packed arcade game with explosive gameplay and strategic challenges</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["Realistic pipe skateboarding physics and smooth controls","Multiple challenging pipe environments and ramps","Perform amazing tricks and stunts in 3D pipes","Intuitive touch controls for mobile gameplay","Immersive graphics and dynamic camera angles","Progressive levels with increasing difficulty"]'>
-        <img src="files/Icon_PipeSkater.png" alt="Pipe Skater" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Pipe Skater</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.PipeSkater&hl=en_IN" target="_blank">Android</a>
-              <a href="https://apps.apple.com/us/app/pipe-skater/id1495333287" target="_blank">iOS</a>
+        <div class="project-card"
+          data-features='["Realistic pipe skateboarding physics and smooth controls","Multiple challenging pipe environments and ramps","Perform amazing tricks and stunts in 3D pipes","Intuitive touch controls for mobile gameplay","Immersive graphics and dynamic camera angles","Progressive levels with increasing difficulty"]'>
+          <img src="files/projecticons/icon_pipeskater.png" alt="Pipe Skater" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Pipe Skater</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.PipeSkater&hl=en_IN"
+                  target="_blank">Android</a>
+                <a href="https://apps.apple.com/us/app/pipe-skater/id1495333287" target="_blank">iOS</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Experience the ultimate skateboarding adventure in pipes and ramps with
+            realistic physics and smooth controls</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Experience the ultimate skateboarding adventure in pipes and ramps with realistic physics and smooth controls</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["Realistic 3D skateboarding physics and controls","Multiple challenging racing tracks and environments","Customizable skateboards and character options","Competitive racing gameplay with time challenges","Smooth graphics and immersive sound effects","Progressive difficulty levels for all skill types"]'>
-        <img src="files/Icon_SR3D.jpg" alt="Skater Racing 3D" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Skater Racing 3D</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.SkaterRacing3D&hl=en_IN" target="_blank">Android</a>
-              <a href="https://apps.apple.com/us/app/skater-racing-3d/id1530838917" target="_blank">iOS</a>
+        <div class="project-card"
+          data-features='["Realistic 3D skateboarding physics and controls","Multiple challenging racing tracks and environments","Customizable skateboards and character options","Competitive racing gameplay with time challenges","Smooth graphics and immersive sound effects","Progressive difficulty levels for all skill types"]'>
+          <img src="files/projecticons/icon_sr3d.jpg" alt="Skater Racing 3D" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Skater Racing 3D</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.SkaterRacing3D&hl=en_IN"
+                  target="_blank">Android</a>
+                <a href="https://apps.apple.com/us/app/skater-racing-3d/id1530838917" target="_blank">iOS</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Experience the thrill of skateboarding in this exciting 3D racing game with
+            realistic physics and stunning graphics</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Experience the thrill of skateboarding in this exciting 3D racing game with realistic physics and stunning graphics</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["Interactive English learning through engaging games and activities","Comprehensive curriculum covering vocabulary, grammar, and pronunciation","Adaptive learning system that adjusts to individual progress","Multiplayer challenges and competitions with other learners","Progress tracking and achievement system","Available across multiple platforms for seamless learning"]'>
-        <img src="files/Icon_Velawoods.png" alt="Velawoods English" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Velawoods English</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://velawoodsenglish.com/" target="_blank">Learn More</a>
+        <div class="project-card"
+          data-features='["Interactive English learning through engaging games and activities","Comprehensive curriculum covering vocabulary, grammar, and pronunciation","Adaptive learning system that adjusts to individual progress","Multiplayer challenges and competitions with other learners","Progress tracking and achievement system","Available across multiple platforms for seamless learning"]'>
+          <img src="files/projecticons/icon_velawoods.png" alt="Velawoods English" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Velawoods English</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://velawoodsenglish.com/" target="_blank">Learn More</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Velawoods English is a platform for learning English through games and
+            interactive activities.</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Velawoods English is a platform for learning English through games and interactive activities.</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["A variety of driving range games for all skill levels","Mini golf courses with vibrant, themed environments","Real-life golf course challenges (e.g., Casa de Campo, St. Andrews)","TrackMan™ Range technology for real-time ball flight, launch angle, and speed tracking","Interactive and social gameplay experiences","Food, drink, and group event options at venues"]'>
-        <img src="files/Icon_Driveshack.png" alt="Drive Shack Golf and Games" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Drive Shack Golf and Games</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://www.driveshack.com/play/" target="_blank">Learn More</a>
+        <div class="project-card"
+          data-features='["A variety of driving range games for all skill levels","Mini golf courses with vibrant, themed environments","Real-life golf course challenges (e.g., Casa de Campo, St. Andrews)","TrackMan™ Range technology for real-time ball flight, launch angle, and speed tracking","Interactive and social gameplay experiences","Food, drink, and group event options at venues"]'>
+          <img src="files/projecticons/icon_driveshack.png" alt="Drive Shack Golf and Games" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Drive Shack Golf and Games</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://www.driveshack.com/play/" target="_blank">Learn More</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Where fun meets friendly competition! Experience a mix of driving range games,
+            mini golf, and real-life courses, all enhanced with TrackMan™ Range technology for precision ball tracking
+            and immersive gameplay.</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Where fun meets friendly competition! Experience a mix of driving range games, mini golf, and real-life courses, all enhanced with TrackMan™ Range technology for precision ball tracking and immersive gameplay.</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["Play as up to 8 unique fighters, each with specific combos and attacks","Upgrade equipment and abilities to reach full potential","Challenge real players worldwide in action combat","Special fighting styles: Liberal Kungfu, Taekwondo, Sword Attack, Katana","Sensitive and special 3D fighting control system","Sophisticated 3D characters and smooth, intense motion","Combine punching, kicking, catching, throwing, and dodging for deadly attacks","Immersive touch screen mechanics for mobile devices"]'>
-        <img src="files/Icon_FoL2.png" alt="Fight of the Legends 2" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Fight of the Legends 2</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.legends.fight2&hl=en" target="_blank">Play on Google Play</a>
+        <div class="project-card"
+          data-features='["Play as up to 8 unique fighters, each with specific combos and attacks","Upgrade equipment and abilities to reach full potential","Challenge real players worldwide in action combat","Special fighting styles: Liberal Kungfu, Taekwondo, Sword Attack, Katana","Sensitive and special 3D fighting control system","Sophisticated 3D characters and smooth, intense motion","Combine punching, kicking, catching, throwing, and dodging for deadly attacks","Immersive touch screen mechanics for mobile devices"]'>
+          <img src="files/projecticons/icon_fol2.png" alt="Fight of the Legends 2" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Fight of the Legends 2</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.legends.fight2&hl=en"
+                  target="_blank">Play on Google Play</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Reveal your inner fighter in this 3D fighting game! Play up to 8 fighters,
+            upgrade their equipment and abilities, and challenge real players worldwide.</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Reveal your inner fighter in this 3D fighting game! Play up to 8 fighters, upgrade their equipment and abilities, and challenge real players worldwide.</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["Play as the immortal warrior Ashwathama","Immersive 3D combat system","Epic battles with mythological enemies","Ancient Indian warfare and martial arts","Stunning visual effects and animations","Character progression and skill upgrades"]'>
-        <img src="files/Icon_Ashwathama.jpg" alt="Ashwathama" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Ashwathama</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.Ashwathama" target="_blank">Play on Google Play</a>
+        <div class="project-card"
+          data-features='["Play as the immortal warrior Ashwathama","Immersive 3D combat system","Epic battles with mythological enemies","Ancient Indian warfare and martial arts","Stunning visual effects and animations","Character progression and skill upgrades"]'>
+          <img src="files/projecticons/icon_ashwathama.jpg" alt="Ashwathama" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Ashwathama</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.Ashwathama"
+                  target="_blank">Play on Google Play</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Action-packed 3D fighting game featuring the legendary warrior Ashwathama</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Action-packed 3D fighting game featuring the legendary warrior Ashwathama</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["Each character fights with different style of fighting","Pure 3D","Characters made with real models","Indian Martial Art style","Cool Music","Store System to upgrade your character"]'>
-        <img src="files/Icon_FoL.png" alt="Fight of the Legends" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Fight of the Legends</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.fightofthelegends" target="_blank">Play on Google Play</a>
+        <div class="project-card"
+          data-features='["Each character fights with different style of fighting","Pure 3D","Characters made with real models","Indian Martial Art style","Cool Music","Store System to upgrade your character"]'>
+          <img src="files/projecticons/icon_fol.png" alt="Fight of the Legends" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Fight of the Legends</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.fightofthelegends"
+                  target="_blank">Play on Google Play</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Action-packed 3D fighting game featuring mythological characters</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Action-packed 3D fighting game featuring mythological characters</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["Addictive binary pattern puzzle mechanics","Continuous movement with time pressure","Strategic thinking and perfect timing required","3-star completion system for hardcore puzzle solvers","Minimalist design with fast-paced gameplay","GMTK Game Jam 2025 submission"]'>
-        <img src="files/Icon_BinaryLooper.png" alt="Binary Looper" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Binary Looper</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://gamedevkaushik.itch.io/binary-looper" target="_blank">Play on itch.io</a>
+        <div class="project-card"
+          data-features='["Addictive binary pattern puzzle mechanics","Continuous movement with time pressure","Strategic thinking and perfect timing required","3-star completion system for hardcore puzzle solvers","Minimalist design with fast-paced gameplay","GMTK Game Jam 2025 submission"]'>
+          <img src="files/projecticons/icon_binarylooper.png" alt="Binary Looper" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Binary Looper</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://gamedevkaushik.itch.io/binary-looper" target="_blank">Play on itch.io</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Binary Looper takes the familiar concept of binary patterns and transforms it
+            into an addictive puzzle experience. The combination of continuous movement, time pressure, and strategic
+            thinking creates a unique gameplay loop that will keep you coming back for more.</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Binary Looper takes the familiar concept of binary patterns and transforms it into an addictive puzzle experience. The combination of continuous movement, time pressure, and strategic thinking creates a unique gameplay loop that will keep you coming back for more.</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["Innovative echo mechanic - play with your past selves","Recorded action replays create ghost echoes","Echoes can press switches, push boxes, and trigger reactions","Multi-step puzzles requiring coordination with echoes","2D pixel art platformer with mystery elements","GMTK Game Jam 2025 submission (co-developed with RedOre)"]'>
-        <img src="files/Icon_ProjectEcho.png" alt="Project Echo" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Project Echo</h3>
-            <div class="project-links">
-              <span>Godot • </span>
-              <a href="https://gamedevkaushik.itch.io/project-echo" target="_blank">Play on itch.io</a>
+        <div class="project-card"
+          data-features='["Innovative echo mechanic - play with your past selves","Recorded action replays create ghost echoes","Echoes can press switches, push boxes, and trigger reactions","Multi-step puzzles requiring coordination with echoes","2D pixel art platformer with mystery elements","GMTK Game Jam 2025 submission (co-developed with RedOre)"]'>
+          <img src="files/projecticons/icon_projectecho.png" alt="Project Echo" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Project Echo</h3>
+              <div class="project-links">
+                <span>Godot • </span>
+                <a href="https://gamedevkaushik.itch.io/project-echo" target="_blank">Play on itch.io</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Play with Time, Team Up with Your Own Echoes! Solve brain-twisting puzzles in
+            this inventive puzzle-platformer where you don't just play solo—you play with your past! Each time you
+            complete a run, an "Echo" of your previous self replays your recorded actions.</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Play with Time, Team Up with Your Own Echoes! Solve brain-twisting puzzles in this inventive puzzle-platformer where you don't just play solo—you play with your past! Each time you complete a run, an "Echo" of your previous self replays your recorded actions.</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["Mouse-only control system - no brakes, no steering wheel","Time manipulation mechanics - slow motion with limited duration","10 seconds of total slowmo per run - strategic resource management","Physics-based car rotation and movement","High score system - chase the perfect lap time","Unity 20th Anniversary Game Jam submission"]'>
-        <img src="files/Icon_RaceTime.png" alt="Race Time" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Race_Time</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://gamedevkaushik.itch.io/race-time" target="_blank">Download on itch.io</a>
+        <div class="project-card"
+          data-features='["Mouse-only control system - no brakes, no steering wheel","Time manipulation mechanics - slow motion with limited duration","10 seconds of total slowmo per run - strategic resource management","Physics-based car rotation and movement","High score system - chase the perfect lap time","Unity 20th Anniversary Game Jam submission"]'>
+          <img src="files/projecticons/icon_racetime.png" alt="Race Time" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Race_Time</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://gamedevkaushik.itch.io/race-time" target="_blank">Download on itch.io</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">A high-speed racing challenge where control meets chaos! Control your car using
+            only the mouse to slow down time and rotate the car with pinpoint precision. You only get 10 seconds of
+            total slowmo for the entire run - master the art of timing and angle!</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">A high-speed racing challenge where control meets chaos! Control your car using only the mouse to slow down time and rotate the car with pinpoint precision. You only get 10 seconds of total slowmo for the entire run - master the art of timing and angle!</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["Two game modes: Racing Mode and Simulation Mode","Realistic physics with side forces during turns","Power-ups: Booster, Homing Missile, Rocket Launcher, Mine, Minigun, Shield","Side characters balance your Tuk-tuk in simulation mode","Intuitive touch controls for mobile gameplay","Various stages and levels with increasing challenges"]'>
-        <img src="files/Icon_TukTukRace.png" alt="TukTuk Race" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">TukTuk Race</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://play.google.com/store/apps/details?id=com.darkpyre.tuktuk" target="_blank">Android</a>
+        <div class="project-card"
+          data-features='["Two game modes: Racing Mode and Simulation Mode","Realistic physics with side forces during turns","Power-ups: Booster, Homing Missile, Rocket Launcher, Mine, Minigun, Shield","Side characters balance your Tuk-tuk in simulation mode","Intuitive touch controls for mobile gameplay","Various stages and levels with increasing challenges"]'>
+          <img src="files/projecticons/icon_tuktukrace.png" alt="TukTuk Race" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">TukTuk Race</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://play.google.com/store/apps/details?id=com.darkpyre.tuktuk" target="_blank">Android</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Dive into a world where the traditional meets the thrill of racing! Race using
+            Tuk-tuks transformed into high-speed racing machines. Choose between Racing Mode for simplified controls or
+            Simulation Mode with realistic physics and side characters balancing your Tuk-tuk.</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Dive into a world where the traditional meets the thrill of racing! Race using Tuk-tuks transformed into high-speed racing machines. Choose between Racing Mode for simplified controls or Simulation Mode with realistic physics and side characters balancing your Tuk-tuk.</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["Immersive 3D environment with stunning visuals and high-quality details","Tilt-based control using device motion sensors for intuitive gameplay","Challenging mazes with obstacles, traps, and puzzles","Dynamic obstacles including moving platforms and rotating barriers","Rich soundscape that enhances the immersive experience","High replay value with numerous levels and increasing difficulty"]'>
-        <img src="files/Icon_TiltMaze3D.png" alt="Tilt Maze 3D" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Tilt Maze 3D</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://play.google.com/store/apps/details?id=com.ShashiTAGS.TiltMaze3D" target="_blank">Android</a>
+        <div class="project-card"
+          data-features='["Immersive 3D environment with stunning visuals and high-quality details","Tilt-based control using device motion sensors for intuitive gameplay","Challenging mazes with obstacles, traps, and puzzles","Dynamic obstacles including moving platforms and rotating barriers","Rich soundscape that enhances the immersive experience","High replay value with numerous levels and increasing difficulty"]'>
+          <img src="files/projecticons/icon_tiltmaze3d.png" alt="Tilt Maze 3D" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Tilt Maze 3D</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://play.google.com/store/apps/details?id=com.ShashiTAGS.TiltMaze3D"
+                  target="_blank">Android</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Step into an immersive 3D world with our innovative 3D Tilt Maze Game, where
+            your device becomes the key to navigating complex and engaging mazes. The game capitalizes on the unique
+            capabilities of your device's motion sensors, allowing you to control the environment with a simple tilt.
+          </p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Step into an immersive 3D world with our innovative 3D Tilt Maze Game, where your device becomes the key to navigating complex and engaging mazes. The game capitalizes on the unique capabilities of your device's motion sensors, allowing you to control the environment with a simple tilt.</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["Dynamic track-switching between three parallel tracks","Simple tap controls for seamless movement between tracks","Destroy goods coaches to make room for rescued passenger cars","Link passenger coaches to extinguish flames and save passengers","Immersive 3D environments with stunning visuals","Challenging missions under time pressure with upgrades and unlockable train models"]'>
-        <img src="files/Icon_TheBurningTrain.png" alt="The Burning Train" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">The Burning Train</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://play.google.com/store/apps/details?id=com.shashitags.burningtrain" target="_blank">Android</a>
+        <div class="project-card"
+          data-features='["Dynamic track-switching between three parallel tracks","Simple tap controls for seamless movement between tracks","Destroy goods coaches to make room for rescued passenger cars","Link passenger coaches to extinguish flames and save passengers","Immersive 3D environments with stunning visuals","Challenging missions under time pressure with upgrades and unlockable train models"]'>
+          <img src="files/projecticons/icon_theburningtrain.png" alt="The Burning Train" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">The Burning Train</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://play.google.com/store/apps/details?id=com.shashitags.burningtrain"
+                  target="_blank">Android</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Take control of a blazing train in The Burning Train, an adrenaline-fueled 3D
+            game that will test your reflexes, precision, and quick thinking. The engine roars forward unscathed, but
+            the passenger coaches are engulfed in flames! Your mission? Save the day by navigating the train and
+            rescuing passengers.</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Take control of a blazing train in The Burning Train, an adrenaline-fueled 3D game that will test your reflexes, precision, and quick thinking. The engine roars forward unscathed, but the passenger coaches are engulfed in flames! Your mission? Save the day by navigating the train and rescuing passengers.</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
-      <div class="project-card" data-features='["Intuitive swipe controls to move platforms and guide animals","Varied challenges with new obstacles and layouts in each level","Increasing difficulty as animals hop faster and terrain becomes trickier","Adorable characters with unique hopping animations","Fast, reflex-driven gameplay perfect for quick challenges","Endless replayability with progressively challenging levels"]'>
-        <img src="files/Icon_TumbleRescue.png" alt="Tumble Rescue" class="project-image">
-        <div class="project-header">
-          <div class="project-info">
-            <h3 class="project-title">Tumble Rescue</h3>
-            <div class="project-links">
-              <span>Unity • </span>
-              <a href="https://play.google.com/store/apps/details?id=com.shashitags.tumblerescue" target="_blank">Android</a>
+        <div class="project-card"
+          data-features='["Intuitive swipe controls to move platforms and guide animals","Varied challenges with new obstacles and layouts in each level","Increasing difficulty as animals hop faster and terrain becomes trickier","Adorable characters with unique hopping animations","Fast, reflex-driven gameplay perfect for quick challenges","Endless replayability with progressively challenging levels"]'>
+          <img src="files/projecticons/icon_tumblerescue.png" alt="Tumble Rescue" class="project-image">
+          <div class="project-header">
+            <div class="project-info">
+              <h3 class="project-title">Tumble Rescue</h3>
+              <div class="project-links">
+                <span>Unity • </span>
+                <a href="https://play.google.com/store/apps/details?id=com.shashitags.tumblerescue"
+                  target="_blank">Android</a>
+              </div>
             </div>
           </div>
+          <p class="project-description">Tumble Rescue is an engaging, fast-paced 2D mobile game where you help cute,
+            hopping animals reach their home by swiping and moving platforms on the screen. Your goal is to guide these
+            animals safely across tricky obstacles, ensuring they don't fall off as they bounce along the path.</p>
+          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
-        <p class="project-description">Tumble Rescue is an engaging, fast-paced 2D mobile game where you help cute, hopping animals reach their home by swiping and moving platforms on the screen. Your goal is to guide these animals safely across tricky obstacles, ensuring they don't fall off as they bounce along the path.</p>
-        <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
-      </div>
       </div>
     </div>
   </section>
@@ -1934,7 +1994,7 @@
     // Featured Games Data
     const featuredGamesPool = {
       'Race_Time': {
-        image: 'files/Icon_RaceTime.png',
+        image: 'files/projecticons/icon_racetime.png',
         title: 'Race_Time',
         tech: 'Unity',
         links: '<span>Unity • </span><a href="https://gamedevkaushik.itch.io/race-time" target="_blank">Download on itch.io</a>',
@@ -1949,7 +2009,7 @@
         ]
       },
       'TukTuk Race': {
-        image: 'files/Icon_TukTukRace.png',
+        image: 'files/projecticons/icon_tuktukrace.png',
         title: 'TukTuk Race',
         tech: 'Unity',
         links: '<span>Unity • </span><a href="https://play.google.com/store/apps/details?id=com.darkpyre.tuktuk" target="_blank">Android</a>',
@@ -1964,7 +2024,7 @@
         ]
       },
       'Drive Shack Golf and Games': {
-        image: 'files/Icon_Driveshack.png',
+        image: 'files/projecticons/icon_driveshack.png',
         title: 'Drive Shack Golf and Games',
         tech: 'Unity',
         links: '<span>Unity • </span><a href="https://www.driveshack.com/play/" target="_blank">Learn More</a>',
@@ -1979,7 +2039,7 @@
         ]
       },
       'Velawoods English': {
-        image: 'files/Icon_Velawoods.png',
+        image: 'files/projecticons/icon_velawoods.png',
         title: 'Velawoods English',
         tech: 'Unity',
         links: '<span>Unity • </span><a href="https://velawoodsenglish.com/" target="_blank">Learn More</a>',
@@ -1994,7 +2054,7 @@
         ]
       },
       'Ashwathama': {
-        image: 'files/Icon_Ashwathama.jpg',
+        image: 'files/projecticons/icon_ashwathama.jpg',
         title: 'Ashwathama',
         tech: 'Unity',
         links: '<span>Unity • </span><a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.Ashwathama" target="_blank">Play on Google Play</a>',
@@ -2009,7 +2069,7 @@
         ]
       },
       'Star Titan': {
-        image: 'files/Icon_StarTitan.png',
+        image: 'files/projecticons/icon_startitan.png',
         title: 'Star Titan',
         tech: 'Unity',
         links: '<span>Unity • </span><a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.StarTitan&hl=en_IN" target="_blank">Android</a><a href="https://apps.apple.com/us/app/star-titan/id1482626137" target="_blank">iOS</a>',
@@ -2024,7 +2084,7 @@
         ]
       },
       'Measure PM': {
-        image: 'files/Icon_Measure.png',
+        image: 'files/projecticons/icon_measure.png',
         title: 'Measure PM',
         tech: 'Unity',
         links: '<span>Unity • </span><a href="https://play.google.com/store/apps/details?id=com.measuresoftware.app&hl=en_IN" target="_blank">Android</a> <a href="https://apps.apple.com/in/app/measurepm/id1493856868" target="_blank">IOS</a>',
@@ -2047,7 +2107,7 @@
       const startOfYear = new Date(year, 0, 1);
       const daysSinceStart = Math.floor((today - startOfYear) / (1000 * 60 * 60 * 24));
       const weekNumber = Math.floor(daysSinceStart / 7);
-      
+
       // Create a seed from year and week number
       const dateString = `${year}-${weekNumber}`;
       let hash = 0;
@@ -2081,30 +2141,30 @@
     // Games rotate weekly starting with Race_Time
     function selectFeaturedGames() {
       const gameOrder = ['Race_Time', 'TukTuk Race', 'Drive Shack Golf and Games', 'Velawoods English', 'Ashwathama', 'Star Titan', 'Measure PM'];
-      
+
       // Calculate which week we're in (starting from a reference date)
       // Use a reference date and add offset to ensure Race_Time shows first
       // If Velawoods (index 3) was showing, we need to offset by -3 to get Race_Time (index 0)
       const referenceDate = new Date('2025-01-01T00:00:00');
       const today = new Date();
-      
+
       // Calculate days since reference date
       const timeDiff = today.getTime() - referenceDate.getTime();
       const daysSinceStart = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-      
+
       // Calculate week number (weeks since reference date)
       const weekNumber = Math.floor(daysSinceStart / 7);
-      
+
       // Add offset to ensure Race_Time (index 0) is shown first
       // If Velawoods (index 3) was showing, we offset by -3 to get Race_Time (index 0)
       const offset = -3; // Offset to make Race_Time show first
-      
+
       // Calculate index in the rotation (modulo to cycle through all games)
       const gameIndex = (weekNumber + offset) % gameOrder.length;
-      
+
       // Ensure positive index
       const finalIndex = gameIndex < 0 ? gameIndex + gameOrder.length : gameIndex;
-      
+
       // Return array with single game
       return [gameOrder[finalIndex]];
     }
@@ -2113,7 +2173,7 @@
     function generateFeaturedCard(gameKey) {
       const game = featuredGamesPool[gameKey];
       const featuresJSON = JSON.stringify(game.features);
-      
+
       return `
         <div class="featured-card" data-features='${featuresJSON}'>
           <img src="${game.image}" alt="${game.title}" class="project-image">
@@ -2130,28 +2190,28 @@
         </div>
       `;
     }
-    
+
     // Open game popup with game details
     function openGamePopup(button) {
       const card = button.closest('.project-card, .featured-card');
       if (!card) return;
-      
+
       const popup = document.getElementById('gamePopup');
       const image = card.querySelector('.project-image');
       const title = card.querySelector('.project-title');
       const links = card.querySelector('.project-links');
       const description = card.querySelector('.project-description');
       const featuresData = card.getAttribute('data-features');
-      
+
       if (!popup || !title || !description || !featuresData) return;
-      
+
       // Set popup content
       const popupImage = document.getElementById('popupImage');
       const popupTitle = document.getElementById('popupTitle');
       const popupLinks = document.getElementById('popupLinks');
       const popupDescription = document.getElementById('popupDescription');
       const popupFeatures = document.getElementById('popupFeatures');
-      
+
       if (image && image.src) {
         popupImage.src = image.src;
         popupImage.alt = image.alt || title.textContent;
@@ -2159,11 +2219,11 @@
       } else {
         popupImage.style.display = 'none';
       }
-      
+
       popupTitle.textContent = title.textContent;
       popupLinks.innerHTML = links ? links.innerHTML : '';
       popupDescription.textContent = description.textContent;
-      
+
       // Parse and display features
       try {
         const features = JSON.parse(featuresData);
@@ -2171,12 +2231,12 @@
       } catch (e) {
         popupFeatures.innerHTML = '<li>Features not available</li>';
       }
-      
+
       // Show popup
       popup.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-    
+
     // Close game popup
     function closeGamePopup() {
       const popup = document.getElementById('gamePopup');
@@ -2185,27 +2245,27 @@
         document.body.style.overflow = '';
       }
     }
-    
+
     // Close popup on close button click
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const closeBtn = document.getElementById('gamePopupClose');
       const popup = document.getElementById('gamePopup');
-      
+
       if (closeBtn) {
         closeBtn.addEventListener('click', closeGamePopup);
       }
-      
+
       // Close popup on background click
       if (popup) {
-        popup.addEventListener('click', function(e) {
+        popup.addEventListener('click', function (e) {
           if (e.target === popup) {
             closeGamePopup();
           }
         });
       }
-      
+
       // Close popup on Escape key
-      document.addEventListener('keydown', function(e) {
+      document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && popup && popup.classList.contains('active')) {
           closeGamePopup();
         }
@@ -2216,74 +2276,74 @@
     function loadFeaturedGames() {
       const featuredGrid = document.getElementById('featuredGrid');
       if (!featuredGrid) return;
-      
+
       const selectedGames = selectFeaturedGames();
       featuredGrid.innerHTML = selectedGames.map(gameKey => generateFeaturedCard(gameKey)).join('');
     }
 
     // Loading Screen
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
       setTimeout(() => {
         document.getElementById('loadingOverlay').classList.add('hidden');
         loadFeaturedGames();
       }, 1000);
     });
-    
+
     // Hamburger Menu Toggle
     const hamburgerMenu = document.getElementById('hamburgerMenu');
     const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
     const mobileMenuClose = document.getElementById('mobileMenuClose');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
-    
+
     function openMobileMenu() {
       hamburgerMenu.classList.add('active');
       mobileMenuOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-    
+
     function closeMobileMenu() {
       hamburgerMenu.classList.remove('active');
       mobileMenuOverlay.classList.remove('active');
       document.body.style.overflow = '';
     }
-    
+
     if (hamburgerMenu) {
       hamburgerMenu.addEventListener('click', openMobileMenu);
     }
-    
+
     if (mobileMenuClose) {
       mobileMenuClose.addEventListener('click', closeMobileMenu);
     }
-    
+
     // Close menu when clicking overlay background
     if (mobileMenuOverlay) {
-      mobileMenuOverlay.addEventListener('click', function(e) {
+      mobileMenuOverlay.addEventListener('click', function (e) {
         if (e.target === mobileMenuOverlay) {
           closeMobileMenu();
         }
       });
     }
-    
+
     // Close menu when clicking mobile nav links
     mobileNavLinks.forEach(link => {
-      link.addEventListener('click', function() {
+      link.addEventListener('click', function () {
         closeMobileMenu();
       });
     });
-    
+
     // Close menu on Escape key
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && mobileMenuOverlay && mobileMenuOverlay.classList.contains('active')) {
         closeMobileMenu();
       }
     });
-    
+
     // Navigation (Desktop)
     document.querySelectorAll('.nav a[href^="index.html"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const href = this.getAttribute('href');
-        
+
         if (href === 'index.html') {
           window.location.href = 'index.html';
         } else if (href.includes('#')) {
@@ -2292,7 +2352,64 @@
         }
       });
     });
-    
+
+    // Floating Social Bar Logic
+    const floatingSocial = document.getElementById('floatingSocial');
+    const header = document.querySelector('header');
+    const FLOATING_TOP = 110;
+    const FLOATING_BOTTOM_OFFSET = 30;
+
+    function handleScroll() {
+      const scrollTop = window.pageYOffset;
+
+      if (header) {
+        const headerHeight = header.offsetHeight;
+        const fadeStartPoint = headerHeight * 0.3;
+        const fadeEndPoint = headerHeight * 0.8;
+
+        if (scrollTop >= fadeStartPoint) {
+          header.classList.add('fade-out');
+          if (scrollTop >= fadeEndPoint) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        } else {
+          header.classList.remove('fade-out', 'scrolled');
+        }
+      }
+
+      if (floatingSocial) {
+        const threshold = header ? header.offsetHeight * 0.6 : 200;
+        const shouldStickBottom = scrollTop > threshold;
+        updateFloatingSocialPosition(shouldStickBottom);
+      }
+    }
+
+    function updateFloatingSocialPosition(shouldStickBottom) {
+      if (!floatingSocial) return;
+
+      if (shouldStickBottom) {
+        floatingSocial.classList.add('bottom-left');
+        const availableTop = window.innerHeight - floatingSocial.offsetHeight - FLOATING_BOTTOM_OFFSET;
+        const targetTop = Math.max(FLOATING_TOP, availableTop);
+        floatingSocial.style.top = `${targetTop}px`;
+      } else {
+        floatingSocial.classList.remove('bottom-left');
+        floatingSocial.style.top = `${FLOATING_TOP}px`;
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    window.addEventListener('resize', () => {
+      if (!floatingSocial) return;
+      const isBottom = floatingSocial.classList.contains('bottom-left');
+      updateFloatingSocialPosition(isBottom);
+    });
+
   </script>
 </body>
+
 </html>

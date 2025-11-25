@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rahul Kaushik - Game Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:wght@300;400;600;700;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:wght@300;400;600;700;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
   <style>
     :root {
       /* Black, Gold, and Red Color Palette - Calvin Template Style */
-      --primary-bg: #000000; /* Black background */
-      --secondary-bg: #1a1a1a; /* Dark gray for cards */
-      --card-bg: #ffffff; /* White for content cards */
-      --light-bg: #f5f5f5; /* Light gray for sections */
+      --primary-bg: #000000;
+      /* Black background */
+      --secondary-bg: #1a1a1a;
+      /* Dark gray for cards */
+      --card-bg: #ffffff;
+      /* White for content cards */
+      --light-bg: #f5f5f5;
+      /* Light gray for sections */
       --white: #ffffff;
-      --primary-accent: #d4af37; /* Gold */
-      --secondary-accent: #b8940f; /* Darker gold */
-      --accent-red: #c41e3a; /* Red accent */
+      --primary-accent: #d4af37;
+      /* Gold */
+      --secondary-accent: #b8940f;
+      /* Darker gold */
+      --accent-red: #c41e3a;
+      /* Red accent */
       --success-color: #d4af37;
       --warning-color: #ffd700;
       --danger-color: #c41e3a;
-      
+
       /* Surfaces */
       --surface-primary: #ffffff;
       --surface-primary-rgb: 255, 255, 255;
@@ -32,26 +42,30 @@
       --border-accent: #d4af37;
       --shadow-color: rgba(0, 0, 0, 0.1);
       --overlay-bg: rgba(0, 0, 0, 0.95);
-      
+
       /* Text Colors */
-      --text-primary: #2d3436; /* Dark gray/black for main text */
-      --text-secondary: #636e72; /* Lighter gray */
+      --text-primary: #2d3436;
+      /* Dark gray/black for main text */
+      --text-secondary: #636e72;
+      /* Lighter gray */
       --text-muted: #b2bec3;
-      --text-accent: #d4af37; /* Gold */
-      --text-link: #c41e3a; /* Red */
-      
+      --text-accent: #d4af37;
+      /* Gold */
+      --text-link: #c41e3a;
+      /* Red */
+
       /* Gradients */
       --primary-gradient: linear-gradient(135deg, #d4af37, #b8940f);
       --secondary-gradient: linear-gradient(135deg, #c41e3a, #8b0000);
       --accent-gradient: linear-gradient(135deg, #d4af37, #c41e3a);
       --bg-gradient: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
-      
+
       /* Shadows */
       --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
       --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
       --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
       --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.25);
-      
+
       /* Typography */
       --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -60,17 +74,17 @@
       --font-ui: 'Poppins', sans-serif;
       --font-code: 'Courier New', monospace;
     }
-    
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     html {
       scroll-behavior: smooth;
     }
-    
+
     body {
       font-family: var(--font-body);
       background: var(--light-bg);
@@ -90,8 +104,8 @@
       content: none;
     }
 
-    
-    
+
+
     /* Top Navigation Bar - Calvin Template Style */
     .top-navbar {
       position: fixed;
@@ -107,7 +121,7 @@
       z-index: 1000;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
-    
+
     .brand-name {
       font-family: var(--font-heading);
       font-size: 1.5rem;
@@ -116,14 +130,14 @@
       text-decoration: none;
       letter-spacing: 1px;
     }
-    
+
     .nav {
       display: flex;
       align-items: center;
       gap: 2rem;
       font-family: var(--font-ui);
     }
-    
+
     .nav a {
       color: var(--white);
       text-decoration: none;
@@ -135,7 +149,7 @@
       padding: 0.5rem 0;
       position: relative;
     }
-    
+
     .nav a::after {
       content: '';
       position: absolute;
@@ -146,17 +160,17 @@
       background: var(--primary-accent);
       transition: width 0.3s ease;
     }
-    
+
     .nav a:hover::after,
     .nav a.active::after {
       width: 100%;
     }
-    
+
     .nav a:hover,
     .nav a.active {
       color: var(--primary-accent);
     }
-    
+
     .lets-talk-btn {
       background: var(--white);
       color: var(--primary-bg) !important;
@@ -176,11 +190,11 @@
       white-space: nowrap;
       min-width: 120px;
     }
-    
+
     .lets-talk-btn::after {
       display: none;
     }
-    
+
     .lets-talk-btn .resume-icon {
       font-size: 1rem;
       line-height: 1;
@@ -188,7 +202,7 @@
       align-items: center;
       justify-content: center;
     }
-    
+
     .lets-talk-btn:hover {
       background: var(--primary-accent);
       color: var(--white) !important;
@@ -246,7 +260,7 @@
         display: none;
       }
     }
-    
+
     /* Hamburger Menu Button (Hidden on Desktop) */
     .hamburger-menu {
       display: none;
@@ -268,7 +282,7 @@
       box-shadow: var(--shadow-md);
       transition: all 0.3s ease;
     }
-    
+
     .hamburger-menu span {
       display: block;
       width: 25px;
@@ -277,24 +291,24 @@
       border-radius: 2px;
       transition: all 0.3s ease;
     }
-    
+
     .hamburger-menu:hover {
       background: var(--primary-accent);
       box-shadow: var(--shadow-lg);
     }
-    
+
     .hamburger-menu.active span:nth-child(1) {
       transform: rotate(45deg) translate(8px, 8px);
     }
-    
+
     .hamburger-menu.active span:nth-child(2) {
       opacity: 0;
     }
-    
+
     .hamburger-menu.active span:nth-child(3) {
       transform: rotate(-45deg) translate(7px, -7px);
     }
-    
+
     /* Mobile Menu Overlay */
     .mobile-menu-overlay {
       position: fixed;
@@ -310,12 +324,12 @@
       opacity: 0;
       transition: opacity 0.3s ease;
     }
-    
+
     .mobile-menu-overlay.active {
       display: flex;
       opacity: 1;
     }
-    
+
     .mobile-menu-content {
       width: 100%;
       max-width: 400px;
@@ -326,7 +340,7 @@
       position: relative;
       box-shadow: var(--shadow-xl);
     }
-    
+
     .mobile-menu-close {
       position: absolute;
       top: 1rem;
@@ -345,20 +359,20 @@
       transition: all 0.3s ease;
       z-index: 10;
     }
-    
+
     .mobile-menu-close:hover {
       background: var(--primary-accent);
       color: var(--white);
       transform: rotate(90deg);
     }
-    
+
     .mobile-nav {
       display: flex;
       flex-direction: column;
       gap: 1rem;
       margin-top: 3rem;
     }
-    
+
     .mobile-nav a {
       color: var(--text-primary);
       text-decoration: none;
@@ -373,11 +387,11 @@
       border: 1px solid transparent;
       position: relative;
     }
-    
+
     .mobile-nav a::before {
       display: none;
     }
-    
+
     .mobile-nav a:hover,
     .mobile-nav a.active {
       color: var(--white);
@@ -386,7 +400,7 @@
       transform: translateX(4px);
       box-shadow: var(--shadow-sm);
     }
-    
+
     /* Header - Hero Section with Black Background */
     header {
       min-height: 100vh;
@@ -413,13 +427,11 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(
-        to bottom,
-        var(--primary-bg) 0%,
-        var(--primary-bg) 20%,
-        transparent 50%,
-        transparent 100%
-      );
+      background: linear-gradient(to bottom,
+          var(--primary-bg) 0%,
+          var(--primary-bg) 20%,
+          transparent 50%,
+          transparent 100%);
       opacity: 0;
       transition: opacity 0.3s ease;
       z-index: 10;
@@ -433,13 +445,13 @@
     header.fade-out.scrolled {
       transform: translateY(-20px);
     }
-    
+
     .profile-container {
       position: relative;
       margin-bottom: 3rem;
       z-index: 15;
     }
-    
+
     .profile-image {
       width: 200px;
       height: 200px;
@@ -450,13 +462,13 @@
       object-fit: cover;
       object-position: center;
     }
-    
+
     .profile-image:hover {
       transform: scale(1.05);
       box-shadow: var(--shadow-lg);
       border-color: var(--primary-accent);
     }
-    
+
     /* Integrated Hero Content */
     .hero-content {
       max-width: 900px;
@@ -470,8 +482,8 @@
       position: relative;
       z-index: 15;
     }
-    
-    
+
+
     .header-title {
       font-family: var(--font-heading);
       font-size: clamp(3rem, 8vw, 5rem);
@@ -483,7 +495,7 @@
       line-height: 1.2;
       z-index: 15;
     }
-    
+
     .header-subtitle {
       font-family: var(--font-display);
       font-size: 2rem;
@@ -529,7 +541,7 @@
       object-fit: contain;
       display: inline-block;
     }
-    
+
     .header-tagline {
       font-family: var(--font-body);
       font-size: 1.05rem;
@@ -545,7 +557,7 @@
       text-transform: uppercase;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
     }
-    
+
     .scroll-indicator {
       position: absolute;
       bottom: 2rem;
@@ -556,12 +568,21 @@
       background: linear-gradient(to bottom, var(--primary-accent), transparent);
       animation: scroll-pulse 2s ease-in-out infinite;
     }
-    
+
     @keyframes scroll-pulse {
-      0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
-      50% { opacity: 0.5; transform: translateX(-50%) translateY(10px); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: translateX(-50%) translateY(10px);
+      }
     }
-    
+
     /* Sections */
     section {
       padding: 5rem 2rem;
@@ -569,7 +590,7 @@
       z-index: 10;
       background: var(--card-bg);
     }
-    
+
     .section-container {
       max-width: 1200px;
       margin: 0 auto;
@@ -583,7 +604,7 @@
       transition: none;
       font-family: var(--font-body);
     }
-    
+
     .section-container::before {
       display: none;
     }
@@ -591,7 +612,7 @@
     .section-container:hover {
       transform: none;
     }
-    
+
     .section-title {
       font-family: var(--font-heading);
       font-size: 2.5rem;
@@ -602,21 +623,21 @@
       letter-spacing: 0.5px;
       color: var(--text-primary);
     }
-    
+
     .section-title span {
       color: var(--text-primary);
       position: relative;
     }
-    
+
     .section-title::after {
       display: none;
     }
-    
+
     /* Hero Welcome */
     /* Integrated hero content styling moved to header section */
-    
+
     /* Clean professional appearance */
-    
+
     .hero-title {
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
@@ -626,7 +647,7 @@
       font-weight: 700;
       letter-spacing: 1px;
     }
-    
+
     .hero-description {
       font-size: 1.1rem;
       color: var(--white);
@@ -637,7 +658,7 @@
       margin-right: auto;
       opacity: 0.95;
     }
-    
+
     /* CTA Buttons */
     .cta-container {
       display: flex;
@@ -690,7 +711,7 @@
       color: rgba(255, 255, 255, 0.65);
       text-transform: uppercase;
     }
-    
+
     .cta-button {
       display: inline-flex;
       align-items: center;
@@ -709,7 +730,7 @@
       overflow: hidden;
       z-index: 1;
     }
-    
+
     .cta-button::before {
       content: '';
       position: absolute;
@@ -721,12 +742,12 @@
       transition: left 0.6s ease;
       z-index: -1;
     }
-    
+
     .cta-button:hover::before {
       left: 100%;
     }
-    
-    
+
+
     .cta-primary {
       background: var(--primary-accent);
       color: var(--white);
@@ -737,7 +758,7 @@
       font-weight: 600;
       letter-spacing: 0.5px;
     }
-    
+
     .cta-primary:hover {
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
@@ -749,7 +770,7 @@
       transform: translateY(0);
       transition: all 0.1s ease;
     }
-    
+
     .cta-secondary {
       background: transparent;
       color: var(--white);
@@ -760,11 +781,11 @@
       font-weight: 600;
       letter-spacing: 0.5px;
     }
-    
+
     .cta-secondary::after {
       display: none;
     }
-    
+
     .cta-secondary:hover {
       color: var(--primary-bg);
       background: var(--white);
@@ -777,7 +798,7 @@
       transform: translateY(0);
       transition: all 0.1s ease;
     }
-    
+
     /* Stats Grid */
     .stats-grid {
       display: grid;
@@ -787,12 +808,12 @@
       align-items: stretch;
       justify-items: center;
     }
-    
+
     /* Upcoming Game Section */
     .upcoming-game-section {
       margin-top: 3rem;
     }
-    
+
     .upcoming-game-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -808,21 +829,21 @@
       display: flex;
       flex-direction: column;
     }
-    
+
     .upcoming-game-card::before {
       display: none;
     }
-    
+
     .upcoming-game-card::after {
       display: none;
     }
-    
+
     .upcoming-game-card:hover {
       transform: translateY(-4px);
       border-color: var(--primary-accent);
       box-shadow: var(--shadow-md);
     }
-    
+
     .upcoming-game-image {
       width: 100%;
       height: 350px;
@@ -832,20 +853,20 @@
       filter: brightness(0.9);
       transition: all 0.3s ease;
     }
-    
+
     .upcoming-game-card:hover .upcoming-game-image {
       filter: brightness(1);
       transform: scale(1.02);
     }
-    
+
     .upcoming-game-content {
       padding: 2.5rem;
     }
-    
+
     .upcoming-game-header {
       margin-bottom: 1.5rem;
     }
-    
+
     .upcoming-game-title {
       font-family: var(--font-heading);
       font-size: 2rem;
@@ -854,7 +875,7 @@
       margin-bottom: 0.75rem;
       letter-spacing: 1px;
     }
-    
+
     .upcoming-game-links {
       display: flex;
       flex-wrap: wrap;
@@ -862,13 +883,13 @@
       align-items: center;
       margin-bottom: 1rem;
     }
-    
+
     .upcoming-game-links span {
       color: var(--text-secondary);
       font-size: 0.9rem;
       font-weight: 500;
     }
-    
+
     .upcoming-game-links a {
       display: inline-block;
       padding: 0.4rem 1rem;
@@ -884,7 +905,7 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    
+
     .upcoming-game-links a:hover {
       background: var(--primary-accent);
       color: var(--white);
@@ -892,14 +913,14 @@
       box-shadow: var(--shadow-sm);
       border-color: var(--primary-accent);
     }
-    
+
     .upcoming-game-description {
       color: var(--text-secondary);
       line-height: 1.8;
       font-size: 1.1rem;
       margin-bottom: 1.5rem;
     }
-    
+
     .upcoming-game-status {
       display: inline-flex;
       align-items: center;
@@ -916,11 +937,11 @@
       letter-spacing: 0.1em;
       margin-top: 1rem;
     }
-    
+
     .upcoming-game-status::before {
       display: none;
     }
-    
+
     .upcoming-game-button {
       display: inline-flex;
       align-items: center;
@@ -944,7 +965,7 @@
       box-shadow: var(--shadow-sm);
       z-index: 1;
     }
-    
+
     .upcoming-game-button::before {
       content: '';
       position: absolute;
@@ -956,34 +977,34 @@
       transition: left 0.6s ease;
       z-index: -1;
     }
-    
+
     .upcoming-game-button:hover::before {
       left: 100%;
     }
-    
+
     .upcoming-game-button:hover {
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
       background: var(--secondary-accent);
       border-color: var(--secondary-accent);
     }
-    
+
     .upcoming-game-button:active {
       transform: translateY(0);
       transition: all 0.1s ease;
     }
-    
+
     .upcoming-game-button::after {
       content: ' →';
       font-size: 1.2rem;
       transition: transform 0.3s ease;
       display: inline-block;
     }
-    
+
     .upcoming-game-button:hover::after {
       transform: translateX(4px);
     }
-    
+
     .stat-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -1002,7 +1023,7 @@
       justify-content: center;
       box-shadow: var(--shadow-sm);
     }
-    
+
     .stat-card::before {
       content: '';
       position: absolute;
@@ -1015,21 +1036,21 @@
       transition: opacity 0.4s ease;
       z-index: -1;
     }
-    
+
     .stat-card:hover::before {
       opacity: 0.08;
     }
-    
+
     .stat-card::after {
       display: none;
     }
-    
+
     .stat-card:hover {
       transform: translateY(-4px);
       border-color: var(--primary-accent);
       box-shadow: var(--shadow-md);
     }
-    
+
     .stat-number {
       font-family: var(--font-heading);
       font-size: 4rem;
@@ -1043,29 +1064,30 @@
       text-align: center;
       display: inline-block;
     }
-    
+
     .stat-value,
     .stat-suffix {
       color: var(--primary-accent);
     }
-    
+
     /* Fallback for stats without spans */
     .stat-number:not(:has(.stat-value)) {
       color: var(--primary-accent);
     }
-    
+
     .stat-number::before {
-      display: none; /* Removed glow effect to prevent unwanted visual artifacts */
+      display: none;
+      /* Removed glow effect to prevent unwanted visual artifacts */
     }
-    
-    
+
+
     .stat-label {
       font-size: 1.1rem;
       color: var(--text-secondary);
       font-weight: 500;
       letter-spacing: 0.5px;
     }
-    
+
     /* Achievement Cards */
     .achievements-grid {
       display: grid;
@@ -1073,7 +1095,7 @@
       gap: 2rem;
       margin-top: 3rem;
     }
-    
+
     .achievement-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -1085,7 +1107,7 @@
       cursor: pointer;
       box-shadow: var(--shadow-sm);
     }
-    
+
     .achievement-card::before {
       display: none;
     }
@@ -1096,7 +1118,7 @@
       box-shadow: var(--shadow-md);
       cursor: pointer;
     }
-    
+
     .achievement-card:active {
       transform: translateY(-2px);
     }
@@ -1104,26 +1126,26 @@
     .achievement-card::after {
       display: none;
     }
-    
+
     .achievement-icon {
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
       display: block;
     }
-    
+
     .achievement-title {
       font-size: 1.5rem;
       font-weight: 600;
       color: var(--text-primary);
       margin-bottom: 1rem;
     }
-    
+
     .achievement-description {
       color: var(--text-secondary);
       line-height: 1.6;
       font-size: 1rem;
     }
-    
+
     /* Skills */
     .skills-container {
       display: flex;
@@ -1132,7 +1154,7 @@
       margin-top: 3rem;
       justify-content: center;
     }
-    
+
     .skill-badge {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -1150,29 +1172,29 @@
       position: relative;
       box-shadow: var(--shadow-sm);
     }
-    
+
     .skill-badge::after {
       display: none;
     }
-    
+
     .skill-badge::before {
       display: none;
     }
-    
+
     .skill-badge:hover {
       transform: translateY(-2px);
       color: var(--primary-accent);
       border-color: var(--primary-accent);
       box-shadow: var(--shadow-md);
     }
-    
+
     /* Experience Grid - Card Design */
     .experience-grid {
       display: grid;
       gap: 2.5rem;
       margin-top: 3rem;
     }
-    
+
     .experience-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -1184,17 +1206,17 @@
       transition: all 0.3s ease;
       box-shadow: var(--shadow-sm);
     }
-    
+
     .experience-card::before {
       display: none;
     }
-    
+
     .experience-card:hover {
       transform: translateY(-4px);
       border-color: var(--primary-accent);
       box-shadow: var(--shadow-md);
     }
-    
+
     .experience-header {
       display: flex;
       justify-content: space-between;
@@ -1202,7 +1224,7 @@
       margin-bottom: 1.5rem;
       gap: 1.5rem;
     }
-    
+
     .company-logo {
       width: 90px;
       height: 90px;
@@ -1216,21 +1238,21 @@
       overflow: hidden;
       border: 1px solid var(--border-color);
     }
-    
+
     .company-logo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 12px;
     }
-    
+
     .experience-info {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
     }
-    
+
     .experience-role {
       color: var(--primary-accent);
       font-weight: 600;
@@ -1238,7 +1260,7 @@
       margin-bottom: 0.5rem;
       font-family: var(--font-heading);
     }
-    
+
     .experience-title {
       font-size: 1.3rem;
       font-weight: 600;
@@ -1246,7 +1268,7 @@
       margin: 0 0 0.5rem 0;
       font-family: var(--font-heading);
     }
-    
+
     .experience-date {
       background: var(--primary-accent);
       color: var(--white);
@@ -1258,7 +1280,7 @@
       font-family: var(--font-ui);
       align-self: flex-start;
     }
-    
+
     .experience-description {
       color: var(--text-secondary);
       line-height: 1.8;
@@ -1269,7 +1291,7 @@
       opacity: 0;
       transition: max-height 0.4s ease, opacity 0.4s ease, margin-bottom 0.4s ease;
     }
-    
+
     /* Show description on hover - Desktop only */
     @media (min-width: 769px) {
       .experience-card:hover .experience-description {
@@ -1278,19 +1300,19 @@
         margin-bottom: 1.5rem;
       }
     }
-    
+
     .experience-description ul {
       list-style: none;
       padding-left: 0;
       margin: 0;
     }
-    
+
     .experience-description ul li {
       margin-bottom: 0.8rem;
       position: relative;
       padding-left: 1.5rem;
     }
-    
+
     .experience-description ul li::before {
       content: '▶';
       color: var(--primary-accent);
@@ -1299,14 +1321,14 @@
       left: 0;
       font-size: 0.8rem;
     }
-    
+
     .skills-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
       margin-top: 1rem;
     }
-    
+
     .skill-tag {
       background: rgba(212, 175, 55, 0.1);
       color: var(--primary-accent);
@@ -1319,7 +1341,7 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    
+
     .experience-stats {
       display: flex;
       gap: 1rem;
@@ -1327,7 +1349,7 @@
       padding-top: 1rem;
       border-top: 1px solid var(--border-color);
     }
-    
+
     .stat-item {
       display: flex;
       align-items: center;
@@ -1336,11 +1358,11 @@
       color: var(--text-secondary);
       font-family: var(--font-ui);
     }
-    
+
     .stat-icon {
       font-size: 1.1rem;
     }
-    
+
     /* Awards & Education Grid */
     /* Awards Grid - Inverted Triangle Pattern */
     .awards-grid {
@@ -1354,29 +1376,29 @@
       margin-left: auto;
       margin-right: auto;
     }
-    
+
     .awards-grid .award-card:nth-child(1) {
       grid-column: 1 / 3;
     }
-    
+
     .awards-grid .award-card:nth-child(2) {
       grid-column: 3 / 5;
     }
-    
+
     .awards-grid .award-card:nth-child(3) {
       grid-column: 5 / 7;
     }
-    
+
     .awards-grid .award-card:nth-child(4) {
       grid-column: 2 / 4;
       grid-row: 2;
     }
-    
+
     .awards-grid .award-card:nth-child(5) {
       grid-column: 4 / 6;
       grid-row: 2;
     }
-    
+
     /* Education Grid - Single Row Layout */
     .education-grid {
       display: grid;
@@ -1386,7 +1408,7 @@
       justify-items: stretch;
       align-items: stretch;
     }
-    
+
     .award-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -1406,7 +1428,7 @@
       justify-content: flex-start;
       box-shadow: var(--shadow-sm);
     }
-    
+
     .education-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -1425,12 +1447,12 @@
       justify-content: flex-start;
       box-shadow: var(--shadow-sm);
     }
-    
+
     .award-card::before,
     .education-card::before {
       display: none;
     }
-    
+
     .award-card:hover,
     .education-card:hover {
       transform: translateY(-4px);
@@ -1438,19 +1460,19 @@
       box-shadow: var(--shadow-md);
       cursor: pointer;
     }
-    
+
     .award-card:active,
     .education-card:active {
       transform: translateY(-2px);
     }
-    
+
     .award-icon,
     .education-icon {
       font-size: 3rem;
       margin-bottom: 1.5rem;
       display: block;
     }
-    
+
     .award-card h3 {
       color: var(--text-primary);
       font-size: 1.4rem;
@@ -1458,7 +1480,7 @@
       font-family: var(--font-heading);
       font-weight: 600;
     }
-    
+
     .education-card h3 {
       color: var(--text-primary);
       font-size: 1.1rem;
@@ -1466,7 +1488,7 @@
       font-family: var(--font-heading);
       font-weight: 600;
     }
-    
+
     .award-card h4 {
       color: var(--text-secondary);
       font-size: 1.1rem;
@@ -1474,7 +1496,7 @@
       font-family: var(--font-accent);
       font-weight: 500;
     }
-    
+
     .education-card h4 {
       color: var(--text-secondary);
       font-size: 0.95rem;
@@ -1482,7 +1504,7 @@
       font-family: var(--font-accent);
       font-weight: 500;
     }
-    
+
     .award-details {
       color: var(--text-primary);
       line-height: 1.5;
@@ -1495,7 +1517,7 @@
       text-align: center;
       overflow: hidden;
     }
-    
+
     .education-details {
       color: var(--text-primary);
       line-height: 1.4;
@@ -1505,14 +1527,14 @@
       text-align: center;
       overflow: hidden;
     }
-    
+
     .education-card .institution,
     .education-card .year {
       font-size: 0.85rem;
       margin: 0.2rem 0;
       color: var(--text-secondary);
     }
-    
+
     /* Academic Projects Grid */
     .academic-projects-grid {
       display: grid;
@@ -1520,7 +1542,7 @@
       gap: 1.5rem;
       margin-top: 3rem;
     }
-    
+
     .academic-project-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -1531,17 +1553,17 @@
       transition: all 0.3s ease;
       box-shadow: var(--shadow-sm);
     }
-    
+
     .academic-project-card::before {
       display: none;
     }
-    
+
     .academic-project-card:hover {
       transform: translateY(-4px);
       border-color: var(--primary-accent);
       box-shadow: var(--shadow-md);
     }
-    
+
     .academic-project-card h4 {
       color: var(--text-primary);
       font-size: 1.2rem;
@@ -1549,7 +1571,7 @@
       font-family: var(--font-heading);
       font-weight: 600;
     }
-    
+
     .academic-project-card p {
       color: var(--text-secondary);
       margin: 0;
@@ -1557,7 +1579,7 @@
       font-size: 0.95rem;
       font-family: var(--font-body);
     }
-    
+
     /* Contact */
     .contact-container {
       display: grid;
@@ -1569,13 +1591,13 @@
       margin-left: auto;
       margin-right: auto;
     }
-    
+
     .contact-info {
       width: 100%;
       text-align: left;
       margin: 0;
     }
-    
+
     .contact-info h3 {
       color: var(--text-primary);
       font-size: 2rem;
@@ -1583,14 +1605,14 @@
       font-family: var(--font-heading);
       font-weight: 700;
     }
-    
+
     .contact-info p {
       color: var(--text-secondary);
       line-height: 1.8;
       margin-bottom: 2rem;
       font-size: 1.1rem;
     }
-    
+
     .contact-methods {
       display: flex;
       flex-direction: column;
@@ -1599,7 +1621,7 @@
       width: 100%;
       align-items: stretch;
     }
-    
+
     .contact-method {
       display: flex;
       align-items: center;
@@ -1620,7 +1642,7 @@
       box-shadow: var(--shadow-sm);
       cursor: pointer;
     }
-    
+
     .contact-method:active {
       transform: translateX(2px);
     }
@@ -1639,7 +1661,7 @@
     .contact-method:hover::before {
       opacity: 1;
     }
-    
+
     .contact-icon {
       font-size: 1.5rem;
       width: 50px;
@@ -1652,12 +1674,12 @@
       justify-content: center;
       flex-shrink: 0;
     }
-    
+
     .contact-details {
       flex: 1;
       text-align: left;
     }
-    
+
     .contact-details h4 {
       color: var(--text-primary);
       margin-bottom: 0.25rem;
@@ -1665,7 +1687,7 @@
       font-weight: 600;
       font-size: 1.1rem;
     }
-    
+
     .contact-details p {
       color: var(--text-secondary);
       margin: 0;
@@ -1704,7 +1726,7 @@
     .futuristic-form textarea:focus {
       border-color: var(--primary-accent);
     }
-    
+
     /* Modern Contact Form */
     .futuristic-form {
       background: var(--card-bg);
@@ -1715,12 +1737,12 @@
       overflow: hidden;
       transition: all 0.3s ease;
     }
-    
+
     .futuristic-form:hover {
       border-color: var(--primary-accent);
       box-shadow: var(--shadow-sm);
     }
-    
+
     .futuristic-form::before {
       content: '';
       position: absolute;
@@ -1730,11 +1752,11 @@
       height: 3px;
       background: var(--primary-accent);
     }
-    
+
     .form-group {
       margin-bottom: 2rem;
     }
-    
+
     .form-group label {
       display: block;
       color: var(--text-primary);
@@ -1743,7 +1765,7 @@
       font-size: 1rem;
       font-family: var(--font-ui);
     }
-    
+
     .form-group input,
     .form-group select,
     .form-group textarea {
@@ -1757,13 +1779,13 @@
       font-family: var(--font-body);
       transition: all 0.3s ease;
     }
-    
+
     .form-group input::placeholder,
     .form-group textarea::placeholder {
       color: var(--text-muted);
       opacity: 0.6;
     }
-    
+
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
@@ -1772,12 +1794,12 @@
       box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
       background: var(--white);
     }
-    
+
     .form-group textarea {
       resize: vertical;
       min-height: 120px;
     }
-    
+
     .submit-button {
       background: var(--primary-accent);
       color: var(--white);
@@ -1793,13 +1815,13 @@
       overflow: hidden;
       width: 100%;
     }
-    
+
     .submit-button:hover {
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
       background: var(--secondary-accent);
     }
-    
+
     .button-bg {
       position: absolute;
       top: 0;
@@ -1809,52 +1831,54 @@
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
       transition: left 0.6s ease;
     }
-    
+
     .submit-button:hover .button-bg {
       left: 100%;
     }
-    
+
     /* Mobile Navigation */
     @media (max-width: 992px) {
       .top-navbar {
         padding: 1rem 1.5rem;
       }
-      
+
       .top-navbar .nav {
         display: none;
       }
-      
+
       .hamburger-menu {
         display: flex;
       }
-      
+
       .brand-name {
         font-size: 1.2rem;
       }
     }
-    
+
     @media (min-width: 993px) {
       .hamburger-menu {
         display: none;
       }
     }
-    
+
     /* Mobile Responsiveness */
     @media (max-width: 768px) {
+
       /* Prevent horizontal scrolling */
-      html, body {
+      html,
+      body {
         overflow-x: hidden;
         width: 100%;
         max-width: 100vw;
       }
-      
+
       /* Ensure images don't overflow */
       img {
         max-width: 100%;
         height: auto;
         display: block;
       }
-      
+
       /* Ensure containers respect viewport */
       .section-container,
       .hero-content,
@@ -1869,47 +1893,50 @@
         max-width: 100%;
         box-sizing: border-box;
       }
-      
+
       /* Touch-friendly buttons */
-      button, .cta-button, .view-features-btn, .nav a {
+      button,
+      .cta-button,
+      .view-features-btn,
+      .nav a {
         min-height: 44px;
         min-width: 44px;
       }
-      
+
       header {
         min-height: auto;
         padding: 5rem 1rem 2rem;
       }
-      
+
       .profile-container {
         margin-bottom: 2rem;
       }
-      
+
       .profile-image {
         width: 150px;
         height: 150px;
         object-fit: cover;
         object-position: center;
       }
-      
+
       .header-title {
         font-size: clamp(2rem, 8vw, 3rem);
         letter-spacing: 2px;
         margin-bottom: 1rem;
       }
-      
+
       .header-subtitle {
         font-size: 1.1rem;
         letter-spacing: 1px;
         margin-bottom: 1rem;
       }
-      
+
       .header-tagline {
         font-size: 0.85rem;
         letter-spacing: 1.5px;
         margin-bottom: 2rem;
       }
-      
+
       .hero-content {
         padding: 2rem 1.5rem;
         margin: 1.5rem 0 0;
@@ -1919,82 +1946,82 @@
         grid-template-columns: repeat(2, minmax(140px, 1fr));
         gap: 1.5rem;
       }
-      
+
       .hero-title {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
       }
-      
+
       .hero-description {
         font-size: 1rem;
         line-height: 1.6;
       }
-      
+
       section {
         padding: 3rem 1rem;
       }
-      
+
       .section-container {
         padding: 2rem 1.5rem;
         border-radius: 12px;
       }
-      
+
       .section-title {
         font-size: 2rem;
         margin-bottom: 2rem;
         letter-spacing: 2px;
       }
-      
-      
+
+
       .cta-container {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
       }
-      
+
       .cta-button {
         width: 100%;
         max-width: 300px;
         justify-content: center;
       }
-      
+
       .stats-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
       }
-      
+
       .stat-card {
         padding: 2rem 1.5rem;
       }
-      
+
       .stat-number {
         font-size: 2.5rem;
       }
-      
+
       .stat-label {
         font-size: 1rem;
       }
-      
+
       .upcoming-game-card {
         max-width: 100%;
       }
-      
+
       .upcoming-game-image {
         height: 250px;
       }
-      
+
       .upcoming-game-content {
         padding: 1.5rem;
       }
-      
+
       .upcoming-game-title {
         font-size: 1.5rem;
       }
-      
+
       .upcoming-game-description {
         font-size: 1rem;
       }
-      
+
       .upcoming-game-button {
         width: 100%;
         max-width: 300px;
@@ -2002,33 +2029,33 @@
         font-size: 0.9rem;
         margin-top: 0;
       }
-      
+
       .achievements-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
       }
-      
+
       .achievement-card {
         padding: 2rem;
       }
-      
+
       .skills-container {
         gap: 0.8rem;
       }
-      
+
       .skill-badge {
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
       }
-      
+
       .experience-grid {
         gap: 1.5rem;
       }
-      
+
       .experience-card {
         padding: 1.5rem;
       }
-      
+
       /* Always show experience description on mobile (tablet) */
       .experience-description {
         max-height: none !important;
@@ -2036,20 +2063,20 @@
         margin-bottom: 1.5rem !important;
         overflow: visible !important;
       }
-      
+
       .experience-header {
         flex-direction: row;
         align-items: flex-start;
         gap: 1rem;
       }
-      
+
       .company-logo {
         width: 60px;
         height: 60px;
         align-self: flex-start;
         flex-shrink: 0;
       }
-      
+
       .experience-role {
         font-size: 1.1rem;
         margin: 0;
@@ -2057,13 +2084,13 @@
         flex: 1;
         min-width: 200px;
       }
-      
+
       .experience-title {
         font-size: 1.2rem;
         margin: 0;
         text-align: left;
       }
-      
+
       .experience-date {
         font-size: 0.8rem;
         padding: 0.3rem 0.8rem;
@@ -2071,57 +2098,57 @@
         white-space: nowrap;
         align-self: flex-start;
       }
-      
+
       .skills-tags {
         flex-wrap: wrap;
         gap: 0.3rem;
       }
-      
+
       .skill-tag {
         font-size: 0.8rem;
         padding: 0.3rem 0.6rem;
       }
-      
+
       .academic-projects-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
       }
-      
+
       .academic-project-card {
         padding: 1.25rem;
       }
-      
+
       .academic-project-card h4 {
         font-size: 1.1rem;
       }
-      
+
       .education-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
       }
-      
+
       .education-card {
         min-height: 250px;
         padding: 1.25rem;
       }
-      
+
       .education-icon {
         font-size: 1.5rem;
         margin-bottom: 0.75rem;
       }
-      
+
       .education-card h3 {
         font-size: 1rem;
       }
-      
+
       .education-card h4 {
         font-size: 0.85rem;
       }
-      
+
       .education-details {
         font-size: 0.8rem;
       }
-      
+
       .contact-container {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -2136,7 +2163,7 @@
       .contact-form {
         width: 100%;
       }
-      
+
       /* Awards Grid - Mobile Responsive */
       .awards-grid {
         grid-template-columns: 1fr;
@@ -2144,14 +2171,14 @@
         max-width: 100%;
         justify-items: center;
       }
-      
+
       .awards-grid .award-card {
         width: 100%;
         max-width: 400px;
         height: auto;
         min-height: 400px;
       }
-      
+
       .awards-grid .award-card:nth-child(1),
       .awards-grid .award-card:nth-child(2),
       .awards-grid .award-card:nth-child(3),
@@ -2160,25 +2187,25 @@
         grid-column: 1;
         grid-row: auto;
       }
-      
+
       .contact-method {
         flex-direction: column;
         text-align: center;
         gap: 1rem;
         padding: 1.25rem 1.5rem;
       }
-      
+
       .contact-details {
         text-align: center;
       }
-      
+
       .contact-details p {
         word-break: break-all;
         font-size: 0.85rem;
       }
-      
+
     }
-    
+
     @media (max-width: 480px) {
       .hamburger-menu {
         width: 45px;
@@ -2187,55 +2214,55 @@
         right: 0.75rem;
         padding: 0.6rem;
       }
-      
+
       .hamburger-menu span {
         width: 22px;
         height: 2.5px;
       }
-      
+
       .mobile-menu-content {
         max-width: 100%;
         padding: 1.5rem;
       }
-      
+
       .mobile-nav a {
         padding: 0.9rem 1.25rem;
         font-size: 0.9rem;
       }
-      
+
       header {
         padding: 4.5rem 0.75rem 1.5rem;
       }
-      
+
       .profile-image {
         width: 120px;
         height: 120px;
         object-fit: cover;
         object-position: center;
       }
-      
+
       .header-title {
         font-size: clamp(1.8rem, 8vw, 2.5rem);
         letter-spacing: 1px;
       }
-      
+
       .header-subtitle {
         font-size: 1rem;
       }
-      
+
       .header-tagline {
         font-size: 0.75rem;
       }
-      
+
       .hero-content {
         padding: 1.5rem 1rem;
       }
-      
+
       .hero-title {
         font-size: 1.5rem;
         margin-bottom: 1rem;
       }
-      
+
       .hero-description {
         font-size: 0.95rem;
       }
@@ -2244,54 +2271,54 @@
         grid-template-columns: 1fr;
         gap: 1rem;
       }
-      
+
       .section-container {
         padding: 1.5rem 1rem;
       }
-      
+
       .section-title {
         font-size: 1.75rem;
         margin-bottom: 1.5rem;
       }
-      
+
       .stats-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
       }
-      
+
       .stat-card {
         padding: 1.5rem 1rem;
       }
-      
+
       .stat-number {
         font-size: 2.5rem;
       }
-      
+
       .stat-label {
         font-size: 0.9rem;
       }
-      
+
       .achievement-card {
         padding: 1.5rem;
       }
-      
+
       .achievement-title {
         font-size: 1.2rem;
       }
-      
+
       .achievement-description {
         font-size: 1rem;
       }
-      
+
       .skill-badge {
         padding: 0.5rem 1rem;
         font-size: 0.8rem;
       }
-      
+
       .experience-card {
         padding: 1.25rem;
       }
-      
+
       /* Always show experience description on mobile */
       .experience-description {
         max-height: none !important;
@@ -2299,68 +2326,68 @@
         margin-bottom: 1.5rem !important;
         overflow: visible !important;
       }
-      
+
       .experience-header {
         flex-direction: column;
         gap: 1rem;
       }
-      
+
       .company-logo {
         width: 70px;
         height: 70px;
         align-self: center;
       }
-      
+
       .experience-role {
         font-size: 1rem;
         text-align: center;
       }
-      
+
       .experience-title {
         font-size: 1.1rem;
         text-align: center;
       }
-      
+
       .experience-date {
         align-self: center;
         font-size: 0.75rem;
         padding: 0.4rem 0.8rem;
       }
-      
+
       .education-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
       }
-      
+
       .contact-method {
         padding: 1rem 1.25rem;
         min-height: auto;
         flex-direction: column;
         text-align: center;
       }
-      
+
       .contact-icon {
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
       }
-      
+
       .contact-details h4 {
         font-size: 1rem;
       }
-      
+
       .contact-details p {
         font-size: 0.8rem;
         word-break: break-all;
       }
-      
+
       /* Awards Grid - Mobile Single Column */
       .awards-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         max-width: 100%;
       }
-      
+
       .awards-grid .award-card {
         width: 100%;
         max-width: 100%;
@@ -2368,7 +2395,7 @@
         min-height: 380px;
         padding: 1.5rem;
       }
-      
+
       .awards-grid .award-card:nth-child(1),
       .awards-grid .award-card:nth-child(2),
       .awards-grid .award-card:nth-child(3),
@@ -2377,27 +2404,27 @@
         grid-column: 1;
         grid-row: auto;
       }
-      
+
       .upcoming-game-card {
         max-width: 100%;
       }
-      
+
       .upcoming-game-image {
         height: 200px;
       }
-      
+
       .upcoming-game-content {
         padding: 1.25rem;
       }
-      
+
       .upcoming-game-title {
         font-size: 1.3rem;
       }
-      
+
       .upcoming-game-description {
         font-size: 0.95rem;
       }
-      
+
       .upcoming-game-button {
         width: 100%;
         max-width: 280px;
@@ -2405,44 +2432,44 @@
         font-size: 0.85rem;
         margin-top: 0;
       }
-      
+
       /* Game HUD Mobile */
     }
-    
+
     /* Intersection Observer Classes */
     .animate-on-scroll {
       opacity: 0;
       transform: translateY(60px);
       transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-    
+
     .animate-on-scroll.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    
+
     .animate-left {
       opacity: 0;
       transform: translateX(-60px);
       transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-    
+
     .animate-left.visible {
       opacity: 1;
       transform: translateX(0);
     }
-    
+
     .animate-right {
       opacity: 0;
       transform: translateX(60px);
       transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-    
+
     .animate-right.visible {
       opacity: 1;
       transform: translateX(0);
     }
-    
+
     /* Professional Loading Animation */
     .loading-overlay {
       position: fixed;
@@ -2458,12 +2485,12 @@
       z-index: 9999;
       transition: opacity 0.5s ease;
     }
-    
+
     .loading-overlay.hidden {
       opacity: 0;
       pointer-events: none;
     }
-    
+
     .loading-spinner {
       width: 60px;
       height: 60px;
@@ -2481,36 +2508,42 @@
       letter-spacing: 2px;
       text-transform: uppercase;
     }
-    
+
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
   </style>
 </head>
-  <body>
+
+<body>
   <!-- Loading Screen -->
   <div class="loading-overlay" id="loadingOverlay">
     <div class="loading-spinner"></div>
-    <div class="loading-text">Loading Portfolio</div>
+    <div class="loading-text">Loading Website</div>
   </div>
-  
+
   <!-- Hamburger Menu Button (Mobile Only) -->
   <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu">
     <span></span>
     <span></span>
     <span></span>
   </button>
-  
+
   <!-- Mobile Menu Overlay -->
   <div class="mobile-menu-overlay" id="mobileMenuOverlay">
     <div class="mobile-menu-content">
       <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">×</button>
       <div class="mobile-nav">
         <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
         <a href="#upcoming-game">Upcoming Game</a>
         <a href="portfolio.html">Portfolio</a>
+        <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#awards">Awards</a>
         <a href="#education">Education</a>
@@ -2519,10 +2552,10 @@
       </div>
     </div>
   </div>
-  
+
   <!-- Top Navigation Bar - Calvin Template Style -->
   <nav class="top-navbar">
-    <a href="#home" class="brand-name">Rahul Kaushik.</a>
+    <a href="#home" class="brand-name">RAHUL KAUSHIK</a>
     <div class="nav">
       <a href="#home" class="active">Home</a>
       <a href="#upcoming-game">Upcoming Game</a>
@@ -2540,7 +2573,8 @@
   </nav>
 
   <div class="floating-social" id="floatingSocial">
-    <a href="https://www.linkedin.com/in/game-dev-kaushik/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+    <a href="https://www.linkedin.com/in/game-dev-kaushik/" target="_blank" rel="noopener noreferrer"
+      aria-label="LinkedIn">
       <img src="files/socialprofiles/linkedin.png" alt="LinkedIn">
     </a>
     <a href="https://gamedevkaushik.itch.io" target="_blank" rel="noopener noreferrer" aria-label="Itch.io">
@@ -2549,14 +2583,15 @@
     <a href="https://github.com/gamedevkaushik" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
       <img src="files/socialprofiles/github.png" alt="GitHub">
     </a>
-    <a href="https://www.instagram.com/gamedev.kaushik" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+    <a href="https://www.instagram.com/gamedev.kaushik" target="_blank" rel="noopener noreferrer"
+      aria-label="Instagram">
       <img src="files/socialprofiles/insta.png" alt="Instagram">
     </a>
     <a href="https://twitter.com/gamedevkaushik" target="_blank" rel="noopener noreferrer" aria-label="X">
       <img src="files/socialprofiles/x.jpg" alt="X">
     </a>
   </div>
-  
+
   <header id="home">
     <div class="profile-container">
       <img src="files/profilepicture.jpeg" alt="Rahul Kaushik" class="profile-image">
@@ -2578,11 +2613,13 @@
       </span>
     </div>
     <p class="header-tagline">CODE. CREATE. PLAY.</p>
-    
+
     <!-- Integrated Digital Universe Content -->
     <div class="hero-content">
       <p class="hero-description">
-        I architect high-performance gameplay systems and lead cross-functional teams to ship premium experiences across console, mobile, and XR. From greenfield prototypes to live-ops scale-ups, I translate creative vision into polished Unity, Unreal, and Godot builds that delight players and hit production goals.
+        I architect high-performance gameplay systems and lead cross-functional teams to ship premium experiences across
+        console, mobile, and XR. From greenfield prototypes to live-ops scale-ups, I translate creative vision into
+        polished Unity, Unreal, and Godot builds that delight players and hit production goals.
       </p>
       <div class="hero-stats">
         <div class="hero-stat">
@@ -2611,7 +2648,7 @@
         </a>
       </div>
     </div>
-    
+
     <div class="scroll-indicator"></div>
   </header>
 
@@ -2621,11 +2658,12 @@
       <h2 class="section-title">
         <span>Upcoming Game</span>
       </h2>
-      
-      <p style="font-size: 1.1rem; color: var(--text-primary); text-align: center; margin-bottom: 3rem; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);">
+
+      <p
+        style="font-size: 1.1rem; color: var(--text-primary); text-align: center; margin-bottom: 3rem; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);">
         Currently in development! Get a sneak peek at the next exciting project I'm working on.
       </p>
-      
+
       <div class="upcoming-game-card">
         <img src="files/projecticons/icon_racetime.png" alt="Race_Time" class="upcoming-game-image">
         <div class="upcoming-game-content">
@@ -2637,14 +2675,16 @@
             </div>
           </div>
           <p class="upcoming-game-description">
-            A high-speed racing challenge where control meets chaos! Control your car using only the mouse to slow down time and rotate the car with pinpoint precision. You only get 10 seconds of total slowmo for the entire run - master the art of timing and angle!
+            A high-speed racing challenge where control meets chaos! Control your car using only the mouse to slow down
+            time and rotate the car with pinpoint precision. You only get 10 seconds of total slowmo for the entire run
+            - master the art of timing and angle!
           </p>
           <div class="upcoming-game-status">
             Development in Progress
           </div>
         </div>
       </div>
-      
+
       <div style="text-align: center; margin-top: 3rem;">
         <a href="portfolio.html" class="upcoming-game-button">
           View More Games
@@ -2658,9 +2698,12 @@
       <h2 class="section-title">
         <span>About Me</span>
       </h2>
-      
-      <p style="font-size: 1.3rem; color: var(--text-primary); text-align: center; margin-bottom: 3rem; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);">
-        I'm a passionate Game Developer and Technical Lead with over a decade of experience creating engaging digital experiences. From mobile games that millions play to immersive VR adventures, I've led teams and built games that connect with players worldwide.
+
+      <p
+        style="font-size: 1.3rem; color: var(--text-primary); text-align: center; margin-bottom: 3rem; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);">
+        I'm a passionate Game Developer and Technical Lead with over a decade of experience creating engaging digital
+        experiences. From mobile games that millions play to immersive VR adventures, I've led teams and built games
+        that connect with players worldwide.
       </p>
 
       <div class="achievements-grid">
@@ -2671,7 +2714,7 @@
             Mobile games with millions of downloads across Android, iOS, Web & VR platforms with positive user reviews.
           </div>
         </div>
-        
+
         <div class="achievement-card animate-right">
           <div class="achievement-icon">👥</div>
           <div class="achievement-title">Team Leadership</div>
@@ -2679,7 +2722,7 @@
             Led multiple development teams to success in fast-paced environments, mentoring junior developers.
           </div>
         </div>
-        
+
         <div class="achievement-card animate-left">
           <div class="achievement-icon">🏆</div>
           <div class="achievement-title">Award Winner</div>
@@ -2687,7 +2730,7 @@
             Multiple game development awards and recognition in the industry for innovation and excellence.
           </div>
         </div>
-        
+
         <div class="achievement-card animate-right">
           <div class="achievement-icon">🚀</div>
           <div class="achievement-title">Innovation Focus</div>
@@ -2700,7 +2743,7 @@
       <h2 class="section-title" style="margin-top: 4rem;">
         <span>Technical Skills</span>
       </h2>
-      
+
       <div class="skills-container">
         <div class="skill-badge">Unity 3D</div>
         <div class="skill-badge">Unreal Engine</div>
@@ -2723,15 +2766,17 @@
       <h2 class="section-title">
         <span>Experience</span>
       </h2>
-      
+
       <div class="experience-grid">
         <div class="experience-card animate-left">
           <div class="experience-header">
             <div class="company-logo">
-              <img src="files/companylogos/mpm_logo.png" alt="MPM Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <img src="files/companylogos/mpm_logo.png" alt="MPM Logo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
             <div class="experience-info">
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
                 <p class="experience-role" style="margin: 0; padding-top: 0;">Development Team Lead (Consultant)</p>
                 <span class="experience-date">2021 - 2025</span>
               </div>
@@ -2762,14 +2807,16 @@
             </div>
           </div>
         </div>
-        
+
         <div class="experience-card animate-right">
           <div class="experience-header">
             <div class="company-logo">
-              <img src="files/companylogos/dpi_logo.png" alt="DPI Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <img src="files/companylogos/dpi_logo.png" alt="DPI Logo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
             <div class="experience-info">
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
                 <p class="experience-role" style="margin: 0; padding-top: 0;">Development Team Lead (Consultant)</p>
                 <span class="experience-date">2021 - 2024</span>
               </div>
@@ -2800,14 +2847,16 @@
             </div>
           </div>
         </div>
-        
+
         <div class="experience-card animate-left">
           <div class="experience-header">
             <div class="company-logo">
-              <img src="files/companylogos/freelance_logo.png" alt="Freelance Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <img src="files/companylogos/freelance_logo.png" alt="Freelance Logo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
             <div class="experience-info">
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
                 <p class="experience-role" style="margin: 0; padding-top: 0;">AR Development</p>
                 <span class="experience-date">2019 - 2020</span>
               </div>
@@ -2835,14 +2884,16 @@
             </div>
           </div>
         </div>
-        
+
         <div class="experience-card animate-right">
           <div class="experience-header">
             <div class="company-logo">
-              <img src="files/companylogos/mds_logo.png" alt="MDS Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <img src="files/companylogos/mds_logo.png" alt="MDS Logo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
             <div class="experience-info">
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
                 <p class="experience-role" style="margin: 0; padding-top: 0;">Team Lead</p>
                 <span class="experience-date">2016 - 2019</span>
               </div>
@@ -2872,14 +2923,16 @@
             </div>
           </div>
         </div>
-        
+
         <div class="experience-card animate-left">
           <div class="experience-header">
             <div class="company-logo">
-              <img src="files/companylogos/ki_logo.png" alt="KI Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <img src="files/companylogos/ki_logo.png" alt="KI Logo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
             <div class="experience-info">
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
                 <p class="experience-role" style="margin: 0; padding-top: 0;">Sr. Unity Developer</p>
                 <span class="experience-date">2016</span>
               </div>
@@ -2910,14 +2963,16 @@
             </div>
           </div>
         </div>
-        
+
         <div class="experience-card animate-right">
           <div class="experience-header">
             <div class="company-logo">
-              <img src="files/companylogos/dai_logo.png" alt="DAI Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <img src="files/companylogos/dai_logo.png" alt="DAI Logo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
             <div class="experience-info">
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
                 <p class="experience-role" style="margin: 0; padding-top: 0;">Game Developer</p>
                 <span class="experience-date">2015 - 2016</span>
               </div>
@@ -2947,14 +3002,16 @@
             </div>
           </div>
         </div>
-        
+
         <div class="experience-card animate-left">
           <div class="experience-header">
             <div class="company-logo">
-              <img src="files/companylogos/vi_logo.png" alt="VI Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <img src="files/companylogos/vi_logo.png" alt="VI Logo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
             <div class="experience-info">
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
                 <p class="experience-role" style="margin: 0; padding-top: 0;">Sr. Unity Developer</p>
                 <span class="experience-date">2015</span>
               </div>
@@ -2985,14 +3042,16 @@
             </div>
           </div>
         </div>
-        
+
         <div class="experience-card animate-right">
           <div class="experience-header">
             <div class="company-logo">
-              <img src="files/companylogos/gis_logo.png" alt="GIS Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <img src="files/companylogos/gis_logo.png" alt="GIS Logo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             </div>
             <div class="experience-info">
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
                 <p class="experience-role" style="margin: 0; padding-top: 0;">Senior Web Developer</p>
                 <span class="experience-date">2013 - 2014</span>
               </div>
@@ -3032,7 +3091,7 @@
       <h2 class="section-title">
         <span>Awards & Recognition</span>
       </h2>
-      
+
       <div class="awards-grid">
         <div class="award-card animate-left">
           <div class="award-icon">🏆</div>
@@ -3042,7 +3101,7 @@
             First place in national robotics competition, demonstrating excellence in engineering and innovation.
           </div>
         </div>
-        
+
         <div class="award-card animate-on-scroll">
           <div class="award-icon">🏆</div>
           <h3>Regional Level Winner</h3>
@@ -3051,31 +3110,34 @@
             Champion in regional robotics challenge, showcasing precision programming and hardware expertise.
           </div>
         </div>
-        
+
         <div class="award-card animate-right">
           <div class="award-icon">🥇</div>
           <h3>1st Position</h3>
           <h4>University Computer Science Olympiad</h4>
           <div class="award-details">
-            Top performer in university coding competition, demonstrating superior programming skills and problem-solving abilities.
+            Top performer in university coding competition, demonstrating superior programming skills and
+            problem-solving abilities.
           </div>
         </div>
-        
+
         <div class="award-card animate-left">
           <div class="award-icon">🏆</div>
           <h3>Project Exhibition Winner</h3>
           <h4>Space Invaders Game</h4>
           <div class="award-details">
-            Best game development project award, recognized for innovative gameplay mechanics and technical implementation.
+            Best game development project award, recognized for innovative gameplay mechanics and technical
+            implementation.
           </div>
         </div>
-        
+
         <div class="award-card animate-right">
           <div class="award-icon">🥈</div>
           <h3>NASSCOM Game Jam Titans</h3>
           <h4>2.5D Side Scroller Game - Runner-up</h4>
           <div class="award-details">
-            Second place in prestigious game development competition, showcasing creativity and technical excellence in game design.
+            Second place in prestigious game development competition, showcasing creativity and technical excellence in
+            game design.
           </div>
         </div>
       </div>
@@ -3087,7 +3149,7 @@
       <h2 class="section-title">
         <span>Education</span>
       </h2>
-      
+
       <div class="education-grid">
         <div class="education-card animate-left">
           <div class="education-icon">🎓</div>
@@ -3099,7 +3161,7 @@
             Foundation of academic excellence and core subjects.
           </div>
         </div>
-        
+
         <div class="education-card animate-right">
           <div class="education-icon">🎓</div>
           <h3>12th Grade</h3>
@@ -3110,7 +3172,7 @@
             Advanced studies preparing for higher education in computer science.
           </div>
         </div>
-        
+
         <div class="education-card animate-left">
           <div class="education-icon">⚙️</div>
           <h3>Bachelor of Technology</h3>
@@ -3121,7 +3183,7 @@
             Specialized in software engineering with focus on game development, algorithms, and computer graphics.
           </div>
         </div>
-        
+
         <div class="education-card animate-right">
           <div class="education-icon">🎮</div>
           <h3>PD Diploma in Game Development</h3>
@@ -3133,27 +3195,27 @@
           </div>
         </div>
       </div>
-      
+
       <h2 class="section-title" style="margin-top: 4rem;">
         <span>Academic Game Projects</span>
       </h2>
-      
+
       <div class="academic-projects-grid">
         <div class="academic-project-card animate-left">
           <h4>🎮 Space Invaders Game</h4>
           <p>HAAF's Game Engine - C++</p>
         </div>
-        
+
         <div class="academic-project-card animate-right">
           <h4>🎮 2.5D Side Scroller Game</h4>
           <p>Unity</p>
         </div>
-        
+
         <div class="academic-project-card animate-left">
           <h4>🎮 Text-Based DOS Game</h4>
           <p>C++</p>
         </div>
-        
+
         <div class="academic-project-card animate-right">
           <h4>🤖 Line Following Robot</h4>
           <p>Embedded C</p>
@@ -3167,12 +3229,13 @@
       <h2 class="section-title">
         <span>Get In Touch</span>
       </h2>
-      
+
       <div class="contact-container">
         <div class="contact-info animate-left">
           <h3>Let's Create Something Amazing Together</h3>
-          <p>Ready to bring your game ideas to life? I'm always excited to work on innovative projects and collaborate with creative teams.</p>
-          
+          <p>Ready to bring your game ideas to life? I'm always excited to work on innovative projects and collaborate
+            with creative teams.</p>
+
           <div class="contact-methods">
             <div class="contact-method">
               <div class="contact-icon">📧</div>
@@ -3181,7 +3244,7 @@
                 <p>gamedev.kaushik@gmail.com</p>
               </div>
             </div>
-            
+
             <div class="contact-method">
               <div class="contact-icon">📱</div>
               <div class="contact-details">
@@ -3189,7 +3252,7 @@
                 <p>+91 88266 25771</p>
               </div>
             </div>
-<!-- 
+            <!-- 
             <div class="contact-method">
               <div class="contact-icon">🎮</div>
               <div class="contact-details">
@@ -3216,19 +3279,19 @@
 
           </div>
         </div>
-        
+
         <div class="contact-form animate-right">
           <form class="futuristic-form">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" required>
             </div>
-            
+
             <div class="form-group">
               <label for="email">Email</label>
               <input type="email" id="email" name="email" required>
             </div>
-            
+
             <div class="form-group">
               <label for="project">Project Type</label>
               <select id="project" name="project">
@@ -3240,12 +3303,12 @@
                 <option value="other">Other</option>
               </select>
             </div>
-            
+
             <div class="form-group">
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="5" required></textarea>
             </div>
-            
+
             <button type="submit" class="submit-button">
               <span>Send Message</span>
               <div class="button-bg"></div>
@@ -3522,4 +3585,5 @@
     });
   </script>
 </body>
+
 </html>
