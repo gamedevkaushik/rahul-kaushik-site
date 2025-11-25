@@ -610,12 +610,21 @@
     }
 
     .featured-card .project-image {
+      width: 100%;
       height: 300px;
+      border-radius: 0;
       border-bottom: 3px solid var(--border-color);
     }
 
     .featured-card .project-header {
       padding: 2rem 2.5rem 1.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    .featured-card .project-info {
+      gap: 0.75rem;
     }
 
     .featured-card .project-title {
@@ -624,14 +633,13 @@
     }
 
     .featured-card .project-description {
-      padding: 0 2.5rem;
+      padding: 0 2.5rem 2rem;
       font-size: 1.1rem;
       line-height: 1.8;
     }
 
     .featured-card .project-features {
       display: none;
-      /* Hidden in featured card too */
     }
 
     .featured-card .view-features-btn {
@@ -846,25 +854,24 @@
     /* Portfolio Grid */
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
       margin-top: 3rem;
     }
 
     .project-card {
       background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-left: 3px solid var(--primary-accent);
-      border-radius: 0;
-      padding: 0;
+      border: 2px solid var(--primary-accent);
+      border-radius: 8px;
+      padding: 1.5rem;
       position: relative;
-      overflow: hidden;
+      overflow: visible;
       transition: all 0.3s ease;
       cursor: pointer;
-      min-height: 400px;
       display: flex;
       flex-direction: column;
-      box-shadow: var(--shadow-sm);
+      gap: 1rem;
+      box-shadow: var(--shadow-md);
     }
 
     .project-card::before {
@@ -876,19 +883,22 @@
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-3px);
       border-color: var(--primary-accent);
       box-shadow: var(--shadow-md);
     }
 
     .project-image {
-      width: 100%;
-      height: 250px;
+      width: 100px;
+      height: 100px;
       object-fit: cover;
-      border: none;
-      border-bottom: 1px solid var(--border-color);
+      border-radius: 8px;
+      border: 3px solid var(--primary-accent);
       transition: all 0.3s ease;
       display: block;
+      flex-shrink: 0;
+      background: var(--white);
+      padding: 0.25rem;
     }
 
     .project-image:not(img) {
@@ -899,17 +909,55 @@
       font-weight: 700;
       background: var(--secondary-bg);
       color: var(--white);
+      font-size: 0.9rem;
     }
 
     .project-card:hover .project-image {
-      transform: scale(1.02);
+      transform: scale(1.05);
+      border-color: var(--primary-accent);
+    }
+
+    .portfolio-grid .project-header {
+      grid-column: 2;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      padding: 0;
+      margin: 0;
+      align-self: start;
+    }
+
+    .portfolio-grid .project-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto auto 1fr auto auto;
+      column-gap: 1.25rem;
+      row-gap: 0;
+      align-items: start;
+      padding: 1.5rem;
+      min-height: 320px;
+      height: 100%;
+    }
+
+    .portfolio-grid .project-image {
+      width: 80px;
+      height: 80px;
+      border-width: 2px;
+      border-radius: 12px;
+      padding: 0.15rem;
+      grid-column: 1;
+      grid-row: 1;
     }
 
     .project-header {
-      padding: 1.5rem 1.5rem 1rem;
+      padding: 0;
       margin-bottom: 0;
       border-bottom: none;
       position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
     }
 
     .project-header::after {
@@ -919,18 +967,33 @@
     .project-info {
       flex: 1;
       min-width: 0;
-      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .portfolio-grid .project-info {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.35rem;
     }
 
     .project-title {
       font-family: var(--font-heading);
-      font-size: 1.4rem;
-      font-weight: 700;
+      font-size: 1.5rem;
+      font-weight: 800;
       color: var(--primary-accent);
-      margin: 0 0 0.5rem 0;
-      line-height: 1.2;
+      margin: 0;
+      line-height: 1.1;
       text-transform: uppercase;
       letter-spacing: 1px;
+      flex-shrink: 0;
+      background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .project-links {
@@ -938,77 +1001,186 @@
       flex-wrap: wrap;
       gap: 0.5rem;
       align-items: center;
+      flex: 1;
     }
 
     .project-links span {
-      color: var(--text-accent);
-      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
       font-weight: 500;
     }
 
     .project-links a {
       display: inline-block;
-      padding: 0.4rem 1rem;
-      background: var(--surface-elevated);
-      border: 1px solid var(--border-color);
+      padding: 0.5rem 1.2rem;
+      background: linear-gradient(135deg, #FFD700, #FFA500);
+      border: 2px solid #FF8C00;
       border-radius: 4px;
-      color: var(--game-unity-blue);
+      color: var(--primary-bg);
       text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
+      font-size: 0.85rem;
+      font-weight: 700;
       font-family: var(--font-ui);
       transition: all 0.3s ease;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
     }
 
     .project-links a:hover {
-      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
-      color: var(--white);
+      background: linear-gradient(135deg, #FFA500, #FF8C00);
       transform: translateY(-2px);
-      box-shadow:
-        var(--shadow-md),
-        0 0 15px rgba(0, 188, 212, 0.5);
-      border-color: var(--game-unity-blue);
+      box-shadow: 0 4px 12px rgba(255, 165, 0, 0.5);
+    }
+
+    .portfolio-grid .project-links {
+      width: 100%;
+      justify-content: flex-start;
+      gap: 0.4rem;
+    }
+
+    .portfolio-grid .project-links span {
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+    }
+
+    .portfolio-grid .project-links a {
+      padding: 0.45rem 1.1rem;
+      border-radius: 8px;
+      border-width: 0;
+      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.35);
     }
 
     .project-description {
       color: var(--text-primary);
       line-height: 1.6;
       margin-bottom: 0;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-family: var(--font-body);
-      padding: 0 2rem 2rem;
+      padding: 0;
       flex: 1;
+    }
+
+    .portfolio-grid .project-description {
+      grid-column: 1 / span 2;
+      grid-row: 3;
+      padding: 0;
+      margin: 0;
+      font-size: 0.85rem;
+      font-style: italic;
+      line-height: 1.5;
+      align-self: start;
+    }
+
+    /* Separator lines */
+    .portfolio-grid .card-separator {
+      grid-column: 1 / span 2;
+      height: 3px;
+      margin: 1rem 0;
+      position: relative;
+      overflow: visible;
+      align-self: start;
+    }
+
+    .portfolio-grid .card-separator:first-of-type {
+      grid-row: 2;
+    }
+
+    .portfolio-grid .card-separator:last-of-type {
+      grid-row: 4;
+    }
+
+    .portfolio-grid .card-separator::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      transform: translateY(-50%);
+      background: var(--primary-accent);
+      border-radius: 2px;
+      opacity: 0.7;
+    }
+
+    .portfolio-grid .card-separator::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      transform: translateY(-50%);
+      background: repeating-linear-gradient(
+        90deg,
+        var(--primary-accent) 0px,
+        var(--primary-accent) 4px,
+        transparent 4px,
+        transparent 8px
+      );
+      border-radius: 2px;
+      animation: wave-dash 2s linear infinite;
+      opacity: 0.9;
+    }
+
+    @keyframes wave-dash {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 8px 0;
+      }
     }
 
     .project-features {
       display: none;
-      /* Hidden in card, shown in popup */
     }
 
     .view-features-btn {
-      margin: 0 2rem 2rem;
+      margin: 0;
       padding: 0.75rem 1.5rem;
       background: transparent;
-      border: 2px solid var(--game-unity-blue);
-      border-radius: 4px;
-      color: var(--game-unity-blue);
+      border: 3px solid #9ACD32;
+      border-radius: 6px;
+      color: #9ACD32;
       font-family: var(--font-ui);
-      font-weight: 600;
-      font-size: 0.875rem;
+      font-weight: 700;
+      font-size: 0.9rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 1px;
       cursor: pointer;
       transition: all 0.3s ease;
       text-align: center;
+      align-self: flex-start;
     }
 
     .view-features-btn:hover {
-      background: var(--game-unity-blue);
-      color: var(--white);
+      background: #9ACD32;
+      color: var(--primary-bg);
       transform: translateY(-2px);
-      box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+      box-shadow: 0 4px 12px rgba(154, 205, 50, 0.4);
+    }
+
+    .portfolio-grid .view-features-btn {
+      grid-column: 1 / span 2;
+      grid-row: 5;
+      justify-self: flex-start;
+      align-self: end;
+      background: linear-gradient(135deg, #ffd700, #f0a500);
+      border: none;
+      color: #1a1a1a;
+      border-radius: 10px;
+      padding: 0.85rem 1.8rem;
+      letter-spacing: 0.08em;
+      box-shadow: 0 6px 16px rgba(255, 215, 0, 0.35);
+      margin-top: 0;
+    }
+
+    .portfolio-grid .view-features-btn:hover {
+      background: linear-gradient(135deg, #f0a500, #d98c00);
+      color: #1a1a1a;
+      box-shadow: 0 8px 18px rgba(217, 140, 0, 0.45);
     }
 
     .features-title {
@@ -1637,9 +1809,11 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">It is a cloud-based innovative, comprehensive, effective, paperless suite of
             HIPAA-compliant tools delivering Practice Management, Data Collection, Scheduling, and Revenue Cycle
             Management for ABA Therapy providers.</p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1656,8 +1830,10 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Help the adorable gummy bears escape dangerous situations in this charming
             puzzle-adventure game</p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1674,8 +1850,10 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Challenge your mind with this innovative puzzle game featuring unique
-            brain-teasing mechanics and progressively difficult levels</p>
+            brain-teasing mechanics and progressively difficult levels          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1692,8 +1870,10 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Epic space adventure where you pilot powerful mechs through intense battles
-            across the galaxy</p>
+            across the galaxy          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1710,8 +1890,10 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Classic brick-breaking arcade action with modern twists, power-ups, and
-            challenging levels to test your reflexes</p>
+            challenging levels to test your reflexes          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1728,8 +1910,10 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Navigate through mysterious dungeons using your trusty boomerang to defeat
-            enemies and solve puzzles in this adventure game</p>
+            enemies and solve puzzles in this adventure game          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1746,8 +1930,10 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Launch missiles and destroy targets in this action-packed arcade game with
-            explosive gameplay and strategic challenges</p>
+            explosive gameplay and strategic challenges          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1764,8 +1950,10 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Experience the ultimate skateboarding adventure in pipes and ramps with
-            realistic physics and smooth controls</p>
+            realistic physics and smooth controls          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1782,8 +1970,10 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Experience the thrill of skateboarding in this exciting 3D racing game with
-            realistic physics and stunning graphics</p>
+            realistic physics and stunning graphics          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1798,8 +1988,10 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Velawoods English is a platform for learning English through games and
-            interactive activities.</p>
+            interactive activities.          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1814,9 +2006,11 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Where fun meets friendly competition! Experience a mix of driving range games,
             mini golf, and real-life courses, all enhanced with TrackMan™ Range technology for precision ball tracking
-            and immersive gameplay.</p>
+            and immersive gameplay.          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1832,8 +2026,10 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Reveal your inner fighter in this 3D fighting game! Play up to 8 fighters,
-            upgrade their equipment and abilities, and challenge real players worldwide.</p>
+            upgrade their equipment and abilities, and challenge real players worldwide.          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1849,7 +2045,9 @@
               </div>
             </div>
           </div>
-          <p class="project-description">Action-packed 3D fighting game featuring the legendary warrior Ashwathama</p>
+          <div class="card-separator"></div>
+          <p class="project-description">Action-packed 3D fighting game featuring the legendary warrior Ashwathama          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1865,7 +2063,9 @@
               </div>
             </div>
           </div>
-          <p class="project-description">Action-packed 3D fighting game featuring mythological characters</p>
+          <div class="card-separator"></div>
+          <p class="project-description">Action-packed 3D fighting game featuring mythological characters          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1880,9 +2080,11 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Binary Looper takes the familiar concept of binary patterns and transforms it
             into an addictive puzzle experience. The combination of continuous movement, time pressure, and strategic
-            thinking creates a unique gameplay loop that will keep you coming back for more.</p>
+            thinking creates a unique gameplay loop that will keep you coming back for more.          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1897,9 +2099,11 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Play with Time, Team Up with Your Own Echoes! Solve brain-twisting puzzles in
             this inventive puzzle-platformer where you don't just play solo—you play with your past! Each time you
-            complete a run, an "Echo" of your previous self replays your recorded actions.</p>
+            complete a run, an "Echo" of your previous self replays your recorded actions.          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1914,9 +2118,11 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">A high-speed racing challenge where control meets chaos! Control your car using
             only the mouse to slow down time and rotate the car with pinpoint precision. You only get 10 seconds of
-            total slowmo for the entire run - master the art of timing and angle!</p>
+            total slowmo for the entire run - master the art of timing and angle!          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1931,9 +2137,11 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Dive into a world where the traditional meets the thrill of racing! Race using
             Tuk-tuks transformed into high-speed racing machines. Choose between Racing Mode for simplified controls or
-            Simulation Mode with realistic physics and side characters balancing your Tuk-tuk.</p>
+            Simulation Mode with realistic physics and side characters balancing your Tuk-tuk.          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1949,10 +2157,12 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Step into an immersive 3D world with our innovative 3D Tilt Maze Game, where
             your device becomes the key to navigating complex and engaging mazes. The game capitalizes on the unique
             capabilities of your device's motion sensors, allowing you to control the environment with a simple tilt.
           </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1968,10 +2178,12 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Take control of a blazing train in The Burning Train, an adrenaline-fueled 3D
             game that will test your reflexes, precision, and quick thinking. The engine roars forward unscathed, but
             the passenger coaches are engulfed in flames! Your mission? Save the day by navigating the train and
-            rescuing passengers.</p>
+            rescuing passengers.          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
         <div class="project-card"
@@ -1987,9 +2199,11 @@
               </div>
             </div>
           </div>
+          <div class="card-separator"></div>
           <p class="project-description">Tumble Rescue is an engaging, fast-paced 2D mobile game where you help cute,
             hopping animals reach their home by swiping and moving platforms on the screen. Your goal is to guide these
-            animals safely across tricky obstacles, ensuring they don't fall off as they bounce along the path.</p>
+            animals safely across tricky obstacles, ensuring they don't fall off as they bounce along the path.          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
       </div>
@@ -2191,7 +2405,8 @@
               </div>
             </div>
           </div>
-          <p class="project-description">${game.description}</p>
+          <p class="project-description">${game.description}          </p>
+          <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
       `;
