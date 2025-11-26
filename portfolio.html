@@ -948,8 +948,8 @@
     .portfolio-grid .project-card {
       display: grid;
       grid-template-columns: auto 1fr;
-      grid-template-rows: auto auto 1fr auto auto;
-      column-gap: 1.25rem;
+      grid-template-rows: auto auto auto auto auto auto;
+      column-gap: 1.5rem;
       row-gap: 0;
       align-items: start;
       padding: 1.5rem;
@@ -958,13 +958,14 @@
     }
 
     .portfolio-grid .project-image {
-      width: 80px;
-      height: 80px;
+      width: 130px;
+      height: 130px;
       border-width: 2px;
-      border-radius: 12px;
+      border-radius: 16px;
       padding: 0.15rem;
       grid-column: 1;
-      grid-row: 1;
+      grid-row: 1 / span 2;
+      align-self: start;
     }
 
     .project-header {
@@ -1013,6 +1014,13 @@
       background-clip: text;
     }
 
+    .portfolio-grid .tech-stack-highlight {
+      grid-column: 2;
+      grid-row: 2;
+      margin-top: 0.25rem;
+      align-self: start;
+    }
+
     .project-links {
       display: flex;
       flex-wrap: wrap;
@@ -1052,9 +1060,12 @@
     }
 
     .portfolio-grid .project-links {
-      width: 100%;
-      justify-content: flex-start;
+      grid-column: 2;
+      grid-row: 6;
+      width: auto;
+      justify-content: flex-end;
       gap: 0.4rem;
+      margin-left: auto;
     }
 
     .portfolio-grid .project-links span {
@@ -1064,10 +1075,12 @@
     }
 
     .portfolio-grid .project-links a {
-      padding: 0.45rem 1.1rem;
-      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
       border-width: 2px;
       box-shadow: none;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
     }
 
     .project-description {
@@ -1082,7 +1095,7 @@
 
     .portfolio-grid .project-description {
       grid-column: 1 / span 2;
-      grid-row: 3;
+      grid-row: 4;
       padding: 0;
       margin: 0;
       font-size: 0.85rem;
@@ -1102,11 +1115,11 @@
     }
 
     .portfolio-grid .card-separator:first-of-type {
-      grid-row: 2;
+      grid-row: 3;
     }
 
     .portfolio-grid .card-separator:last-of-type {
-      grid-row: 4;
+      grid-row: 5;
     }
 
     .portfolio-grid .card-separator::before {
@@ -1168,7 +1181,7 @@
 
     .portfolio-grid .view-features-btn {
       grid-column: 1 / span 2;
-      grid-row: 5;
+      grid-row: 6;
       justify-self: flex-start;
       align-self: end;
       background: var(--white);
@@ -1835,13 +1848,16 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Measure PM</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://play.google.com/store/apps/details?id=com.measuresoftware.app&hl=en_IN"
-                  target="_blank">Android</a>
-                <a href="https://apps.apple.com/in/app/measurepm/id1493856868" target="_blank">IOS</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.measuresoftware.app&hl=en_IN"
+              target="_blank">Android</a>
+            <a href="https://apps.apple.com/in/app/measurepm/id1493856868" target="_blank">IOS</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">It is a cloud-based innovative, comprehensive, effective, paperless suite of
@@ -1856,13 +1872,16 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Gummy Rescue</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.GummyRescue&hl=en_IN"
-                  target="_blank">Android</a>
-                <a href="https://apps.apple.com/us/app/gummy-rescue/id1526106552" target="_blank">iOS</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.GummyRescue&hl=en_IN"
+              target="_blank">Android</a>
+            <a href="https://apps.apple.com/us/app/gummy-rescue/id1526106552" target="_blank">iOS</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Help the adorable gummy bears escape dangerous situations in this charming
@@ -1876,13 +1895,16 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Brainchild</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.Brainchild&hl=en_IN"
-                  target="_blank">Android</a>
-                <a href="https://apps.apple.com/us/app/brainchild/id1452322012" target="_blank">iOS</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.Brainchild&hl=en_IN"
+              target="_blank">Android</a>
+            <a href="https://apps.apple.com/us/app/brainchild/id1452322012" target="_blank">iOS</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Challenge your mind with this innovative puzzle game featuring unique
@@ -1896,13 +1918,16 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Star Titan</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.StarTitan&hl=en_IN"
-                  target="_blank">Android</a>
-                <a href="https://apps.apple.com/us/app/star-titan/id1482626137" target="_blank">iOS</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.StarTitan&hl=en_IN"
+              target="_blank">Android</a>
+            <a href="https://apps.apple.com/us/app/star-titan/id1482626137" target="_blank">iOS</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Epic space adventure where you pilot powerful mechs through intense battles
@@ -1916,13 +1941,16 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Block Smash 3D</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.BlockBreaker&hl=en_IN"
-                  target="_blank">Android</a>
-                <a href="https://apps.apple.com/us/app/block-smash-3d/id1518571680" target="_blank">iOS</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.BlockBreaker&hl=en_IN"
+              target="_blank">Android</a>
+            <a href="https://apps.apple.com/us/app/block-smash-3d/id1518571680" target="_blank">iOS</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Classic brick-breaking arcade action with modern twists, power-ups, and
@@ -1936,13 +1964,16 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Boomerang Dungeon</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.BoomerangDungeon&hl=en_IN"
-                  target="_blank">Android</a>
-                <a href="https://apps.apple.com/us/app/boomerang-dungeon/id1518551078" target="_blank">iOS</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.BoomerangDungeon&hl=en_IN"
+              target="_blank">Android</a>
+            <a href="https://apps.apple.com/us/app/boomerang-dungeon/id1518551078" target="_blank">iOS</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Navigate through mysterious dungeons using your trusty boomerang to defeat
@@ -1956,13 +1987,16 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Missiles Are Go</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.MissilesAreGo&hl=en"
-                  target="_blank">Android</a>
-                <a href="https://apps.apple.com/us/app/missiles-are-go/id1509454143" target="_blank">iOS</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.MissilesAreGo&hl=en"
+              target="_blank">Android</a>
+            <a href="https://apps.apple.com/us/app/missiles-are-go/id1509454143" target="_blank">iOS</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Launch missiles and destroy targets in this action-packed arcade game with
@@ -1976,13 +2010,16 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Pipe Skater</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.PipeSkater&hl=en_IN"
-                  target="_blank">Android</a>
-                <a href="https://apps.apple.com/us/app/pipe-skater/id1495333287" target="_blank">iOS</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.PipeSkater&hl=en_IN"
+              target="_blank">Android</a>
+            <a href="https://apps.apple.com/us/app/pipe-skater/id1495333287" target="_blank">iOS</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Experience the ultimate skateboarding adventure in pipes and ramps with
@@ -1996,13 +2033,16 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Skater Racing 3D</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.SkaterRacing3D&hl=en_IN"
-                  target="_blank">Android</a>
-                <a href="https://apps.apple.com/us/app/skater-racing-3d/id1530838917" target="_blank">iOS</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.DarkPyreInteractive.SkaterRacing3D&hl=en_IN"
+              target="_blank">Android</a>
+            <a href="https://apps.apple.com/us/app/skater-racing-3d/id1530838917" target="_blank">iOS</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Experience the thrill of skateboarding in this exciting 3D racing game with
@@ -2016,11 +2056,14 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Velawoods English</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://velawoodsenglish.com/" target="_blank">Learn More</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://velawoodsenglish.com/" target="_blank">Learn More</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Velawoods English is a platform for learning English through games and
@@ -2034,11 +2077,14 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Drive Shack Golf and Games</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://www.driveshack.com/play/" target="_blank">Learn More</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://www.driveshack.com/play/" target="_blank">Learn More</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Where fun meets friendly competition! Experience a mix of driving range games,
@@ -2053,12 +2099,15 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Fight of the Legends 2</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.legends.fight2&hl=en"
-                  target="_blank">Play on Google Play</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.legends.fight2&hl=en"
+              target="_blank">Android</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Reveal your inner fighter in this 3D fighting game! Play up to 8 fighters,
@@ -2072,12 +2121,15 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Ashwathama</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.Ashwathama"
-                  target="_blank">Play on Google Play</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.Ashwathama"
+              target="_blank">Android</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Action-packed 3D fighting game featuring the legendary warrior Ashwathama </p>
@@ -2090,12 +2142,15 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Fight of the Legends</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.fightofthelegends"
-                  target="_blank">Play on Google Play</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.fightofthelegends"
+              target="_blank">Android</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Action-packed 3D fighting game featuring mythological characters </p>
@@ -2108,11 +2163,14 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Binary Looper</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://gamedevkaushik.itch.io/binary-looper" target="_blank">Play on itch.io</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://gamedevkaushik.itch.io/binary-looper" target="_blank">Play on itch.io</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Binary Looper takes the familiar concept of binary patterns and transforms it
@@ -2127,10 +2185,7 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Project Echo</h3>
-              <div class="project-links">
-                <span>Godot • </span>
-                <a href="https://gamedevkaushik.itch.io/project-echo" target="_blank">Play on itch.io</a>
-              </div>
+              <span>Godot • </span>
             </div>
           </div>
           <div class="card-separator"></div>
@@ -2139,6 +2194,9 @@
             complete a run, an "Echo" of your previous self replays your recorded actions. </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
+          <div class="project-links">
+            <a href="https://gamedevkaushik.itch.io/project-echo" target="_blank">Play on itch.io</a>
+          </div>
         </div>
         <div class="project-card"
           data-features='["Mouse-only control system - no brakes, no steering wheel","Time manipulation mechanics - slow motion with limited duration","10 seconds of total slowmo per run - strategic resource management","Physics-based car rotation and movement","High score system - chase the perfect lap time","Unity 20th Anniversary Game Jam submission"]'>
@@ -2146,11 +2204,14 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Race_Time</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://gamedevkaushik.itch.io/race-time" target="_blank">Download on itch.io</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://gamedevkaushik.itch.io/race-time" target="_blank">Download on itch.io</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">A high-speed racing challenge where control meets chaos! Control your car using
@@ -2165,11 +2226,14 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">TukTuk Race</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://play.google.com/store/apps/details?id=com.darkpyre.tuktuk" target="_blank">Android</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.darkpyre.tuktuk" target="_blank">Android</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Dive into a world where the traditional meets the thrill of racing! Race using
@@ -2184,12 +2248,15 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Tilt Maze 3D</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://play.google.com/store/apps/details?id=com.ShashiTAGS.TiltMaze3D"
-                  target="_blank">Android</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.ShashiTAGS.TiltMaze3D"
+              target="_blank">Android</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Step into an immersive 3D world with our innovative 3D Tilt Maze Game, where
@@ -2205,12 +2272,15 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">The Burning Train</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://play.google.com/store/apps/details?id=com.shashitags.burningtrain"
-                  target="_blank">Android</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.shashitags.burningtrain"
+              target="_blank">Android</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Take control of a blazing train in The Burning Train, an adrenaline-fueled 3D
@@ -2226,12 +2296,15 @@
           <div class="project-header">
             <div class="project-info">
               <h3 class="project-title">Tumble Rescue</h3>
-              <div class="project-links">
-                <span>Unity • </span>
-                <a href="https://play.google.com/store/apps/details?id=com.shashitags.tumblerescue"
-                  target="_blank">Android</a>
-              </div>
             </div>
+          </div>
+          <div class="tech-stack-highlight">
+            <img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">
+            <span style="color: var(--white); font-weight: 700; font-size: 1rem;">Unity</span>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=com.shashitags.tumblerescue"
+              target="_blank">Android</a>
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Tumble Rescue is an engaging, fast-paced 2D mobile game where you help cute,
@@ -2311,7 +2384,7 @@
         image: 'files/projecticons/icon_ashwathama.jpg',
         title: 'Ashwathama',
         tech: 'Unity',
-        links: '<span>Unity • </span><a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.Ashwathama" target="_blank">Play on Google Play</a>',
+        links: '<span>Unity • </span><a href="https://play.google.com/store/apps/details?id=com.virtualinfocom.Ashwathama" target="_blank">Android</a>',
         description: 'Action-packed 3D fighting game featuring the legendary warrior Ashwathama',
         features: [
           'Play as the immortal warrior Ashwathama',
