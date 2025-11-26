@@ -529,12 +529,8 @@
     }
 
     .section-title span {
-      background: linear-gradient(135deg, var(--game-unity-blue), var(--game-unreal-orange));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--primary-accent);
       position: relative;
-      text-shadow: 0 0 30px rgba(0, 188, 212, 0.5);
     }
 
     .section-title::after {
@@ -861,7 +857,7 @@
 
     .project-card {
       background: var(--card-bg);
-      border: 2px solid var(--primary-accent);
+      border: none;
       border-radius: 8px;
       padding: 1.5rem;
       position: relative;
@@ -884,8 +880,7 @@
 
     .project-card:hover {
       transform: translateY(-3px);
-      border-color: var(--primary-accent);
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-xl);
     }
 
     .project-image {
@@ -1013,10 +1008,10 @@
     .project-links a {
       display: inline-block;
       padding: 0.5rem 1.2rem;
-      background: linear-gradient(135deg, #FFD700, #FFA500);
-      border: 2px solid #FF8C00;
+      background: var(--white);
+      border: 2px solid var(--primary-accent);
       border-radius: 4px;
-      color: var(--primary-bg);
+      color: var(--primary-accent);
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 700;
@@ -1024,13 +1019,14 @@
       transition: all 0.3s ease;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+      box-shadow: none;
     }
 
     .project-links a:hover {
-      background: linear-gradient(135deg, #FFA500, #FF8C00);
+      background: var(--primary-accent);
+      color: var(--white);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(255, 165, 0, 0.5);
+      box-shadow: none;
     }
 
     .portfolio-grid .project-links {
@@ -1048,8 +1044,8 @@
     .portfolio-grid .project-links a {
       padding: 0.45rem 1.1rem;
       border-radius: 8px;
-      border-width: 0;
-      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.35);
+      border-width: 2px;
+      box-shadow: none;
     }
 
     .project-description {
@@ -1099,35 +1095,20 @@
       right: 0;
       height: 2px;
       transform: translateY(-50%);
-      background: var(--primary-accent);
+      background: linear-gradient(to right, var(--primary-accent), transparent);
       border-radius: 2px;
       opacity: 0.7;
     }
 
     .portfolio-grid .card-separator::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      height: 2px;
-      transform: translateY(-50%);
-      background: repeating-linear-gradient(
-        90deg,
-        var(--primary-accent) 0px,
-        var(--primary-accent) 4px,
-        transparent 4px,
-        transparent 8px
-      );
-      border-radius: 2px;
-      animation: wave-dash 2s linear infinite;
-      opacity: 0.9;
+      display: none;
     }
 
     @keyframes wave-dash {
       0% {
         background-position: 0 0;
       }
+
       100% {
         background-position: 8px 0;
       }
@@ -1140,10 +1121,10 @@
     .view-features-btn {
       margin: 0;
       padding: 0.75rem 1.5rem;
-      background: transparent;
-      border: 3px solid #9ACD32;
+      background: var(--white);
+      border: 2px solid var(--primary-accent);
       border-radius: 6px;
-      color: #9ACD32;
+      color: var(--primary-accent);
       font-family: var(--font-ui);
       font-weight: 700;
       font-size: 0.9rem;
@@ -1153,13 +1134,14 @@
       transition: all 0.3s ease;
       text-align: center;
       align-self: flex-start;
+      box-shadow: none;
     }
 
     .view-features-btn:hover {
-      background: #9ACD32;
-      color: var(--primary-bg);
+      background: var(--primary-accent);
+      color: var(--white);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(154, 205, 50, 0.4);
+      box-shadow: none;
     }
 
     .portfolio-grid .view-features-btn {
@@ -1167,20 +1149,20 @@
       grid-row: 5;
       justify-self: flex-start;
       align-self: end;
-      background: linear-gradient(135deg, #ffd700, #f0a500);
-      border: none;
-      color: #1a1a1a;
+      background: var(--white);
+      border: 2px solid var(--primary-accent);
+      color: var(--primary-accent);
       border-radius: 10px;
       padding: 0.85rem 1.8rem;
       letter-spacing: 0.08em;
-      box-shadow: 0 6px 16px rgba(255, 215, 0, 0.35);
+      box-shadow: none;
       margin-top: 0;
     }
 
     .portfolio-grid .view-features-btn:hover {
-      background: linear-gradient(135deg, #f0a500, #d98c00);
-      color: #1a1a1a;
-      box-shadow: 0 8px 18px rgba(217, 140, 0, 0.45);
+      background: var(--primary-accent);
+      color: var(--white);
+      box-shadow: none;
     }
 
     .features-title {
@@ -1769,7 +1751,7 @@
       </h2>
 
       <p
-        style="font-size: 1.1rem; color: var(--text-primary); text-align: center; margin-bottom: 2rem; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);">
+        style="font-size: 1.1rem; color: var(--text-primary); text-align: center; margin-bottom: 2rem; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto;">
         Discover our standout games! A new featured title is selected weekly to showcase the diversity and quality of
         our game development portfolio.
       </p>
@@ -1788,7 +1770,7 @@
       </h2>
 
       <p
-        style="font-size: 1.1rem; color: var(--text-primary); text-align: center; margin-bottom: 2rem; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);">
+        style="font-size: 1.1rem; color: var(--text-primary); text-align: center; margin-bottom: 2rem; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto;">
         From casual mobile hits to immersive VR experiences, here's a complete collection of games and interactive
         projects I've developed. Each project represents different challenges, technologies, and creative solutions in
         game development.
@@ -1852,7 +1834,7 @@
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Challenge your mind with this innovative puzzle game featuring unique
-            brain-teasing mechanics and progressively difficult levels          </p>
+            brain-teasing mechanics and progressively difficult levels </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -1872,7 +1854,7 @@
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Epic space adventure where you pilot powerful mechs through intense battles
-            across the galaxy          </p>
+            across the galaxy </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -1892,7 +1874,7 @@
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Classic brick-breaking arcade action with modern twists, power-ups, and
-            challenging levels to test your reflexes          </p>
+            challenging levels to test your reflexes </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -1912,7 +1894,7 @@
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Navigate through mysterious dungeons using your trusty boomerang to defeat
-            enemies and solve puzzles in this adventure game          </p>
+            enemies and solve puzzles in this adventure game </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -1932,7 +1914,7 @@
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Launch missiles and destroy targets in this action-packed arcade game with
-            explosive gameplay and strategic challenges          </p>
+            explosive gameplay and strategic challenges </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -1952,7 +1934,7 @@
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Experience the ultimate skateboarding adventure in pipes and ramps with
-            realistic physics and smooth controls          </p>
+            realistic physics and smooth controls </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -1972,7 +1954,7 @@
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Experience the thrill of skateboarding in this exciting 3D racing game with
-            realistic physics and stunning graphics          </p>
+            realistic physics and stunning graphics </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -1990,7 +1972,7 @@
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Velawoods English is a platform for learning English through games and
-            interactive activities.          </p>
+            interactive activities. </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -2009,7 +1991,7 @@
           <div class="card-separator"></div>
           <p class="project-description">Where fun meets friendly competition! Experience a mix of driving range games,
             mini golf, and real-life courses, all enhanced with TrackMan™ Range technology for precision ball tracking
-            and immersive gameplay.          </p>
+            and immersive gameplay. </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -2028,7 +2010,7 @@
           </div>
           <div class="card-separator"></div>
           <p class="project-description">Reveal your inner fighter in this 3D fighting game! Play up to 8 fighters,
-            upgrade their equipment and abilities, and challenge real players worldwide.          </p>
+            upgrade their equipment and abilities, and challenge real players worldwide. </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -2046,7 +2028,7 @@
             </div>
           </div>
           <div class="card-separator"></div>
-          <p class="project-description">Action-packed 3D fighting game featuring the legendary warrior Ashwathama          </p>
+          <p class="project-description">Action-packed 3D fighting game featuring the legendary warrior Ashwathama </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -2064,7 +2046,7 @@
             </div>
           </div>
           <div class="card-separator"></div>
-          <p class="project-description">Action-packed 3D fighting game featuring mythological characters          </p>
+          <p class="project-description">Action-packed 3D fighting game featuring mythological characters </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -2083,7 +2065,7 @@
           <div class="card-separator"></div>
           <p class="project-description">Binary Looper takes the familiar concept of binary patterns and transforms it
             into an addictive puzzle experience. The combination of continuous movement, time pressure, and strategic
-            thinking creates a unique gameplay loop that will keep you coming back for more.          </p>
+            thinking creates a unique gameplay loop that will keep you coming back for more. </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -2102,7 +2084,7 @@
           <div class="card-separator"></div>
           <p class="project-description">Play with Time, Team Up with Your Own Echoes! Solve brain-twisting puzzles in
             this inventive puzzle-platformer where you don't just play solo—you play with your past! Each time you
-            complete a run, an "Echo" of your previous self replays your recorded actions.          </p>
+            complete a run, an "Echo" of your previous self replays your recorded actions. </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -2121,7 +2103,7 @@
           <div class="card-separator"></div>
           <p class="project-description">A high-speed racing challenge where control meets chaos! Control your car using
             only the mouse to slow down time and rotate the car with pinpoint precision. You only get 10 seconds of
-            total slowmo for the entire run - master the art of timing and angle!          </p>
+            total slowmo for the entire run - master the art of timing and angle! </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -2140,7 +2122,7 @@
           <div class="card-separator"></div>
           <p class="project-description">Dive into a world where the traditional meets the thrill of racing! Race using
             Tuk-tuks transformed into high-speed racing machines. Choose between Racing Mode for simplified controls or
-            Simulation Mode with realistic physics and side characters balancing your Tuk-tuk.          </p>
+            Simulation Mode with realistic physics and side characters balancing your Tuk-tuk. </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -2182,7 +2164,7 @@
           <p class="project-description">Take control of a blazing train in The Burning Train, an adrenaline-fueled 3D
             game that will test your reflexes, precision, and quick thinking. The engine roars forward unscathed, but
             the passenger coaches are engulfed in flames! Your mission? Save the day by navigating the train and
-            rescuing passengers.          </p>
+            rescuing passengers. </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
@@ -2202,7 +2184,7 @@
           <div class="card-separator"></div>
           <p class="project-description">Tumble Rescue is an engaging, fast-paced 2D mobile game where you help cute,
             hopping animals reach their home by swiping and moving platforms on the screen. Your goal is to guide these
-            animals safely across tricky obstacles, ensuring they don't fall off as they bounce along the path.          </p>
+            animals safely across tricky obstacles, ensuring they don't fall off as they bounce along the path. </p>
           <div class="card-separator"></div>
           <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
