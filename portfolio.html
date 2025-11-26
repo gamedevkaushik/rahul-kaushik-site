@@ -556,43 +556,31 @@
       grid-template-columns: 1fr;
       gap: 2.5rem;
       margin-top: 3rem;
-      max-width: 900px;
+      max-width: 1100px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .featured-card {
       background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-left: 3px solid var(--primary-accent);
-      border-radius: 0;
+      border: none;
+      border-radius: 8px;
       padding: 0;
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
       cursor: pointer;
-      min-height: 550px;
+      min-height: auto;
       display: flex;
-      flex-direction: column;
-      box-shadow: var(--shadow-sm);
+      flex-direction: row;
+      align-items: center;
+      box-shadow: var(--shadow-md);
+      padding: 2rem;
+      gap: 2.5rem;
     }
 
     .featured-card::before {
-      content: 'FEATURED';
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      font-size: 0.7rem;
-      color: var(--white);
-      font-family: var(--font-ui);
-      font-weight: 700;
-      letter-spacing: 1px;
-      z-index: 5;
-      background: var(--primary-accent);
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-      border: none;
-      box-shadow: var(--shadow-sm);
+      display: none;
     }
 
     .featured-card::after {
@@ -601,19 +589,29 @@
 
     .featured-card:hover {
       transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--border-color);
+      box-shadow: var(--shadow-xl);
     }
 
     .featured-card .project-image {
-      width: 100%;
-      height: 300px;
-      border-radius: 0;
-      border-bottom: 3px solid var(--border-color);
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: none;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-md);
+    }
+
+    .featured-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
     }
 
     .featured-card .project-header {
-      padding: 2rem 2.5rem 1.5rem;
+      padding: 0 0 1rem;
       flex-direction: column;
       align-items: flex-start;
       gap: 0;
@@ -629,9 +627,33 @@
     }
 
     .featured-card .project-description {
-      padding: 0 2.5rem 2rem;
+      padding: 0 0 1.5rem;
       font-size: 1.1rem;
       line-height: 1.8;
+    }
+
+    .tech-stack-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(0, 0, 0, 0.85);
+      border: 2px solid var(--primary-accent);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+      margin-top: 0.5rem;
+      width: fit-content;
+    }
+
+    .tech-stack-highlight img {
+      filter: brightness(1.2);
+    }
+
+    .tech-stack-highlight span {
+      color: var(--white) !important;
+      font-weight: 700 !important;
+      font-size: 1rem !important;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
 
     .featured-card .project-features {
@@ -1428,8 +1450,21 @@
         word-wrap: break-word;
       }
 
+      .featured-card {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.5rem;
+      }
+
+      .featured-card .project-image {
+        width: 100%;
+        height: 250px;
+        border-radius: 12px;
+        margin-right: 0;
+      }
+
       .featured-card .project-description {
-        padding: 0 1.5rem;
+        padding: 0 0 1.5rem;
         font-size: 1rem;
       }
 
@@ -1596,9 +1631,26 @@
       }
 
       .featured-card .view-features-btn {
-        margin: 0 1.25rem 1.25rem;
+        margin: 0;
         padding: 0.6rem 1rem;
         font-size: 0.75rem;
+      }
+
+      .featured-actions {
+        padding: 0;
+        flex-wrap: wrap;
+      }
+
+      .tech-stack-highlight {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: #000000;
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        border: 1px solid var(--primary-accent);
+        margin-top: 0.5rem;
+        box-shadow: var(--shadow-sm);
       }
 
       .portfolio-grid {
@@ -2376,20 +2428,44 @@
       const game = featuredGamesPool[gameKey];
       const featuresJSON = JSON.stringify(game.features);
 
+      // Parse links to separate tech and url
+      // Expected format: <span>Tech • </span><a href="url">Text</a>
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = game.links;
+
+      const linkElement = tempDiv.querySelector('a');
+      const linkUrl = linkElement ? linkElement.getAttribute('href') : '#';
+      const linkText = linkElement ? linkElement.textContent : 'Learn More';
+
+      // Determine tech icon
+      let techIcon = '';
+      if (game.tech === 'Unity') {
+        techIcon = '<img src="files/gameengines/unity.png" alt="Unity" style="width: 24px; height: 24px; object-fit: contain;">';
+      }
+
       return `
         <div class="featured-card" data-features='${featuresJSON}'>
           <img src="${game.image}" alt="${game.title}" class="project-image">
-          <div class="project-header">
-            <div class="project-info">
-              <h3 class="project-title">${game.title}</h3>
-              <div class="project-links">
-                ${game.links}
+          
+          <div class="featured-content">
+            <div class="project-header">
+              <div class="project-info">
+                <h3 class="project-title">${game.title}</h3>
               </div>
             </div>
+            
+            <div class="tech-stack-highlight">
+              ${techIcon}
+              <span style="color: var(--white); font-weight: 700; font-size: 1rem;">${game.tech}</span>
+            </div>
+            
+            <p class="project-description">${game.description}</p>
+            
+            <div class="featured-actions" style="display: flex; gap: 1rem; align-items: center;">
+              <button class="view-features-btn" onclick="openGamePopup(this)" style="margin: 0;">View Features</button>
+              <a href="${linkUrl}" target="_blank" class="view-features-btn" style="text-decoration: none; display: inline-block;">${linkText}</a>
+            </div>
           </div>
-          <p class="project-description">${game.description}          </p>
-          <div class="card-separator"></div>
-          <button class="view-features-btn" onclick="openGamePopup(this)">View Features</button>
         </div>
       `;
     }
