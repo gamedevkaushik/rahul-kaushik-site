@@ -4,7 +4,7 @@ const featuredGamesPool = {
       image: 'files/projecticons/icon_racetime.png',
       title: 'Race_Time',
       tech: 'Unity',
-      links: '<span>Unity • </span><a href="https://gamedevkaushik.itch.io/race-time" target="_blank">Download on itch.io</a>',
+      links: '<span>Unity • </span><a href="https://gamedevkaushik.itch.io/race-time" target="_blank">PLay on itch.io</a>',
       description: 'A high-speed racing challenge where control meets chaos! Control your car using only the mouse to slow down time and rotate the car with pinpoint precision. You only get 10 seconds of total slowmo for the entire run - master the art of timing and angle!',
       features: [
         'Mouse-only control system - no brakes, no steering wheel',
