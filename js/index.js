@@ -10,6 +10,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const FLOATING_TOP = 110;
     const FLOATING_BOTTOM_OFFSET = 32;
 
+    // Material Design Ripple Effect
+    function createRipple(event) {
+        const button = event.currentTarget;
+        const circle = document.createElement('span');
+        const diameter = Math.max(button.clientWidth, button.clientHeight);
+        const radius = diameter / 2;
+
+        circle.style.width = circle.style.height = `${diameter}px`;
+        circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+        circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+        circle.classList.add('ripple');
+
+        const ripple = button.getElementsByClassName('ripple')[0];
+        if (ripple) {
+            ripple.remove();
+        }
+
+        button.appendChild(circle);
+    }
+
+    // Add ripple to buttons
+    const buttons = document.querySelectorAll('.cta-button, .submit-button, .lets-talk-btn, .upcoming-game-button, .view-features-btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', createRipple);
+    });
+
     window.addEventListener('load', () => {
       setTimeout(() => {
         if (loadingOverlay) {
