@@ -175,7 +175,9 @@ const featuredGamesPool = {
             <span style="color: var(--white); font-weight: 700; font-size: 1rem;">${game.tech}</span>
           </div>
           
+          <div class="card-separator"></div>
           <p class="project-description">${game.description}</p>
+          <div class="card-separator"></div>
           
           <div class="featured-actions" style="display: flex; gap: 1rem; align-items: center;">
             <button class="view-features-btn" onclick="openGamePopup(this)" style="margin: 0;">View Features</button>
@@ -349,57 +351,59 @@ const featuredGamesPool = {
   });
 
   // Floating Social Bar Logic
-  const floatingSocial = document.getElementById('floatingSocial');
-  const header = document.querySelector('header');
-  const FLOATING_TOP = 110;
-  const FLOATING_BOTTOM_OFFSET = 30;
+  document.addEventListener('DOMContentLoaded', () => {
+    const floatingSocial = document.getElementById('floatingSocial');
+    const header = document.querySelector('header');
+    const FLOATING_TOP = 110;
+    const FLOATING_BOTTOM_OFFSET = 32;
 
-  function handleScroll() {
-    const scrollTop = window.pageYOffset;
+    function handleScroll() {
+      const scrollTop = window.pageYOffset;
 
-    if (header) {
-      const headerHeight = header.offsetHeight;
-      const fadeStartPoint = headerHeight * 0.3;
-      const fadeEndPoint = headerHeight * 0.8;
+      if (header) {
+        const headerHeight = header.offsetHeight;
+        const fadeStartPoint = headerHeight * 0.3;
+        const fadeEndPoint = headerHeight * 0.8;
 
-      if (scrollTop >= fadeStartPoint) {
-        header.classList.add('fade-out');
-        if (scrollTop >= fadeEndPoint) {
-          header.classList.add('scrolled');
+        if (scrollTop >= fadeStartPoint) {
+          header.classList.add('fade-out');
+          if (scrollTop >= fadeEndPoint) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
         } else {
-          header.classList.remove('scrolled');
+          header.classList.remove('fade-out', 'scrolled');
         }
-      } else {
-        header.classList.remove('fade-out', 'scrolled');
+      }
+
+      if (floatingSocial) {
+        const threshold = header ? header.offsetHeight * 0.6 : 200;
+        const shouldStickBottom = scrollTop > threshold;
+        updateFloatingSocialPosition(shouldStickBottom);
       }
     }
 
-    if (floatingSocial) {
-      const threshold = header ? header.offsetHeight * 0.6 : 200;
-      const shouldStickBottom = scrollTop > threshold;
-      updateFloatingSocialPosition(shouldStickBottom);
+    function updateFloatingSocialPosition(shouldStickBottom) {
+      if (!floatingSocial) return;
+
+      if (shouldStickBottom) {
+        floatingSocial.classList.add('bottom-left');
+        const availableTop = window.innerHeight - floatingSocial.offsetHeight - FLOATING_BOTTOM_OFFSET;
+        const targetTop = Math.max(FLOATING_TOP, availableTop);
+        floatingSocial.style.top = `${targetTop}px`;
+      } else {
+        floatingSocial.classList.remove('bottom-left');
+        floatingSocial.style.top = `${FLOATING_TOP}px`;
+      }
     }
-  }
 
-  function updateFloatingSocialPosition(shouldStickBottom) {
-    if (!floatingSocial) return;
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
 
-    if (shouldStickBottom) {
-      floatingSocial.classList.add('bottom-left');
-      const availableTop = window.innerHeight - floatingSocial.offsetHeight - FLOATING_BOTTOM_OFFSET;
-      const targetTop = Math.max(FLOATING_TOP, availableTop);
-      floatingSocial.style.top = `${targetTop}px`;
-    } else {
-      floatingSocial.classList.remove('bottom-left');
-      floatingSocial.style.top = `${FLOATING_TOP}px`;
-    }
-  }
-
-  window.addEventListener('scroll', handleScroll);
-  handleScroll(); // Initial check
-
-  window.addEventListener('resize', () => {
-    if (!floatingSocial) return;
-    const isBottom = floatingSocial.classList.contains('bottom-left');
-    updateFloatingSocialPosition(isBottom);
+    window.addEventListener('resize', () => {
+      if (!floatingSocial) return;
+      const isBottom = floatingSocial.classList.contains('bottom-left');
+      updateFloatingSocialPosition(isBottom);
+    });
   });
